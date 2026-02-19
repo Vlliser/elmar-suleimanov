@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Эльмар Сулейманов — адвокат в Баку. Гражданское, уголовное, корпоративное право. +994 55 644 70 80">
+<meta property="og:title" content="Эльмар Сулейманов · Адвокат · Баку">
+<meta property="og:description" content="Адвокатская практика в Азербайджане — гражданские, уголовные, корпоративные дела.">
+<title>Эльмар Сулейманов · Адвокат · Баку</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0A1628;
+    --navy-mid: #162240;
+    --gold: #B8972A;
+    --gold-light: #D4B050;
+    --bg: #F5F3EF;
+    --bg2: #EDEAE4;
+    --surface: #FFFFFF;
+    --text: #0A1628;
+    --text-muted: #6B7280;
+    --border: rgba(10,22,40,0.12);
+    --header-bg: rgba(245,243,239,0.92);
+    --card-bg: #FFFFFF;
+    --modal-bg: #FFFFFF;
+    --transition: 0.35s cubic-bezier(0.4,0,0.2,1);
+  }
+  [data-theme="dark"] {
+    --bg: #090E18;
+    --bg2: #0F1825;
+    --surface: #111B2E;
+    --text: #EDE9E0;
+    --text-muted: #8A94A6;
+    --border: rgba(184,151,42,0.15);
+    --header-bg: rgba(9,14,24,0.92);
+    --card-bg: #111B2E;
+    --modal-bg: #111B2E;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); transition: background var(--transition), color var(--transition); line-height: 1.6; overflow-x: hidden; }
+
+  /* HEADER */
+  header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 5vw; height: 72px; display: flex; align-items: center; justify-content: space-between; background: transparent; transition: background var(--transition), backdrop-filter var(--transition), box-shadow var(--transition); }
+  header.scrolled { background: var(--header-bg); backdrop-filter: blur(12px); box-shadow: 0 1px 0 var(--border); }
+  .logo { display: flex; flex-direction: column; gap: 1px; text-decoration: none; }
+  .logo-name { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 500; color: var(--text); letter-spacing: 0.02em; transition: color var(--transition); }
+  .logo-sub { font-size: 0.65rem; font-weight: 300; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
+  nav { display: flex; align-items: center; gap: 1.5rem; }
+  nav > a { font-size: 0.8rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; color: var(--text-muted); transition: color var(--transition); }
+  nav > a:hover { color: var(--gold); }
+
+  /* LANG SWITCHER */
+  .lang-switcher { display: flex; border: 1px solid var(--border); overflow: hidden; flex-shrink: 0; }
+  .lang-btn { background: none; border: none; border-right: 1px solid var(--border); cursor: pointer; padding: 7px 11px; font-size: 0.62rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); font-family: 'DM Sans', sans-serif; transition: all var(--transition); }
+  .lang-btn:last-child { border-right: none; }
+  .lang-btn.active { background: var(--gold); color: var(--navy); }
+  .lang-btn:not(.active):hover { color: var(--gold); }
+
+  .theme-btn { background: none; border: 1px solid var(--border); width: 36px; height: 36px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--text-muted); transition: all var(--transition); flex-shrink: 0; }
+  .theme-btn:hover { border-color: var(--gold); color: var(--gold); }
+  .burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+  .burger span { display: block; width: 22px; height: 1.5px; background: var(--text); transition: all var(--transition); }
+
+  /* MOBILE NAV */
+  .mobile-nav { display: none; position: fixed; inset: 0; z-index: 99; background: var(--bg); flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; text-decoration: none; color: var(--text); letter-spacing: 0.05em; transition: color var(--transition); }
+  .mobile-nav a:hover { color: var(--gold); }
+  .mobile-lang { display: flex; gap: 0; border: 1px solid var(--border); }
+  .mobile-lang-btn { background: none; border: none; border-right: 1px solid var(--border); padding: 8px 16px; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all var(--transition); }
+  .mobile-lang-btn:last-child { border-right: none; }
+  .mobile-lang-btn.active { background: var(--gold); color: var(--navy); }
+
+  /* HERO */
+  #hero { min-height: 100svh; display: flex; align-items: center; padding: 120px 5vw 80px; position: relative; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; pointer-events: none; }
+  .hero-bg svg { width: 100%; height: 100%; opacity: 0.04; }
+  [data-theme="dark"] .hero-bg svg { opacity: 0.06; }
+  .hero-content { position: relative; max-width: 820px; }
+  .hero-eyebrow { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 400; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
+  .hero-eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 7vw, 5.5rem); font-weight: 300; line-height: 1.08; letter-spacing: -0.01em; color: var(--text); margin-bottom: 1.5rem; }
+  h1 em { font-style: italic; color: var(--gold); }
+  .hero-sub { font-size: 1rem; font-weight: 300; color: var(--text-muted); max-width: 520px; margin-bottom: 3rem; line-height: 1.7; }
+  .btn-primary { display: inline-block; padding: 14px 36px; background: var(--gold); color: var(--navy); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all var(--transition); border: 1px solid var(--gold); cursor: pointer; }
+  .btn-primary:hover { background: var(--navy); color: #EDE9E0; border-color: var(--navy); }
+  .hero-scroll { position: absolute; bottom: 2.5rem; left: 5vw; display: flex; align-items: center; gap: 0.75rem; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); }
+  .hero-scroll-line { width: 40px; height: 1px; background: var(--text-muted); animation: scrollLine 2s ease-in-out infinite alternate; }
+  @keyframes scrollLine { from { width: 20px; } to { width: 50px; } }
+
+  /* SECTIONS */
+  section { padding: 100px 5vw; }
+  .section-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; }
+  .section-label::before { content: ''; display: block; width: 30px; height: 1px; background: var(--gold); }
+  h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 300; color: var(--text); line-height: 1.2; margin-bottom: 3.5rem; }
+
+  /* PRACTICE */
+  #practice { background: var(--bg2); }
+  .practice-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .practice-card { background: var(--card-bg); padding: 2rem 1.75rem; border-left: 3px solid transparent; transition: border-color var(--transition), background var(--transition); display: flex; flex-direction: column; gap: 0.75rem; }
+  .practice-card:hover { border-left-color: var(--gold); }
+  .practice-icon { color: var(--gold); opacity: 0.8; margin-bottom: 0.25rem; }
+  .practice-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--text); line-height: 1.3; }
+  .practice-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+
+  /* ABOUT */
+  #about { background: var(--bg); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+  .about-text p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 1.25rem; font-weight: 300; }
+  .about-text p:first-child { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--text); font-weight: 300; line-height: 1.6; }
+  .media-list { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+  .media-list-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .media-items { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .media-tag { font-size: 0.75rem; padding: 6px 14px; border: 1px solid var(--border); color: var(--text-muted); letter-spacing: 0.05em; }
+
+  /* REVIEWS PANEL */
+  .reviews-panel { display: flex; flex-direction: column; gap: 1rem; }
+  .reviews-cards { display: flex; flex-direction: column; gap: 0.75rem; }
+  .review-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    padding: 1.25rem 1.5rem;
+    transition: all var(--transition);
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  .review-card.visible-card {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .review-card:nth-child(2) { transition-delay: 0.08s; }
+  .review-card:nth-child(3) { transition-delay: 0.16s; }
+  .review-card:hover { border-left-color: var(--gold-light); box-shadow: 0 4px 24px rgba(10,22,40,0.06); }
+  [data-theme="dark"] .review-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.3); }
+  .review-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.75rem; }
+  .review-card-author { display: flex; flex-direction: column; gap: 0.15rem; }
+  .review-name { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text); }
+  .review-stars { color: var(--gold); font-size: 0.7rem; letter-spacing: 1.5px; }
+  .review-fb-icon { color: var(--text-muted); opacity: 0.4; flex-shrink: 0; margin-top: 2px; }
+  .review-text { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 400; line-height: 1.65; color: var(--text); font-style: italic; }
+  .reviews-nav { display: flex; align-items: center; justify-content: space-between; padding-top: 0.5rem; }
+  .review-dots { display: flex; gap: 5px; }
+  .review-dot { width: 5px; height: 5px; background: var(--border); cursor: pointer; transition: background var(--transition); border-radius: 50%; border: 1px solid var(--border); }
+  .review-dot.active { background: var(--gold); border-color: var(--gold); }
+  .reviews-fb-link { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; transition: color var(--transition); }
+  .reviews-fb-link:hover { color: var(--gold); }
+
+  /* CONTACTS */
+  #contacts { background: var(--navy); color: #EDE9E0; }
+  #contacts .section-label { color: var(--gold-light); }
+  #contacts h2 { color: #EDE9E0; }
+  .contacts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+  .contact-phone { display: block; font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 300; color: #EDE9E0; text-decoration: none; letter-spacing: -0.01em; line-height: 1.1; transition: color var(--transition); border-bottom: 1px solid rgba(184,151,42,0.3); padding-bottom: 1.25rem; margin-bottom: 2rem; }
+  .contact-phone:hover { color: var(--gold-light); }
+  .contact-info-item { display: flex; flex-direction: column; gap: 0.2rem; margin-bottom: 1.5rem; }
+  .contact-info-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(184,151,42,0.7); }
+  .contact-info-val { font-size: 0.9rem; color: rgba(237,233,224,0.8); font-weight: 300; }
+  .social-links { display: flex; gap: 1rem; margin-top: 1.5rem; }
+  .social-link { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: rgba(237,233,224,0.6); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px 18px; border: 1px solid rgba(184,151,42,0.25); transition: all var(--transition); }
+  .social-link:hover { border-color: var(--gold-light); color: var(--gold-light); }
+  .contact-cta-block { padding-top: 1rem; }
+  .contact-cta-block p { font-size: 0.9rem; color: rgba(237,233,224,0.6); line-height: 1.75; font-weight: 300; margin-bottom: 2rem; }
+  .btn-outline { display: inline-block; padding: 14px 36px; border: 1px solid rgba(184,151,42,0.5); color: var(--gold-light); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all var(--transition); background: transparent; }
+  .btn-outline:hover { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+
+  /* FOOTER */
+  footer { background: #060D18; padding: 2rem 5vw; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-top: 1px solid rgba(184,151,42,0.1); }
+  .footer-copy { font-size: 0.75rem; color: rgba(237,233,224,0.3); font-weight: 300; }
+  .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .footer-links button { background: none; border: none; cursor: pointer; font-size: 0.72rem; color: rgba(237,233,224,0.35); font-family: 'DM Sans', sans-serif; letter-spacing: 0.03em; text-decoration: underline; text-underline-offset: 3px; transition: color var(--transition); padding: 0; }
+  .footer-links button:hover { color: var(--gold-light); }
+
+  /* COOKIES */
+  #cookies-banner { position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: var(--navy); border-top: 1px solid rgba(184,151,42,0.2); padding: 1rem 5vw; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; transform: translateY(0); transition: transform var(--transition); }
+  #cookies-banner.hidden { transform: translateY(110%); }
+  #cookies-banner p { font-size: 0.8rem; color: rgba(237,233,224,0.7); font-weight: 300; max-width: 680px; line-height: 1.5; }
+  #cookies-banner button { padding: 10px 28px; background: var(--gold); color: var(--navy); border: none; cursor: pointer; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; font-family: 'DM Sans', sans-serif; transition: background var(--transition); white-space: nowrap; }
+  #cookies-banner button:hover { background: var(--gold-light); }
+
+  /* MODALS */
+  .modal-overlay { display: none; position: fixed; inset: 0; z-index: 300; background: rgba(6,13,24,0.85); backdrop-filter: blur(4px); align-items: center; justify-content: center; padding: 2rem; }
+  .modal-overlay.open { display: flex; }
+  .modal-box { background: var(--modal-bg); max-width: 640px; width: 100%; max-height: 80vh; overflow-y: auto; position: relative; padding: 3rem; border-top: 3px solid var(--gold); }
+  .modal-close { position: absolute; top: 1.25rem; right: 1.25rem; background: none; border: 1px solid var(--border); width: 36px; height: 36px; cursor: pointer; font-size: 1.1rem; color: var(--text-muted); display: flex; align-items: center; justify-content: center; transition: all var(--transition); }
+  .modal-close:hover { border-color: var(--gold); color: var(--gold); }
+  .modal-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; margin-bottom: 1.5rem; color: var(--text); }
+  .modal-box p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem; font-weight: 300; }
+  .modal-box h4 { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text); margin: 1.5rem 0 0.5rem; }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* RESPONSIVE */
+
+
+  
+  /* ── PRESS STRIP (after hero) ── */
+  .press-cards-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border);
+    overflow-x: auto;
+  }
+  .press-card {
+    background: var(--card-bg);
+    padding: 1.5rem 1.25rem;
+    display: flex; flex-direction: column; gap: 0.75rem;
+    text-decoration: none; color: inherit;
+    border-bottom: 3px solid transparent;
+    transition: border-color var(--transition), background var(--transition);
+    min-width: 180px;
+  }
+  .press-card:hover { border-bottom-color: var(--gold); }
+  .press-card-src {
+    font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold); font-weight: 500;
+  }
+  .press-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem; font-weight: 400; line-height: 1.4;
+    color: var(--text); flex: 1;
+    transition: color var(--transition);
+  }
+  .press-card:hover .press-card-title { color: var(--gold); }
+  .press-card-tag {
+    font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-muted); padding: 4px 8px;
+    border: 1px solid var(--border); display: inline-block; width: fit-content;
+  }
+  @media (max-width: 900px) {
+    .press-cards-row { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .press-cards-row { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ── MEDIA SECTION ── */
+  #media-section { background: var(--bg2); }
+  .media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1px; background: var(--border); border: 1px solid var(--border);
+  }
+  .media-card {
+    background: var(--card-bg); padding: 2rem;
+    display: flex; flex-direction: column; gap: 1rem;
+    transition: background var(--transition);
+    text-decoration: none; color: inherit;
+    border-top: 3px solid transparent;
+    transition: border-color var(--transition), background var(--transition);
+  }
+  .media-card:hover { border-top-color: var(--gold); }
+  .media-card-source {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold); font-weight: 500;
+  }
+  .media-card-source::before {
+    content: ''; display: block; width: 18px; height: 1px; background: var(--gold);
+  }
+  .media-card-date { font-size: 0.7rem; color: var(--text-muted); margin-left: auto; }
+  .media-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; font-weight: 400; line-height: 1.4; color: var(--text);
+  }
+  .media-card:hover .media-card-title { color: var(--gold); }
+  .media-card-excerpt {
+    font-size: 0.8rem; color: var(--text-muted); line-height: 1.7;
+    font-weight: 300; flex: 1;
+  }
+  .media-card-arrow {
+    font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-muted); display: flex; align-items: center; gap: 0.4rem;
+    transition: color var(--transition);
+  }
+  .media-card:hover .media-card-arrow { color: var(--gold); }
+
+  /* ── FAQ SECTION ── */
+  #faq { background: var(--bg); }
+  .faq-layout { display: grid; grid-template-columns: 1fr 1.6fr; gap: 6rem; align-items: start; }
+  .faq-intro p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.8; font-weight: 300; margin-bottom: 1.25rem; }
+  .faq-list { display: flex; flex-direction: column; }
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    transition: border-color var(--transition);
+  }
+  .faq-item:first-child { border-top: 1px solid var(--border); }
+  .faq-question {
+    width: 100%; background: none; border: none; text-align: left; cursor: pointer;
+    padding: 1.25rem 0; display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 1rem; font-family: 'Cormorant Garamond', serif; font-size: 1.05rem;
+    font-weight: 400; color: var(--text); line-height: 1.4;
+    transition: color var(--transition);
+  }
+  .faq-question:hover { color: var(--gold); }
+  .faq-question.open { color: var(--gold); }
+  .faq-icon {
+    flex-shrink: 0; width: 18px; height: 18px; border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem; color: var(--text-muted); margin-top: 2px;
+    transition: all var(--transition);
+  }
+  .faq-question.open .faq-icon { border-color: var(--gold); color: var(--gold); transform: rotate(45deg); }
+  .faq-answer {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    font-size: 0.85rem; color: var(--text-muted); line-height: 1.8; font-weight: 300;
+  }
+  .faq-answer.open { max-height: 400px; padding-bottom: 1.25rem; }
+  .faq-answer .source-tag {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    margin-top: 0.75rem; font-size: 0.62rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--gold); text-decoration: none;
+  }
+  .faq-answer .source-tag:hover { text-decoration: underline; }
+
+  @media (max-width: 900px) {
+    .faq-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  }
+
+  /* ── MEDIA AD CARDS ── */
+  #media-section { background: var(--bg2); }
+  .media-section-sub {
+    font-size: 0.9rem; color: var(--text-muted); font-weight: 300;
+    max-width: 600px; line-height: 1.75; margin-bottom: 3rem; margin-top: -2rem;
+  }
+  .media-ad-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .media-ad-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    display: flex; flex-direction: column;
+    text-decoration: none; color: inherit;
+    padding: 1.75rem;
+    position: relative;
+    transition: all var(--transition);
+    overflow: hidden;
+  }
+  .media-ad-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    transform: scaleX(0); transform-origin: left;
+    transition: transform var(--transition);
+  }
+  .media-ad-card:hover::before { transform: scaleX(1); }
+  .media-ad-card:hover { box-shadow: 0 8px 32px rgba(10,22,40,0.08); transform: translateY(-3px); }
+  [data-theme="dark"] .media-ad-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+  .media-ad-source {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  .media-ad-src-logo {
+    font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600;
+    padding: 4px 10px; border: 1px solid rgba(184,151,42,0.3);
+  }
+  .media-ad-badge {
+    font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-muted); padding: 3px 8px; border: 1px solid var(--border);
+  }
+  .media-ad-body {
+    flex: 1; position: relative; margin-bottom: 1.25rem;
+  }
+  .media-ad-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem; line-height: 0.8;
+    color: var(--gold); opacity: 0.25;
+    margin-bottom: -0.5rem;
+  }
+  .media-ad-excerpt {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; font-style: italic;
+    color: var(--text); line-height: 1.65; font-weight: 300;
+  }
+  .media-ad-footer {
+    border-top: 1px solid var(--border); padding-top: 1rem;
+    display: flex; flex-direction: column; gap: 0.6rem;
+  }
+  .media-ad-title {
+    font-size: 0.78rem; font-weight: 500; color: var(--text);
+    letter-spacing: 0.02em; line-height: 1.4;
+    transition: color var(--transition);
+  }
+  .media-ad-card:hover .media-ad-title { color: var(--gold); }
+  .media-ad-arrow {
+    font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gold); font-weight: 500;
+    transition: letter-spacing var(--transition);
+  }
+  .media-ad-card:hover .media-ad-arrow { letter-spacing: 0.15em; }
+  @media (max-width: 1024px) { .media-ad-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .media-ad-grid { grid-template-columns: 1fr; } }
+
+  /* ── PRESS TICKER ── */
+  .press-ticker-track-wrap {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+    height: 42px;
+  }
+  .press-ticker-track {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    white-space: nowrap;
+    animation: tickerScroll 40s linear infinite;
+    width: max-content;
+  }
+  .press-ticker-track:hover { animation-play-state: paused; }
+  @keyframes tickerScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .press-ticker-item {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    padding: 0 2rem;
+    text-decoration: none;
+    font-size: 0.72rem; letter-spacing: 0.04em;
+    color: var(--text-muted);
+    height: 42px;
+    border-right: 1px solid var(--border);
+    transition: color var(--transition), background var(--transition);
+    flex-shrink: 0;
+  }
+  .press-ticker-item:hover { color: var(--gold); background: var(--bg2); }
+  .press-ticker-source {
+    font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gold);
+  }
+  .press-ticker-dot {
+    width: 3px; height: 3px; border-radius: 50%;
+    background: var(--gold); opacity: 0.4; flex-shrink: 0;
+  }
+
+  @media (max-width: 600px) { .press-ticker-track-wrap { display: none; } }
+
+  @media (max-width: 1024px) { .about-grid { grid-template-columns: 1fr; gap: 3rem; } }
+  @media (max-width: 900px) { nav > a { display: none; } .burger { display: flex; } .contacts-grid { grid-template-columns: 1fr; gap: 3rem; } .hero-scroll { display: none; } nav { gap: 0.75rem; } }
+  @media (max-width: 600px) { section { padding: 70px 5vw; } .modal-box { padding: 2rem 1.5rem; } .social-links { flex-direction: column; } footer { flex-direction: column; align-items: flex-start; } .lang-switcher { display: none; } .reviews-panel { min-height: auto; } .review-slide { inset: 2rem 2rem 0; } .reviews-footer { padding: 1.5rem 2rem; } }
+</style>
+</head>
+<body>
+
+<header id="main-header">
+  <a href="#" class="logo" aria-label="Главная">
+    <span class="logo-name">Э. Сулейманов</span>
+    <span class="logo-sub" data-i18n="logo_sub">Адвокат · Баку</span>
+  </a>
+  <nav aria-label="Навигация">
+    <a href="#practice" data-i18n="nav_practice">Практика</a>
+    <a href="#about" data-i18n="nav_about">О себе</a>
+    <a href="#media-section" data-i18n="media_label">В СМИ</a>
+    <a href="#contacts" data-i18n="nav_contacts">Контакты</a>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="ru">РУ</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="az">AZ</button>
+    </div>
+    <button class="theme-btn" id="theme-toggle" aria-label="Тема">
+      <svg id="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg id="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </nav>
+  <button class="burger" id="burger-btn" aria-label="Меню"><span></span><span></span><span></span></button>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <a href="#practice" class="mobile-link" data-i18n="nav_practice">Практика</a>
+  <a href="#about" class="mobile-link" data-i18n="nav_about">О себе</a>
+  <a href="#media-section" class="mobile-link" data-i18n="media_label">В СМИ</a>
+  <a href="#contacts" class="mobile-link" data-i18n="nav_contacts">Контакты</a>
+  <div class="mobile-lang">
+    <button class="mobile-lang-btn active" data-lang="ru">РУ</button>
+    <button class="mobile-lang-btn" data-lang="en">EN</button>
+    <button class="mobile-lang-btn" data-lang="az">AZ</button>
+  </div>
+</div>
+
+<section id="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect x="900" y="50" width="400" height="400" fill="none" stroke="currentColor" stroke-width="1"/>
+      <rect x="950" y="100" width="300" height="300" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <line x1="900" y1="50" x2="1300" y2="450" stroke="currentColor" stroke-width="0.5"/>
+      <line x1="1300" y1="50" x2="900" y2="450" stroke="currentColor" stroke-width="0.5"/>
+      <circle cx="1100" cy="250" r="150" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <line x1="0" y1="700" x2="700" y2="700" stroke="currentColor" stroke-width="0.5"/>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow reveal" data-i18n="hero_eyebrow">Личная практика в Азербайджане</p>
+    <h1 class="reveal reveal-delay-1" data-i18n="hero_h1">Юридическая<br>защита. <em>Чётко.</em><br>Без лишних слов.</h1>
+    <p class="hero-sub reveal reveal-delay-2" data-i18n="hero_sub">Адвокатская практика в Азербайджане — гражданские, уголовные и корпоративные дела. Работаю с теми, кто ценит профессионализм и ясность.</p>
+    <a href="#contacts" class="btn-primary reveal reveal-delay-3" data-i18n="hero_cta">Записаться на консультацию</a>
+  </div>
+    <div class="press-ticker-track-wrap">
+      <div class="press-ticker-track">
+        <!-- set 1 -->
+        <a class="press-ticker-item" href="https://haqqin.az/newsarchive/368020" target="_blank" rel="noopener">
+          <span class="press-ticker-source">Haqqin.az</span>
+          <span class="press-ticker-dot"></span>
+          Переборщил с рекламой? Сядешь на два года
+        </a>
+        <a class="press-ticker-item" href="https://haqqin.az/news/366488" target="_blank" rel="noopener">
+          <span class="press-ticker-source">Haqqin.az</span>
+          <span class="press-ticker-dot"></span>
+          Защита от SMS-бомбардировки: как наказать нарушителей
+        </a>
+        <a class="press-ticker-item" href="https://haqqin.az/news/364742" target="_blank" rel="noopener">
+          <span class="press-ticker-source">Haqqin.az</span>
+          <span class="press-ticker-dot"></span>
+          Как распределяется наследство в Азербайджане?
+        </a>
+        <a class="press-ticker-item" href="https://haqqin.az/news/364030" target="_blank" rel="noopener">
+          <span class="press-ticker-source">Haqqin.az</span>
+          <span class="press-ticker-dot"></span>
+          Курильщиков и их работодателей ждут крупные штрафы
+        </a>
+        <a class="press-ticker-item" href="https://media.az/society/razvod-po-azerbajdzhanski-chto-vazhno-znat-prezhde-chem-postavit-tochku-v-brake" target="_blank" rel="noopener">
+          <span class="press-ticker-source">Media.az</span>
+          <span class="press-ticker-dot"></span>
+          Развод по-азербайджански: что важно знать
+        </a>
+        <a class="press-ticker-item" href="https://media.az/society/dnk-sud-i-alimenty-yuridicheskie-nyuansy-osparivaniya-otcovstva-v-azerbajdzhane" target="_blank" rel="noopener">
+          <span class="press-ticker-source">Media.az</span>
+          <span class="press-ticker-dot"></span>
+          ДНК, суд и алименты: нюансы оспаривания отцовства
+        </a>
+        <!-- set 2 (duplicate for seamless loop) -->
+        <a class="press-ticker-item" href="https://haqqin.az/newsarchive/368020" target="_blank" rel="noopener">
+          <span class="press-ticker-source">Haqqin.az</span>
+          <span class="press-ticker-dot"></span>
+          Переборщил с рекламой? Сядешь на два года
+        </a>
+        <a class="press-ticker-item" href="https://haqqin.az/news/366488" target="_blank" rel="noopener">
+          <span class="press-ticker-source">Haqqin.az</span>
+          <span class="press-ticker-dot"></span>
+          Защита от SMS-бомбардировки: как наказать нарушителей
+        </a>
+        <a class="press-ticker-item" href="https://haqqin.az/news/364742" target="_blank" rel="noopener">
+          <span class="press-ticker-source">Haqqin.az</span>
+          <span class="press-ticker-dot"></span>
+          Как распределяется наследство в Азербайджане?
+        </a>
+        <a class="press-ticker-item" href="https://haqqin.az/news/364030" target="_blank" rel="noopener">
+          <span class="press-ticker-source">Haqqin.az</span>
+          <span class="press-ticker-dot"></span>
+          Курильщиков и их работодателей ждут крупные штрафы
+        </a>
+        <a class="press-ticker-item" href="https://media.az/society/razvod-po-azerbajdzhanski-chto-vazhno-znat-prezhde-chem-postavit-tochku-v-brake" target="_blank" rel="noopener">
+          <span class="press-ticker-source">Media.az</span>
+          <span class="press-ticker-dot"></span>
+          Развод по-азербайджански: что важно знать
+        </a>
+        <a class="press-ticker-item" href="https://media.az/society/dnk-sud-i-alimenty-yuridicheskie-nyuansy-osparivaniya-otcovstva-v-azerbajdzhane" target="_blank" rel="noopener">
+          <span class="press-ticker-source">Media.az</span>
+          <span class="press-ticker-dot"></span>
+          ДНК, суд и алименты: нюансы оспаривания отцовства
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <span class="hero-scroll-line"></span>
+    <span data-i18n="hero_scroll">Прокрутите вниз</span>
+  </div>
+</section>
+
+<section id="practice">
+  <p class="section-label reveal" data-i18n="practice_label">Области права</p>
+  <h2 class="reveal" data-i18n="practice_h2">Направления<br>адвокатской практики</h2>
+  <div class="practice-grid">
+    <div class="practice-card reveal"><div class="practice-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><div class="practice-title" data-i18n="p1_title">Гражданское право</div><div class="practice-desc" data-i18n="p1_desc">Споры между физическими и юридическими лицами, защита имущественных и неимущественных прав.</div></div>
+    <div class="practice-card reveal reveal-delay-1"><div class="practice-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="practice-title" data-i18n="p2_title">Уголовное право</div><div class="practice-desc" data-i18n="p2_desc">Защита обвиняемых и подозреваемых на всех стадиях уголовного процесса.</div></div>
+    <div class="practice-card reveal reveal-delay-2"><div class="practice-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="practice-title" data-i18n="p3_title">Семейное право</div><div class="practice-desc" data-i18n="p3_desc">Раздел имущества, вопросы опеки, алименты — с вниманием к интересам каждой стороны.</div></div>
+    <div class="practice-card reveal reveal-delay-3"><div class="practice-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="0"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div><div class="practice-title" data-i18n="p4_title">Трудовое право</div><div class="practice-desc" data-i18n="p4_desc">Трудовые споры, незаконное увольнение, защита прав работников и работодателей.</div></div>
+    <div class="practice-card reveal"><div class="practice-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="practice-title" data-i18n="p5_title">Жилищное право</div><div class="practice-desc" data-i18n="p5_desc">Споры о праве собственности, выселение, приватизация и иные жилищные конфликты.</div></div>
+    <div class="practice-card reveal reveal-delay-1"><div class="practice-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 22L22 22"/><path d="M12 2L12 22"/><rect x="3" y="13" width="8" height="9"/><rect x="13" y="3" width="8" height="9"/></svg></div><div class="practice-title" data-i18n="p6_title">Земельное право</div><div class="practice-desc" data-i18n="p6_desc">Оформление прав на земельные участки, земельные споры, сделки с недвижимостью.</div></div>
+    <div class="practice-card reveal reveal-delay-2"><div class="practice-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="practice-title" data-i18n="p7_title">Международное право</div><div class="practice-desc" data-i18n="p7_desc">Трансграничные споры, международные контракты, правовая помощь за рубежом.</div></div>
+    <div class="practice-card reveal reveal-delay-3"><div class="practice-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div><div class="practice-title" data-i18n="p8_title">Корпоративное право</div><div class="practice-desc" data-i18n="p8_desc">Корпоративные конфликты, сопровождение сделок, защита интересов акционеров.</div></div>
+    <div class="practice-card reveal"><div class="practice-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 0 0 6.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 0 0 6.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg></div><div class="practice-title" data-i18n="p9_title">Административное право</div><div class="practice-desc" data-i18n="p9_desc">Оспаривание решений государственных органов, административные правонарушения.</div></div>
+    <div class="practice-card reveal reveal-delay-1"><div class="practice-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div><div class="practice-title" data-i18n="p10_title">Регистрация юрлиц</div><div class="practice-desc" data-i18n="p10_desc">Регистрация компаний, изменения в уставных документах, ликвидация юридических лиц.</div></div>
+    <div class="practice-card reveal reveal-delay-2"><div class="practice-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div><div class="practice-title" data-i18n="p11_title">Составление договоров</div><div class="practice-desc" data-i18n="p11_desc">Разработка и правовая проверка договоров с учётом специфики сделки и рисков сторон.</div></div>
+    <div class="practice-card reveal reveal-delay-3"><div class="practice-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div class="practice-title" data-i18n="p12_title">Юридическая экспертиза</div><div class="practice-desc" data-i18n="p12_desc">Анализ договоров и документов — выявление правовых рисков до подписания или в ходе спора.</div></div>
+  </div>
+</section>
+
+<section id="about">
+  <p class="section-label reveal" data-i18n="about_label">Об адвокате</p>
+  <h2 class="reveal">Эльмар Сулейманов</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p class="reveal" data-i18n="about_p1">Адвокатская практика — это не только знание закона, но и способность видеть ситуацию глазами клиента. Я работаю с делами, в которых важна не только юридическая грамотность, но и точность в деталях.</p>
+      <p class="reveal reveal-delay-1" data-i18n="about_p2">Специализируюсь на широком спектре правовых вопросов — от гражданских споров до сопровождения крупных сделок. В числе завершённых дел — сопровождение транзакций общим объёмом свыше 20 000 000 EUR.</p>
+      <p class="reveal reveal-delay-2" data-i18n="about_p3">Регулярно выступаю экспертом в прямых эфирах ведущих телеканалов и радиостанций Азербайджана. Это не самоцель, а возможность говорить о праве понятным языком — без терминологических барьеров.</p>
+      <p class="reveal reveal-delay-3" data-i18n="about_p4">На консультации я не даю обещаний. Я даю анализ.</p>
+      <div class="media-list reveal">
+        <div class="media-list-label" data-i18n="media_label">Медиаучастие</div>
+        <div class="media-items">
+          <span class="media-tag">AzTV</span><span class="media-tag">SpaceTV</span><span class="media-tag">Ictimai TV</span><span class="media-tag">Azadliq Radio</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- REVIEWS -->
+    <div class="reviews-panel reveal reveal-delay-1" id="reviews-panel">
+      <div class="reviews-cards" id="reviews-cards"></div>
+      <div class="reviews-nav">
+        <div class="review-dots" id="review-dots"></div>
+        <a href="https://www.facebook.com/advokatelmar/reviews" target="_blank" rel="noopener" class="reviews-fb-link">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          <span data-i18n="reviews_fb">Все отзывы на Facebook</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     MEDIA SECTION — press interview cards
+════════════════════════════════════════════ -->
+<section id="media-section">
+  <p class="section-label reveal" data-i18n="media_section_label">В СМИ</p>
+  <h2 class="reveal" data-i18n="media_section_h2">Публикации<br>и комментарии</h2>
+  <p class="media-section-sub reveal" data-i18n="media_section_sub">Эльмар Сулейманов регулярно выступает экспертом в ведущих азербайджанских изданиях — комментирует изменения в законодательстве и разъясняет права граждан.</p>
+
+  <div class="media-ad-grid">
+
+    <a class="media-ad-card reveal" href="https://haqqin.az/newsarchive/368020" target="_blank" rel="noopener">
+      <div class="media-ad-source">
+        <span class="media-ad-src-logo">Haqqin.az</span>
+        <span class="media-ad-badge" data-i18n="press_tag_adm">Административное право</span>
+      </div>
+      <div class="media-ad-body">
+        <div class="media-ad-quote">"</div>
+        <p class="media-ad-excerpt" data-i18n="mc1_excerpt">Обман покупателей — не просто плохая практика, а уголовно наказуемое деяние. Искусственно завышенные «старые» цены и скрытые сборы могут обернуться для рекламодателя реальным сроком.</p>
+      </div>
+      <div class="media-ad-footer">
+        <p class="media-ad-title" data-i18n="mc1_title">Переборщил с рекламой? Сядешь на два года</p>
+        <span class="media-ad-arrow">Читать интервью →</span>
+      </div>
+    </a>
+
+    <a class="media-ad-card reveal reveal-delay-1" href="https://haqqin.az/news/366488" target="_blank" rel="noopener">
+      <div class="media-ad-source">
+        <span class="media-ad-src-logo">Haqqin.az</span>
+        <span class="media-ad-badge" data-i18n="press_tag_civil">Гражданское право</span>
+      </div>
+      <div class="media-ad-body">
+        <div class="media-ad-quote">"</div>
+        <p class="media-ad-excerpt" data-i18n="mc2_excerpt">Ваш номер телефона — это персональные данные, и любая организация, которая использует их без вашего согласия, нарушает закон. За это предусмотрен штраф и право на компенсацию.</p>
+      </div>
+      <div class="media-ad-footer">
+        <p class="media-ad-title" data-i18n="mc2_title">Защита от SMS-бомбардировки: как наказать нарушителей</p>
+        <span class="media-ad-arrow">Читать интервью →</span>
+      </div>
+    </a>
+
+    <a class="media-ad-card reveal reveal-delay-2" href="https://haqqin.az/news/364742" target="_blank" rel="noopener">
+      <div class="media-ad-source">
+        <span class="media-ad-src-logo">Haqqin.az</span>
+        <span class="media-ad-badge" data-i18n="press_tag_civil">Гражданское право</span>
+      </div>
+      <div class="media-ad-body">
+        <div class="media-ad-quote">"</div>
+        <p class="media-ad-excerpt" data-i18n="mc3_excerpt">Закон чётко определяет очерёдность наследников. Главное, о чём часто забывают: долги умершего тоже переходят к наследникам — но только в пределах полученного имущества.</p>
+      </div>
+      <div class="media-ad-footer">
+        <p class="media-ad-title" data-i18n="mc3_title">Как распределяется наследство в Азербайджане?</p>
+        <span class="media-ad-arrow">Читать интервью →</span>
+      </div>
+    </a>
+
+    <a class="media-ad-card reveal reveal-delay-3" href="https://haqqin.az/news/364030" target="_blank" rel="noopener">
+      <div class="media-ad-source">
+        <span class="media-ad-src-logo">Haqqin.az</span>
+        <span class="media-ad-badge" data-i18n="press_tag_labour">Трудовое право</span>
+      </div>
+      <div class="media-ad-body">
+        <div class="media-ad-quote">"</div>
+        <p class="media-ad-excerpt" data-i18n="mc4_excerpt">Работодатель обязан принять меры против курения в офисе — включая вейпы и кальяны. Если этого не сделано, штраф может достигнуть 2000 манатов. Для самого курильщика — 30 манатов.</p>
+      </div>
+      <div class="media-ad-footer">
+        <p class="media-ad-title" data-i18n="mc4_title">Курильщиков и работодателей ждут крупные штрафы</p>
+        <span class="media-ad-arrow">Читать интервью →</span>
+      </div>
+    </a>
+
+    <a class="media-ad-card reveal" href="https://media.az/society/razvod-po-azerbajdzhanski-chto-vazhno-znat-prezhde-chem-postavit-tochku-v-brake" target="_blank" rel="noopener">
+      <div class="media-ad-source">
+        <span class="media-ad-src-logo">Media.az</span>
+        <span class="media-ad-badge" data-i18n="press_tag_family">Семейное право</span>
+      </div>
+      <div class="media-ad-body">
+        <div class="media-ad-quote">"</div>
+        <p class="media-ad-excerpt" data-i18n="mc5_excerpt">Развод — это не только эмоциональное решение. Раздел совместно нажитого имущества, вопросы опеки и алиментов требуют правовой подготовки ещё до подачи заявления.</p>
+      </div>
+      <div class="media-ad-footer">
+        <p class="media-ad-title" data-i18n="mc5_title">Развод по-азербайджански: что важно знать</p>
+        <span class="media-ad-arrow">Читать интервью →</span>
+      </div>
+    </a>
+
+    <a class="media-ad-card reveal reveal-delay-1" href="https://media.az/society/dnk-sud-i-alimenty-yuridicheskie-nyuansy-osparivaniya-otcovstva-v-azerbajdzhane" target="_blank" rel="noopener">
+      <div class="media-ad-source">
+        <span class="media-ad-src-logo">Media.az</span>
+        <span class="media-ad-badge" data-i18n="press_tag_family">Семейное право</span>
+      </div>
+      <div class="media-ad-body">
+        <div class="media-ad-quote">"</div>
+        <p class="media-ad-excerpt" data-i18n="mc6_excerpt">Оспорить отцовство можно только в суде. Ключевое доказательство — ДНК-экспертиза. При успешном исходе запись об отцовстве аннулируется, и обязательство платить алименты прекращается.</p>
+      </div>
+      <div class="media-ad-footer">
+        <p class="media-ad-title" data-i18n="mc6_title">ДНК, суд и алименты: нюансы оспаривания отцовства</p>
+        <span class="media-ad-arrow">Читать интервью →</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FAQ SECTION
+════════════════════════════════════════════ -->
+<section id="faq">
+  <div class="faq-layout">
+    <div class="faq-intro">
+      <p class="section-label reveal" data-i18n="faq_label">Вопрос — Ответ</p>
+      <h2 class="reveal" data-i18n="faq_h2">Часто задаваемые<br>вопросы</h2>
+      <p class="reveal reveal-delay-1" data-i18n="faq_intro">Ответы основаны на действующем законодательстве Азербайджанской Республики. Каждая ситуация индивидуальна — для точного анализа обратитесь на консультацию.</p>
+      <a href="#contacts" class="btn-primary reveal reveal-delay-2" style="margin-top:2rem;display:inline-block;" data-i18n="hero_cta">Записаться на консультацию</a>
+    </div>
+    <div id="faq-list" class="faq-list reveal reveal-delay-1"></div>
+  </div>
+</section>
+
+<section id="contacts">
+  <p class="section-label reveal" data-i18n="contacts_label">Контакты</p>
+  <h2 class="reveal" data-i18n="contacts_h2">Записаться<br>на консультацию</h2>
+  <div class="contacts-grid">
+    <div>
+      <a href="tel:+994556447080" class="contact-phone reveal">+994 55 644 70 80</a>
+      <div class="contact-info-item reveal reveal-delay-1">
+        <span class="contact-info-label" data-i18n="addr_label">Адрес</span>
+        <span class="contact-info-val" data-i18n="addr_val">Проспект Ататюрка 27, AZ 1069<br>Баку, Азербайджан</span>
+      </div>
+      <div class="contact-info-item reveal reveal-delay-2">
+        <span class="contact-info-label" data-i18n="hours_label">График работы</span>
+        <span class="contact-info-val" data-i18n="hours_val">Уточняйте по телефону</span>
+      </div>
+      <div class="social-links reveal reveal-delay-3">
+        <a href="https://www.instagram.com/advokat_elmar_suleymanov/" target="_blank" rel="noopener" class="social-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="3"/><path d="M17.5 6.5h.01"/></svg> Instagram
+        </a>
+        <a href="https://www.facebook.com/advokatelmar/" target="_blank" rel="noopener" class="social-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook
+        </a>
+      </div>
+    </div>
+    <div class="contact-cta-block reveal reveal-delay-1">
+      <p data-i18n="cta_p1">Первичная консультация позволяет оценить ситуацию и определить возможные пути решения. Для записи достаточно одного звонка.</p>
+      <p data-i18n="cta_p2">Конфиденциальность переговоров гарантируется адвокатской тайной.</p>
+      <a href="tel:+994556447080" class="btn-outline" data-i18n="cta_btn">Позвонить сейчас</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="footer-copy" data-i18n="footer_copy">© 2025 Эльмар Сулейманов. Все права защищены.</p>
+  <div class="footer-links">
+    <button onclick="openModal('modal-terms')" data-i18n="footer_terms">Пользовательское соглашение</button>
+    <button onclick="openModal('modal-privacy')" data-i18n="footer_privacy">Обработка персональных данных</button>
+    <button onclick="openModal('modal-cookies')" data-i18n="footer_cookies">Политика cookies</button>
+  </div>
+</footer>
+
+<div id="cookies-banner" class="hidden">
+  <p data-i18n="cookie_text">Мы используем cookies для корректной работы сайта. Продолжая использование, вы соглашаетесь с нашей политикой конфиденциальности.</p>
+  <button onclick="acceptCookies()" data-i18n="cookie_btn">Принять</button>
+</div>
+
+<div class="modal-overlay" id="modal-terms" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-terms')">×</button>
+    <h3 data-i18n="footer_terms">Пользовательское соглашение</h3>
+    <p>Настоящее соглашение регулирует условия использования сайта адвоката Эльмара Сулейманова. Получая доступ к Сайту, вы принимаете изложенные условия в полном объёме.</p>
+    <h4>1. Общие положения</h4>
+    <p>Сайт носит информационный характер и не является офертой об оказании юридических услуг. Информация на Сайте не может рассматриваться как юридическая консультация применительно к конкретной ситуации.</p>
+    <h4>2. Интеллектуальная собственность</h4>
+    <p>Все материалы Сайта являются собственностью владельца. Их воспроизведение без письменного согласия запрещено.</p>
+    <h4>3. Ограничение ответственности</h4>
+    <p>Владелец Сайта не несёт ответственности за последствия самостоятельного применения материалов Сайта без получения индивидуальной консультации.</p>
+    <h4>4. Применимое право</h4>
+    <p>Соглашение регулируется законодательством Азербайджанской Республики.</p>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-privacy" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-privacy')">×</button>
+    <h3 data-i18n="footer_privacy">Обработка персональных данных</h3>
+    <p>Настоящее уведомление составлено в соответствии с Законом Азербайджанской Республики «О персональных данных».</p>
+    <h4>Какие данные собираются</h4>
+    <p>Сайт не содержит форм сбора персональных данных. При посещении могут фиксироваться технические данные (тип браузера, IP-адрес, время сеанса) исключительно в агрегированном виде.</p>
+    <h4>Цели обработки</h4>
+    <p>Анализ посещаемости для улучшения Сайта. Данные не передаются третьим лицам в коммерческих целях.</p>
+    <h4>Права субъекта данных</h4>
+    <p>Вы вправе запросить информацию об обрабатываемых данных или потребовать их удаления. Обратитесь по телефону: +994 55 644 70 80.</p>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-cookies" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-cookies')">×</button>
+    <h3 data-i18n="footer_cookies">Политика использования cookies</h3>
+    <p>Сайт использует файлы cookies — небольшие текстовые файлы, сохраняемые браузером на вашем устройстве.</p>
+    <h4>Что отслеживается</h4>
+    <p>Исключительно технические cookies: сохранение выбора темы оформления, языка интерфейса и вашего согласия с настоящей политикой.</p>
+    <h4>Управление cookies</h4>
+    <p>Вы можете отключить cookies в настройках браузера. Это может повлиять на работу отдельных элементов Сайта.</p>
+    <h4>Согласие</h4>
+    <p>Продолжение использования Сайта расценивается как согласие с использованием cookies в описанном объёме.</p>
+  </div>
+</div>
+
+<script>
+// ─── TRANSLATIONS ───────────────────────────────────
+const i18n = {
+  ru: {
+    logo_sub:'Адвокат · Баку', nav_practice:'Практика', nav_about:'О себе', nav_contacts:'Контакты',
+    hero_eyebrow:'Личная практика в Азербайджане',
+    hero_h1:'Юридическая<br>защита. <em>Чётко.</em><br>Без лишних слов.',
+    hero_sub:'Адвокатская практика в Азербайджане — гражданские, уголовные и корпоративные дела. Работаю с теми, кто ценит профессионализм и ясность.',
+    hero_cta:'Записаться на консультацию', hero_scroll:'Прокрутите вниз',
+    practice_label:'Области права', practice_h2:'Направления<br>адвокатской практики',
+    p1_title:'Гражданское право', p1_desc:'Споры между физическими и юридическими лицами, защита имущественных и неимущественных прав.',
+    p2_title:'Уголовное право', p2_desc:'Защита обвиняемых и подозреваемых на всех стадиях уголовного процесса.',
+    p3_title:'Семейное право', p3_desc:'Раздел имущества, вопросы опеки, алименты — с вниманием к интересам каждой стороны.',
+    p4_title:'Трудовое право', p4_desc:'Трудовые споры, незаконное увольнение, защита прав работников и работодателей.',
+    p5_title:'Жилищное право', p5_desc:'Споры о праве собственности, выселение, приватизация и иные жилищные конфликты.',
+    p6_title:'Земельное право', p6_desc:'Оформление прав на земельные участки, земельные споры, сделки с недвижимостью.',
+    p7_title:'Международное право', p7_desc:'Трансграничные споры, международные контракты, правовая помощь за рубежом.',
+    p8_title:'Корпоративное право', p8_desc:'Корпоративные конфликты, сопровождение сделок, защита интересов акционеров.',
+    p9_title:'Административное право', p9_desc:'Оспаривание решений государственных органов, административные правонарушения.',
+    p10_title:'Регистрация юрлиц', p10_desc:'Регистрация компаний, изменения в уставных документах, ликвидация юридических лиц.',
+    p11_title:'Составление договоров', p11_desc:'Разработка и правовая проверка договоров с учётом специфики сделки и рисков сторон.',
+    p12_title:'Юридическая экспертиза', p12_desc:'Анализ договоров и документов — выявление правовых рисков до подписания или в ходе спора.',
+    about_label:'Об адвокате',
+    about_p1:'Адвокатская практика — это не только знание закона, но и способность видеть ситуацию глазами клиента. Я работаю с делами, в которых важна не только юридическая грамотность, но и точность в деталях.',
+    about_p2:'Специализируюсь на широком спектре правовых вопросов — от гражданских споров до сопровождения крупных сделок. В числе завершённых дел — сопровождение транзакций общим объёмом свыше 20 000 000 EUR.',
+    about_p3:'Регулярно выступаю экспертом в прямых эфирах ведущих телеканалов и радиостанций Азербайджана. Это не самоцель, а возможность говорить о праве понятным языком — без терминологических барьеров.',
+    about_p4:'На консультации я не даю обещаний. Я даю анализ.',
+    media_label: 'В СМИ',
+    press_h2: 'Экспертные комментарии<br>в ведущих изданиях',
+    press_all: 'Все публикации ↓',
+    press_tag_adm: 'Административное право',
+    press_tag_civil: 'Гражданское право',
+    press_tag_labour: 'Трудовое право',
+    press_tag_family: 'Семейное право',
+    media_section_h2: 'Публикации<br>и комментарии',
+    media_section_sub: 'Эльмар Сулейманов регулярно выступает экспертом в ведущих азербайджанских изданиях — комментирует изменения в законодательстве и разъясняет права граждан.',
+    faq_label: 'Вопрос — Ответ',
+    faq_h2: 'Часто задаваемые<br>вопросы',
+    faq_intro: 'Ответы основаны на действующем законодательстве Азербайджанской Республики. Каждая ситуация индивидуальна — для точного анализа обратитесь на консультацию.',
+    read_more: 'Читать →',
+    media_section_label: 'В СМИ',
+    mc1_excerpt: 'Обман покупателей — не просто плохая практика, а уголовно наказуемое деяние. Искусственно завышенные «старые» цены и скрытые сборы могут обернуться для рекламодателя реальным сроком.',
+    mc1_title: 'Переборщил с рекламой? Сядешь на два года',
+    mc2_excerpt: 'Ваш номер телефона — это персональные данные, и любая организация, использующая их без вашего согласия, нарушает закон. За это предусмотрен штраф и право на компенсацию.',
+    mc2_title: 'Защита от SMS-бомбардировки: как наказать нарушителей',
+    mc3_excerpt: 'Закон чётко определяет очерёдность наследников. Главное, о чём часто забывают: долги умершего тоже переходят к наследникам — но только в пределах полученного имущества.',
+    mc3_title: 'Как распределяется наследство в Азербайджане?',
+    mc4_excerpt: 'Работодатель обязан принять меры против курения в офисе — включая вейпы и кальяны. Если этого не сделано, штраф может достигнуть 2000 манатов. Для самого курильщика — 30 манатов.',
+    mc4_title: 'Курильщиков и работодателей ждут крупные штрафы',
+    mc5_excerpt: 'Развод — это не только эмоциональное решение. Раздел совместно нажитого имущества, вопросы опеки и алиментов требуют правовой подготовки ещё до подачи заявления.',
+    mc5_title: 'Развод по-азербайджански: что важно знать',
+    mc6_excerpt: 'Оспорить отцовство можно только в суде. Ключевое доказательство — ДНК-экспертиза. При успешном исходе запись об отцовстве аннулируется, и обязательство платить алименты прекращается.',
+    mc6_title: 'ДНК, суд и алименты: нюансы оспаривания отцовства',
+    media_label:'Медиаучастие', reviews_fb:'Все отзывы на Facebook',
+    contacts_label:'Контакты', contacts_h2:'Записаться<br>на консультацию',
+    addr_label:'Адрес', addr_val:'Проспект Ататюрка 27, AZ 1069<br>Баку, Азербайджан',
+    hours_label:'График работы', hours_val:'Уточняйте по телефону',
+    cta_p1:'Первичная консультация позволяет оценить ситуацию и определить возможные пути решения. Для записи достаточно одного звонка.',
+    cta_p2:'Конфиденциальность переговоров гарантируется адвокатской тайной.',
+    cta_btn:'Позвонить сейчас',
+    footer_copy:'© 2025 Эльмар Сулейманов. Все права защищены.',
+    footer_terms:'Пользовательское соглашение', footer_privacy:'Обработка персональных данных', footer_cookies:'Политика cookies',
+    cookie_text:'Мы используем cookies для корректной работы сайта. Продолжая использование, вы соглашаетесь с нашей политикой конфиденциальности.',
+    cookie_btn:'Принять'
+  },
+  en: {
+    logo_sub:'Attorney · Baku', nav_practice:'Practice', nav_about:'About', nav_contacts:'Contact',
+    hero_eyebrow:'Private Practice in Azerbaijan',
+    hero_h1:'Legal defence.<br><em>Clear.</em><br>No empty words.',
+    hero_sub:'Legal practice in Azerbaijan — civil, criminal and corporate matters. For those who value professionalism and clarity.',
+    hero_cta:'Book a consultation', hero_scroll:'Scroll down',
+    practice_label:'Areas of Law', practice_h2:'Practice<br>Areas',
+    p1_title:'Civil Law', p1_desc:'Disputes between individuals and legal entities, protection of property and non-property rights.',
+    p2_title:'Criminal Law', p2_desc:'Defence of suspects and accused at all stages of criminal proceedings.',
+    p3_title:'Family Law', p3_desc:'Asset division, custody matters, alimony — with attention to every party\'s interests.',
+    p4_title:'Labour Law', p4_desc:'Employment disputes, wrongful dismissal, protection of employee and employer rights.',
+    p5_title:'Housing Law', p5_desc:'Ownership disputes, eviction, privatisation and other housing conflicts.',
+    p6_title:'Land Law', p6_desc:'Registration of land rights, land disputes, real estate transactions.',
+    p7_title:'International Law', p7_desc:'Cross-border disputes, international contracts, legal assistance abroad.',
+    p8_title:'Corporate Law', p8_desc:'Corporate conflicts, deal support, protection of shareholder interests.',
+    p9_title:'Administrative Law', p9_desc:'Challenging government decisions, administrative offences.',
+    p10_title:'Business Registration', p10_desc:'Company registration, charter amendments, liquidation of legal entities.',
+    p11_title:'Contract Drafting', p11_desc:'Development and legal review of contracts, accounting for transaction specifics and risks.',
+    p12_title:'Legal Due Diligence', p12_desc:'Analysis of contracts and documents — identifying legal risks before signing or during a dispute.',
+    about_label:'About',
+    about_p1:'Legal practice is not only about knowledge of the law, but also the ability to see a situation through the client\'s eyes. I work on cases where legal competence and precision in detail both matter.',
+    about_p2:'I specialise across a broad range of legal questions — from civil disputes to major transaction support. Completed matters include transactions totalling over €20,000,000.',
+    about_p3:'I regularly appear as a legal expert in live broadcasts on Azerbaijan\'s leading TV channels and radio stations — to speak about law in plain language, without barriers.',
+    about_p4:'In a consultation, I make no promises. I provide analysis.',
+    media_label: 'In the Press',
+    press_h2: 'Expert Commentary<br>in Leading Media',
+    press_all: 'All publications ↓',
+    press_tag_adm: 'Administrative law',
+    press_tag_civil: 'Civil law',
+    press_tag_labour: 'Labour law',
+    press_tag_family: 'Family law',
+    media_section_h2: 'Publications<br>& Commentary',
+    media_section_sub: 'Elmar Suleymanov regularly appears as a legal expert in leading Azerbaijani media — commenting on legislative changes and explaining citizens\'s rights.',
+    faq_label: 'Q & A',
+    faq_h2: 'Frequently Asked<br>Questions',
+    faq_intro: 'Answers are based on the current legislation of the Republic of Azerbaijan. Every situation is individual — book a consultation for precise analysis.',
+    read_more: 'Read →',
+    media_section_label: 'In the Press',
+    mc1_excerpt: 'Deceiving consumers is not just bad practice — it is a criminal offence. Artificially inflated "original" prices and hidden fees can land an advertiser in prison.',
+    mc1_title: 'Too much advertising? That could mean two years in jail',
+    mc2_excerpt: 'Your phone number is personal data, and any organisation using it without your consent is breaking the law. Penalties apply and you are entitled to compensation.',
+    mc2_title: 'How to stop spam messages and hold violators accountable',
+    mc3_excerpt: 'The law defines the order of heirs precisely. The key detail many overlook: the deceased\'s debts also pass to heirs — but only up to the value of the inherited estate.',
+    mc3_title: 'How is inheritance distributed in Azerbaijan?',
+    mc4_excerpt: 'An employer must take action against smoking on premises — including vapes and hookahs. Failure to do so can result in a fine of up to 2,000 manats. The employee faces 30 manats.',
+    mc4_title: 'Smokers and employers face heavy fines',
+    mc5_excerpt: 'Divorce is more than an emotional decision. Division of jointly acquired property, custody, and alimony all require legal preparation before you file.',
+    mc5_title: 'Azerbaijani-style divorce: what you need to know',
+    mc6_excerpt: 'Paternity can only be contested in court. The key evidence is a DNA test. A successful outcome annuls the paternity record and terminates the obligation to pay alimony.',
+    mc6_title: 'DNA, court and alimony: contesting paternity in Azerbaijan',
+    media_label:'Media Appearances', reviews_fb:'All reviews on Facebook',
+    contacts_label:'Contact', contacts_h2:'Book a<br>consultation',
+    addr_label:'Address', addr_val:'27 Atatürk Avenue, AZ 1069<br>Baku, Azerbaijan',
+    hours_label:'Working hours', hours_val:'Please inquire by phone',
+    cta_p1:'An initial consultation helps assess the situation and identify possible solutions. One call is enough — I\'ll be in touch at a convenient time.',
+    cta_p2:'Confidentiality is protected by attorney-client privilege.',
+    cta_btn:'Call now',
+    footer_copy:'© 2025 Elmar Suleymanov. All rights reserved.',
+    footer_terms:'Terms of Use', footer_privacy:'Personal Data Policy', footer_cookies:'Cookie Policy',
+    cookie_text:'We use cookies for site functionality. By continuing, you agree to our privacy policy.',
+    cookie_btn:'Accept'
+  },
+  az: {
+    logo_sub:'Vəkil · Bakı', nav_practice:'Təcrübə', nav_about:'Haqqımda', nav_contacts:'Əlaqə',
+    hero_eyebrow:'Azərbaycanda Şəxsi Vəkillik Təcrübəsi',
+    hero_h1:'Hüquqi müdafiə.<br><em>Aydın.</em><br>Boş söz yox.',
+    hero_sub:'Azərbaycanda vəkillik təcrübəsi — mülki, cinayət və korporativ işlər. Peşəkarlığa və aydınlığa dəyər verənlər üçün.',
+    hero_cta:'Konsultasiya üçün yazın', hero_scroll:'Aşağı sürüşdürün',
+    practice_label:'Hüquq Sahələri', practice_h2:'Vəkillik<br>Təcrübəsi',
+    p1_title:'Mülki hüquq', p1_desc:'Fiziki və hüquqi şəxslər arasında mübahisələr, əmlak hüquqlarının müdafiəsi.',
+    p2_title:'Cinayət hüququ', p2_desc:'Cinayət prosesinin bütün mərhələlərində şübhəli və müttəhimlərin müdafiəsi.',
+    p3_title:'Ailə hüququ', p3_desc:'Əmlakın bölüşdürülməsi, qəyyumluq, alimentlər — hər tərəfin maraqları nəzərə alınmaqla.',
+    p4_title:'Əmək hüququ', p4_desc:'Əmək mübahisələri, qanunsuz işdən çıxarılma, işçi və işəgötürən hüquqlarının qorunması.',
+    p5_title:'Mənzil hüququ', p5_desc:'Mülkiyyət hüququ mübahisələri, köçürülmə, özəlləşdirmə və digər mənzil konfliktləri.',
+    p6_title:'Torpaq hüququ', p6_desc:'Torpaq hüquqlarının rəsmiləşdirilməsi, torpaq mübahisələri, daşınmaz əmlak əqdləri.',
+    p7_title:'Beynəlxalq hüquq', p7_desc:'Transsərhəd mübahisələr, beynəlxalq müqavilələr, xaricdə hüquqi yardım.',
+    p8_title:'Korporativ hüquq', p8_desc:'Korporativ konfliktlər, əqdlərə dəstək, səhmdarların maraqlarının qorunması.',
+    p9_title:'İnzibati hüquq', p9_desc:'Dövlət orqanlarının qərarlarına etiraz, inzibati xətalar.',
+    p10_title:'Hüquqi şəxslərin qeydiyyatı', p10_desc:'Şirkət qeydiyyatı, nizamnamə dəyişiklikləri, hüquqi şəxslərin ləğvi.',
+    p11_title:'Müqavilə hazırlanması', p11_desc:'Əqdin xüsusiyyətləri və riskləri nəzərə alınaraq müqavilələrin hazırlanması və yoxlanması.',
+    p12_title:'Hüquqi ekspertiza', p12_desc:'Müqavilə və sənədlərin təhlili — imzalanmadan əvvəl hüquqi risklərin müəyyən edilməsi.',
+    about_label:'Haqqımda',
+    about_p1:'Vəkillik təcrübəsi yalnız qanunları bilmək deyil, həm də vəziyyəti müvəkkilin gözü ilə görə bilmək bacarığıdır.',
+    about_p2:'20 000 000 EUR-dan çox həcmli əqdlər daxil olmaqla geniş hüquqi məsələlər üzrə ixtisaslaşmışam.',
+    about_p3:'Azərbaycanın aparıcı televiziya kanalları və radio stansiyalarının canlı yayımlarında mütəmadi olaraq ekspert kimi çıxış edirəm.',
+    about_p4:'Konsultasiyada vəd vermirəm. Analiz edirəm.',
+    media_label: 'KİV-də',
+    press_h2: 'Aparıcı nəşrlərdə<br>ekspert şərhləri',
+    press_all: 'Bütün nəşrlər ↓',
+    press_tag_adm: 'İnzibati hüquq',
+    press_tag_civil: 'Mülki hüquq',
+    press_tag_labour: 'Əmək hüququ',
+    press_tag_family: 'Ailə hüququ',
+    media_section_h2: 'Nəşrlər<br>və şərhlər',
+    media_section_sub: 'Elmar Süleymanov Azərbaycanın aparıcı nəşrlərində mütəmadi olaraq hüquq eksperti kimi çıxış edir — qanunvericilik dəyişikliklərini şərh edir və vətəndaşların hüquqlarını izah edir.',
+    faq_label: 'Sual — Cavab',
+    faq_h2: 'Tez-tez verilən<br>suallar',
+    faq_intro: 'Cavablar Azərbaycan Respublikasının qüvvədə olan qanunvericiliyinə əsaslanır. Hər vəziyyət fərdidir — dəqiq analiz üçün konsultasiyaya müraciət edin.',
+    read_more: 'Oxu →',
+    media_section_label: 'KİV-də',
+    mc1_excerpt: 'Alıcıları aldatmaq yalnız pis praktika deyil, cinayət əməlidir. Süni şişirdilmiş "əvvəlki" qiymətlər və gizli ödənişlər reklam verənə real cəza gətirə bilər.',
+    mc1_title: 'Reklamla həddi aşdınız? İki il həbs gözləyir',
+    mc2_excerpt: 'Telefon nömrəniz şəxsi məlumatlardır, istənilən qurum onu icazəsiz istifadə edərsə, qanunu pozur. Cərimə və kompensasiya hüququ nəzərdə tutulub.',
+    mc2_title: 'SMS hücumlarından qorunma: pozucuları necə cəzalandırmaq olar',
+    mc3_excerpt: 'Qanun varislik ardıcıllığını dəqiq müəyyən edir. Çoxlarının unuduğu əsas məqam: mərhumun borcları da varisə keçir — lakin yalnız alınan əmlakın dəyəri həddində.',
+    mc3_title: 'Azərbaycanda miras necə bölünür?',
+    mc4_excerpt: 'İşəgötürən ofisdə siqaret çəkilməsinin qarşısını almalıdır — veyp və nərgizə daxil olmaqla. Tədbirlər görülmədikdə cərimə 2000 manat ola bilər. İşçiyə isə 30 manat.',
+    mc4_title: 'Siqaretçilərə və işəgötürənlərə böyük cərimələr gözləyir',
+    mc5_excerpt: 'Boşanma yalnız emosional qərar deyil. Birgə qazanılmış əmlakın bölüşdürülməsi, qəyyumluq və alimentlər ərizə verilməmişdən əvvəl hüquqi hazırlıq tələb edir.',
+    mc5_title: 'Azərbaycan üslubunda boşanma: bilməli olduğunuz şeylər',
+    mc6_excerpt: 'Atalıq yalnız məhkəmədə mübahisə edilə bilər. Əsas sübut DNT ekspertizasıdır. Müvəffəqiyyətli nəticədə atalıq qeydi ləğv edilir və aliment ödəmə öhdəliyi sona çatır.',
+    mc6_title: 'DNT, məhkəmə və aliment: Azərbaycanda atalığın mübahisəsi',
+    media_label:'Media çıxışları', reviews_fb:'Facebook-da bütün rəylər',
+    contacts_label:'Əlaqə', contacts_h2:'Konsultasiya<br>üçün yazın',
+    addr_label:'Ünvan', addr_val:'Atatürk prospekti 27, AZ 1069<br>Bakı, Azərbaycan',
+    hours_label:'İş saatları', hours_val:'Telefon ilə dəqiqləşdirin',
+    cta_p1:'İlkin konsultasiya vəziyyəti qiymətləndirməyə və mümkün həll yollarını müəyyən etməyə imkan verir.',
+    cta_p2:'Danışıqların məxfiliyi vəkillik sirri ilə təmin edilir.',
+    cta_btn:'İndi zəng edin',
+    footer_copy:'© 2025 Elmar Süleymanov. Bütün hüquqlar qorunur.',
+    footer_terms:'İstifadəçi Razılaşması', footer_privacy:'Şəxsi Məlumatların Emalı', footer_cookies:'Cookie Siyasəti',
+    cookie_text:'Saytın düzgün işləməsi üçün cookie-lərdən istifadə edirik. İstifadəni davam etdirərək məxfilik siyasətimizdə razılaşırsınız.',
+    cookie_btn:'Qəbul et'
+  }
+};
+
+const reviews = {
+  ru: [
+    { text: 'Грамотный специалист, подробно разъясняет ситуацию, наперед говорит какие исходы могут быть и как лучше решать тот или иной вопрос. Доверились полностью и не пожалели. Рекомендую 👍', name: 'Alla Alieva-Rafikova', stars: 5 },
+    { text: 'Эльмар Мяллим. Вы профессионал своего дела. Огромная благодарность Вам за Ваш труд.', name: 'Tamila Heyderova', stars: 5 },
+    { text: 'Специалист своего дела, подмечает даже самые мелкие детали в деле. Эльмар Бей — желаю Вам успехов в Вашей нелегкой работе, всех благ и процветания!', name: 'Виктория Юнина', stars: 5 },
+    { text: 'Хорошо знает и выполняет свою работу', name: 'Богдан Тылинго', stars: 5 },
+    { text: 'Огромное спасибо Эльмар м, вы всегда направляете людей в правильном направлении и даете дельные советы!', name: 'Лейла Агаева', stars: 5 },
+    { text: 'Высококвалифицированный адвокат, грамотно и доступно проконсультировал по моему вопросу. Рекомендую!', name: 'Татьяна Гамидова', stars: 5 },
+    { text: 'Mr. Suleymanov has been representing me remotely in resolving case in regards to citizenship. Very professional approach, acted proactively, good knowledge of Azeri and international law. I recommend.', name: 'Natali Yefimova', stars: 5 },
+    { text: 'Грамотный юрист. Дал понятную консультацию по ситуации которую в России решать никто не взялся.', name: 'Alexander Kuntsman', stars: 5 },
+    { text: 'Очень грамотный адвокат с большим опытом работы. Получил необходимые советы. Спасибо большое вам!!!', name: 'Азер Гасанов', stars: 5 },
+    { text: 'Очень вежливый грамотный! Получила полноценный ответ на свой вопрос и рекомендации!', name: 'Tatyana Shnipenko', stars: 5 },
+    { text: 'Высокопрофессиональный адвокат с большим опытом, относится с пониманием к людям. Очень оценил его советы и рекомендую другим.', name: 'Elkhan Nahmadov', stars: 5 },
+    { text: 'Высокопорядочный человек и великолепный профессионал своего дела! Побольше бы таких людей, глядишь, реальность и начнёт потихоньку меняться к лучшему!', name: 'Искендер Кадымов', stars: 5 },
+  ],
+  en: [
+    { text: 'A knowledgeable specialist who explains the situation in detail and tells you in advance what outcomes are possible. We trusted him completely and have no regrets. Highly recommend 👍', name: 'Alla Alieva-Rafikova', stars: 5 },
+    { text: 'Elmar Mualim. You are a true professional. Enormous gratitude to you for your work.', name: 'Tamila Heyderova', stars: 5 },
+    { text: 'A specialist in his field who notices even the smallest details. Elmar Bey — wishing you success in your challenging work, all the best and prosperity!', name: 'Victoria Yunina', stars: 5 },
+    { text: 'Knows and performs his work well.', name: 'Bogdan Tylinko', stars: 5 },
+    { text: 'Thank you so much, Elmar — you always point people in the right direction and give sound advice!', name: 'Leila Agaeva', stars: 5 },
+    { text: 'A highly qualified attorney who consulted me clearly and accessibly on my matter. I recommend!', name: 'Tatiana Gamidova', stars: 5 },
+    { text: 'Mr. Suleymanov has been representing me remotely in resolving a case in regards to citizenship. Very professional approach, acted proactively, good knowledge of Azeri and international law. I recommend.', name: 'Natali Yefimova', stars: 5 },
+    { text: 'A competent lawyer. Gave me a clear consultation on a matter that nobody in Russia was willing to take on.', name: 'Alexander Kuntsman', stars: 5 },
+    { text: 'A very competent attorney with extensive experience. Got the advice I needed. Thank you very much!', name: 'Azer Gasanov', stars: 5 },
+    { text: 'Very polite and knowledgeable! Received a thorough answer to my question and practical recommendations!', name: 'Tatyana Shnipenko', stars: 5 },
+    { text: 'A highly professional attorney with extensive experience, treats people with understanding. Greatly valued his advice and recommend to others.', name: 'Elkhan Nahmadov', stars: 5 },
+    { text: 'A man of great integrity and an outstanding professional. If only there were more people like him — reality would quietly begin to change for the better!', name: 'Iskender Kadymov', stars: 5 },
+  ],
+  az: [
+    { text: 'Bacarıqlı mütəxəssis, vəziyyəti ətraflı izah edir, hansı nəticələrin mümkün olduğunu əvvəlcədən bildirir. Ona tam etibar etdik və peşman olmadıq. Tövsiyə edirəm 👍', name: 'Alla Alieva-Rafikova', stars: 5 },
+    { text: 'Elmar Müəllim. Siz öz işinizin peşəkarısınız. Əməyinizə görə böyük minnətdarlıq.', name: 'Tamila Heyderova', stars: 5 },
+    { text: 'Öz sahəsinin mütəxəssisi, işdəki ən kiçik təfərrüatları belə fərq edir. Elmar Bəy — çətin işinizdə uğurlar, xeyir-bərəkət və firavanlıq arzulayıram!', name: 'Viktoria Yunina', stars: 5 },
+    { text: 'İşini yaxşı bilir və yerinə yetirir.', name: 'Bohdan Tylynko', stars: 5 },
+    { text: 'Çox böyük təşəkkür, Elmar müəllim — siz həmişə insanları doğru istiqamətə yönəldir və işə yarayan məsləhətlər verirsiniz!', name: 'Leyla Ağayeva', stars: 5 },
+    { text: 'Yüksək ixtisaslı vəkil, məsələm üzrə savadlı və anlaşıqlı məsləhət verdi. Tövsiyə edirəm!', name: 'Tatyana Hamidova', stars: 5 },
+    { text: 'Mr. Suleymanov vətəndaşlıq məsələsi ilə bağlı işimi uzaqdan həll etməkdə mənə nümayəndəlik etdi. Çox peşəkar yanaşma, proaktiv davrandı, Azərbaycan və beynəlxalq hüququ yaxşı bilir. Tövsiyə edirəm.', name: 'Natali Yefimova', stars: 5 },
+    { text: 'Bacarıqlı hüquqşünas. Rusiyada heç kimin öhdəsinə götürmək istəmədiyi bir məsələ üzrə mənə aydın məsləhət verdi.', name: 'Alexander Kuntsman', stars: 5 },
+    { text: 'Böyük təcrübəyə malik çox bacarıqlı vəkil. Lazımi məsləhətlər aldım. Çox sağ olun!!!', name: 'Azər Həsənov', stars: 5 },
+    { text: 'Çox nəzakətli və savadlı! Sualıma ətraflı cavab və tövsiyələr aldım!', name: 'Tatyana Shnipenko', stars: 5 },
+    { text: 'Böyük təcrübəyə malik yüksək peşəkar vəkil, insanlara anlayışla yanaşır. Məsləhətlərini çox qiymətləndirdim və başqalarına tövsiyə edirəm.', name: 'Elkhan Nahmadov', stars: 5 },
+    { text: 'Şərəfli insan və öz sahəsinin əla peşəkarı! Belə insanlar çox olsa, gerçəklik yavaş-yavaş dəyişməyə başlayar!', name: 'İskəndər Kədimov', stars: 5 },
+  ]
+};
+
+// ─── STATE ───────────────────────────────────────────
+let currentLang = 'ru';
+let reviewIndex = 0;
+let reviewTimer = null;
+
+// ─── LANGUAGE ────────────────────────────────────────
+function detectLang() {
+  const saved = localStorage.getItem('lang');
+  if (saved && i18n[saved]) return saved;
+  const bl = (navigator.language || 'ru').toLowerCase();
+  if (bl.startsWith('az')) return 'az';
+  if (bl.startsWith('en')) return 'en';
+  return 'ru';
+}
+
+function applyLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('lang', lang);
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (i18n[lang][key] !== undefined) el.innerHTML = i18n[lang][key];
+  });
+  document.querySelectorAll('.lang-btn, .mobile-lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+  reviewIndex = 0;
+  renderReviews(lang);
+  renderFAQ(lang);
+}
+
+// ─── REVIEWS ─────────────────────────────────────────
+// Show 3 cards at a time, page through sets
+const PAGE_SIZE = 3;
+
+function renderReviews(lang) {
+  const cardsEl = document.getElementById('reviews-cards');
+  const dotsEl = document.getElementById('review-dots');
+  cardsEl.innerHTML = '';
+  dotsEl.innerHTML = '';
+  const data = reviews[lang];
+  const pages = Math.ceil(data.length / PAGE_SIZE);
+
+  for (let p = 0; p < pages; p++) {
+    const dot = document.createElement('div');
+    dot.className = 'review-dot' + (p === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goToReview(p));
+    dotsEl.appendChild(dot);
+  }
+
+  showPage(lang, 0);
+  resetTimer();
+}
+
+function showPage(lang, page) {
+  const cardsEl = document.getElementById('reviews-cards');
+  cardsEl.innerHTML = '';
+  const data = reviews[lang];
+  const start = page * PAGE_SIZE;
+  const slice = data.slice(start, start + PAGE_SIZE);
+  slice.forEach((r) => {
+    const card = document.createElement('div');
+    card.className = 'review-card';
+    card.innerHTML = `
+      <div class="review-card-top">
+        <div class="review-card-author">
+          <div class="review-stars">${'★'.repeat(r.stars)}</div>
+          <div class="review-name">${r.name}</div>
+        </div>
+        <svg class="review-fb-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </div>
+      <div class="review-text">${r.text}</div>`;
+    cardsEl.appendChild(card);
+    // Trigger animation
+    requestAnimationFrame(() => requestAnimationFrame(() => card.classList.add('visible-card')));
+  });
+}
+
+function goToReview(idx) {
+  const dots = document.querySelectorAll('.review-dot');
+  dots[reviewIndex].classList.remove('active');
+  reviewIndex = idx;
+  dots[reviewIndex].classList.add('active');
+  showPage(currentLang, reviewIndex);
+  resetTimer();
+}
+
+function nextReview() {
+  const pages = Math.ceil(reviews[currentLang].length / PAGE_SIZE);
+  goToReview((reviewIndex + 1) % pages);
+}
+
+function resetTimer() {
+  if (reviewTimer) clearInterval(reviewTimer);
+  reviewTimer = setInterval(nextReview, 7000);
+}
+
+// ─── THEME ───────────────────────────────────────────
+const html = document.documentElement;
+const sunIcon = document.getElementById('icon-sun');
+const moonIcon = document.getElementById('icon-moon');
+function applyTheme(t) {
+  html.setAttribute('data-theme', t);
+  localStorage.setItem('theme', t);
+  sunIcon.style.display = t === 'dark' ? 'none' : 'block';
+  moonIcon.style.display = t === 'dark' ? 'block' : 'none';
+}
+applyTheme(localStorage.getItem('theme') || 'light');
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  applyTheme(html.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+});
+
+// ─── HEADER SCROLL ───────────────────────────────────
+const header = document.getElementById('main-header');
+window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+
+// ─── BURGER ──────────────────────────────────────────
+const burger = document.getElementById('burger-btn');
+const mobileNav = document.getElementById('mobile-nav');
+burger.addEventListener('click', () => {
+  const isOpen = mobileNav.classList.toggle('open');
+  mobileNav.setAttribute('aria-hidden', !isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => {
+  mobileNav.classList.remove('open');
+  mobileNav.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}));
+
+// ─── REVEAL ──────────────────────────────────────────
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// ─── MODALS ──────────────────────────────────────────
+function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow = ''; }
+document.querySelectorAll('.modal-overlay').forEach(o => o.addEventListener('click', e => { if (e.target === o) closeModal(o.id); }));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id)); });
+
+// ─── COOKIES ─────────────────────────────────────────
+function acceptCookies() { localStorage.setItem('cookie_consent', 'true'); document.getElementById('cookies-banner').classList.add('hidden'); }
+if (!localStorage.getItem('cookie_consent')) setTimeout(() => document.getElementById('cookies-banner').classList.remove('hidden'), 1200);
+
+// ─── LANG BUTTONS ────────────────────────────────────
+document.querySelectorAll('.lang-btn, .mobile-lang-btn').forEach(btn => btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang'))));
+
+
+// ─── FAQ DATA ─────────────────────────────────────────
+const faqData = {
+  ru: [
+    {
+      q: 'Что считается ложной рекламой и можно ли взыскать компенсацию?',
+      a: 'Да. Фальшивые скидки, выдуманные «старые» цены и скрытые платежи — прямое нарушение Закона о рекламе. Если из-за ложной рекламы вам причинён ущерб, рекламодатель по решению суда обязан его возместить. В тяжких случаях предусмотрено до двух лет лишения свободы (ст. 198 УК).',
+      src: 'https://haqqin.az/newsarchive/368020', srcLabel: 'Haqqin.az'
+    },
+    {
+      q: 'Могу ли я потребовать удалить мои данные из базы магазина или салона красоты?',
+      a: 'Да. Телефонный номер — персональные данные, охраняемые законом. Вы вправе потребовать прекратить обработку и удалить данные. Отказ — нарушение ст. 375 КоАП, штраф от 300 до 500 манатов. За несанкционированное использование данных можно взыскать компенсацию морального и материального вреда.',
+      src: 'https://haqqin.az/news/366488', srcLabel: 'Haqqin.az'
+    },
+    {
+      q: 'Кто наследует имущество, если завещания нет?',
+      a: 'Имущество делится по закону. В первую очередь — дети, супруг и родители (поровну). Вторая очередь — братья, сёстры, дедушки и бабушки. Если наследников нет вовсе, имущество переходит государству. Важно: долги переходят к наследникам лишь в пределах стоимости полученного имущества.',
+      src: 'https://haqqin.az/news/364742', srcLabel: 'Haqqin.az'
+    },
+    {
+      q: 'Чем грозит курение вейпа или кальяна в офисе?',
+      a: 'Закон приравнивает вейпы и кальяны к табачным изделиям. Штраф для сотрудника — 30 манатов. Работодателю — до 400 манатов за отсутствие таблички «Курить запрещено», до 2000 манатов, если меры по профилактике не приняты вовсе.',
+      src: 'https://haqqin.az/news/364030', srcLabel: 'Haqqin.az'
+    },
+    {
+      q: 'Как делится совместно нажитое имущество при разводе?',
+      a: 'Имущество, приобретённое в браке, по общему правилу делится пополам. Исключения: личные подарки, наследство, имущество, приобретённое до брака. Суд вправе отступить от равенства долей, если этого требуют интересы детей или иные существенные обстоятельства.',
+      src: 'https://media.az/society/razvod-po-azerbajdzhanski-chto-vazhno-znat-prezhde-chem-postavit-tochku-v-brake', srcLabel: 'Media.az'
+    },
+    {
+      q: 'Можно ли оспорить отцовство и как это влияет на алименты?',
+      a: 'Оспаривание отцовства производится исключительно через суд. Ключевое доказательство — ДНК-экспертиза. При успешном оспаривании запись об отце аннулируется, обязанность платить алименты прекращается. Уже выплаченные суммы возврату не подлежат.',
+      src: 'https://media.az/society/dnk-sud-i-alimenty-yuridicheskie-nyuansy-osparivaniya-otcovstva-v-azerbajdzhane', srcLabel: 'Media.az'
+    },
+  ],
+  en: [
+    {
+      q: 'What counts as false advertising, and can I claim compensation?',
+      a: 'Yes. Fake discounts, fabricated "original" prices and hidden charges are a direct violation of the Law on Advertising. If you suffered losses due to misleading advertising, the advertiser can be ordered by a court to compensate you. In serious cases, up to two years imprisonment applies (Article 198 of the Criminal Code).',
+      src: 'https://haqqin.az/newsarchive/368020', srcLabel: 'Haqqin.az'
+    },
+    {
+      q: 'Can I demand a company delete my personal data?',
+      a: 'Yes. Your phone number is personal data protected by law. You have the right to demand that processing stops and your data is deleted. Refusal is a violation of Article 375 of the Code of Administrative Offences, carrying a fine of 300–500 manats. You can also claim compensation for unauthorised use of your data.',
+      src: 'https://haqqin.az/news/366488', srcLabel: 'Haqqin.az'
+    },
+    {
+      q: 'Who inherits property if there is no will?',
+      a: 'Property is divided by law. First priority: children, spouse and parents (equally). Second priority: siblings and grandparents. If there are no heirs at all, property passes to the state. Note: debts pass to heirs only up to the value of the inherited property.',
+      src: 'https://haqqin.az/news/364742', srcLabel: 'Haqqin.az'
+    },
+    {
+      q: 'What are the penalties for vaping or smoking hookah in the office?',
+      a: 'The law equates vapes and hookahs with tobacco products. Fine for the employee: 30 manats. For the employer: up to 400 manats for missing a "No Smoking" sign, up to 2,000 manats if no preventive measures were taken at all.',
+      src: 'https://haqqin.az/news/364030', srcLabel: 'Haqqin.az'
+    },
+    {
+      q: 'How is jointly acquired property divided in a divorce?',
+      a: 'Property acquired during marriage is generally divided equally. Exceptions: personal gifts, inheritance, and property acquired before marriage. A court may deviate from equal division if the interests of children or other significant circumstances require it.',
+      src: 'https://media.az/society/razvod-po-azerbajdzhanski-chto-vazhno-znat-prezhde-chem-postavit-tochku-v-brake', srcLabel: 'Media.az'
+    },
+    {
+      q: 'Can paternity be contested and how does it affect alimony?',
+      a: 'Contesting paternity is done exclusively through court. The key evidence is a DNA test. If successful, the paternity record is annulled and the obligation to pay alimony ceases. Amounts already paid are not subject to return.',
+      src: 'https://media.az/society/dnk-sud-i-alimenty-yuridicheskie-nyuansy-osparivaniya-otcovstva-v-azerbajdzhane', srcLabel: 'Media.az'
+    },
+  ],
+  az: [
+    {
+      q: 'Yanlış reklam nə sayılır və kompensasiya tələb etmək olarmı?',
+      a: 'Bəli. Saxta endirimlər, uydurma "köhnə" qiymətlər və gizli ödənişlər Reklam Qanununun birbaşa pozuntusudur. Yanlış reklam nəticəsində zərər çəkmisinizsə, reklam verən məhkəmə qərarı ilə bunu ödəməyə məcbur edilə bilər. Ağır hallarda 2 ilə qədər azadlıqdan məhrum etmə nəzərdə tutulur.',
+      src: 'https://haqqin.az/newsarchive/368020', srcLabel: 'Haqqin.az'
+    },
+    {
+      q: 'Mağazadan məlumatlarımın silinməsini tələb edə bilərəmmi?',
+      a: 'Bəli. Telefon nömrəniz qanunla qorunan şəxsi məlumatlardır. Emalın dayandırılmasını və məlumatların silinməsini tələb etmək hüququnuz var. İmtina İnzibati Xətalar Məcəlləsinin 375-ci maddəsinin pozuntusudur — 300–500 manat cərimə. İcazəsiz istifadəyə görə kompensasiya da tələb edilə bilər.',
+      src: 'https://haqqin.az/news/366488', srcLabel: 'Haqqin.az'
+    },
+    {
+      q: 'Vəsiyyət olmadıqda mülkü kim miras alır?',
+      a: 'Əmlak qanun üzrə bölünür. Birinci növbə: uşaqlar, həyat yoldaşı və valideynlər (bərabər paylarla). İkinci növbə: qardaşlar, bacılar, baba-nənələr. Varis yoxdursa, əmlak dövlətə keçir. Vacib: borclar varisə yalnız alınan əmlakın dəyəri həddində keçir.',
+      src: 'https://haqqin.az/news/364742', srcLabel: 'Haqqin.az'
+    },
+    {
+      q: 'Ofisdə veyp və ya nərgizə çəkmək nə ilə nəticələnər?',
+      a: 'Qanun veyp və nərgizəni tütün məmulatlarına bərabər tutur. İşçiyə cərimə: 30 manat. İşəgötürənə: "Siqaret çəkilməz" lövhəsi olmadığına görə 400 manatadək, ümumilikdə heç bir tədbirlər görülmədiyi halda 2000 manatadək.',
+      src: 'https://haqqin.az/news/364030', srcLabel: 'Haqqin.az'
+    },
+    {
+      q: 'Boşanmada birgə əmlak necə bölünür?',
+      a: 'Nikahda əldə edilmiş əmlak ümumi qayda olaraq bərabər bölünür. İstisnalar: şəxsi hədiyyələr, miras, nikahdan əvvəl alınan əmlak. Uşaqların maraqları və ya digər mühüm hallar tələb edərsə, məhkəmə bərabər bölgüdən kənar ola bilər.',
+      src: 'https://media.az/society/razvod-po-azerbajdzhanski-chto-vazhno-znat-prezhde-chem-postavit-tochku-v-brake', srcLabel: 'Media.az'
+    },
+    {
+      q: 'Atalıq mübahisə edilə bilərmi və bu alimentə necə təsir edir?',
+      a: 'Atalığın mübahisə edilməsi yalnız məhkəmə vasitəsilə həyata keçirilir. Əsas sübut DNT ekspertizasıdır. Uğurlu nəticədə atalıq qeydi ləğv edilir, aliment ödəmə öhdəliyi sona çatır. Artıq ödənilmiş məbləğlər geri qaytarılmır.',
+      src: 'https://media.az/society/dnk-sud-i-alimenty-yuridicheskie-nyuansy-osparivaniya-otcovstva-v-azerbajdzhane', srcLabel: 'Media.az'
+    },
+  ]
+};
+
+function renderFAQ(lang) {
+  const list = document.getElementById('faq-list');
+  if (!list) return;
+  list.innerHTML = '';
+  (faqData[lang] || faqData.ru).forEach((item, i) => {
+    const el = document.createElement('div');
+    el.className = 'faq-item';
+    el.innerHTML = `
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+        ${item.q}
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        ${item.a}
+        <a href="${item.src}" target="_blank" rel="noopener" class="source-tag">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          ${item.srcLabel}
+        </a>
+      </div>`;
+    list.appendChild(el);
+  });
+}
+
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = btn.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-question.open').forEach(b => {
+    b.classList.remove('open');
+    b.setAttribute('aria-expanded', 'false');
+    b.nextElementSibling.classList.remove('open');
+  });
+  if (!isOpen) {
+    btn.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+    answer.classList.add('open');
+  }
+}
+
+// ─── INIT ─────────────────────────────────────────────
+applyLang(detectLang());
+</script>
+</body>
+</html>
