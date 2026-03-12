@@ -14,7 +14,83 @@
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="apple-touch-icon" href="logo.png">
 <title>Эльмар Сулейманов · Адвокат · Баку</title>
-<script src="schema.json" type="application/ld+json"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LegalService",
+      "@id": "https://elmar-suleymanov.az/#legalservice",
+      "name": "Адвокат Эльмар Сулейманов",
+      "alternateName": ["Elmar Süleymanov Hüquqşünas", "Elmar Suleymanov Lawyer"],
+      "description": "Адвокатская практика в Азербайджане — гражданские, уголовные и корпоративные дела.",
+      "url": "https://elmar-suleymanov.az/",
+      "telephone": "+994556447080",
+      "priceRange": "$$",
+      "image": "https://elmar-suleymanov.az/photo.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Mirəli Qaşqay 42",
+        "addressLocality": "Баку",
+        "postalCode": "AZ 1010",
+        "addressCountry": "AZ"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.3698,
+        "longitude": 49.8364
+      },
+      "sameAs": [
+        "https://www.instagram.com/advokat_elmar_suleymanov/",
+        "https://www.facebook.com/advokatelmar/"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Azerbaijan"
+      },
+      "serviceType": [
+        "Гражданское право",
+        "Уголовное право",
+        "Семейное право",
+        "Трудовое право",
+        "Корпоративное право",
+        "Административное право",
+        "Жилищное право",
+        "Земельное право",
+        "Международное право"
+      ],
+      "founder": {
+        "@type": "Person",
+        "@id": "https://elmar-suleymanov.az/#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://elmar-suleymanov.az/#person",
+      "name": "Эльмар Сулейманов",
+      "alternateName": "Elmar Süleymanov",
+      "jobTitle": "Адвокат",
+      "worksFor": {
+        "@id": "https://elmar-suleymanov.az/#legalservice"
+      },
+      "url": "https://elmar-suleymanov.az/",
+      "telephone": "+994556447080",
+      "image": "https://elmar-suleymanov.az/photo.jpg",
+      "sameAs": [
+        "https://www.instagram.com/advokat_elmar_suleymanov/",
+        "https://www.facebook.com/advokatelmar/"
+      ],
+      "knowsAbout": [
+        "Гражданское право Азербайджана",
+        "Уголовное право Азербайджана",
+        "Корпоративное право",
+        "Семейное право"
+      ],
+      "knowsLanguage": ["ru", "az", "en"]
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -536,7 +612,7 @@
       <a href="tel:+994556447080" class="contact-phone reveal">+994 55 644 70 80</a>
       <div class="contact-info-item reveal reveal-delay-1">
         <span class="contact-info-label" data-i18n="addr_label">Адрес</span>
-        <span class="contact-info-val" data-i18n="addr_val">Баку, Азербайджан, AZ 1010<br>ул. Мирали Гашгай 24, Адвокатское Бюро № 14</span>
+        <span class="contact-info-val" data-i18n="addr_val">Баку, Азербайджан, AZ 1010<br>ул. Мирали Гашгай 42, Адвокатское Бюро № 14</span>
       </div>
       <div class="map-wrap reveal reveal-delay-2">
         <iframe
