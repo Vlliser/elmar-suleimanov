@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ═══════════════════════════════════════════════
+       ГЛАВНАЯ — Русская версия (основная)
+  ════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://elmar-suleymanov.az/</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <!-- hreflang annotations для поисковика -->
+    <xhtml:link rel="alternate" hreflang="ru"      href="https://elmar-suleymanov.az/"/>
+    <xhtml:link rel="alternate" hreflang="az"      href="https://elmar-suleymanov.az/az/"/>
+    <xhtml:link rel="alternate" hreflang="en"      href="https://elmar-suleymanov.az/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elmar-suleymanov.az/"/>
+    <image:image>
+      <image:loc>https://elmar-suleymanov.az/og-image.jpg</image:loc>
+      <image:title>Адвокат Эльмар Сулейманов — Баку, Азербайджан</image:title>
+      <image:caption>Адвокатская практика в Азербайджане. Гражданское, уголовное, семейное право.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ═══════════════════════════════════════════════
+       ГЛАВНАЯ — Азербайджанская версия
+  ════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://elmar-suleymanov.az/az/</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru"      href="https://elmar-suleymanov.az/"/>
+    <xhtml:link rel="alternate" hreflang="az"      href="https://elmar-suleymanov.az/az/"/>
+    <xhtml:link rel="alternate" hreflang="en"      href="https://elmar-suleymanov.az/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elmar-suleymanov.az/"/>
+    <image:image>
+      <image:loc>https://elmar-suleymanov.az/og-image.jpg</image:loc>
+      <image:title>Vəkil Elmar Süleymanov — Bakı, Azərbaycan</image:title>
+      <image:caption>Azərbaycanda vəkillik praktikası. Mülki, cinayət, ailə hüququ.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ═══════════════════════════════════════════════
+       ГЛАВНАЯ — Английская версия
+  ════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://elmar-suleymanov.az/en/</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru"      href="https://elmar-suleymanov.az/"/>
+    <xhtml:link rel="alternate" hreflang="az"      href="https://elmar-suleymanov.az/az/"/>
+    <xhtml:link rel="alternate" hreflang="en"      href="https://elmar-suleymanov.az/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elmar-suleymanov.az/"/>
+  </url>
+
+  <!-- ═══════════════════════════════════════════════
+       СТРАНИЦА МЕДИА
+  ════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://elmar-suleymanov.az/media.html</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru"      href="https://elmar-suleymanov.az/media.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elmar-suleymanov.az/media.html"/>
+  </url>
+
+</urlset>
