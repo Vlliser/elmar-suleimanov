@@ -1,5 +1,5 @@
 # ═══════════════════════════════════════════════════════
-# robots.txt — elmar-suleymanov.az
+# robots.txt — elmarsuleymanov.az
 # Управление индексацией поисковыми роботами
 # Документация: https://developers.google.com/search/docs/crawling-indexing/robots/intro
 # ═══════════════════════════════════════════════════════
@@ -34,7 +34,7 @@ Allow: /media.html
 # ── Ссылка на карту сайта ──
 # Google, Bing, Yandex и другие поисковики
 # автоматически найдут sitemap через этот файл
-Sitemap: https://elmar-suleymanov.az/sitemap.xml
+Sitemap: https://elmarsuleymanov.az/sitemap.xml
 
 # ═══════════════════════════════════════════════════════
 # ПРИМЕЧАНИЕ: Этот файл НЕ блокирует большинство страниц.
