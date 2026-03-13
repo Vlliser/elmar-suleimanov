@@ -72,7 +72,7 @@ const i18n = {
     consult_success_text:'Сейчас откроется окно WhatsApp с вашим сообщением.',
     float_contact:'Связаться',
     about_name:'Эльмар Сулейманов',
-    stats_l1:'лет в адвокатуре', stats_l2:'выигранных дел', stats_l3:'направлений практики', stats_l4:'ведущих СМИ',
+    stats_l1:'лет юридической практики', stats_l2:'выигранных дел', stats_l3:'AZN — максимальная сумма иска', stats_l4:'сумма крупнейшего контракта',
     stats_n4:'5',
     cases_label:'Из практики', cases_h2:'Резонансные дела',
     cases_sub:'Все имена и детали, позволяющие идентифицировать клиентов, изменены или опущены в соответствии с адвокатской тайной.',
@@ -188,7 +188,7 @@ const i18n = {
     mc4_date:'24 October 2025',
     mc5_date:'27 November 2025',
     mc6_date:'22 September 2025',
-    stats_l1:'years in practice', stats_l2:'cases won', stats_l3:'practice areas', stats_l4:'leading media outlets',
+    stats_l1:'years of legal practice', stats_l2:'cases won', stats_l3:'AZN — largest claim handled', stats_l4:'largest contract reviewed',
     stats_n4:'5',
     cases_label:'From Practice', cases_h2:'Notable Cases',
     cases_sub:'All names and identifying details have been altered or omitted in accordance with attorney-client privilege.',
@@ -232,7 +232,7 @@ const i18n = {
     p11_title:'Müqavilələrin hazırlanması və ekspertizası', p11_desc:'Əqdin xüsusiyyətləri və riskləri nəzərə alınaraq müqavilələrin hazırlanması, yoxlanması və ekspertizası.',
     about_label:'Haqqımda',
     about_name:'Elmar Süleymanov',
-    stats_l1:'illik vəkillik təcrübəsi', stats_l2:'udulan iş', stats_l3:'hüquq sahəsi', stats_l4:'aparıcı KİV',
+    stats_l1:'illik hüquqi təcrübə', stats_l2:'udulan iş', stats_l3:'AZN — ən böyük iddia məbləği', stats_l4:'ən böyük müqavilənin məbləği',
     stats_n4:'5',
     cases_label:'Təcrübədən', cases_h2:'Əhəmiyyətli işlər',
     cases_sub:'Müvəkkil sirrinin qorunması məqsədilə bütün adlar və şəxsiyyəti müəyyən edən məlumatlar dəyişdirilmiş və ya buraxılmışdır.',
@@ -503,14 +503,16 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
       if (!e.isIntersecting) return;
       const el = e.target;
       const target = parseInt(el.getAttribute('data-target'), 10);
+      const suffix = el.getAttribute('data-suffix') || '';
+      const isPlus = el.classList.contains('stats-number--plus');
       const duration = 1600;
       const start = performance.now();
       function tick(now) {
         const elapsed = now - start;
         const progress = Math.min(elapsed / duration, 1);
-        // easeOutExpo
         const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-        el.textContent = Math.round(ease * target);
+        const val = Math.round(ease * target);
+        el.textContent = val + suffix + (isPlus && progress === 1 ? '+' : '');
         if (progress < 1) requestAnimationFrame(tick);
       }
       requestAnimationFrame(tick);
@@ -519,6 +521,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
   }, { threshold: 0.5 });
   numbers.forEach(n => counterObs.observe(n));
 })();
+
 
 
 // ─── MODALS ──────────────────────────────────────────
