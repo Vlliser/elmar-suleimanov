@@ -1,7 +1,7 @@
 // ─── TRANSLATIONS ───────────────────────────────────
 const i18n = {
   ru: {
-    logo_sub:'Адвокат · +994 55 644 70 80', logo_name:'Эльмар Сулейманов', nav_practice:'Практика', nav_about:'О себе', nav_media:'Медиа', nav_contacts:'Контакты',
+    logo_sub:'Адвокат · +994 55 644 70 80', logo_name:'Эльмар Сулейманов', nav_practice:'Практика', nav_cases:'Дела', nav_about:'О себе', nav_media:'Медиа', nav_contacts:'Контакты',
     hero_eyebrow:'Частная адвокатская практика',
     hero_h1:'Я готов защитить ваши<br><span style="color:var(--gold)">справедливые</span> права.',
     hero_sub:'Моя цель — защитить права каждого, кто выдвигает справедливое требование. Пусть путь к истине и справедливости будет успешным.',
@@ -72,6 +72,29 @@ const i18n = {
     consult_success_text:'Сейчас откроется окно WhatsApp с вашим сообщением.',
     float_contact:'Связаться',
     about_name:'Эльмар Сулейманов',
+    stats_l1:'лет в адвокатуре', stats_l2:'выигранных дел', stats_l3:'направлений практики', stats_l4:'ведущих СМИ',
+    stats_n4:'5',
+    cases_label:'Из практики', cases_h2:'Резонансные дела',
+    cases_sub:'Все имена и детали, позволяющие идентифицировать клиентов, изменены или опущены в соответствии с адвокатской тайной.',
+    cases_tag_criminal:'Уголовное право', cases_tag_corporate:'Корпоративное право', cases_tag_civil:'Гражданское право',
+    cases_tag_intl:'Международное право', cases_tag_family:'Семейное право',
+    cases_court_supreme:'Верховный суд АР', cases_court_const:'Конституционный суд АР',
+    cases_court_appeal:'Апелляционный суд Баку', cases_court_contract:'Договорная работа',
+    cases_result_acquittal:'Оправдательный приговор', cases_result_rejected:'Иск отклонён',
+    cases_result_written_off:'Долг списан', cases_result_granted:'Жалоба удовлетворена',
+    cases_result_expertise:'Экспертиза завершена', cases_result_compensation:'Компенсация взыскана',
+    case1_title:'Оправдательный приговор по обвинению в обороте наркотиков',
+    case1_desc:'Верховный суд Азербайджанской Республики отклонил кассационный протест Генеральной прокуратуры и оставил в силе оправдательный приговор. Ранее апелляционная инстанция также отвергла протест прокуратуры. Дело прошло три судебные инстанции.',
+    case2_title:'Защита ОАО от иска о выделении доли',
+    case2_desc:'Иск о принудительном выделении доли из имущества акционерного общества отклонён на трёх инстанциях: в первом административно-экономическом суде, апелляции и Верховном суде.',
+    case3_title:'Списание незаконно начисленного кредитного долга',
+    case3_desc:'По итогам конституционного производства часть задолженности по кредитному договору, начисленная с нарушением Конституции, была признана незаконной и списана.',
+    case4_title:'Признание договора купли-продажи недействительным',
+    case4_desc:'Верховный суд удовлетворил кассационную жалобу и признал сделку купли-продажи имущества недействительной. Права доверителя на имущество восстановлены.',
+    case5_title:'Международный контракт по реконструкции',
+    case5_desc:'Правовая экспертиза основного международного контракта на проведение масштабных реконструкционных работ с иностранной компанией. Выявлены и устранены правовые риски.',
+    case6_title:'Компенсация за унижение чести и достоинства',
+    case6_desc:'Апелляционный суд обязал взыскать компенсацию за систематические оскорбления и унижение достоинства. Суд дал правовую оценку действиям, повлёкшим моральный вред доверителю.',
     press_tag_digital:'Цифровизация правосудия',
     mc0_title:'Азербайджанцев будут судить роботы?',
     mc0_excerpt:'В Азербайджане предпринимаются конкретные шаги по внедрению искусственного интеллекта в судебную систему…',
@@ -84,7 +107,7 @@ const i18n = {
     mc6_date:'22 сентября 2025'
   },
   en: {
-    logo_sub:'Attorney · +994 55 644 70 80', logo_name:'Elmar Suleymanov', nav_practice:'Practice', nav_about:'About', nav_media:'Media', nav_contacts:'Contact',
+    logo_sub:'Attorney · +994 55 644 70 80', logo_name:'Elmar Suleymanov', nav_practice:'Practice', nav_cases:'Cases', nav_about:'About', nav_media:'Media', nav_contacts:'Contact',
     hero_eyebrow:'Private Legal Practice',
     hero_h1:'I Stand Ready to Defend Your<br><span style="color:var(--gold)">Rightful</span> Rights.',
     hero_sub:'My goal is to protect the rights of everyone with a just claim. May the path to truth and justice be a successful one.',
@@ -164,10 +187,33 @@ const i18n = {
     mc3_date:'31 October 2025',
     mc4_date:'24 October 2025',
     mc5_date:'27 November 2025',
-    mc6_date:'22 September 2025'
+    mc6_date:'22 September 2025',
+    stats_l1:'years in practice', stats_l2:'cases won', stats_l3:'practice areas', stats_l4:'leading media outlets',
+    stats_n4:'5',
+    cases_label:'From Practice', cases_h2:'Notable Cases',
+    cases_sub:'All names and identifying details have been altered or omitted in accordance with attorney-client privilege.',
+    cases_tag_criminal:'Criminal Law', cases_tag_corporate:'Corporate Law', cases_tag_civil:'Civil Law',
+    cases_tag_intl:'International Law', cases_tag_family:'Family Law',
+    cases_court_supreme:'Supreme Court of AR', cases_court_const:'Constitutional Court of AR',
+    cases_court_appeal:'Baku Court of Appeal', cases_court_contract:'Contract Work',
+    cases_result_acquittal:'Acquittal', cases_result_rejected:'Claim rejected',
+    cases_result_written_off:'Debt written off', cases_result_granted:'Appeal granted',
+    cases_result_expertise:'Review completed', cases_result_compensation:'Compensation awarded',
+    case1_title:'Acquittal on drug trafficking charges',
+    case1_desc:'The Supreme Court rejected the cassation protest by the Prosecutor General\'s Office and upheld the acquittal. The appellate court had also rejected the prosecution\'s challenge. The case passed through three instances.',
+    case2_title:'Defence of JSC against share separation claim',
+    case2_desc:'A claim demanding forced separation of a share from a joint-stock company\'s assets was rejected at three levels: the first administrative-economic court, the appeal and the Supreme Court.',
+    case3_title:'Write-off of unlawfully accrued credit debt',
+    case3_desc:'Following constitutional proceedings, a portion of the debt under a loan agreement — accrued in violation of the Constitution — was declared unlawful and written off.',
+    case4_title:'Sale contract declared null and void',
+    case4_desc:'The Supreme Court granted the cassation appeal and declared the property sale agreement null and void. The client\'s ownership rights to the property were restored.',
+    case5_title:'International reconstruction contract',
+    case5_desc:'Legal review of a major international contract for large-scale reconstruction works with a foreign company. Legal risks identified and eliminated.',
+    case6_title:'Compensation for damage to honour and dignity',
+    case6_desc:'The Court of Appeal ordered compensation for systematic insults and degradation. The court assessed the conduct that caused moral harm to the client.'
   },
   az: {
-    logo_sub:'Vəkil · +994 55 644 70 80', logo_name:'Elmar Süleymanov', nav_practice:'Təcrübə', nav_about:'Haqqımda', nav_media:'Media', nav_contacts:'Əlaqə',
+    logo_sub:'Vəkil · +994 55 644 70 80', logo_name:'Elmar Süleymanov', nav_practice:'Təcrübə', nav_cases:'İşlər', nav_about:'Haqqımda', nav_media:'Media', nav_contacts:'Əlaqə',
     hero_eyebrow:'Özəl vəkillik praktikası',
     hero_h1:'Ədalətli hüquqlarınızı<br>müdafiə etməyə <span style="color:var(--gold)">hazıram</span>.',
     hero_sub:'Məqsədim ədalətli tələb irəli sürən hər kəsin hüquqlarını qorumaqдır. Qoy həqiqətə və ədalətə aparan yol uğurlu olsun.',
@@ -186,6 +232,29 @@ const i18n = {
     p11_title:'Müqavilələrin hazırlanması və ekspertizası', p11_desc:'Əqdin xüsusiyyətləri və riskləri nəzərə alınaraq müqavilələrin hazırlanması, yoxlanması və ekspertizası.',
     about_label:'Haqqımda',
     about_name:'Elmar Süleymanov',
+    stats_l1:'illik vəkillik təcrübəsi', stats_l2:'udulan iş', stats_l3:'hüquq sahəsi', stats_l4:'aparıcı KİV',
+    stats_n4:'5',
+    cases_label:'Təcrübədən', cases_h2:'Əhəmiyyətli işlər',
+    cases_sub:'Müvəkkil sirrinin qorunması məqsədilə bütün adlar və şəxsiyyəti müəyyən edən məlumatlar dəyişdirilmiş və ya buraxılmışdır.',
+    cases_tag_criminal:'Cinayət hüququ', cases_tag_corporate:'Korporativ hüquq', cases_tag_civil:'Mülki hüquq',
+    cases_tag_intl:'Beynəlxalq hüquq', cases_tag_family:'Ailə hüququ',
+    cases_court_supreme:'AR Ali Məhkəməsi', cases_court_const:'AR Konstitusiya Məhkəməsi',
+    cases_court_appeal:'Bakı Apellyasiya Məhkəməsi', cases_court_contract:'Müqavilə işi',
+    cases_result_acquittal:'Bəraət hökmü', cases_result_rejected:'İddia rədd edildi',
+    cases_result_written_off:'Borc silinib', cases_result_granted:'Şikayət təmin edildi',
+    cases_result_expertise:'Ekspertiza tamamlandı', cases_result_compensation:'Kompensasiya tutuldu',
+    case1_title:'Narkotik dövriyyəsi ittihamı üzrə bəraət hökmü',
+    case1_desc:'Ali Məhkəmə Baş Prokurorluğun kassasiya protestini rədd edərək bəraət hökmünü qüvvədə saxladı. Əvvəllər apellyasiya instansiyası da prokurorun protestini rədd etmişdi. İş üç məhkəmə instansiyasından keçdi.',
+    case2_title:'ASC-nin pay ayrılması iddiasından müdafiəsi',
+    case2_desc:'Səhmdar cəmiyyətinin əmlakından payın məcburi ayrılmasına dair iddia üç instansiyada — birinci inzibati-iqtisadi məhkəmədə, apellyasiyada və Ali Məhkəmədə rədd edildi.',
+    case3_title:'Qanunsuz hesablanmış kredit borcunun silinməsi',
+    case3_desc:'Konstitusiya icraatının nəticəsində kredit müqaviləsi üzrə Konstitusiya normalarını pozaraq hesablanmış borc hissəsi qanunsuz elan edilib silindi.',
+    case4_title:'Alqı-satqı müqaviləsinin etibarsız hesab edilməsi',
+    case4_desc:'Ali Məhkəmə kassasiya şikayətini təmin edərək əmlakın alqı-satqı müqaviləsini etibarsız hesab etdi. Müvəkkilin əmlak hüquqları bərpa edildi.',
+    case5_title:'Beynəlxalq bərpa müqaviləsi',
+    case5_desc:'Xarici şirkətlə böyük miqyaslı bərpa işlərinin aparılmasına dair əsas beynəlxalq müqavilənin hüquqi ekspertizası. Hüquqi risklər müəyyən edilib aradan qaldırıldı.',
+    case6_title:'Şərəf və ləyaqətin alçaldılmasına görə kompensasiya',
+    case6_desc:'Apellyasiya Məhkəməsi sistematik təhqirlərə və ləyaqətin alçaldılmasına görə kompensasiya tutulmasını qət etdi. Məhkəmə müvəkkilə mənəvi zərər vuran hərəkətlərə hüquqi qiymət verdi.',
     about_p1:'Elmar Süleymanov 1976-cı ildə Bakı şəhərində anadan olmuşdur. 2003-cü ildə hüquq üzrə magistr dərəcəsi almışdır.',
     about_p2:'Müxtəlif illərdə bir sıra şirkətlərdə hüquq məsləhətçisi kimi fəaliyyət göstərmiş, "ANS-TV" tele-radio şirkətinin və "MƏTANƏT-A" MMC-nin inzibati-hüquqi departamentinə rəhbərlik etmiş, həmçinin Azərbaycan Respublikası Standartlaşdırma İnstitutunun baş direktorunun müşaviri vəzifəsində çalışmışdır. 2002-ci ildə "Təfəkkür" Universitetində pedaqoji fəaliyyətlə məşğul olmuşdur.',
     about_p3:'2007-ci ildən Azərbaycan Respublikası Vəkillər Kollegiyasının üzvüdür. Mülki, ailə, əmək, vərəsəlik, əmlak, kommersiya, korporativ, təsərrüfat, müəlliflik, inzibati və cinayət hüququ sahələrində ixtisaslaşmışdır. Şərəf, ləyaqət və işgüzar nüfuzun müdafiəsi sahəsində tanınmış mütəxəssislərdən biridir.',
@@ -424,6 +493,33 @@ const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// ─── STATS COUNTER ────────────────────────────────────
+(function() {
+  const numbers = document.querySelectorAll('.stats-number[data-target]');
+  if (!numbers.length) return;
+  const counterObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const target = parseInt(el.getAttribute('data-target'), 10);
+      const duration = 1600;
+      const start = performance.now();
+      function tick(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        // easeOutExpo
+        const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+        el.textContent = Math.round(ease * target);
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      counterObs.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  numbers.forEach(n => counterObs.observe(n));
+})();
+
 
 // ─── MODALS ──────────────────────────────────────────
 function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow = 'hidden'; }

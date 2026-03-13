@@ -195,6 +195,7 @@
   </a>
   <nav aria-label="Навигация">
     <a href="#practice" data-i18n="nav_practice">Практика</a>
+    <a href="#cases" data-i18n="nav_cases">Дела</a>
     <a href="#about" data-i18n="nav_about">О себе</a>
     <a href="media.html" data-i18n="nav_media">Медиа</a><a href="#contacts" data-i18n="nav_contacts">Контакты</a>
     <div class="header-socials">
@@ -223,6 +224,7 @@
 
 <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
   <a href="#practice" class="mobile-link" data-i18n="nav_practice">Практика</a>
+  <a href="#cases" class="mobile-link" data-i18n="nav_cases">Дела</a>
   <a href="#about" class="mobile-link" data-i18n="nav_about">О себе</a>
   <a href="media.html" class="mobile-link" data-i18n="nav_media">Медиа</a>
   <a href="#contacts" class="mobile-link" data-i18n="nav_contacts">Контакты</a>
@@ -282,6 +284,30 @@
   <div class="hero-scroll" aria-hidden="true">
     <span class="hero-scroll-line"></span>
     <span data-i18n="hero_scroll">Прокрутите вниз</span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     STATS SECTION
+════════════════════════════════════════════ -->
+<section id="stats" aria-label="Статистика практики">
+  <div class="stats-grid">
+    <div class="stats-item reveal">
+      <div class="stats-number" data-target="18">0</div>
+      <div class="stats-label" data-i18n="stats_l1">лет в адвокатуре</div>
+    </div>
+    <div class="stats-item reveal reveal-delay-1">
+      <div class="stats-number stats-number--plus" data-target="500">0</div>
+      <div class="stats-label" data-i18n="stats_l2">выигранных дел</div>
+    </div>
+    <div class="stats-item reveal reveal-delay-2">
+      <div class="stats-number" data-target="11">0</div>
+      <div class="stats-label" data-i18n="stats_l3">направлений практики</div>
+    </div>
+    <div class="stats-item reveal reveal-delay-3">
+      <div class="stats-number stats-number--tv" data-i18n="stats_n4">5</div>
+      <div class="stats-label" data-i18n="stats_l4">ТВ и радио</div>
+    </div>
   </div>
 </section>
 
@@ -431,6 +457,103 @@
         <span data-i18n="reviews_fb">Все отзывы на Facebook</span>
       </a>
     </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CASES SECTION
+════════════════════════════════════════════ -->
+<section id="cases">
+  <p class="section-label reveal" data-i18n="cases_label">Практика</p>
+  <h2 class="reveal" data-i18n="cases_h2">Резонансные дела</h2>
+  <p class="cases-sub reveal reveal-delay-1" data-i18n="cases_sub">Все имена и детали, позволяющие идентифицировать клиентов, изменены или опущены в соответствии с адвокатской тайной.</p>
+
+  <div class="cases-grid">
+
+    <!-- Case 1: Наркотики — оправдательный Верховный суд -->
+    <div class="case-card reveal">
+      <div class="case-card-top">
+        <span class="case-tag case-tag--criminal" data-i18n="cases_tag_criminal">Уголовное право</span>
+        <span class="case-court" data-i18n="cases_court_supreme">Верховный суд АР</span>
+      </div>
+      <h3 class="case-title" data-i18n="case1_title">Оправдательный приговор по обвинению в обороте наркотиков</h3>
+      <p class="case-desc" data-i18n="case1_desc">Верховный суд Азербайджанской Республики отклонил кассационный протест Генеральной прокуратуры и оставил в силе оправдательный приговор. Ранее апелляционная инстанция также отвергла протест прокуратуры. Дело прошло три судебные инстанции.</p>
+      <div class="case-card-bottom">
+        <span class="case-result case-result--win" data-i18n="cases_result_acquittal">Оправдательный приговор</span>
+        <span class="case-year">2014</span>
+      </div>
+    </div>
+
+    <!-- Case 2: ОАО 12 млн -->
+    <div class="case-card reveal reveal-delay-1">
+      <div class="case-card-top">
+        <span class="case-tag case-tag--corporate" data-i18n="cases_tag_corporate">Корпоративное право</span>
+        <span class="case-court" data-i18n="cases_court_supreme">Верховный суд АР</span>
+      </div>
+      <h3 class="case-title" data-i18n="case2_title">Защита ОАО от иска о выделении доли</h3>
+      <p class="case-desc" data-i18n="case2_desc">Иск о принудительном выделении доли из имущества акционерного общества отклонён на трёх инстанциях: в первом административно-экономическом суде, апелляции и Верховном суде.</p>
+      <div class="case-card-bottom">
+        <span class="case-result case-result--win" data-i18n="cases_result_rejected">Иск отклонён</span>
+        <span class="case-amount">12 000 000 AZN</span>
+      </div>
+    </div>
+
+    <!-- Case 3: КС + кредит -->
+    <div class="case-card reveal reveal-delay-2">
+      <div class="case-card-top">
+        <span class="case-tag case-tag--civil" data-i18n="cases_tag_civil">Гражданское право</span>
+        <span class="case-court" data-i18n="cases_court_const">Конституционный суд АР</span>
+      </div>
+      <h3 class="case-title" data-i18n="case3_title">Списание незаконно начисленного кредитного долга</h3>
+      <p class="case-desc" data-i18n="case3_desc">По итогам конституционного производства часть задолженности по кредитному договору, начисленная с нарушением Конституции, была признана незаконной и списана. Жалоба принята Конституционным судом к производству.</p>
+      <div class="case-card-bottom">
+        <span class="case-result case-result--win" data-i18n="cases_result_written_off">Долг списан</span>
+        <span class="case-amount">33 000 AZN</span>
+      </div>
+    </div>
+
+    <!-- Case 4: Купля-продажа недействительной -->
+    <div class="case-card reveal">
+      <div class="case-card-top">
+        <span class="case-tag case-tag--civil" data-i18n="cases_tag_civil">Гражданское право</span>
+        <span class="case-court" data-i18n="cases_court_supreme">Верховный суд АР</span>
+      </div>
+      <h3 class="case-title" data-i18n="case4_title">Признание договора купли-продажи недействительным</h3>
+      <p class="case-desc" data-i18n="case4_desc">Верховный суд удовлетворил кассационную жалобу и признал сделку купли-продажи имущества недействительной. Права доверителя на имущество восстановлены.</p>
+      <div class="case-card-bottom">
+        <span class="case-result case-result--win" data-i18n="cases_result_granted">Жалоба удовлетворена</span>
+        <span class="case-amount">200 000 AZN</span>
+      </div>
+    </div>
+
+    <!-- Case 5: Международный контракт -->
+    <div class="case-card reveal reveal-delay-1">
+      <div class="case-card-top">
+        <span class="case-tag case-tag--intl" data-i18n="cases_tag_intl">Международное право</span>
+        <span class="case-court" data-i18n="cases_court_contract">Договорная работа</span>
+      </div>
+      <h3 class="case-title" data-i18n="case5_title">Международный контракт по реконструкции</h3>
+      <p class="case-desc" data-i18n="case5_desc">Правовая экспертиза основного международного контракта на проведение масштабных реконструкционных работ с иностранной компанией. Выявлены и устранены правовые риски.</p>
+      <div class="case-card-bottom">
+        <span class="case-result case-result--contract" data-i18n="cases_result_expertise">Экспертиза завершена</span>
+        <span class="case-amount">450 000 000 €</span>
+      </div>
+    </div>
+
+    <!-- Case 6: Семейное — свекровь -->
+    <div class="case-card reveal reveal-delay-2">
+      <div class="case-card-top">
+        <span class="case-tag case-tag--family" data-i18n="cases_tag_family">Семейное право</span>
+        <span class="case-court" data-i18n="cases_court_appeal">Апелляционный суд Баку</span>
+      </div>
+      <h3 class="case-title" data-i18n="case6_title">Компенсация за унижение чести и достоинства</h3>
+      <p class="case-desc" data-i18n="case6_desc">Апелляционный суд обязал взыскать компенсацию за систематические оскорбления и унижение достоинства. Суд дал правовую оценку действиям, повлёкшим моральный вред доверителю.</p>
+      <div class="case-card-bottom">
+        <span class="case-result case-result--win" data-i18n="cases_result_compensation">Компенсация взыскана</span>
+        <span class="case-amount">2 500 AZN</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
