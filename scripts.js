@@ -5,7 +5,7 @@ const i18n = {
     hero_eyebrow:'Частная адвокатская практика',
     hero_h1:'Я готов защитить ваши<br><span style="color:var(--gold)">справедливые</span> права.',
     hero_sub:'Моя цель — защитить права каждого, кто выдвигает справедливое требование. Пусть путь к истине и справедливости будет успешным.',
-    hero_cta:'Записаться на консультацию', hero_scroll:'Прокрутите вниз',
+    hero_cta:'Обратиться для консультации', hero_scroll:'Прокрутите вниз',
     practice_label:'Сферы деятельности', practice_h2:'Сферы деятельности',
     p1_title:'Гражданское право', p1_desc:'Споры между физическими и юридическими лицами, защита имущественных и неимущественных прав.',
     p2_title:'Уголовное право', p2_desc:'Защита прав потерпевших, обвиняемых, подозреваемых и свидетелей на всех стадиях уголовного процесса.',
@@ -72,7 +72,7 @@ const i18n = {
     consult_success_text:'Сейчас откроется окно WhatsApp с вашим сообщением.',
     float_contact:'Связаться',
     about_name:'Эльмар Сулейманов',
-    stats_l1:'лет юридической практики', stats_l2:'выигранных дел', stats_l3:'AZN — максимальная сумма иска', stats_l4:'сумма крупнейшего контракта',
+    stats_l1:'лет юридической практики', stats_l2:'сумма контрактов под сопровождением', stats_l3:'судебных дел в год', stats_l4:'сумма крупнейшего контракта',
     stats_n4:'5',
     cases_label:'Из практики', cases_h2:'Резонансные дела',
     cases_sub:'Все имена и детали, позволяющие идентифицировать клиентов, изменены или опущены в соответствии с адвокатской тайной.',
@@ -111,7 +111,7 @@ const i18n = {
     hero_eyebrow:'Private Legal Practice',
     hero_h1:'I Stand Ready to Defend Your<br><span style="color:var(--gold)">Rightful</span> Rights.',
     hero_sub:'My goal is to protect the rights of everyone with a just claim. May the path to truth and justice be a successful one.',
-    hero_cta:'Book a consultation', hero_scroll:'Scroll down',
+    hero_cta:'Contact for Consultation', hero_scroll:'Scroll down',
     practice_label:'Practice Areas', practice_h2:'Practice Areas',
     p1_title:'Civil Law', p1_desc:'Disputes between individuals and legal entities, protection of property and non-property rights.',
     p2_title:'Criminal Law', p2_desc:'Protection of victims, suspects and accused at all stages of criminal proceedings.',
@@ -188,7 +188,7 @@ const i18n = {
     mc4_date:'24 October 2025',
     mc5_date:'27 November 2025',
     mc6_date:'22 September 2025',
-    stats_l1:'years of legal practice', stats_l2:'cases won', stats_l3:'AZN — largest claim handled', stats_l4:'largest contract reviewed',
+    stats_l1:'years of legal practice', stats_l2:'contracts under legal supervision', stats_l3:'court cases per year', stats_l4:'largest contract reviewed',
     stats_n4:'5',
     cases_label:'From Practice', cases_h2:'Notable Cases',
     cases_sub:'All names and identifying details have been altered or omitted in accordance with attorney-client privilege.',
@@ -217,7 +217,7 @@ const i18n = {
     hero_eyebrow:'Özəl vəkillik praktikası',
     hero_h1:'Ədalətli hüquqlarınızı<br>müdafiə etməyə <span style="color:var(--gold)">hazıram</span>.',
     hero_sub:'Məqsədim ədalətli tələb irəli sürən hər kəsin hüquqlarını qorumaqдır. Qoy həqiqətə və ədalətə aparan yol uğurlu olsun.',
-    hero_cta:'Konsultasiya üçün yazın', hero_scroll:'Aşağı sürüşdürün',
+    hero_cta:'Konsultasiya üçün müraciət edin', hero_scroll:'Aşağı sürüşdürün',
     practice_label:'Təcrübə sahələri', practice_h2:'Vəkillik Təcrübəsi',
     p1_title:'Mülki hüquq', p1_desc:'Fiziki və hüquqi şəxslər arasında mübahisələr, əmlak hüquqlarının müdafiəsi.',
     p2_title:'Cinayət hüququ', p2_desc:'Zərərçəkmişlərin, şübhəli və müttəhimlərin cinayət prosesinin bütün mərhələlərində müdafiəsi.',
@@ -232,7 +232,7 @@ const i18n = {
     p11_title:'Müqavilələrin hazırlanması və ekspertizası', p11_desc:'Əqdin xüsusiyyətləri və riskləri nəzərə alınaraq müqavilələrin hazırlanması, yoxlanması və ekspertizası.',
     about_label:'Haqqımda',
     about_name:'Elmar Süleymanov',
-    stats_l1:'illik hüquqi təcrübə', stats_l2:'udulan iş', stats_l3:'AZN — ən böyük iddia məbləği', stats_l4:'ən böyük müqavilənin məbləği',
+    stats_l1:'illik hüquqi təcrübə', stats_l2:'müqavilə dəstəyi həcmi', stats_l3:'ildə məhkəmə işi', stats_l4:'ən böyük müqavilənin məbləği',
     stats_n4:'5',
     cases_label:'Təcrübədən', cases_h2:'Əhəmiyyətli işlər',
     cases_sub:'Müvəkkil sirrinin qorunması məqsədilə bütün adlar və şəxsiyyəti müəyyən edən məlumatlar dəyişdirilmiş və ya buraxılmışdır.',
@@ -778,17 +778,49 @@ document.getElementById('consult-form').addEventListener('submit', async functio
   }
 });
 
-// ─── FLOATING SOCIAL WIDGET ─────────────────────────────
+// ─── SHOW FLOAT BUTTON AFTER HERO ────────────────────────
 (function() {
-  const widget = document.getElementById('float-widget');
-  const btn = document.getElementById('float-main-btn');
-  if (!widget || !btn) return;
-  btn.addEventListener('click', function() {
-    widget.classList.toggle('open');
-  });
-  document.addEventListener('click', function(e) {
-    if (!widget.contains(e.target)) {
-      widget.classList.remove('open');
+  const wrap = document.getElementById('float-contact-wrap');
+  if (!wrap) return;
+  function checkScroll() {
+    const hero = document.getElementById('hero');
+    const threshold = hero ? hero.offsetHeight * 0.7 : window.innerHeight * 0.7;
+    if (window.scrollY > 100) {
+      wrap.classList.add('visible');
+    } else {
+      wrap.classList.remove('visible');
+    }
+  }
+  window.addEventListener('scroll', checkScroll, { passive: true });
+  checkScroll();
+})();
+
+// ─── FLOATING CONTACT BUTTON ─────────────────────────────
+(function() {
+  const wrap = document.getElementById('float-contact-wrap');
+  const mainBtn = document.getElementById('float-main-btn');
+  if (!wrap || !mainBtn) return;
+
+  var reopenTimer = null;
+
+  function openPopup() {
+    wrap.classList.remove('closed');
+    clearTimeout(reopenTimer);
+  }
+
+  function closePopup() {
+    wrap.classList.add('closed');
+    clearTimeout(reopenTimer);
+    reopenTimer = setTimeout(openPopup, 10000);
+  }
+
+  // Click on pill: if open → close; if closed → open
+  mainBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (wrap.classList.contains('closed')) {
+      openPopup();
+    } else {
+      closePopup();
     }
   });
 })();

@@ -13,7 +13,9 @@
 <link rel="canonical" href="https://www.elmarsuleymanov.az/">
 <meta name="robots" content="index, follow">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="apple-touch-icon" href="logo.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-192.png">
 <title>Эльмар Сулейманов · Адвокат · Баку</title>
 <script type="application/ld+json">
 {
@@ -252,20 +254,30 @@
 <img src="photo.jpg" alt="Эльмар Сулейманов — адвокат в Баку">
     <div class="hero-office-overlay"></div>
   </div>
+
+  <!-- Stats — positioned absolute inside #hero, bottom of photo area -->
+  <div class="hero-stats-overlay" aria-label="Статистика практики">
+    <div class="hero-stat-item">
+      <div class="stats-number stats-number--plus" data-target="28">0</div>
+      <div class="stats-label" data-i18n="stats_l1">лет юридической практики</div>
+    </div>
+    <div class="hero-stat-divider"></div>
+    <div class="hero-stat-item">
+      <div class="stats-number stats-number--suffix" data-target="450" data-suffix=" млн €">0</div>
+      <div class="stats-label" data-i18n="stats_l2">сумма контрактов под сопровождением</div>
+    </div>
+    <div class="hero-stat-divider"></div>
+    <div class="hero-stat-item">
+      <div class="stats-number stats-number--plus" data-target="50">0</div>
+      <div class="stats-label" data-i18n="stats_l3">судебных дел в год</div>
+    </div>
+  </div>
   <div class="hero-content">
     <p class="hero-eyebrow reveal" data-i18n="hero_eyebrow">Частная адвокатская практика в Азербайджане и за рубежом</p>
     <h1 class="reveal reveal-delay-1" data-i18n="hero_h1">Я готов защитить ваши <span class="text-gold">справедливые</span> права.</h1>
     <p class="hero-sub reveal reveal-delay-2" data-i18n="hero_sub">Моя цель — защитить права каждого, кто выдвигает справедливое требование. Пусть путь к истине и справедливости будет успешным.</p>
     <div class="hero-buttons">
-      <button onclick="openConsultModal()" class="btn-primary reveal reveal-delay-3" data-i18n="hero_cta">Записаться на консультацию</button>
-      <a href="tel:+994556447080" class="btn-outline btn-with-icon reveal reveal-delay-3">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span data-i18n="btn_phone">Связаться по телефону</span>
-      </a>
-      <a href="https://wa.me/994556447080" target="_blank" rel="noopener" class="btn-outline btn-with-icon reveal reveal-delay-3">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.118.549 4.107 1.514 5.84L.057 23.625a.75.75 0 0 0 .921.903l5.919-1.55A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.704 9.704 0 0 1-4.964-1.362l-.355-.211-3.716.974.991-3.624-.231-.373A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
-        <span data-i18n="btn_whatsapp">Связаться по WhatsApp</span>
-      </a>
+      <button onclick="openConsultModal()" class="btn-primary btn-primary--lg reveal reveal-delay-3" data-i18n="hero_cta">Обратиться для консультации</button>
     </div>
     <div class="hero-mobile-socials reveal reveal-delay-3">
       <div class="hero-mobile-socials-row">
@@ -282,35 +294,13 @@
     </div>
   </div>
 
-  <div class="hero-scroll" aria-hidden="true">
-    <span class="hero-scroll-line"></span>
-    <span data-i18n="hero_scroll">Прокрутите вниз</span>
+  <div class="hero-scroll-left" aria-hidden="true">
+    <span class="hero-scroll-line-v"></span>
+    <span class="hero-scroll-text" data-i18n="hero_scroll">Прокрутите вниз</span>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════
-     STATS SECTION
-════════════════════════════════════════════ -->
-<section id="stats" aria-label="Статистика практики">
-  <div class="stats-grid">
-    <div class="stats-item reveal">
-      <div class="stats-number stats-number--plus" data-target="25">0</div>
-      <div class="stats-label" data-i18n="stats_l1">лет юридической практики</div>
-    </div>
-    <div class="stats-item reveal reveal-delay-1">
-      <div class="stats-number stats-number--plus" data-target="500">0</div>
-      <div class="stats-label" data-i18n="stats_l2">выигранных дел</div>
-    </div>
-    <div class="stats-item reveal reveal-delay-2">
-      <div class="stats-number stats-number--suffix" data-target="12" data-suffix=" млн">0</div>
-      <div class="stats-label" data-i18n="stats_l3">AZN — максимальная сумма иска</div>
-    </div>
-    <div class="stats-item reveal reveal-delay-3">
-      <div class="stats-number stats-number--suffix" data-target="450" data-suffix=" млн €">0</div>
-      <div class="stats-label" data-i18n="stats_l4">сумма крупнейшего контракта</div>
-    </div>
-  </div>
-</section>
+
 
 <section id="practice">
   <h2 class="reveal" data-i18n="practice_h2">Направления адвокатской практики</h2>
@@ -802,11 +792,34 @@
 </div>
 
 
-<!-- ── FLOATING CONTACT BUTTON ── -->
-<button onclick="openConsultModal()" class="float-contact-btn" id="float-contact-btn" aria-label="Связаться с нами">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.29 6.29l1.91-1.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-  <span data-i18n="float_contact">Связаться</span>
-</button>
+<!-- ── FLOATING CONTACT BUTTON (vertical popup) ── -->
+<div class="float-contact-wrap" id="float-contact-wrap">
+  <!-- Popup (open by default) -->
+  <div class="float-popup" id="float-popup">
+    <div class="float-popup-row">
+      <span class="float-popup-label" data-i18n="btn_phone">Связаться по телефону</span>
+      <a href="tel:+994556447080" class="float-action-btn float-action-phone" aria-label="Позвонить">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.29 6.29l1.91-1.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+    </div>
+    <div class="float-popup-row">
+      <span class="float-popup-label" data-i18n="btn_whatsapp">Связаться по WhatsApp</span>
+      <a href="https://wa.me/994556447080" target="_blank" rel="noopener" class="float-action-btn float-action-whatsapp" aria-label="WhatsApp">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.118.549 4.107 1.514 5.84L.057 23.625a.75.75 0 0 0 .921.903l5.919-1.55A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.704 9.704 0 0 1-4.964-1.362l-.355-.211-3.716.974.991-3.624-.231-.373A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+      </a>
+    </div>
+  </div>
+  <!-- Main pill — shows "Связаться" when closed, "✕" when open -->
+  <button class="float-main-btn" id="float-main-btn" aria-label="Связаться">
+    <span class="float-main-label" data-i18n="float_contact">Связаться</span>
+    <span class="float-main-icon-open">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </span>
+    <span class="float-main-icon-closed">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.29 6.29l1.91-1.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </span>
+  </button>
+</div>
 
 <div class="modal-overlay" id="modal-terms" role="dialog" aria-modal="true">
   <div class="modal-box">
