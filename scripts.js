@@ -53,7 +53,7 @@ const i18n = {
     mc5_title: 'Развод по-азербайджански: что важно знать',
     mc6_excerpt: 'Оспорить отцовство можно только в суде. Ключевое доказательство — ДНК-экспертиза. При успешном исходе запись об отцовстве аннулируется, и обязательство платить алименты прекращается.',
     mc6_title: 'ДНК, суд и алименты: нюансы оспаривания отцовства',
-    media_label:'Медиаучастие', reviews_fb:'Все отзывы на Facebook',
+    media_label:'Медиаучастие', reviews_fb:'Все отзывы на Facebook', reviews_write:'Оставить отзыв',
     contacts_label:'Контакты', contacts_h2:'Контактные данные',
     addr_label:'Адрес', addr_val:'Баку, Азербайджан, AZ 1010<br>ул. Мирали Гашгай 42, Адвокатское Бюро № 14',
     hours_label:'График работы', hours_val:'Уточняйте по телефону',
@@ -169,7 +169,7 @@ const i18n = {
     mc5_title: 'Azerbaijani-style divorce: what you need to know',
     mc6_excerpt: 'Paternity can only be contested in court. The key evidence is a DNA test. A successful outcome annuls the paternity record and terminates the obligation to pay alimony.',
     mc6_title: 'DNA, court and alimony: contesting paternity in Azerbaijan',
-    media_label:'Media Appearances', reviews_fb:'All reviews on Facebook',
+    media_label:'Media Appearances', reviews_fb:'All reviews on Facebook', reviews_write:'Leave a review',
     contacts_label:'Contact', contacts_h2:'Contact Information',
     addr_label:'Address', addr_val:'Baku, Azerbaijan, AZ 1010<br>Mirali Gashgay St. 42, Law Bureau No. 14',
     hours_label:'Working hours', hours_val:'Please inquire by phone',
@@ -307,7 +307,7 @@ const i18n = {
     mc5_title: 'Azərbaycan üslubunda boşanma: bilməli olduğunuz şeylər',
     mc6_excerpt: 'Atalıq yalnız məhkəmədə mübahisə edilə bilər. Əsas sübut DNT ekspertizasıdır. Müvəffəqiyyətli nəticədə atalıq qeydi ləğv edilir və aliment ödəmə öhdəliyi sona çatır.',
     mc6_title: 'DNT, məhkəmə və aliment: Azərbaycanda atalığın mübahisəsi',
-    media_label:'Media çıxışları', reviews_fb:'Facebook-da bütün rəylər',
+    media_label:'Media çıxışları', reviews_fb:'Facebook-da bütün rəylər', reviews_write:'Rəy yaz',
     contacts_label:'Əlaqə', contacts_h2:'Əlaqə məlumatları',
     addr_label:'Ünvan', addr_val:'Bakı, Azərbaycan, AZ 1010<br>Mirəli Qaşqay küç. 42, Vəkillər Bürosu № 14',
     hours_label:'İş saatları', hours_val:'Telefon ilə dəqiqləşdirin',
@@ -349,47 +349,64 @@ const i18n = {
 
 const reviews = {
   ru: [
-    { text: 'Грамотный специалист, подробно разъясняет ситуацию, наперед говорит какие исходы могут быть и как лучше решать тот или иной вопрос. Доверились полностью и не пожалели. Рекомендую 👍', name: 'Alla Alieva-Rafikova', stars: 5 },
-    { text: 'Эльмар Мяллим. Вы профессионал своего дела. Огромная благодарность Вам за Ваш труд.', name: 'Tamila Heyderova', stars: 5 },
-    { text: 'Специалист своего дела, подмечает даже самые мелкие детали в деле. Эльмар Бей — желаю Вам успехов в Вашей нелегкой работе, всех благ и процветания!', name: 'Виктория Юнина', stars: 5 },
-    { text: 'Хорошо знает и выполняет свою работу', name: 'Богдан Тылинго', stars: 5 },
-    { text: 'Огромное спасибо Эльмар м, вы всегда направляете людей в правильном направлении и даете дельные советы!', name: 'Лейла Агаева', stars: 5 },
-    { text: 'Высококвалифицированный адвокат, грамотно и доступно проконсультировал по моему вопросу. Рекомендую!', name: 'Татьяна Гамидова', stars: 5 },
-    { text: 'Mr. Suleymanov has been representing me remotely in resolving case in regards to citizenship. Very professional approach, acted proactively, good knowledge of Azeri and international law. I recommend.', name: 'Natali Yefimova', stars: 5 },
-    { text: 'Грамотный юрист. Дал понятную консультацию по ситуации которую в России решать никто не взялся.', name: 'Alexander Kuntsman', stars: 5 },
-    { text: 'Очень грамотный адвокат с большим опытом работы. Получил необходимые советы. Спасибо большое вам!!!', name: 'Азер Гасанов', stars: 5 },
-    { text: 'Очень вежливый грамотный! Получила полноценный ответ на свой вопрос и рекомендации!', name: 'Tatyana Shnipenko', stars: 5 },
-    { text: 'Высокопрофессиональный адвокат с большим опытом, относится с пониманием к людям. Очень оценил его советы и рекомендую другим.', name: 'Elkhan Nahmadov', stars: 5 },
-    { text: 'Высокопорядочный человек и великолепный профессионал своего дела! Побольше бы таких людей, глядишь, реальность и начнёт потихоньку меняться к лучшему!', name: 'Искендер Кадымов', stars: 5 },
+    // Google reviews — оригинальные тексты
+    { text: 'Спасибо за консультацию! Эльмар бей внимательно выслушал, быстро разобрался в ситуации и всё объяснил простым, понятным языком. Я получил чёткий план действий и полезные рекомендации — стало спокойнее и ясно, что делать дальше. Рекомендую.', name: 'Dmitriy Fisenko', stars: 5, source: 'google', url: 'https://share.google/sx2jNxAgXcUvc1Jz1' },
+    { text: 'Огромное спасибо Эльмар бею за профессионализм! Нам нужно было составить сложную оферту (первый кейс такого рода в Азербайджане), и он справился блестяще. Очень кропотливый подход, внимание к деталям и соблюдение всех сроков. Результатом довольны на 100%. Настоящий эксперт своего дела!', name: 'Urfan Babayev', stars: 5, source: 'google', url: 'https://share.google/oFYa3K3Rsi0g8vUqN' },
+    { text: 'Очень довольна консультацией! Человек знающий своё дело и закон на высшем уровне! Выслушал и дал чёткие ответы на все мои вопросы, всё было легко и главное я получила ответ на все мои вопросы! Советую!', name: 'Aytan Jafarova', stars: 5, source: 'google', url: 'https://share.google/Kf2i0mh6qZah1G3wA' },
+    { text: 'Хочу поблагодарить Эльмар муаллима за помощь в консультации! Очень грамотный юрист, профессионал своего дела! Желаю Вам успехов в профессиональной деятельности и в личной жизни!', name: 'Noufal Qasimov', stars: 5, source: 'google', url: 'https://share.google/ZPCy1F06jumoeRCw5' },
+    { text: 'Спасибо вам большое за помощь и поддержку! Вы оказались тем человеком, который действительно слушает, понимает и ищет лучшее решение. Очень благодарна за вашу работу и обязательно буду рекомендовать вас всем, кому понадобится хороший адвокат))', name: 'Gulicka.M', stars: 5, source: 'google', url: 'https://share.google/gwhfXDDafEq45Be36' },
+    { text: 'Обратилась за консультацией к адвокату Эльмару Сулейманову и осталась очень довольна. Первая консультация произвела отличное впечатление: адвокат продемонстрировал глубокое понимание моего вопроса, чётко и понятно объяснил все нюансы.', name: 'Natalya Yesil', stars: 5, source: 'google', url: 'https://share.google/sDCEaE4R9g43V4syq' },
+    { text: 'Хочется выразить благодарность Эльмару Сулейманову за оказанную помощь и консультацию которую я получил. На нашей первой встрече я увидел что он подходит к делу как профессионал и со знанием своего дела и без лишней воды. Подсказал правильное направление в котором нужно работать и не обещал золотые горы. Лично я остался доволен и рекомендовал бы его как специалиста своего дела.', name: 'Тагир', stars: 5, source: 'google', url: 'https://share.google/fDjv85begvLvsqUYf' },
+    { text: 'Выражаю Эльмар беку благодарность за профессионализм, психологическую поддержку и разъяснение проблемы.', name: 'Liza Teymurova', stars: 5, source: 'google', url: 'https://share.google/qFxvuwV1l0SIkZ7hr' },
+    { text: 'Мы живём в Германии 20 лет. Но являемся гражданами Азербайджана. Обратились за консультацией к Эльмару Сулейманову. Профессионал своего дела. А главное работает с душой. Рекомендуем всем!!!!!!!', name: 'Aghaali Shukurov', stars: 5, source: 'google', url: 'https://share.google/HnSCwLR2yfUyB7nX8' },
+    { text: 'Эльмар – высококлассный профессионал своего дела. Выражаю благодарность за проделанную юридическую работу. В добавок к глубокому знанию вопроса и обширному опыту он оказывает поддержку и даёт развернутые советы в течение всего процесса предоставления услуг. Очень рекомендую Эльмара, как опытного и мудрого адвоката!', name: 'Nargiz Alizada', stars: 5, source: 'google', url: 'https://share.google/EkY2mfD2IrBTrIqCn' },
+    { text: 'Очень благодарен за профессиональную консультацию. Всё подробно разъяснил и направил в правильном направлении. Однозначно рекомендую.', name: 'Даниил Коробкин', stars: 5, source: 'google', url: 'https://share.google/UMEZstmm8ceQ2CVeL' },
+    { text: 'Хорошая консультация. Адвокат все подробно объяснил. Результатом доволен.', name: 'Majid Mardanov', stars: 5, source: 'google', url: 'https://share.google/fmVxHueKYAuVhsZFA' },
+    { text: 'Большое спасибо за юридическую помощь, которую вы мне оказали, за высокий профессионализм, понимание и отзывчивость.', name: 'Cooking Lady tsh', stars: 5, source: 'google', url: 'https://share.google/ftVRPStQv6DmllQUC' },
+    { text: 'Пишу, чтобы выразить сердечную благодарность за исключительную юридическую консультацию, которую вы мне предоставили. Ваш стратегический подход и внимание к деталям были поистине исключительными. Ваша способность с лёгкостью решать сложные юридические вопросы обеспечила мне душевное спокойствие и ясность, необходимые для продвижения вперёд. Благодарен за ваше терпение и внимание, желаю Вам здоровья и успехов в вашей нелёгкой работе!', name: 'Adil Jafarov', stars: 5, source: 'google', url: 'https://share.google/pzL7h0tIv6uKJRucY' },
+    { text: 'Нужна была срочная юридическая консультация и мы обратились к Эльмару Сулейманову. Мы сами не ожидали, что нам так доходчиво и подробно все объяснят и помогут. Адвокат простым языком объяснил все и помог разобраться с нашей проблемой. Очень довольны всем и будем рекомендовать знакомым. Большое спасибо.', name: 'Siddiga Alibekova', stars: 5, source: 'google', url: 'https://share.google/tbQOkgOoSZypRtleE' },
+    { text: 'Хочу выразить благодарность Эльмар муаллиму за высочайший профессионализм, этику, честность и порядочность. Несмотря на то, что живу в другой стране, Эльмар муаллим по доверенности провёл блестящий процесс в суде и наш вопрос решился наилучшим образом. Спасибо огромное!', name: 'Ilkin Babayev', stars: 5, source: 'google', url: 'https://share.google/V5AufWvGglWgfwJjP' },
+    { text: 'В субботу нужен был адвокат, нигде не могли найти, конторы закрыты. Нашли через поиск Эльмар меллима. Остались очень довольны. Он провёл консультацию, всё замечательно, доступно и грамотно объяснил, помог разобраться в ситуации. Замечательный специалист.', name: 'Alissa Clifford', stars: 5, source: 'google', url: 'https://share.google/xpcL2IrUdgmD0Jscx' },
+    { text: 'Брал консультацию у адвоката Эльмара Сулейманова. На ум приходит поговорка "Как рыба в воде". Человек, который знает свою работу и подходит к ней максимально ответственно. Конструктивен, рационален, собран. Мгновенно отделяет зёрна от плевел. Все вопросы и ответы по существу. Впечатление произвёл положительное. Вызывает уважение такое отношение к работе и людям. Благодарю Вас за Вашу работу.', name: 'Cyril', stars: 5, source: 'google', url: 'https://share.google/H04e4Gx02Ug6XyFlE' },
+    // Facebook reviews
+    { text: 'Грамотный специалист, подробно разъясняет ситуацию, наперед говорит какие исходы могут быть и как лучше решать тот или иной вопрос. Доверились полностью и не пожалели. Рекомендую 👍', name: 'Alla Alieva-Rafikova', stars: 5, source: 'facebook', url: 'https://www.facebook.com/advokatelmar/reviews' },
+    { text: 'Эльмар Мяллим. Вы профессионал своего дела. Огромная благодарность Вам за Ваш труд.', name: 'Tamila Heyderova', stars: 5, source: 'facebook', url: 'https://www.facebook.com/advokatelmar/reviews' },
+    { text: 'Специалист своего дела, подмечает даже самые мелкие детали в деле. Эльмар Бей — желаю Вам успехов в Вашей нелегкой работе, всех благ и процветания!', name: 'Виктория Юнина', stars: 5, source: 'facebook', url: 'https://www.facebook.com/advokatelmar/reviews' },
+    { text: 'Высококвалифицированный адвокат, грамотно и доступно проконсультировал по моему вопросу. Рекомендую!', name: 'Татьяна Гамидова', stars: 5, source: 'facebook', url: 'https://www.facebook.com/advokatelmar/reviews' },
+    { text: 'Mr. Suleymanov has been representing me remotely in resolving case in regards to citizenship. Very professional approach, acted proactively, good knowledge of Azeri and international law. I recommend.', name: 'Natali Yefimova', stars: 5, source: 'facebook', url: 'https://www.facebook.com/advokatelmar/reviews' },
+    { text: 'Очень грамотный адвокат с большим опытом работы. Получил необходимые советы. Спасибо большое вам!!!', name: 'Азер Гасанов', stars: 5, source: 'facebook', url: 'https://www.facebook.com/advokatelmar/reviews' },
+    { text: 'Очень вежливый грамотный! Получила полноценный ответ на свой вопрос и рекомендации!', name: 'Tatyana Shnipenko', stars: 5, source: 'facebook', url: 'https://www.facebook.com/advokatelmar/reviews' },
+    { text: 'Высокопрофессиональный адвокат с большим опытом, относится с пониманием к людям. Очень оценил его советы и рекомендую другим.', name: 'Elkhan Nahmadov', stars: 5, source: 'facebook', url: 'https://www.facebook.com/advokatelmar/reviews' },
+    { text: 'Высокопорядочный человек и великолепный профессионал своего дела! Побольше бы таких людей, глядишь, реальность и начнёт потихоньку меняться к лучшему!', name: 'Искендер Кадымов', stars: 5, source: 'facebook', url: 'https://www.facebook.com/advokatelmar/reviews' },
   ],
   en: [
-    { text: 'A knowledgeable specialist who explains the situation in detail and tells you in advance what outcomes are possible. We trusted him completely and have no regrets. Highly recommend 👍', name: 'Alla Alieva-Rafikova', stars: 5 },
-    { text: 'Elmar Mualim. You are a true professional. Enormous gratitude to you for your work.', name: 'Tamila Heyderova', stars: 5 },
-    { text: 'A specialist in his field who notices even the smallest details. Elmar Bey — wishing you success in your challenging work, all the best and prosperity!', name: 'Victoria Yunina', stars: 5 },
-    { text: 'Knows and performs his work well.', name: 'Bogdan Tylinko', stars: 5 },
-    { text: 'Thank you so much, Elmar — you always point people in the right direction and give sound advice!', name: 'Leila Agaeva', stars: 5 },
-    { text: 'A highly qualified attorney who consulted me clearly and accessibly on my matter. I recommend!', name: 'Tatiana Gamidova', stars: 5 },
-    { text: 'Mr. Suleymanov has been representing me remotely in resolving a case in regards to citizenship. Very professional approach, acted proactively, good knowledge of Azeri and international law. I recommend.', name: 'Natali Yefimova', stars: 5 },
-    { text: 'A competent lawyer. Gave me a clear consultation on a matter that nobody in Russia was willing to take on.', name: 'Alexander Kuntsman', stars: 5 },
-    { text: 'A very competent attorney with extensive experience. Got the advice I needed. Thank you very much!', name: 'Azer Gasanov', stars: 5 },
-    { text: 'Very polite and knowledgeable! Received a thorough answer to my question and practical recommendations!', name: 'Tatyana Shnipenko', stars: 5 },
-    { text: 'A highly professional attorney with extensive experience, treats people with understanding. Greatly valued his advice and recommend to others.', name: 'Elkhan Nahmadov', stars: 5 },
-    { text: 'A man of great integrity and an outstanding professional. If only there were more people like him — reality would quietly begin to change for the better!', name: 'Iskender Kadymov', stars: 5 },
+    { text: 'Thank you for the consultation! Elmar carefully listened, quickly understood the situation and explained everything in simple, clear language. I received a clear action plan and useful recommendations.', name: 'Dmitriy Fisenko', stars: 5, source: 'google', url: 'https://share.google/sx2jNxAgXcUvc1Jz1' },
+    { text: 'Many thanks for the professionalism! We needed to draft a complex offer (the first case of its kind in Azerbaijan), and he handled it brilliantly. Very meticulous approach, attention to detail. 100% satisfied.', name: 'Urfan Babayev', stars: 5, source: 'google', url: 'https://share.google/oFYa3K3Rsi0g8vUqN' },
+    { text: 'Very satisfied with the consultation! A person who truly knows his field and the law at the highest level! Listened and gave clear answers to all my questions. Highly recommend!', name: 'Aytan Jafarova', stars: 5, source: 'google', url: 'https://share.google/Kf2i0mh6qZah1G3wA' },
+    { text: 'Despite living in another country, Elmar conducted a brilliant court process by proxy and our matter was resolved in the best possible way. Thank you so much!', name: 'Ilkin Babayev', stars: 5, source: 'google', url: 'https://share.google/V5AufWvGglWgfwJjP' },
+    { text: 'We have lived in Germany for 20 years but are Azerbaijani citizens. We sought a consultation. A true professional who works with his heart. We recommend to everyone!', name: 'Aghaali Shukurov', stars: 5, source: 'google', url: 'https://share.google/HnSCwLR2yfUyB7nX8' },
+    { text: 'Elmar is a top-class professional. In addition to deep knowledge and extensive experience, he provides support throughout the entire process. Highly recommend him as an experienced and wise attorney!', name: 'Nargiz Alizada', stars: 5, source: 'google', url: 'https://share.google/EkY2mfD2IrBTrIqCn' },
+    { text: 'I write to express heartfelt gratitude for the exceptional legal consultation. Your strategic approach and attention to detail were truly outstanding. Thank you for your patience and care!', name: 'Adil Jafarov', stars: 5, source: 'google', url: 'https://share.google/pzL7h0tIv6uKJRucY' },
+    { text: 'A knowledgeable specialist who explains the situation in detail and tells you in advance what outcomes are possible. We trusted him completely and have no regrets. Highly recommend 👍', name: 'Alla Alieva-Rafikova', stars: 5, source: 'facebook', url: 'https://www.facebook.com/advokatelmar/reviews' },
+    { text: 'Mr. Suleymanov has been representing me remotely in resolving a case in regards to citizenship. Very professional approach, good knowledge of Azeri and international law. I recommend.', name: 'Natali Yefimova', stars: 5, source: 'facebook', url: 'https://www.facebook.com/advokatelmar/reviews' },
   ],
   az: [
-    { text: 'Bacarıqlı mütəxəssis, vəziyyəti ətraflı izah edir, hansı nəticələrin mümkün olduğunu əvvəlcədən bildirir. Ona tam etibar etdik və peşman olmadıq. Tövsiyə edirəm 👍', name: 'Alla Alieva-Rafikova', stars: 5 },
-    { text: 'Elmar Müəllim. Siz öz işinizin peşəkarısınız. Əməyinizə görə böyük minnətdarlıq.', name: 'Tamila Heyderova', stars: 5 },
-    { text: 'Öz sahəsinin mütəxəssisi, işdəki ən kiçik təfərrüatları belə fərq edir. Elmar Bəy — çətin işinizdə uğurlar, xeyir-bərəkət və firavanlıq arzulayıram!', name: 'Viktoria Yunina', stars: 5 },
-    { text: 'İşini yaxşı bilir və yerinə yetirir.', name: 'Bohdan Tylynko', stars: 5 },
-    { text: 'Çox böyük təşəkkür, Elmar müəllim — siz həmişə insanları doğru istiqamətə yönəldir və işə yarayan məsləhətlər verirsiniz!', name: 'Leyla Ağayeva', stars: 5 },
-    { text: 'Yüksək ixtisaslı vəkil, məsələm üzrə savadlı və anlaşıqlı məsləhət verdi. Tövsiyə edirəm!', name: 'Tatyana Hamidova', stars: 5 },
-    { text: 'Mr. Suleymanov vətəndaşlıq məsələsi ilə bağlı işimi uzaqdan həll etməkdə mənə nümayəndəlik etdi. Çox peşəkar yanaşma, proaktiv davrandı, Azərbaycan və beynəlxalq hüququ yaxşı bilir. Tövsiyə edirəm.', name: 'Natali Yefimova', stars: 5 },
-    { text: 'Bacarıqlı hüquqşünas. Rusiyada heç kimin öhdəsinə götürmək istəmədiyi bir məsələ üzrə mənə aydın məsləhət verdi.', name: 'Alexander Kuntsman', stars: 5 },
-    { text: 'Böyük təcrübəyə malik çox bacarıqlı vəkil. Lazımi məsləhətlər aldım. Çox sağ olun!!!', name: 'Azər Həsənov', stars: 5 },
-    { text: 'Çox nəzakətli və savadlı! Sualıma ətraflı cavab və tövsiyələr aldım!', name: 'Tatyana Shnipenko', stars: 5 },
-    { text: 'Böyük təcrübəyə malik yüksək peşəkar vəkil, insanlara anlayışla yanaşır. Məsləhətlərini çox qiymətləndirdim və başqalarına tövsiyə edirəm.', name: 'Elkhan Nahmadov', stars: 5 },
-    { text: 'Şərəfli insan və öz sahəsinin əla peşəkarı! Belə insanlar çox olsa, gerçəklik yavaş-yavaş dəyişməyə başlayar!', name: 'İskəndər Kədimov', stars: 5 },
+    { text: 'Məsləhət üçün təşəkkür edirəm! Elmar bəy diqqətlə dinlədi, vəziyyəti tez başa düşdü və hər şeyi sadə, anlaşıqlı dildə izah etdi. Aydın fəaliyyət planı aldım.', name: 'Dmitriy Fisenko', stars: 5, source: 'google', url: 'https://share.google/sx2jNxAgXcUvc1Jz1' },
+    { text: 'Böyük peşəkarlığa görə təşəkkür! Azərbaycanda ilk belə iş idi — mürəkkəb oferta hazırlamaq lazım idi. Əla öhdəsindən gəldi. Nəticədən 100% razıyıq.', name: 'Urfan Babayev', stars: 5, source: 'google', url: 'https://share.google/oFYa3K3Rsi0g8vUqN' },
+    { text: 'Məsləhətdən çox razı qaldım! İşini və qanunu ən yüksək səviyyədə bilən biri! Bütün suallarıma aydın cavablar verdi. Tövsiyə edirəm!', name: 'Aytan Jafarova', stars: 5, source: 'google', url: 'https://share.google/Kf2i0mh6qZah1G3wA' },
+    { text: 'Başqa ölkədə yaşasam da, Elmar müəllim etibarnamə ilə məhkəmədə parlaq proses keçirdi və məsələmiz ən yaxşı şəkildə həll olundu. Çox sağ olun!', name: 'Ilkin Babayev', stars: 5, source: 'google', url: 'https://share.google/V5AufWvGglWgfwJjP' },
+    { text: 'Biz Almaniyada 20 ildir yaşayırıq, lakin Azərbaycan vətəndaşlarıyıq. Müraciət etdik — öz sahəsinin həqiqi peşəkarı, üstəlik ürəklə çalışır. Hamıya tövsiyə edirik!', name: 'Aghaali Shukurov', stars: 5, source: 'google', url: 'https://share.google/HnSCwLR2yfUyB7nX8' },
+    { text: 'Elmar yüksək səviyyəli peşəkardır. Dərin biliyə və geniş təcrübəyə əlavə olaraq, bütün proses boyu dəstək göstərir. Onu təcrübəli vəkil kimi çox tövsiyə edirəm!', name: 'Nargiz Alizada', stars: 5, source: 'google', url: 'https://share.google/EkY2mfD2IrBTrIqCn' },
+    { text: 'Bacarıqlı mütəxəssis, vəziyyəti ətraflı izah edir, hansı nəticələrin mümkün olduğunu əvvəlcədən bildirir. Ona tam etibar etdik və peşman olmadıq. Tövsiyə edirəm 👍', name: 'Alla Alieva-Rafikova', stars: 5, source: 'facebook', url: 'https://www.facebook.com/advokatelmar/reviews' },
+    { text: 'Yüksək ixtisaslı vəkil, məsələm üzrə savadlı və anlaşıqlı məsləhət verdi. Tövsiyə edirəm!', name: 'Tatyana Hamidova', stars: 5, source: 'facebook', url: 'https://www.facebook.com/advokatelmar/reviews' },
+    { text: 'Böyük təcrübəyə malik yüksək peşəkar vəkil, insanlara anlayışla yanaşır. Tövsiyə edirəm.', name: 'Elkhan Nahmadov', stars: 5, source: 'facebook', url: 'https://www.facebook.com/advokatelmar/reviews' },
   ]
+};
+
+// Source icon SVGs
+const SOURCE_ICONS = {
+  google: `<svg width="14" height="14" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>`,
+  facebook: `<svg width="14" height="14" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#1877F2" d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047v-2.66c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.971h-1.513c-1.491 0-1.956.93-1.956 1.887v2.263h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>`
 };
 
 // ─── STATE ───────────────────────────────────────────
@@ -431,23 +448,28 @@ function applyLang(lang) {
 }
 
 // ─── REVIEWS ─────────────────────────────────────────
-// Show 3 cards at a time, page through sets
 const PAGE_SIZE = 3;
 
 function renderReviews(lang) {
   const cardsEl = document.getElementById('reviews-cards');
-  const dotsEl = document.getElementById('review-dots');
-  cardsEl.innerHTML = '';
+  const dotsEl  = document.getElementById('review-dots');
   dotsEl.innerHTML = '';
-  const data = reviews[lang];
+  const data  = reviews[lang];
   const pages = Math.ceil(data.length / PAGE_SIZE);
 
   for (let p = 0; p < pages; p++) {
-    const dot = document.createElement('div');
+    const dot = document.createElement('button');
     dot.className = 'review-dot' + (p === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Страница ' + (p + 1));
     dot.addEventListener('click', () => goToReview(p));
     dotsEl.appendChild(dot);
   }
+
+  // Wire up arrow buttons
+  const prevBtn = document.getElementById('reviews-prev');
+  const nextBtn = document.getElementById('reviews-next');
+  if (prevBtn) prevBtn.onclick = () => goToReview((reviewIndex - 1 + pages) % pages);
+  if (nextBtn) nextBtn.onclick = () => goToReview((reviewIndex + 1) % pages);
 
   showPage(lang, 0);
   resetTimer();
@@ -455,37 +477,56 @@ function renderReviews(lang) {
 
 function showPage(lang, page) {
   const cardsEl = document.getElementById('reviews-cards');
-  // Lock height before clearing to prevent layout shift
-  cardsEl.style.minHeight = cardsEl.offsetHeight ? cardsEl.offsetHeight + 'px' : '';
+  const currentH = cardsEl.offsetHeight;
+  if (currentH) cardsEl.style.minHeight = currentH + 'px';
+
   cardsEl.innerHTML = '';
-  const data = reviews[lang];
+  const data  = reviews[lang];
   const start = page * PAGE_SIZE;
   const slice = data.slice(start, start + PAGE_SIZE);
+
   slice.forEach((r) => {
-    const card = document.createElement('div');
+    // Generate initials + colour for avatar
+    const initials = r.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+    const colours  = ['#4285F4','#34A853','#B8972A','#7a9ec9','#c97a6a','#b97ac9','#8fc97a'];
+    const colour   = colours[r.name.charCodeAt(0) % colours.length];
+
+    const sourceIcon = r.source === 'google'
+      ? `<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>`
+      : `<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#1877F2" d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047v-2.66c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.971h-1.513c-1.491 0-1.956.93-1.956 1.887v2.263h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>`;
+    const sourceName = r.source === 'google' ? 'Google' : 'Facebook';
+
+    const card = document.createElement('a');
     card.className = 'review-card';
+    card.href   = r.url;
+    card.target = '_blank';
+    card.rel    = 'noopener';
     card.innerHTML = `
-      <div class="review-card-top">
-        <div class="review-card-author">
+      <div class="review-card-head">
+        <div class="review-avatar" style="background:${colour}">${initials}</div>
+        <div class="review-card-meta">
           <div class="review-name">${r.name}</div>
-          <div class="review-stars">${'★'.repeat(r.stars)}</div>
+          <div class="review-stars">★★★★★</div>
         </div>
-        <svg class="review-fb-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
       </div>
-      <div class="review-text">${r.text}</div>`;
+      <div class="review-text">${r.text}</div>
+      <div class="review-card-footer">
+        <div class="review-source-badge">
+          ${sourceIcon}
+          <span>${lang === 'ru' ? 'Опубликовано в' : lang === 'az' ? 'Dərc edilib' : 'Published on'} <strong>${sourceName}</strong></span>
+        </div>
+      </div>`;
     cardsEl.appendChild(card);
-    // Trigger animation
     requestAnimationFrame(() => requestAnimationFrame(() => card.classList.add('visible-card')));
   });
-  // Release height lock after render settles
-  setTimeout(() => { cardsEl.style.minHeight = ''; }, 400);
+
+  document.querySelectorAll('.review-dot').forEach((d, i) => d.classList.toggle('active', i === page));
+  setTimeout(() => { cardsEl.style.minHeight = ''; }, 450);
 }
 
 function goToReview(idx) {
-  const dots = document.querySelectorAll('.review-dot');
-  dots[reviewIndex].classList.remove('active');
-  reviewIndex = idx;
-  dots[reviewIndex].classList.add('active');
+  const pages = Math.ceil(reviews[currentLang].length / PAGE_SIZE);
+  reviewIndex = ((idx % pages) + pages) % pages;
   showPage(currentLang, reviewIndex);
   resetTimer();
 }
@@ -497,7 +538,7 @@ function nextReview() {
 
 function resetTimer() {
   if (reviewTimer) clearInterval(reviewTimer);
-  reviewTimer = setInterval(nextReview, 7000);
+  reviewTimer = setInterval(nextReview, 8000);
 }
 
 // ─── THEME (dark only) ───────────────────────────────
