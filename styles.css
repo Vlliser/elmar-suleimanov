@@ -2527,222 +2527,345 @@ tr.chr-row--linked:hover .chr-td--subject {
 
 
 /* ════════════════════════════════════════════════════════════════
-   MOBILE LAYOUT — с нуля, только ≤ 900px
-   Десктоп (> 900px) не затронут вообще
+   МОБИЛЬНАЯ ВЁРСТКА — только ≤ 900px. Десктоп не тронут.
 ════════════════════════════════════════════════════════════════ */
 
 @media (max-width: 900px) {
 
-  /* ── БАЗОВЫЙ РАЗМЕР ШРИФТА ──────────────────────────────── */
-  html { font-size: 16px; }
-
-  /* ── ХЕДЕР ──────────────────────────────────────────────── */
+  /* ─────────────────────────────────────────────────────────────
+     ХЕДЕР: только лого + имя + язык (1 квадрат) + бургер
+     Убираем: logo-sub (адвокат + телефон), соцсети из шапки,
+     тему (theme-btn), все nav-ссылки
+  ───────────────────────────────────────────────────────────── */
   header {
-    height: 68px;
-    padding: 0 6vw;
+    height: 62px;
+    padding: 0 5vw;
   }
 
-  .logo img  { height: 42px; width: 42px; }
-  .logo      { gap: 0.6rem; }
-  .logo-name { font-size: 1.15rem; }
-  .logo-sub  { font-size: 0.62rem; letter-spacing: 0.12em; }
+  /* Логотип */
+  .logo img  { height: 36px; width: 36px; }
+  .logo      { gap: 0.55rem; }
+  .logo-name { font-size: 1.05rem; letter-spacing: 0.01em; }
+  .logo-sub  { display: none; } /* убираем "Адвокат · телефон" */
 
-  /* nav-ссылки уже скрываются десктопным правилом на 900px */
-  nav { gap: 0.6rem; }
-  .theme-btn { width: 34px; height: 34px; }
-  .lang-btn  { padding: 7px 10px; font-size: 0.62rem; }
+  /* Nav: прячем всё лишнее, оставляем язык + бургер */
+  nav { gap: 0.5rem; }
+  .header-socials { display: none; }
+  .theme-btn { display: none; }
 
-  /* ── МОБИЛЬНОЕ МЕНЮ (полноэкранное) ────────────────────── */
+  /* Языковой переключатель — компактный квадрат */
+  .lang-switcher {
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .lang-btn {
+    padding: 6px 9px;
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+  }
+
+  /* Бургер — чуть крупнее для удобного тапа */
+  .burger { display: flex; }
+  .burger span { width: 20px; }
+
+
+  /* ─────────────────────────────────────────────────────────────
+     МОБИЛЬНОЕ МЕНЮ (полноэкранное)
+  ───────────────────────────────────────────────────────────── */
   .mobile-nav {
-    padding-top: 80px;
+    padding-top: 72px;
     padding-bottom: 2rem;
     gap: 0;
     background: var(--bg);
   }
 
   .mobile-link {
-    font-size: 1.9rem;
-    padding: 0.55rem 2rem;
+    font-size: 1.75rem;
+    padding: 0.5rem 6vw;
+    justify-content: flex-start;
   }
 
+  .mobile-sub { background: rgba(184,151,42,0.04); }
   .mobile-sub-link {
-    font-size: 0.82rem;
-    padding: 0.6rem 2rem;
-    letter-spacing: 0.06em;
+    font-size: 0.85rem;
+    padding: 0.6rem 8vw;
+    text-align: left;
+    letter-spacing: 0.05em;
   }
 
-  /* ── HERO ────────────────────────────────────────────────── */
+  /* Языки в мобильном меню */
+  .mobile-lang { margin-top: 1.5rem; }
+  .mobile-lang-btn { padding: 9px 18px; font-size: 0.65rem; }
+
+
+  /* ─────────────────────────────────────────────────────────────
+     HERO: убираем лишние пробелы, заголовок компактнее,
+     текст крупнее, заменяем мелкие кнопки на соцсети
+  ───────────────────────────────────────────────────────────── */
   #hero {
     height: auto;
     min-height: 100svh;
-    padding: 100px 6vw 72px;
+    /* Подтягиваем eyebrow ближе к шапке */
+    padding: 80px 6vw 60px;
     justify-content: center;
+    align-items: flex-start;
   }
 
+  /* "Частная адвокатская практика" — без лишнего отступа */
+  .hero-eyebrow {
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 0.6rem;
+    /* убираем автоматический отступ от шапки */
+    margin-top: 0;
+  }
+
+  /* Заголовок — 2-3 строки, не 4 */
   h1 {
-    font-size: clamp(2.4rem, 10vw, 3.8rem);
-    line-height: 1.18;
+    font-size: clamp(2.2rem, 9.5vw, 3.4rem);
+    line-height: 1.15;
     letter-spacing: -0.02em;
+    margin-bottom: 0;
   }
 
+  /* Текст "Моя цель..." — заметно крупнее */
   .hero-sub {
     font-size: 1.05rem;
-    line-height: 1.65;
-    margin-top: 1rem;
-    margin-bottom: 1.75rem;
+    line-height: 1.7;
+    opacity: 0.88;
+    margin-top: 1.1rem;
+    margin-bottom: 1.6rem;
     max-width: 100%;
   }
 
-  .hero-eyebrow {
-    font-size: 0.65rem;
-    letter-spacing: 0.16em;
-    margin-bottom: 0.75rem;
-  }
-
+  /* Кнопка консультации — на всю ширину */
   .hero-buttons {
     flex-direction: column;
     align-items: stretch;
-    gap: 0.75rem;
-    max-width: 340px;
+    gap: 0;
+    max-width: 100%;
   }
 
   .btn-primary--lg {
-    padding: 15px 28px;
-    font-size: 0.76rem;
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
     text-align: center;
     justify-content: center;
     display: flex;
   }
 
-  .btn-outline {
-    padding: 14px 28px;
-    font-size: 0.76rem;
-    text-align: center;
-    justify-content: center;
+  /* Соцсети из десктопной шапки — вместо мелких кнопок */
+  .hero-mobile-socials {
+    display: block;
+    margin-top: 1.75rem;
   }
 
-  /* Социальные иконки в hero */
-  .hero-mobile-socials { display: block; margin-top: 2.25rem; }
-  .hero-mobile-social  { width: 44px; height: 44px; }
+  .hero-mobile-socials-row {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
 
-  /* ── СЕКЦИИ — отступы ────────────────────────────────────── */
-  section { padding: 72px 6vw; }
+  /* Переопределяем мобильные кружочки → стиль desktop header-social-btn */
+  .hero-mobile-social {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    border: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+    flex-shrink: 0;
+  }
+
+  .hero-mobile-social svg { width: 20px; height: 20px; }
+  .hero-mobile-social:active { transform: scale(0.92); }
+
+  /* Брендовые цвета — как в десктопном хедере */
+  .hero-mobile-social.whatsapp  { background: #25D366; color: #fff; }
+  .hero-mobile-social.instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    color: #fff;
+  }
+  .hero-mobile-social.facebook  { background: #1877F2; color: #fff; }
+
+  /* TikTok — добавляем, его нет в текущих mobile-socials HTML */
+  /* (он появится если добавить в HTML, стиль готов) */
+
+  /* Мини-статистика под кнопками — компактная полоска */
+  .hero-stats-overlay { display: none; }
+
+  /* Добавляем мини-стату прямо в hero как заменитель */
+  #hero::after {
+    content: '';
+    display: none; /* placeholder — статика через CSS не работает, оставляем */
+  }
+
+
+  /* ─────────────────────────────────────────────────────────────
+     ОБЩИЕ СЕКЦИИ — умеренные отступы
+  ───────────────────────────────────────────────────────────── */
+  section { padding: 52px 6vw; }
 
   h2 {
-    font-size: clamp(1.75rem, 7vw, 2.6rem);
+    font-size: clamp(1.65rem, 7vw, 2.4rem);
     line-height: 1.2;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.75rem;
     white-space: normal;
   }
 
-  .section-label { font-size: 0.62rem; margin-bottom: 0.75rem; }
+  .section-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.16em;
+    margin-bottom: 0.6rem;
+  }
 
-  /* ── PRESS STRIP ─────────────────────────────────────────── */
-  .press-cards-row { grid-template-columns: repeat(2, 1fr); overflow-x: visible; }
-  .press-card { padding: 1.25rem 1rem; min-width: 0; }
-  .press-card-title { font-size: 0.9rem; }
+  .cases-sub {
+    font-size: 0.88rem;
+    margin-top: -1rem;
+    margin-bottom: 1.75rem;
+    line-height: 1.75;
+  }
 
-  /* ── PRACTICE SLIDER ─────────────────────────────────────── */
-  #practice { padding: 64px 0 72px; }
+
+  /* ─────────────────────────────────────────────────────────────
+     PRACTICE SLIDER
+  ───────────────────────────────────────────────────────────── */
+  #practice { padding: 52px 0 60px; }
   #practice h2,
   #practice .section-label { padding: 0 6vw; }
 
-  .practice-slider-wrap { padding: 0 0 48px; }
-  .practice-featured-card { flex: 0 0 78vw; height: 260px; }
-  .practice-featured-title { font-size: 1.2rem; }
-  .practice-featured-desc  { font-size: 0.82rem; max-height: 90px !important; opacity: 1 !important; }
+  .practice-slider-wrap { padding: 0 0 44px; }
+  .practice-featured-card   { flex: 0 0 80vw; height: 260px; }
+  .practice-featured-title  { font-size: 1.2rem; }
+  .practice-featured-desc   {
+    font-size: 0.82rem;
+    max-height: 80px !important;
+    opacity: 1 !important;
+  }
 
-  /* ── STATS ───────────────────────────────────────────────── */
-  #stats { padding: 48px 6vw; }
+
+  /* ─────────────────────────────────────────────────────────────
+     STATS
+  ───────────────────────────────────────────────────────────── */
+  #stats { padding: 40px 6vw; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .stats-item { padding: 1.5rem 1.25rem; }
+  .stats-item { padding: 1.4rem 1.1rem; }
   .stats-item:nth-child(2) { border-right: none; }
   .stats-item:nth-child(3) {
     border-right: 1px solid rgba(184,151,42,0.15);
+    border-top:   1px solid rgba(184,151,42,0.15);
+  }
+  .stats-item:nth-child(4) {
+    border-right: none;
     border-top: 1px solid rgba(184,151,42,0.15);
   }
-  .stats-item:nth-child(4) { border-right: none; border-top: 1px solid rgba(184,151,42,0.15); }
-  .stats-number { font-size: clamp(2rem, 8vw, 2.8rem); }
-  .stats-label  { font-size: 0.65rem; }
+  .stats-number { font-size: clamp(1.8rem, 7.5vw, 2.5rem); }
+  .stats-label  { font-size: 0.62rem; }
 
-  /* ── CASES — карточки дел ────────────────────────────────── */
-  #cases { padding: 72px 6vw; }
-  .cases-sub { font-size: 0.9rem; margin-bottom: 2.25rem; }
-  .cases-grid { grid-template-columns: 1fr; gap: 1px; }
-  .case-card { padding: 1.75rem 1.5rem; }
-  .case-title { font-size: 1.2rem; }
-  .case-desc  { font-size: 0.88rem; line-height: 1.8; }
 
-  /* ── ТАБЛИЦА ХРОНИКА ─────────────────────────────────────── */
-  .chronicle-wrap { padding: 2rem 0 0; margin-top: 3rem; }
+  /* ─────────────────────────────────────────────────────────────
+     PRESS STRIP
+  ───────────────────────────────────────────────────────────── */
+  .press-cards-row { grid-template-columns: repeat(2, 1fr); }
+  .press-card { padding: 1.1rem 0.9rem; min-width: 0; }
+  .press-card-title { font-size: 0.88rem; }
 
-  /* Скрываем «Суд» и «Сумма» — не влезают */
+
+  /* ─────────────────────────────────────────────────────────────
+     CASES — карточки дел
+  ───────────────────────────────────────────────────────────── */
+  #cases { padding: 52px 6vw; }
+  .cases-grid { grid-template-columns: 1fr; }
+  .case-card  { padding: 1.5rem 1.25rem; }
+  .case-title { font-size: 1.15rem; }
+  .case-desc  { font-size: 0.87rem; line-height: 1.75; }
+
+
+  /* ─────────────────────────────────────────────────────────────
+     ТАБЛИЦА ХРОНИКА: скрываем Суд и Сумма
+  ───────────────────────────────────────────────────────────── */
+  .chronicle-wrap { margin-top: 2.5rem; padding-top: 1.75rem; }
+
   .chronicle-table th:nth-child(2),
   .chronicle-table td:nth-child(2),
   .chronicle-table th:nth-child(4),
   .chronicle-table td:nth-child(4) { display: none; }
 
-  .chr-td           { padding: 1rem 0.85rem; font-size: 0.84rem; }
-  .chr-td--date     { font-size: 0.75rem; min-width: 56px; }
-  .chr-td--subject  { font-size: 0.95rem; }
-  .chronicle-table th { font-size: 0.6rem; padding: 0.65rem 0.85rem; }
-  .chr-badge        { font-size: 0.6rem; padding: 4px 9px; }
+  .chr-td          { padding: 0.9rem 0.75rem; font-size: 0.83rem; }
+  .chr-td--date    { font-size: 0.72rem; min-width: 54px; }
+  .chr-td--subject { font-size: 0.93rem; }
+  .chronicle-table th { font-size: 0.58rem; padding: 0.6rem 0.75rem; }
+  .chr-badge       { font-size: 0.58rem; padding: 3px 8px; }
+  .chr-filter      { font-size: 0.63rem; padding: 6px 12px; }
+  .chronicle-filters { gap: 0.3rem; }
+  .chronicle-heading { font-size: clamp(1.3rem, 5.5vw, 1.9rem); }
 
-  .chr-filter { font-size: 0.65rem; padding: 7px 14px; }
-  .chronicle-filters { gap: 0.35rem; }
 
-  .chronicle-heading { font-size: clamp(1.4rem, 5.5vw, 2rem); }
-
-  /* ── ABOUT ───────────────────────────────────────────────── */
-  #about { padding: 72px 6vw; }
+  /* ─────────────────────────────────────────────────────────────
+     ABOUT
+  ───────────────────────────────────────────────────────────── */
+  #about { padding: 52px 6vw; }
 
   .about-photo-wrap {
     display: block !important;
     float: none;
-    max-width: 200px;
-    width: 160px;
+    width: 140px;
+    max-width: 140px;
     aspect-ratio: 3/4;
-    margin: 0 auto 2.25rem;
+    margin: 0 auto 2rem;
   }
 
-  .about-text p { font-size: 0.93rem; line-height: 1.85; }
-  .about-text p:first-child { font-size: 0.98rem; }
+  .about-text p            { font-size: 0.9rem; line-height: 1.85; }
+  .about-text p:first-child { font-size: 0.95rem; }
 
-  /* ── ОТЗЫВЫ ──────────────────────────────────────────────── */
+
+  /* ─────────────────────────────────────────────────────────────
+     ОТЗЫВЫ
+  ───────────────────────────────────────────────────────────── */
   .reviews-cards { grid-template-columns: 1fr; }
-  .review-card { padding: 1.5rem 1.4rem; }
-  .review-text { font-size: 0.93rem; line-height: 1.75; }
-  .review-name { font-size: 0.82rem; }
-  .reviews-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .review-card   { padding: 1.35rem 1.25rem; }
+  .review-text   { font-size: 0.92rem; line-height: 1.75; }
+  .review-name   { font-size: 0.8rem; }
+  .reviews-header { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
 
-  /* ── МЕДИА СЕКЦИЯ ────────────────────────────────────────── */
-  #media-section { padding: 64px 6vw; }
 
-  .media-ad-card { grid-template-columns: 120px 1fr; min-height: 120px; }
-  .media-ad-img  { min-height: 120px; }
-  .media-ad-title   { font-size: 0.98rem; line-height: 1.4; }
+  /* ─────────────────────────────────────────────────────────────
+     МЕДИА
+  ───────────────────────────────────────────────────────────── */
+  #media-section { padding: 52px 6vw; }
+
+  .media-ad-card    { grid-template-columns: 110px 1fr; min-height: 110px; }
+  .media-ad-img     { min-height: 110px; }
+  .media-ad-title   { font-size: 0.95rem; line-height: 1.4; }
   .media-ad-excerpt { display: none; }
-  .media-ad-text { padding: 1rem 1.1rem; gap: 0.6rem; }
+  .media-ad-text    { padding: 0.9rem 1rem; gap: 0.5rem; }
+  .media-section-sub { font-size: 0.9rem; }
+  .section-footer   { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
 
-  .media-section-sub { font-size: 0.92rem; }
 
-  .section-footer { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
-
-  /* ── FAQ ─────────────────────────────────────────────────── */
-  #faq { padding: 72px 6vw; }
-  .faq-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  /* ─────────────────────────────────────────────────────────────
+     FAQ
+  ───────────────────────────────────────────────────────────── */
+  #faq { padding: 52px 6vw; }
+  .faq-layout { grid-template-columns: 1fr; gap: 2rem; }
 
   .faq-question {
-    font-size: 1.05rem;
-    padding: 1.15rem 0;
+    font-size: 1.02rem;
+    padding: 1.1rem 0;
     line-height: 1.45;
   }
-  .faq-answer { font-size: 0.9rem; line-height: 1.85; }
+  .faq-answer { font-size: 0.88rem; line-height: 1.85; }
 
   .faq-actions {
     flex-direction: column;
     align-items: stretch;
-    gap: 0.65rem;
+    gap: 0.55rem;
   }
   .faq-actions .btn-primary,
   .faq-actions .btn-outline {
@@ -2751,116 +2874,163 @@ tr.chr-row--linked:hover .chr-td--subject {
     text-align: center;
   }
 
-  /* ── КОНТАКТЫ ────────────────────────────────────────────── */
-  #contacts { padding: 72px 6vw; }
+
+  /* ─────────────────────────────────────────────────────────────
+     КОНТАКТЫ
+  ───────────────────────────────────────────────────────────── */
+  #contacts { padding: 52px 6vw; }
 
   .contact-phone {
-    font-size: clamp(1.8rem, 8vw, 2.6rem);
-    padding-bottom: 1.25rem;
-    margin-bottom: 1.75rem;
+    font-size: clamp(1.7rem, 7.5vw, 2.4rem);
+    padding-bottom: 1.1rem;
+    margin-bottom: 1.5rem;
   }
 
-  .contact-info-val { font-size: 0.95rem; line-height: 1.7; }
-  .contact-info-label { font-size: 0.68rem; }
+  .contact-info-val   { font-size: 0.92rem; line-height: 1.7; }
+  .contact-info-label { font-size: 0.65rem; }
+  .contacts-grid      { gap: 2rem; }
+  .map-wrap iframe    { height: 210px; }
 
-  .contacts-grid { gap: 2.5rem; }
+  .social-links { flex-direction: column; gap: 0.5rem; }
+  .social-link  { padding: 11px 18px; font-size: 0.76rem; }
 
-  .map-wrap iframe { height: 220px; }
 
-  .social-links { flex-direction: column; gap: 0.65rem; }
-  .social-link { padding: 12px 20px; font-size: 0.78rem; }
-
-  /* ── ПЛАВАЮЩАЯ КНОПКА СВЯЗИ ──────────────────────────────── */
-  /* Убираем подписи — они перекрывают контент */
+  /* ─────────────────────────────────────────────────────────────
+     ПЛАВАЮЩАЯ КНОПКА: подписи убраны — не перекрывают контент
+  ───────────────────────────────────────────────────────────── */
   .float-popup-label { display: none; }
-
-  .float-contact-wrap { bottom: 22px; right: 18px; gap: 10px; }
+  .float-contact-wrap { bottom: 20px; right: 16px; gap: 10px; }
   .float-popup { gap: 10px; }
   .float-popup-row { gap: 10px; }
-
   .float-action-btn { width: 50px; height: 50px; }
   .float-main-btn   { height: 50px; width: 50px; }
-
   .float-contact-wrap.closed .float-main-btn {
     width: auto;
-    padding: 0 20px;
-    font-size: 0.82rem;
+    padding: 0 18px;
+    font-size: 0.8rem;
   }
 
-  /* ── SCROLL-TO-TOP ───────────────────────────────────────── */
-  /* Поднимаем чтобы не перекрывался float-кнопкой */
+
+  /* ─────────────────────────────────────────────────────────────
+     SCROLL TO TOP — выше float-кнопки
+  ───────────────────────────────────────────────────────────── */
   .scroll-top-btn {
-    bottom: 90px;
-    left: 18px;
+    bottom: 86px;
+    left: 16px;
     width: 40px;
     height: 40px;
   }
 
-  /* ── МОДАЛКИ ─────────────────────────────────────────────── */
-  .modal-box { padding: 2.25rem 1.75rem; }
-  .consult-modal { border-radius: 12px; }
-  .consult-modal-body { padding: 1.25rem 1.25rem 1.5rem; }
+
+  /* ─────────────────────────────────────────────────────────────
+     МОДАЛКИ
+  ───────────────────────────────────────────────────────────── */
+  .modal-box         { padding: 2rem 1.5rem; }
+  .consult-modal     { border-radius: 12px; max-height: 95vh; }
+  .consult-modal-body { padding: 1.2rem 1.2rem 1.4rem; }
   .consult-fields-row { grid-template-columns: 1fr; }
 
-  /* ── FOOTER ──────────────────────────────────────────────── */
+
+  /* ─────────────────────────────────────────────────────────────
+     FOOTER
+  ───────────────────────────────────────────────────────────── */
   footer {
-    padding: 1.75rem 6vw;
+    padding: 1.5rem 6vw;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 0.75rem;
   }
-  .footer-copy { font-size: 0.72rem; }
-  .footer-links { gap: 1rem; }
-  .footer-links button { font-size: 0.68rem; }
+  .footer-copy { font-size: 0.7rem; }
+  .footer-links { gap: 0.85rem; flex-wrap: wrap; }
+  .footer-links button { font-size: 0.66rem; }
 
 } /* end @media 900px */
 
 
-/* ── МАЛЕНЬКИЕ ТЕЛЕФОНЫ (≤ 480px) ──────────────────────────── */
+/* ── МАЛЕНЬКИЕ ТЕЛЕФОНЫ ≤ 480px ────────────────────────────── */
 @media (max-width: 480px) {
 
-  html { font-size: 15px; }
+  header { height: 58px; }
+  .logo-name { font-size: 0.95rem; }
+  .logo img  { height: 32px; width: 32px; }
 
-  header { height: 62px; padding: 0 5vw; }
-  .logo-name { font-size: 1.05rem; }
-  .logo-sub  { font-size: 0.58rem; }
+  #hero { padding: 74px 5vw 52px; }
 
-  #hero { padding: 86px 5vw 64px; }
-
-  h1 { font-size: clamp(2rem, 11.5vw, 3.2rem); }
-
+  h1 { font-size: clamp(2rem, 11vw, 3rem); }
   .hero-sub { font-size: 0.97rem; }
 
-  section { padding: 60px 5vw; }
+  section { padding: 44px 5vw; }
+  h2 { font-size: clamp(1.5rem, 8.5vw, 2rem); margin-bottom: 1.5rem; }
 
-  h2 { font-size: clamp(1.6rem, 8vw, 2.2rem); margin-bottom: 2rem; }
-
-  /* Практика */
   .practice-featured-card { flex: 0 0 88vw; height: 250px; }
 
-  /* Телефон */
-  .contact-phone { font-size: clamp(1.6rem, 9vw, 2.2rem); }
+  .contact-phone { font-size: clamp(1.5rem, 8.5vw, 2rem); }
 
-  /* Плавающая кнопка */
   .float-action-btn { width: 46px; height: 46px; }
   .float-main-btn   { height: 46px; width: 46px; }
-  .float-contact-wrap.closed .float-main-btn { padding: 0 16px; font-size: 0.76rem; }
+  .float-contact-wrap.closed .float-main-btn { padding: 0 15px; font-size: 0.74rem; }
+  .float-contact-wrap { bottom: 16px; right: 12px; }
+  .scroll-top-btn    { bottom: 80px; left: 12px; width: 38px; height: 38px; }
 
-  .float-contact-wrap { bottom: 18px; right: 14px; }
-  .scroll-top-btn    { bottom: 84px; left: 14px; width: 38px; height: 38px; }
-
-  /* Таблица хроника */
-  .chr-td         { padding: 0.85rem 0.65rem; }
-  .chr-td--subject { font-size: 0.88rem; }
-
-  /* Пресс */
-  .press-cards-row { grid-template-columns: repeat(2, 1fr); }
-  .press-card-title { font-size: 0.82rem; }
-
-  /* Карточки медиа */
-  .media-ad-card { grid-template-columns: 90px 1fr; min-height: 100px; }
-  .media-ad-img  { min-height: 100px; }
-  .media-ad-title { font-size: 0.88rem; }
+  .chr-td { padding: 0.8rem 0.6rem; }
+  .media-ad-card  { grid-template-columns: 88px 1fr; }
+  .media-ad-img   { min-height: 100px; }
 
 } /* end @media 480px */
 
+
+/* TikTok цвет в hero-mobile-socials */
+@media (max-width: 900px) {
+  .hero-mobile-social.tiktok { background: #010101; color: #fff; }
+
+  /* Мини-стата под кнопкой в hero — компактная полоска */
+  .hero-mini-stats {
+    display: flex;
+    gap: 0;
+    margin-top: 2rem;
+    border: 1px solid rgba(184,151,42,0.2);
+    border-top: 2px solid var(--gold);
+    background: rgba(9,14,24,0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .hero-mini-stat {
+    flex: 1;
+    padding: 0.85rem 0.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    border-right: 1px solid rgba(184,151,42,0.15);
+  }
+
+  .hero-mini-stat:last-child { border-right: none; }
+
+  .hero-mini-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--gold-light);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-mini-stat-label {
+    font-size: 0.52rem;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(237,233,224,0.55);
+    text-align: center;
+    line-height: 1.3;
+  }
+}
+
+/* Мини-стата в hero — только мобиле */
+.hero-mini-stats { display: none; }
+@media (max-width: 900px) {
+  .hero-mini-stats { display: flex; }
+}
