@@ -2753,7 +2753,7 @@ tr.chr-row--linked:hover .chr-td--subject {
   }
 
   h1 {
-    font-size: clamp(2rem, 8.5vw, 3rem);
+    font-size: clamp(2.2rem, 9.5vw, 3.4rem);
     line-height: 1.15;
     letter-spacing: -0.02em;
     margin-bottom: 0;
@@ -3260,3 +3260,4 @@ tr.chr-row--linked:hover .chr-td--subject {
 
 /* Кнопка биографии — только мобиле */
 .about-read-more-btn { display: none; }
+@media (max-width: 900px) { .about-read-more-btn { display: inline-flex; } }
