@@ -582,6 +582,9 @@ document.querySelectorAll('.mobile-link:not(.mobile-link--toggle)').forEach(l =>
 document.querySelectorAll('.mobile-sub-link').forEach(l => {
   l.addEventListener('click', closeMobileNav);
 });
+document.querySelectorAll('.mobile-sub-grid-item').forEach(l => {
+  l.addEventListener('click', closeMobileNav);
+});
 
 // ─── REVEAL ──────────────────────────────────────────
 const revealObs = new IntersectionObserver((entries) => {
