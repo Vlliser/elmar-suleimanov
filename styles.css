@@ -2912,7 +2912,8 @@ tr.chr-row--linked:hover .chr-td--subject {
   .practice-mobile-arrows { display: none; }
 
   /* Chronicle */
-  .chronicle-wrap { margin-top: 0; padding-top: 1.5rem; }
+  .chronicle-wrap { margin-top: 0; padding-top: 1rem; }
+  .chronicle-header { margin-bottom: 1rem; gap: 0.75rem; }
 
   /* Заголовок — скрыт на мобиле */
   .chronicle-heading { display: none; }
@@ -2929,13 +2930,13 @@ tr.chr-row--linked:hover .chr-td--subject {
     padding-bottom: 2px;
   }
   .chronicle-filters::-webkit-scrollbar { display: none; }
-  .chr-filter { font-size: 0.63rem; padding: 6px 12px; flex-shrink: 0; }
+  .chr-filter { font-size: 0.62rem; padding: 5px 11px; flex-shrink: 0; }
 
   /* Таблица — скрыть на мобиле */
   .chronicle-table-wrap { display: none; }
 
   /* Мобильный список карточек */
-  .chronicle-mobile-list { display: flex; flex-direction: column; gap: 0; }
+  .chronicle-mobile-list { display: flex; flex-direction: column; }
 
   .chr-mob-link {
     display: block;
@@ -2944,44 +2945,47 @@ tr.chr-row--linked:hover .chr-td--subject {
     border-bottom: 1px solid var(--border);
   }
   .chr-mob-link:first-child { border-top: 1px solid var(--border); }
+  .chr-mob-link:active .chr-mob-card { background: rgba(184,151,42,0.04); }
 
   .chr-mob-card {
-    padding: 0.85rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-    transition: background var(--transition);
-  }
-  .chr-mob-link:active .chr-mob-card,
-  .chr-mob-link:hover .chr-mob-card { background: rgba(184,151,42,0.04); }
-
-  .chr-mob-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem;
+    padding: 0.55rem 0;
+    display: grid;
+    grid-template-columns: 72px 1fr auto;
+    grid-template-rows: auto auto;
+    column-gap: 0.6rem;
+    row-gap: 0.15rem;
+    align-items: start;
   }
 
   .chr-mob-date {
-    font-size: 0.68rem;
+    font-size: 0.62rem;
     font-weight: 500;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
     color: var(--text-muted);
     white-space: nowrap;
-    flex-shrink: 0;
+    padding-top: 2px;
   }
 
   .chr-mob-subject {
-    font-size: 0.9rem;
+    font-size: 0.82rem;
     color: var(--text);
-    line-height: 1.45;
+    line-height: 1.35;
+    grid-column: 2;
+  }
+
+  .chr-mob-badge {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: start;
   }
 
   .chr-mob-amount {
-    font-size: 0.7rem;
+    font-size: 0.62rem;
     color: var(--gold);
     font-weight: 500;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
+    grid-column: 2;
+    grid-row: 2;
   }
 
 
