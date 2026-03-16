@@ -3102,3 +3102,26 @@ tr.chr-row--linked:hover .chr-td--subject {
 @media (max-width: 900px) {
   .hero-mini-stats { display: flex; }
 }
+
+/* ════════ ТОЧЕЧНЫЕ ФИКСЫ ════════════════════════════════════ */
+
+@media (max-width: 900px) {
+
+  /* 1. Убираем "О себе" и "Контакты" из десктопного nav на мобиле */
+  a.nav-link[href="#about"],
+  a.nav-link[href="#contacts"] {
+    display: none !important;
+  }
+
+  /* 2. Имя в шапке — в одну строку, не переносится */
+  .logo-name {
+    white-space: nowrap;
+    font-size: 1.2rem;
+  }
+
+  /* 3. Заголовок hero — 2 строки максимум */
+  h1 {
+    font-size: clamp(2rem, 8.5vw, 3rem);
+  }
+
+}
