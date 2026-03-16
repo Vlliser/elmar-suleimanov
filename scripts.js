@@ -511,16 +511,36 @@ window.addEventListener('scroll', () => header.classList.toggle('scrolled', wind
 // ─── BURGER ──────────────────────────────────────────
 const burger = document.getElementById('burger-btn');
 const mobileNav = document.getElementById('mobile-nav');
+
+function closeMobileNav() {
+  mobileNav.classList.remove('open');
+  mobileNav.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
 burger.addEventListener('click', () => {
   const isOpen = mobileNav.classList.toggle('open');
   mobileNav.setAttribute('aria-hidden', !isOpen);
   document.body.style.overflow = isOpen ? 'hidden' : '';
 });
-document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => {
-  mobileNav.classList.remove('open');
-  mobileNav.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = '';
-}));
+
+// Toggle sub-menus on mobile
+document.querySelectorAll('.mobile-link--toggle').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const sub = btn.nextElementSibling;
+    const isOpen = sub.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+  });
+});
+
+// Close nav on regular link clicks (not toggles)
+document.querySelectorAll('.mobile-link:not(.mobile-link--toggle)').forEach(l => {
+  l.addEventListener('click', closeMobileNav);
+});
+document.querySelectorAll('.mobile-sub-link').forEach(l => {
+  l.addEventListener('click', closeMobileNav);
+});
 
 // ─── REVEAL ──────────────────────────────────────────
 const revealObs = new IntersectionObserver((entries) => {
@@ -1149,17 +1169,67 @@ chronicleRender = function() {
   });
 };
 
-// ─── SCROLL TO TOP BUTTON ─────────────────────────────────────────────────────
+// ─── ACTIVE NAV HIGHLIGHT ON SCROLL ──────────────────────────────────────────
+(function() {
+  var navLinks = document.querySelectorAll('nav > a[href^="#"]');
+  if (!navLinks.length) return;
+
+  var sections = Array.from(navLinks).map(function(link) {
+    var id = link.getAttribute('href').slice(1);
+    return { link: link, section: document.getElementById(id) };
+  }).filter(function(item) { return item.section; });
+
+  var headerH = document.getElementById('main-header')
+    ? document.getElementById('main-header').offsetHeight
+    : 88;
+
+  function onScroll() {
+    var scrollY = window.scrollY + headerH + 40;
+    var current = null;
+
+    sections.forEach(function(item) {
+      if (item.section.offsetTop <= scrollY) {
+        current = item;
+      }
+    });
+
+    navLinks.forEach(function(l) { l.classList.remove('nav-active'); });
+    if (current) current.link.classList.add('nav-active');
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
 (function() {
   var btn = document.getElementById('scroll-top-btn');
   if (!btn) return;
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 400) {
-      btn.classList.add('visible');
-    } else {
-      btn.classList.remove('visible');
+
+  var footer = document.querySelector('footer');
+
+  function updateBtn() {
+    var scrollY = window.scrollY;
+    var winH = window.innerHeight;
+    var docH = document.documentElement.scrollHeight;
+
+    // Show/hide
+    btn.classList.toggle('visible', scrollY > 400);
+
+    // Lift above footer when near bottom
+    if (footer) {
+      var footerH = footer.offsetHeight;
+      var distFromBottom = docH - (scrollY + winH);
+      if (distFromBottom < footerH + 16) {
+        var lift = footerH + 16 - distFromBottom;
+        btn.style.bottom = (32 + lift) + 'px';
+      } else {
+        btn.style.bottom = '2rem';
+      }
     }
-  }, { passive: true });
+  }
+
+  window.addEventListener('scroll', updateBtn, { passive: true });
+  window.addEventListener('resize', updateBtn, { passive: true });
+
   btn.addEventListener('click', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });

@@ -110,10 +110,113 @@
     </div>
   </a>
   <nav aria-label="Навигация">
-    <a href="#practice" data-i18n="nav_practice">Практика</a>
-    <a href="#cases" data-i18n="nav_cases">Дела</a>
-    <a href="#about" data-i18n="nav_about">О себе</a>
-    <a href="media.html" data-i18n="nav_media">Медиа</a><a href="#contacts" data-i18n="nav_contacts">Контакты</a>
+
+    <!-- ПРАКТИКА — dropdown -->
+    <div class="nav-item nav-has-drop" id="nav-practice">
+      <a href="#practice" class="nav-link" data-i18n="nav_practice">Практика
+        <svg class="nav-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </a>
+      <div class="nav-dropdown nav-dropdown--wide">
+        <div class="nav-drop-label" data-i18n="nav_practice">Направления практики</div>
+        <div class="nav-drop-grid">
+          <a href="practice-civil.html" class="nav-drop-item">
+            <span class="nav-drop-icon">⚖</span>
+            <span data-i18n="p1_title">Гражданское право</span>
+          </a>
+          <a href="practice-criminal.html" class="nav-drop-item">
+            <span class="nav-drop-icon">🔒</span>
+            <span data-i18n="p2_title">Уголовное право</span>
+          </a>
+          <a href="practice-family.html" class="nav-drop-item">
+            <span class="nav-drop-icon">👨‍👩‍👧</span>
+            <span data-i18n="p3_title">Семейное право</span>
+          </a>
+          <a href="practice-labour.html" class="nav-drop-item">
+            <span class="nav-drop-icon">💼</span>
+            <span data-i18n="p4_title">Трудовое право</span>
+          </a>
+          <a href="practice-housing.html" class="nav-drop-item">
+            <span class="nav-drop-icon">🏠</span>
+            <span data-i18n="p5_title">Жилищное право</span>
+          </a>
+          <a href="practice-land.html" class="nav-drop-item">
+            <span class="nav-drop-icon">🌿</span>
+            <span data-i18n="p6_title">Земельное право</span>
+          </a>
+          <a href="practice-international.html" class="nav-drop-item">
+            <span class="nav-drop-icon">🌐</span>
+            <span data-i18n="p7_title">Международное право</span>
+          </a>
+          <a href="practice-corporate.html" class="nav-drop-item">
+            <span class="nav-drop-icon">🏛</span>
+            <span data-i18n="p8_title">Корпоративное право</span>
+          </a>
+          <a href="practice-administrative.html" class="nav-drop-item">
+            <span class="nav-drop-icon">📋</span>
+            <span data-i18n="p9_title">Административное право</span>
+          </a>
+          <a href="practice-registration.html" class="nav-drop-item">
+            <span class="nav-drop-icon">📝</span>
+            <span data-i18n="p10_title">Регистрация юрлиц</span>
+          </a>
+          <a href="practice-contracts.html" class="nav-drop-item">
+            <span class="nav-drop-icon">🤝</span>
+            <span data-i18n="p11_title">Договоры</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ДЕЛА — dropdown -->
+    <div class="nav-item nav-has-drop" id="nav-cases">
+      <a href="#cases" class="nav-link" data-i18n="nav_cases">Дела
+        <svg class="nav-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </a>
+      <div class="nav-dropdown">
+        <div class="nav-drop-label" data-i18n="nav_cases">Из практики</div>
+        <a href="#cases" class="nav-drop-item nav-drop-item--single">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span data-i18n="cases_h2">Резонансные дела</span>
+        </a>
+        <a href="#practice" class="nav-drop-item nav-drop-item--single">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span data-i18n="practice_h2">Хроника дел 2013–2015</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- О СЕБЕ — простая ссылка -->
+    <a href="#about" class="nav-link" data-i18n="nav_about">О себе</a>
+
+    <!-- МЕДИА — dropdown -->
+    <div class="nav-item nav-has-drop" id="nav-media">
+      <a href="media.html" class="nav-link" data-i18n="nav_media">Медиа
+        <svg class="nav-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </a>
+      <div class="nav-dropdown">
+        <div class="nav-drop-label" data-i18n="nav_media">Медиа</div>
+        <a href="#media-section" class="nav-drop-item nav-drop-item--single">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v2"/><path d="M2 8h6"/><path d="M2 12h6"/><path d="M2 16h6"/></svg>
+          <span data-i18n="media_section_h2">Публикации и статьи</span>
+        </a>
+        <a href="https://www.youtube.com/@elmarlawyer" target="_blank" rel="noopener" class="nav-drop-item nav-drop-item--single">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          <span data-i18n="media_video_btn">Видео на YouTube</span>
+        </a>
+        <a href="https://www.facebook.com/advokatelmar/" target="_blank" rel="noopener" class="nav-drop-item nav-drop-item--single">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          <span data-i18n="reviews_fb">Facebook</span>
+        </a>
+        <a href="https://www.instagram.com/advokat_elmar_suleymanov/" target="_blank" rel="noopener" class="nav-drop-item nav-drop-item--single">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="3"/><path d="M17.5 6.5h.01"/></svg>
+          <span>Instagram</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- КОНТАКТЫ — простая ссылка -->
+    <a href="#contacts" class="nav-link" data-i18n="nav_contacts">Контакты</a>
+
     <div class="header-socials">
       <a href="https://wa.me/994556447080" target="_blank" rel="noopener" class="header-social-btn" aria-label="WhatsApp">
         <svg width="26" height="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.05 21.94a.5.5 0 0 0 .61.61l4.772-1.388A9.955 9.955 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.95 7.95 0 0 1-4.054-1.107l-.29-.17-2.94.856.87-2.878-.19-.299A7.96 7.96 0 0 1 4 12a8 8 0 1 1 8 8zm4.406-5.884c-.241-.12-1.426-.704-1.647-.784-.22-.081-.38-.12-.54.12-.16.242-.62.784-.76.945-.14.16-.28.18-.52.06-.24-.12-1.015-.374-1.934-1.193-.714-.636-1.196-1.42-1.337-1.66-.14-.24-.015-.37.105-.49.108-.108.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.062-.12-.542-1.303-.742-1.783-.2-.47-.404-.404-.542-.412l-.46-.008c-.16 0-.42.06-.642.3-.22.242-.84.822-.84 2.003 0 1.18.862 2.322.982 2.482.12.16 1.695 2.59 4.108 3.632.574.248 1.022.396 1.371.507.576.183 1.1.157 1.514.095.462-.069 1.422-.581 1.622-1.143.2-.561.2-1.042.14-1.143-.06-.1-.22-.16-.46-.28z"/></svg>
@@ -139,10 +242,37 @@
 </header>
 
 <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
-  <a href="#practice" class="mobile-link" data-i18n="nav_practice">Практика</a>
+  <div class="mobile-nav-group">
+    <button class="mobile-link mobile-link--toggle" data-i18n="nav_practice">Практика
+      <svg class="mobile-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="mobile-sub">
+      <a href="practice-civil.html" class="mobile-sub-link" data-i18n="p1_title">Гражданское право</a>
+      <a href="practice-criminal.html" class="mobile-sub-link" data-i18n="p2_title">Уголовное право</a>
+      <a href="practice-family.html" class="mobile-sub-link" data-i18n="p3_title">Семейное право</a>
+      <a href="practice-labour.html" class="mobile-sub-link" data-i18n="p4_title">Трудовое право</a>
+      <a href="practice-housing.html" class="mobile-sub-link" data-i18n="p5_title">Жилищное право</a>
+      <a href="practice-land.html" class="mobile-sub-link" data-i18n="p6_title">Земельное право</a>
+      <a href="practice-international.html" class="mobile-sub-link" data-i18n="p7_title">Международное право</a>
+      <a href="practice-corporate.html" class="mobile-sub-link" data-i18n="p8_title">Корпоративное право</a>
+      <a href="practice-administrative.html" class="mobile-sub-link" data-i18n="p9_title">Административное право</a>
+      <a href="practice-registration.html" class="mobile-sub-link" data-i18n="p10_title">Регистрация юрлиц</a>
+      <a href="practice-contracts.html" class="mobile-sub-link" data-i18n="p11_title">Договоры</a>
+    </div>
+  </div>
   <a href="#cases" class="mobile-link" data-i18n="nav_cases">Дела</a>
   <a href="#about" class="mobile-link" data-i18n="nav_about">О себе</a>
-  <a href="media.html" class="mobile-link" data-i18n="nav_media">Медиа</a>
+  <div class="mobile-nav-group">
+    <button class="mobile-link mobile-link--toggle" data-i18n="nav_media">Медиа
+      <svg class="mobile-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="mobile-sub">
+      <a href="#media-section" class="mobile-sub-link" data-i18n="media_section_h2">Публикации</a>
+      <a href="https://www.youtube.com/@elmarlawyer" target="_blank" rel="noopener" class="mobile-sub-link" data-i18n="media_video_btn">Видео на YouTube</a>
+      <a href="https://www.facebook.com/advokatelmar/" target="_blank" rel="noopener" class="mobile-sub-link">Facebook</a>
+      <a href="https://www.instagram.com/advokat_elmar_suleymanov/" target="_blank" rel="noopener" class="mobile-sub-link">Instagram</a>
+    </div>
+  </div>
   <a href="#contacts" class="mobile-link" data-i18n="nav_contacts">Контакты</a>
   <div class="mobile-lang">
     <button class="mobile-lang-btn active" data-lang="ru">РУ</button>
@@ -883,7 +1013,6 @@ function sendToWhatsApp(event) {
     <line x1="12" y1="19" x2="12" y2="5"/>
     <polyline points="5 12 12 5 19 12"/>
   </svg>
-  <span>Наверх</span>
 </button>
 
     <script src="scripts.js"></script>
