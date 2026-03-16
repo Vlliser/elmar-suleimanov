@@ -98,93 +98,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<style>
-/* ── Practice slider: side arrows (desktop hover) ── */
-.practice-slider-wrap {
-  position: relative;
-}
-
-.practice-arrow-side {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.22);
-  background: rgba(10,10,10,0.65);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  color: rgba(255,255,255,0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.28s ease, background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-  pointer-events: none;
-}
-
-.practice-arrow-left  { left: -28px; top: calc(50% - 20px); }
-.practice-arrow-right { right: -28px; top: calc(50% - 20px); }
-
-.practice-slider-wrap:hover .practice-arrow-side {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.practice-arrow-side:hover {
-  background: rgba(30,30,30,0.9);
-  border-color: rgba(255,255,255,0.4);
-  transform: translateY(-50%) scale(1.08);
-}
-
-/* ── Dots row (centered, no flanking arrows) ── */
-.practice-slider-controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-/* ── Mobile arrows: hidden on desktop ── */
-.practice-mobile-arrows {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  /* Hide side arrows entirely on mobile */
-  .practice-arrow-side { display: none !important; }
-
-  /* Show compact mobile arrow row */
-  .practice-mobile-arrows {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 8px;
-  }
-
-  .practice-mobile-arrow {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.15);
-    background: rgba(255,255,255,0.05);
-    color: rgba(255,255,255,0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.2s, border-color 0.2s;
-  }
-
-  .practice-mobile-arrow:active {
-    background: rgba(255,255,255,0.12);
-  }
-}
-</style>
 </head>
 <body>
 
@@ -307,92 +220,103 @@
 
   <div class="practice-slider-wrap reveal">
     <div class="practice-slider" id="practice-slider">
-      <div class="practice-featured-card practice-card-1">
+      <div class="practice-featured-card practice-card-1" data-href="practice-civil.html">
         <div class="practice-featured-card-bg"></div>
         <div class="practice-featured-card-overlay"></div>
         <div class="practice-featured-card-content">
           <div class="practice-featured-title" data-i18n="p1_title">Гражданское право</div>
           <div class="practice-featured-desc" data-i18n="p1_desc">Споры между физическими и юридическими лицами, защита имущественных и неимущественных прав.</div>
+          <a href="practice-civil.html" class="practice-card-more-btn" onclick="event.stopPropagation()"><span data-i18n-pp="more_btn">Подробнее</span> →</a>
         </div>
       </div>
-      <div class="practice-featured-card practice-card-2">
+      <div class="practice-featured-card practice-card-2" data-href="practice-criminal.html">
         <div class="practice-featured-card-bg"></div>
         <div class="practice-featured-card-overlay"></div>
         <div class="practice-featured-card-content">
           <div class="practice-featured-title" data-i18n="p2_title">Уголовное право</div>
           <div class="practice-featured-desc" data-i18n="p2_desc">Защита обвиняемых и подозреваемых на всех стадиях уголовного процесса.</div>
+          <a href="practice-criminal.html" class="practice-card-more-btn" onclick="event.stopPropagation()"><span data-i18n-pp="more_btn">Подробнее</span> →</a>
         </div>
       </div>
-      <div class="practice-featured-card practice-card-3">
+      <div class="practice-featured-card practice-card-3" data-href="practice-family.html">
         <div class="practice-featured-card-bg"></div>
         <div class="practice-featured-card-overlay"></div>
         <div class="practice-featured-card-content">
           <div class="practice-featured-title" data-i18n="p3_title">Семейное право</div>
           <div class="practice-featured-desc" data-i18n="p3_desc">Раздел имущества, вопросы опеки, алименты — с вниманием к интересам каждой стороны.</div>
+          <a href="practice-family.html" class="practice-card-more-btn" onclick="event.stopPropagation()"><span data-i18n-pp="more_btn">Подробнее</span> →</a>
         </div>
       </div>
-      <div class="practice-featured-card practice-card-4">
+      <div class="practice-featured-card practice-card-4" data-href="practice-labour.html">
         <div class="practice-featured-card-bg"></div>
         <div class="practice-featured-card-overlay"></div>
         <div class="practice-featured-card-content">
           <div class="practice-featured-title" data-i18n="p4_title">Трудовое право</div>
           <div class="practice-featured-desc" data-i18n="p4_desc">Трудовые споры, незаконное увольнение, защита прав работников и работодателей.</div>
+          <a href="practice-labour.html" class="practice-card-more-btn" onclick="event.stopPropagation()"><span data-i18n-pp="more_btn">Подробнее</span> →</a>
         </div>
       </div>
-      <div class="practice-featured-card practice-card-5">
+      <div class="practice-featured-card practice-card-5" data-href="practice-corporate.html">
         <div class="practice-featured-card-bg"></div>
         <div class="practice-featured-card-overlay"></div>
         <div class="practice-featured-card-content">
           <div class="practice-featured-title" data-i18n="p8_title">Корпоративное право</div>
           <div class="practice-featured-desc" data-i18n="p8_desc">Корпоративные конфликты, сопровождение сделок, защита интересов акционеров.</div>
+          <a href="practice-corporate.html" class="practice-card-more-btn" onclick="event.stopPropagation()"><span data-i18n-pp="more_btn">Подробнее</span> →</a>
         </div>
       </div>
-      <div class="practice-featured-card practice-card-6">
+      <div class="practice-featured-card practice-card-6" data-href="practice-administrative.html">
         <div class="practice-featured-card-bg"></div>
         <div class="practice-featured-card-overlay"></div>
         <div class="practice-featured-card-content">
           <div class="practice-featured-title" data-i18n="p9_title">Административное право</div>
           <div class="practice-featured-desc" data-i18n="p9_desc">Оспаривание решений государственных органов, административные правонарушения.</div>
+          <a href="practice-administrative.html" class="practice-card-more-btn" onclick="event.stopPropagation()"><span data-i18n-pp="more_btn">Подробнее</span> →</a>
         </div>
       </div>
-      <div class="practice-featured-card practice-card-7">
+      <div class="practice-featured-card practice-card-7" data-href="practice-housing.html">
         <div class="practice-featured-card-bg"></div>
         <div class="practice-featured-card-overlay"></div>
         <div class="practice-featured-card-content">
           <div class="practice-featured-title" data-i18n="p5_title">Жилищное право</div>
           <div class="practice-featured-desc" data-i18n="p5_desc">Споры о праве собственности, выселение, приватизация и иные жилищные конфликты.</div>
+          <a href="practice-housing.html" class="practice-card-more-btn" onclick="event.stopPropagation()"><span data-i18n-pp="more_btn">Подробнее</span> →</a>
         </div>
       </div>
-      <div class="practice-featured-card practice-card-8">
+      <div class="practice-featured-card practice-card-8" data-href="practice-land.html">
         <div class="practice-featured-card-bg"></div>
         <div class="practice-featured-card-overlay"></div>
         <div class="practice-featured-card-content">
           <div class="practice-featured-title" data-i18n="p6_title">Земельное право</div>
           <div class="practice-featured-desc" data-i18n="p6_desc">Оформление прав на земельные участки, земельные споры, сделки с недвижимостью.</div>
+          <a href="practice-land.html" class="practice-card-more-btn" onclick="event.stopPropagation()"><span data-i18n-pp="more_btn">Подробнее</span> →</a>
         </div>
       </div>
-      <div class="practice-featured-card practice-card-9">
+      <div class="practice-featured-card practice-card-9" data-href="practice-international.html">
         <div class="practice-featured-card-bg"></div>
         <div class="practice-featured-card-overlay"></div>
         <div class="practice-featured-card-content">
           <div class="practice-featured-title" data-i18n="p7_title">Международное право</div>
           <div class="practice-featured-desc" data-i18n="p7_desc">Трансграничные споры, международные контракты, правовая помощь за рубежом.</div>
+          <a href="practice-international.html" class="practice-card-more-btn" onclick="event.stopPropagation()"><span data-i18n-pp="more_btn">Подробнее</span> →</a>
         </div>
       </div>
-      <div class="practice-featured-card practice-card-10">
+      <div class="practice-featured-card practice-card-10" data-href="practice-registration.html">
         <div class="practice-featured-card-bg"></div>
         <div class="practice-featured-card-overlay"></div>
         <div class="practice-featured-card-content">
           <div class="practice-featured-title" data-i18n="p10_title">Регистрация юрлиц</div>
           <div class="practice-featured-desc" data-i18n="p10_desc">Регистрация компаний, изменения в уставных документах, ликвидация юридических лиц.</div>
+          <a href="practice-registration.html" class="practice-card-more-btn" onclick="event.stopPropagation()"><span data-i18n-pp="more_btn">Подробнее</span> →</a>
         </div>
       </div>
-      <div class="practice-featured-card practice-card-11">
+      <div class="practice-featured-card practice-card-11" data-href="practice-contracts.html">
         <div class="practice-featured-card-bg"></div>
         <div class="practice-featured-card-overlay"></div>
         <div class="practice-featured-card-content">
           <div class="practice-featured-title" data-i18n="p11_title">Составление и экспертиза договоров</div>
           <div class="practice-featured-desc" data-i18n="p11_desc">Разработка, правовая проверка и экспертиза договоров с учётом специфики сделки и рисков сторон.</div>
+          <a href="practice-contracts.html" class="practice-card-more-btn" onclick="event.stopPropagation()"><span data-i18n-pp="more_btn">Подробнее</span> →</a>
         </div>
       </div>
     </div>
@@ -419,6 +343,48 @@
       </button>
     </div>
   </div>
+
+  <!-- ── CHRONICLE TABLE ── -->
+  <div class="chronicle-wrap reveal reveal-delay-1">
+    <div class="chronicle-header">
+      <div class="chronicle-title-row">
+        <h2 class="chronicle-heading" data-i18n="chronicle_label">Некоторые дела прошлых лет</h2>
+      </div>
+      <div class="chronicle-filters" id="chronicle-filters">
+        <button class="chr-filter active" data-cat="all" data-i18n="chr_all">Все</button>
+        <button class="chr-filter" data-cat="criminal" data-i18n="chr_criminal">Уголовное</button>
+        <button class="chr-filter" data-cat="civil" data-i18n="chr_civil">Гражданское</button>
+        <button class="chr-filter" data-cat="corporate" data-i18n="chr_corporate">Корпоративное</button>
+        <button class="chr-filter" data-cat="family" data-i18n="chr_family">Семейное</button>
+        <button class="chr-filter" data-cat="constitutional" data-i18n="chr_constitutional">Конституционное</button>
+        <button class="chr-filter" data-cat="contract" data-i18n="chr_contract">Договорная работа</button>
+      </div>
+    </div>
+
+    <div class="chronicle-table-wrap">
+      <table class="chronicle-table" id="chronicle-table">
+        <thead>
+          <tr>
+            <th data-i18n="chr_th_date">Дата</th>
+            <th data-i18n="chr_th_court">Суд</th>
+            <th data-i18n="chr_th_subject">Предмет</th>
+            <th data-i18n="chr_th_amount">Сумма иска</th>
+            <th data-i18n="chr_th_result">Результат</th>
+          </tr>
+        </thead>
+        <tbody id="chronicle-tbody"></tbody>
+      </table>
+    </div>
+
+    <div class="chronicle-footer">
+      <span class="chronicle-count" id="chronicle-count"></span>
+      <button class="chronicle-expand-btn" id="chronicle-expand-btn" onclick="chronicleToggle()">
+        <span id="chronicle-expand-text" data-i18n="chr_show_more">Показать все дела</span>
+        <svg id="chronicle-expand-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+    </div>
+  </div>
+
 </section>
 
 <section id="about">
@@ -546,6 +512,7 @@
     </div>
 
   </div>
+
 </section>
 
 <!-- ══════════════════════════════════════════
@@ -685,11 +652,16 @@
   </style>
 
   <div class="section-footer reveal">
-    <a href="media.html" class="btn-primary">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+    <a href="media.html" class="section-footer-video-btn">
+      <div class="section-footer-play">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      </div>
       <span data-i18n="media_video_btn">Смотреть видео</span>
     </a>
-    <span class="section-footer-text" data-i18n="media_video_sub">59 видео с правовыми комментариями</span>
+    <div class="section-footer-text-wrap">
+      <span class="section-footer-title" data-i18n="media_video_btn">Смотреть все видео</span>
+      <span class="section-footer-sub" data-i18n="media_video_sub">59 видео с правовыми комментариями</span>
+    </div>
   </div>
 
 </section>
@@ -751,7 +723,7 @@
 </section>
 
 <footer>
-  <p class="footer-copy" data-i18n="footer_copy">© <span id="footer-year"></span> Эльмар Сулейманов. Все права защищены.</p>
+  <p class="footer-copy" data-i18n="footer_copy">© 2026 Эльмар Сулейманов. Все права защищены.</p>
   <div class="footer-links">
     <button onclick="openModal('modal-terms')" data-i18n="footer_terms">Пользовательское соглашение</button>
     <button onclick="openModal('modal-privacy')" data-i18n="footer_privacy">Обработка персональных данных</button>
@@ -903,12 +875,16 @@ function sendToWhatsApp(event) {
   }, 500);
 }
 
-// Динамический год в футере
-document.addEventListener('DOMContentLoaded', function() {
-  const yearEl = document.getElementById('footer-year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-});
+
 </script>
+
+<button class="scroll-top-btn" id="scroll-top-btn" aria-label="Наверх">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="12" y1="19" x2="12" y2="5"/>
+    <polyline points="5 12 12 5 19 12"/>
+  </svg>
+  <span>Наверх</span>
+</button>
 
     <script src="scripts.js"></script>
 <script>
