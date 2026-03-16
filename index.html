@@ -546,6 +546,10 @@
       <p class="reveal" data-i18n="about_p5">За более чем 20 лет адвокатской практики Эльмар Сулейманов, с помощью Аллаха, успешно выиграл сотни гражданских дел, участвовал в разрешении сложных наследственных споров, добился: восстановления на работе незаконно уволенных сотрудников, взыскания компенсаций за унижение чести и достоинства доверителей, опровержений ложных публикаций в СМИ, справедливого раздела имущества супругов, признания отцовства, смены имени и фамилии, а также вынесения оправдательного приговора и смягчения обвинения по уголовным делам.</p>
       <p class="reveal reveal-delay-1" data-i18n="about_p6">Кроме того, он оказывает правовую помощь компаниям в выявлении юридических рисков в хозяйственных договорах и организации их административно-правовой деятельности.</p>
       <p class="reveal reveal-delay-2" data-i18n="about_p7">Среди его доверителей — не только граждане Азербайджана, но и Турции, России, Украины, Германии, Италии, США и других стран.</p>
+      <button class="about-read-more-btn" id="about-read-more-btn" onclick="toggleAboutText(this)">
+        <span id="about-read-more-text">Читать далее</span>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
     </div>
   </div>
 
@@ -1065,6 +1069,20 @@ function sendToWhatsApp(event) {
 
     <script src="scripts.js"></script>
 <script>
+// About bio toggle (mobile only)
+function toggleAboutText(btn) {
+  if (window.innerWidth > 900) return;
+  var paras = document.querySelectorAll('.about-text p');
+  var isOpen = btn.classList.contains('open');
+  paras.forEach(function(p, i) {
+    if (i > 0) {
+      p.classList.toggle('about-expanded', !isOpen);
+    }
+  });
+  btn.classList.toggle('open', !isOpen);
+  document.getElementById('about-read-more-text').textContent = isOpen ? 'Читать далее' : 'Свернуть';
+}
+
 // Lang switcher: one-square dropdown on mobile
 document.addEventListener('DOMContentLoaded', function() {
   var prevMobile = document.getElementById('practice-prev-mobile');

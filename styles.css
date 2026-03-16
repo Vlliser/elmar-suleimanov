@@ -3206,3 +3206,173 @@ tr.chr-row--linked:hover .chr-td--subject {
   .logo-name { font-size: 1.15rem !important; }
   #hero { padding-top: 90px !important; }
 }
+
+/* ════════════════════════════════════════════════════════════
+   МОБИЛЬНЫЕ ПРАВКИ — hero счётчик, practice, about, reviews
+════════════════════════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+
+  /* ── 1. HERO: счётчик крупнее ── */
+  .hero-mini-stat-num {
+    font-size: 2rem !important;
+    letter-spacing: -0.02em;
+  }
+  .hero-mini-stat-label {
+    font-size: 0.6rem !important;
+    letter-spacing: 0.07em;
+  }
+  .hero-mini-stat { padding: 1rem 0.5rem !important; }
+
+  /* ── 2. PRACTICE: заголовок секции и слайды крупнее ── */
+  #practice h2 {
+    font-size: clamp(1.8rem, 7.5vw, 2.6rem) !important;
+  }
+  .practice-featured-title {
+    font-size: 1.45rem !important;
+    line-height: 1.25 !important;
+    font-weight: 400 !important;
+  }
+  .practice-featured-desc {
+    font-size: 0.92rem !important;
+    line-height: 1.65 !important;
+  }
+
+  /* ── 3. PRACTICE: убираем стрелки под слайдером ── */
+  .practice-mobile-arrows { display: none !important; }
+
+  /* ── 4. PRACTICE: убираем пространство между слайдером и таблицей ── */
+  #practice { padding-bottom: 0 !important; }
+  .practice-slider-wrap { padding-bottom: 16px !important; }
+  .chronicle-wrap { margin-top: 0 !important; padding-top: 1.5rem !important; }
+
+  /* ── 5. ABOUT: скрываем биографию после первого абзаца ── */
+  .about-text p:not(:first-child) {
+    display: none;
+  }
+  .about-text p.about-expanded {
+    display: block !important;
+  }
+
+  /* Кнопка "Читать далее" */
+  .about-read-more-btn {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1rem;
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all var(--transition);
+  }
+  .about-read-more-btn:hover,
+  .about-read-more-btn:active {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+  .about-read-more-btn svg {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+  .about-read-more-btn.open svg {
+    transform: rotate(180deg);
+  }
+
+  /* ── 6. REVIEWS HEADER: компактный, в одну строку ── */
+  .reviews-header {
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    padding: 1rem 1.25rem !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .reviews-header-rating {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    flex-wrap: nowrap !important;
+    min-width: 0 !important;
+  }
+
+  .reviews-header-score {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  .reviews-header-label { font-size: 0.9rem !important; }
+
+  .reviews-header-stars-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.15rem !important;
+    min-width: 0 !important;
+  }
+
+  .reviews-header-number { font-size: 1.5rem !important; line-height: 1 !important; }
+  .reviews-header-stars  { font-size: 0.85rem !important; letter-spacing: 1px !important; }
+  .reviews-header-count  {
+    font-size: 0.62rem !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .reviews-write-btn {
+    padding: 8px 14px !important;
+    font-size: 0.62rem !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  /* ── 7. REVIEWS: горизонтальный скролл по одной карточке ── */
+  .reviews-arrow--prev,
+  .reviews-arrow--next { display: none !important; }
+
+  .reviews-slider-outer {
+    display: block !important;
+  }
+
+  .reviews-track-outer {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+  }
+  .reviews-track-outer::-webkit-scrollbar { display: none !important; }
+
+  .reviews-cards {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 0 !important;
+    background: none !important;
+    border: none !important;
+    min-height: unset !important;
+  }
+
+  .review-card {
+    flex: 0 0 calc(100vw - 12vw) !important;
+    max-width: calc(100vw - 12vw) !important;
+    scroll-snap-align: start !important;
+    border: 1px solid var(--border) !important;
+    border-left: 3px solid var(--gold) !important;
+    margin-right: 1px !important;
+  }
+
+} /* end 900px */
+
+/* Кнопка биографии — только мобиле */
+.about-read-more-btn { display: none; }
