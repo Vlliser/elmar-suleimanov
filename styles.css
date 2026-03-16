@@ -2532,41 +2532,109 @@ tr.chr-row--linked:hover .chr-td--subject {
 
 @media (max-width: 900px) {
 
+
   /* ─────────────────────────────────────────────────────────────
-     ХЕДЕР: только лого + имя + язык (1 квадрат) + бургер
-     Убираем: logo-sub (адвокат + телефон), соцсети из шапки,
-     тему (theme-btn), все nav-ссылки
+     ХЕДЕР: лого + имя (крупнее), 1 квадрат языка, бургер
   ───────────────────────────────────────────────────────────── */
   header {
-    height: 62px;
+    height: 72px;
     padding: 0 5vw;
   }
 
-  /* Логотип */
-  .logo img  { height: 36px; width: 36px; }
-  .logo      { gap: 0.55rem; }
-  .logo-name { font-size: 1.05rem; letter-spacing: 0.01em; }
-  .logo-sub  { display: none; } /* убираем "Адвокат · телефон" */
+  /* Логотип — заметно крупнее */
+  .logo img  { height: 44px; width: 44px; }
+  .logo      { gap: 0.65rem; }
+  .logo-name { font-size: 1.25rem; font-weight: 500; letter-spacing: 0.01em; }
+  .logo-sub  { display: none; }
 
-  /* Nav: прячем всё лишнее, оставляем язык + бургер */
-  nav { gap: 0.5rem; }
+  /* Nav: скрываем всё кроме языка + бургера */
+  nav { gap: 0.75rem; align-items: center; }
   .header-socials { display: none; }
   .theme-btn { display: none; }
 
-  /* Языковой переключатель — компактный квадрат */
+  /* ── Языковой переключатель: один квадрат с dropdown ── */
+  /* Прячем неактивные кнопки, показываем только активную */
   .lang-switcher {
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  .lang-btn {
-    padding: 6px 9px;
-    font-size: 0.6rem;
-    letter-spacing: 0.06em;
+    position: relative;
+    border: 1px solid var(--border);
+    border-radius: 0;
+    overflow: visible; /* нужно для dropdown */
+    background: none;
   }
 
-  /* Бургер — чуть крупнее для удобного тапа */
-  .burger { display: flex; }
-  .burger span { width: 20px; }
+  /* Все кнопки языков скрыты по умолчанию */
+  .lang-btn {
+    display: none;
+    padding: 0;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+
+  /* Только активная видна как квадрат */
+  .lang-btn.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    cursor: pointer;
+  }
+
+  /* При открытии — показываем остальные кнопки снизу */
+  .lang-switcher.open .lang-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-top: 1px solid var(--border);
+  }
+
+  .lang-switcher.open .lang-btn:not(.active) {
+    position: absolute;
+    background: var(--header-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: var(--text-muted);
+    left: 0;
+    right: 0;
+    width: 40px;
+  }
+
+  /* Позиции выпадающих кнопок */
+  .lang-switcher.open .lang-btn:not(.active):nth-child(2) { top: 40px; }
+  .lang-switcher.open .lang-btn:not(.active):nth-child(3) { top: 81px; }
+
+  .lang-switcher.open .lang-btn:not(.active):hover {
+    color: var(--gold);
+    background: var(--card-bg);
+  }
+
+  /* ── Бургер — крупный, хорошо виден ── */
+  .burger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .burger span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: all var(--transition);
+  }
 
 
   /* ─────────────────────────────────────────────────────────────
@@ -2606,7 +2674,7 @@ tr.chr-row--linked:hover .chr-td--subject {
     height: auto;
     min-height: 100svh;
     /* Подтягиваем eyebrow ближе к шапке */
-    padding: 80px 6vw 60px;
+    padding: 88px 6vw 60px;
     justify-content: center;
     align-items: flex-start;
   }

@@ -261,7 +261,6 @@
     </div>
   </div>
   <a href="#cases" class="mobile-link" data-i18n="nav_cases">Дела</a>
-  <a href="#about" class="mobile-link" data-i18n="nav_about">О себе</a>
   <div class="mobile-nav-group">
     <button class="mobile-link mobile-link--toggle" data-i18n="nav_media">Медиа
       <svg class="mobile-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
@@ -273,7 +272,6 @@
       <a href="https://www.instagram.com/advokat_elmar_suleymanov/" target="_blank" rel="noopener" class="mobile-sub-link">Instagram</a>
     </div>
   </div>
-  <a href="#contacts" class="mobile-link" data-i18n="nav_contacts">Контакты</a>
   <div class="mobile-lang">
     <button class="mobile-lang-btn active" data-lang="ru">РУ</button>
     <button class="mobile-lang-btn" data-lang="az">AZ</button>
@@ -1067,7 +1065,7 @@ function sendToWhatsApp(event) {
 
     <script src="scripts.js"></script>
 <script>
-// Sync mobile arrow buttons with the main prev/next controls
+// Lang switcher: one-square dropdown on mobile
 document.addEventListener('DOMContentLoaded', function() {
   var prevMobile = document.getElementById('practice-prev-mobile');
   var nextMobile = document.getElementById('practice-next-mobile');
@@ -1075,6 +1073,24 @@ document.addEventListener('DOMContentLoaded', function() {
   var nextMain   = document.getElementById('practice-next');
   if (prevMobile && prevMain) prevMobile.addEventListener('click', function(){ prevMain.click(); });
   if (nextMobile && nextMain) nextMobile.addEventListener('click', function(){ nextMain.click(); });
+
+  // Lang square dropdown (mobile only)
+  var langSwitcher = document.querySelector('.lang-switcher');
+  if (langSwitcher) {
+    langSwitcher.addEventListener('click', function(e) {
+      if (window.innerWidth > 900) return;
+      // If clicking inactive lang btn — let existing lang-switching logic run, then close
+      if (e.target.classList.contains('lang-btn') && !e.target.classList.contains('active')) {
+        setTimeout(function(){ langSwitcher.classList.remove('open'); }, 50);
+        return;
+      }
+      langSwitcher.classList.toggle('open');
+      e.stopPropagation();
+    });
+    document.addEventListener('click', function() {
+      langSwitcher.classList.remove('open');
+    });
+  }
 });
 </script>
 </body>
