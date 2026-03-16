@@ -3142,3 +3142,67 @@ tr.chr-row--linked:hover .chr-td--subject {
   #hero { padding-top: 96px; }
 
 }
+
+/* ════════ ФИНАЛЬНЫЙ ОВЕРРАЙД ШАПКИ ════════════════════════ */
+@media (max-width: 900px) {
+
+  header {
+    height: 82px !important;
+    padding: 0 5vw !important;
+  }
+
+  .logo { gap: 0.75rem !important; }
+
+  .logo img {
+    height: 52px !important;
+    width: 52px !important;
+  }
+
+  .logo-name {
+    font-size: 1.35rem !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+  }
+
+  .logo-sub { display: none !important; }
+
+  /* RU квадрат и бургер — вплотную друг к другу */
+  nav {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+  }
+
+  /* Бургер — крупный и видимый */
+  .burger {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    padding: 6px !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+  }
+
+  .burger span {
+    width: 28px !important;
+    height: 2px !important;
+    background: var(--text) !important;
+    border-radius: 2px !important;
+  }
+
+  /* Eyebrow — ближе к шапке, дальше от заголовка */
+  .hero-eyebrow {
+    margin-top: 0 !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  #hero { padding-top: 100px !important; }
+}
+
+@media (max-width: 480px) {
+  header { height: 72px !important; }
+  .logo img { height: 44px !important; width: 44px !important; }
+  .logo-name { font-size: 1.15rem !important; }
+  #hero { padding-top: 90px !important; }
+}
