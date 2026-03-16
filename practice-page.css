@@ -1,0 +1,221 @@
+/* ════════════════════════════════════════════════
+   PRACTICE PAGE — dedicated area pages
+   Uses CSS variables from styles.css (same theme)
+════════════════════════════════════════════════ */
+
+/* ── Hero ── */
+.practice-page-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 110px 5vw 5rem;
+  background-image: var(--hero-bg);
+  background-size: cover;
+  background-position: center top;
+  overflow: hidden;
+}
+
+.practice-page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(9,14,24,0.95) 0%,
+    rgba(9,14,24,0.6) 50%,
+    rgba(9,14,24,0.3) 100%
+  );
+}
+
+[data-theme="light"] .practice-page-hero-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(10,22,40,0.92) 0%,
+    rgba(10,22,40,0.55) 50%,
+    rgba(10,22,40,0.25) 100%
+  );
+}
+
+.practice-page-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.practice-page-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  transition: letter-spacing var(--transition);
+  width: fit-content;
+}
+
+.practice-page-back:hover { letter-spacing: 0.18em; }
+
+.practice-page-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 300;
+  color: #EDE9E0;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0;
+  white-space: normal;
+}
+
+.practice-page-intro {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: rgba(237,233,224,0.82);
+  line-height: 1.65;
+  max-width: 620px;
+  margin: 0;
+}
+
+/* ── Sections ── */
+.practice-page-section {
+  padding: 80px 5vw;
+  background: var(--bg);
+}
+
+.practice-page-section--alt {
+  background: var(--bg2);
+}
+
+.practice-page-inner {
+  max-width: 1100px;
+}
+
+/* Override h2 margin for these pages */
+.practice-page-section h2 {
+  margin-bottom: 2rem;
+}
+
+/* ── Services list ── */
+.practice-page-services {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0;
+  border: 1px solid var(--border);
+}
+
+.practice-page-services li {
+  padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  transition: background var(--transition);
+}
+
+.practice-page-services li:hover {
+  background: var(--bg2);
+}
+
+.practice-page-services li::before {
+  content: '';
+  display: block;
+  flex-shrink: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin-top: 0.55em;
+}
+
+/* ── No cases placeholder ── */
+.practice-page-no-cases {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 1rem 0;
+}
+
+/* ── CTA section ── */
+.practice-page-cta {
+  padding: 80px 5vw;
+  background: var(--navy-mid, #162240);
+  border-top: 1px solid rgba(184,151,42,0.25);
+}
+
+[data-theme="light"] .practice-page-cta {
+  background: var(--navy);
+}
+
+.practice-page-cta h2 {
+  color: #EDE9E0;
+  margin-bottom: 0.75rem;
+  white-space: normal;
+}
+
+.practice-page-cta p {
+  color: rgba(237,233,224,0.7);
+  font-size: 0.95rem;
+  max-width: 520px;
+  line-height: 1.65;
+}
+
+.practice-page-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.practice-page-cta-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .practice-page-hero {
+    min-height: 50vh;
+    padding: 100px 5vw 3rem;
+    align-items: flex-end;
+  }
+
+  .practice-page-title {
+    font-size: clamp(2.2rem, 8vw, 3.5rem);
+  }
+
+  .practice-page-services {
+    grid-template-columns: 1fr;
+  }
+
+  .practice-page-cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .practice-page-cta-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .practice-page-cta-btns .btn-primary,
+  .practice-page-cta-btns .btn-outline {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}

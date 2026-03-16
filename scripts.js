@@ -60,7 +60,7 @@ const i18n = {
     cta_p1:'Первичная консультация позволяет оценить ситуацию и определить возможные пути решения. Для записи достаточно одного звонка.',
     cta_p2:'Конфиденциальность переговоров гарантируется адвокатской тайной.',
     cta_btn:'Позвонить сейчас',
-    footer_copy:'© 2025 Эльмар Сулейманов. Все права защищены.',
+    footer_copy:'© {year} Эльмар Сулейманов. Все права защищены.',
     footer_terms:'Пользовательское соглашение', footer_privacy:'Обработка персональных данных',
     btn_phone:'Связаться по телефону', btn_whatsapp:'Связаться по WhatsApp',
     map_label:'ул. Мирали Гашгай 42, Баку',
@@ -104,7 +104,16 @@ const i18n = {
     mc3_date:'31 октября 2025',
     mc4_date:'24 октября 2025',
     mc5_date:'27 ноября 2025',
-    mc6_date:'22 сентября 2025'
+    mc6_date:'22 сентября 2025',
+    chronicle_label:'Краткий перечень сверхсложных дел, успешная защита по которым была осуществлена адвокатом <em style="color:var(--gold);font-style:italic">Эльмаром Сулеймановым</em> в период между <em style="color:var(--gold);font-style:italic">2013–2015&nbsp;гг.</em>',
+    chr_all:'Все', chr_criminal:'Уголовное право', chr_civil:'Гражданское право',
+    chr_corporate:'Корпоративное право', chr_family:'Семейное право',
+    chr_constitutional:'Конституционное право', chr_contract:'Договорная работа',
+    chr_th_date:'Дата', chr_th_court:'Суд', chr_th_subject:'Предмет иска',
+    chr_th_amount:'Сумма', chr_th_result:'Результат',
+    chr_show_more:'Показать все дела', chr_show_less:'Свернуть',
+    chr_of:'из', chr_shown:'показано',
+    chr_win:'Победа', chr_loss:'Отклонено', chr_neutral:'Выполнено'
   },
   en: {
     logo_sub:'Attorney · +994 55 644 70 80', logo_name:'Elmar Suleymanov', nav_practice:'Practice', nav_cases:'Cases', nav_about:'About', nav_media:'Media', nav_contacts:'Contact',
@@ -167,7 +176,7 @@ const i18n = {
     cta_p1:'An initial consultation helps assess the situation and identify possible solutions. One call is enough — I\'ll be in touch at a convenient time.',
     cta_p2:'Confidentiality is protected by attorney-client privilege.',
     cta_btn:'Call now',
-    footer_copy:'© 2025 Elmar Suleymanov. All rights reserved.',
+    footer_copy:'© {year} Elmar Suleymanov. All rights reserved.',
     footer_terms:'Terms of Use', footer_privacy:'Personal Data Policy',
     btn_phone:'Call by phone', btn_whatsapp:'Contact via WhatsApp',
     map_label:'42 Mirali Gashgai St, Baku',
@@ -210,7 +219,16 @@ const i18n = {
     case5_title:'International reconstruction contract',
     case5_desc:'Legal review of a major international contract for large-scale reconstruction works with a foreign company. Legal risks identified and eliminated.',
     case6_title:'Compensation for damage to honour and dignity',
-    case6_desc:'The Court of Appeal ordered compensation for systematic insults and degradation. The court assessed the conduct that caused moral harm to the client.'
+    case6_desc:'The Court of Appeal ordered compensation for systematic insults and degradation. The court assessed the conduct that caused moral harm to the client.',
+    chronicle_label:'A Brief List of Exceptionally Complex Cases Successfully Defended by Attorney <em style="color:var(--gold);font-style:italic">Elmar Suleymanov</em> Between <em style="color:var(--gold);font-style:italic">2013–2015</em>',
+    chr_all:'All', chr_criminal:'Criminal Law', chr_civil:'Civil Law',
+    chr_corporate:'Corporate Law', chr_family:'Family Law',
+    chr_constitutional:'Constitutional Law', chr_contract:'Contract Work',
+    chr_th_date:'Date', chr_th_court:'Court', chr_th_subject:'Subject',
+    chr_th_amount:'Amount', chr_th_result:'Result',
+    chr_show_more:'Show all cases', chr_show_less:'Collapse',
+    chr_of:'of', chr_shown:'shown',
+    chr_win:'Won', chr_loss:'Dismissed', chr_neutral:'Completed'
   },
   az: {
     logo_sub:'Vəkil · +994 55 644 70 80', logo_name:'Elmar Süleymanov', nav_practice:'Təcrübə', nav_cases:'İşlər', nav_about:'Haqqımda', nav_media:'Media', nav_contacts:'Əlaqə',
@@ -296,7 +314,7 @@ const i18n = {
     cta_p1:'İlkin konsultasiya vəziyyəti qiymətləndirməyə və mümkün həll yollarını müəyyən etməyə imkan verir.',
     cta_p2:'Danışıqların məxfiliyi vəkillik sirri ilə təmin edilir.',
     cta_btn:'İndi zəng edin',
-    footer_copy:'© 2025 Elmar Süleymanov. Bütün hüquqlar qorunur.',
+    footer_copy:'© {year} Elmar Süleymanov. Bütün hüquqlar qorunur.',
     footer_terms:'İstifadəçi Razılaşması', footer_privacy:'Şəxsi Məlumatların Emalı',
     btn_phone:'Telefonla əlaqə', btn_whatsapp:'WhatsApp ilə əlaqə',
     map_label:'Mirəli Qaşqay küç. 42, Bakı',
@@ -316,7 +334,16 @@ const i18n = {
     mc3_date:'31 oktyabr 2025',
     mc4_date:'24 oktyabr 2025',
     mc5_date:'27 noyabr 2025',
-    mc6_date:'22 sentyabr 2025'
+    mc6_date:'22 sentyabr 2025',
+    chronicle_label:'Vəkil <em style="color:var(--gold);font-style:italic">Elmar Süleymanov</em> tərəfindən <em style="color:var(--gold);font-style:italic">2013–2015-ci illər</em> arasında müdafiə edilmiş xüsusilə mürəkkəb işlərin qısa siyahısı',
+    chr_all:'Hamısı', chr_criminal:'Cinayət hüququ', chr_civil:'Mülki hüquq',
+    chr_corporate:'Korporativ hüquq', chr_family:'Ailə hüququ',
+    chr_constitutional:'Konstitusiya hüququ', chr_contract:'Müqavilə işi',
+    chr_th_date:'Tarix', chr_th_court:'Məhkəmə', chr_th_subject:'İddianın predmeti',
+    chr_th_amount:'Məbləğ', chr_th_result:'Nəticə',
+    chr_show_more:'Bütün işləri göstər', chr_show_less:'Yığ',
+    chr_of:'/', chr_shown:'göstərilir',
+    chr_win:'Qazanıldı', chr_loss:'Rədd edildi', chr_neutral:'Tamamlandı'
   }
 };
 
@@ -382,11 +409,14 @@ function detectLang() {
 
 function applyLang(lang) {
   currentLang = lang;
+  const currentYear = new Date().getFullYear();
   localStorage.setItem('lang', lang);
   document.documentElement.lang = lang;
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (i18n[lang][key] !== undefined) el.innerHTML = i18n[lang][key];
+    if (i18n[lang][key] !== undefined) {
+      el.innerHTML = i18n[lang][key].replace('{year}', currentYear);
+    }
   });
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder');
@@ -425,6 +455,8 @@ function renderReviews(lang) {
 
 function showPage(lang, page) {
   const cardsEl = document.getElementById('reviews-cards');
+  // Lock height before clearing to prevent layout shift
+  cardsEl.style.minHeight = cardsEl.offsetHeight ? cardsEl.offsetHeight + 'px' : '';
   cardsEl.innerHTML = '';
   const data = reviews[lang];
   const start = page * PAGE_SIZE;
@@ -435,8 +467,8 @@ function showPage(lang, page) {
     card.innerHTML = `
       <div class="review-card-top">
         <div class="review-card-author">
-          <div class="review-stars">${'★'.repeat(r.stars)}</div>
           <div class="review-name">${r.name}</div>
+          <div class="review-stars">${'★'.repeat(r.stars)}</div>
         </div>
         <svg class="review-fb-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
       </div>
@@ -445,6 +477,8 @@ function showPage(lang, page) {
     // Trigger animation
     requestAnimationFrame(() => requestAnimationFrame(() => card.classList.add('visible-card')));
   });
+  // Release height lock after render settles
+  setTimeout(() => { cardsEl.style.minHeight = ''; }, 400);
 }
 
 function goToReview(idx) {
@@ -752,31 +786,7 @@ document.getElementById('modal-consult').addEventListener('click', function(e) {
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeConsultModal();
 });
-// Form submit via Fetch (AJAX)
-document.getElementById('consult-form').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const btn = document.getElementById('consult-submit-btn');
-  const btnText = document.getElementById('consult-btn-text');
-  btn.disabled = true;
-  btnText.textContent = 'Отправляем...';
-  try {
-    const res = await fetch(this.action, {
-      method: 'POST',
-      body: new FormData(this),
-      headers: { 'Accept': 'application/json' }
-    });
-    if (res.ok) {
-      document.getElementById('consult-form-wrap').style.display = 'none';
-      document.getElementById('consult-success').style.display = 'block';
-    } else {
-      btnText.textContent = 'Ошибка. Попробуйте ещё раз.';
-      btn.disabled = false;
-    }
-  } catch(err) {
-    btnText.textContent = 'Ошибка соединения.';
-    btn.disabled = false;
-  }
-});
+
 
 // ─── SHOW FLOAT BUTTON AFTER HERO ────────────────────────
 (function() {
@@ -825,5 +835,332 @@ document.getElementById('consult-form').addEventListener('submit', async functio
   });
 })();
 
+// ─── PRACTICE CARDS — click to navigate ───────────────────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.practice-featured-card[data-href]').forEach(function(card) {
+    card.addEventListener('click', function(e) {
+      // Don't navigate if user is dragging the slider
+      if (card.closest('.practice-slider').classList.contains('grabbing')) return;
+      // Don't navigate if clicking the "more" link itself (it handles its own href)
+      if (e.target.closest('.practice-card-more-btn')) return;
+      window.location.href = card.dataset.href;
+    });
+  });
+});
+
 // ─── INIT  ─────────────────────────────────────────────
 applyLang(detectLang());
+
+// ─── CHRONICLE OF CASES ────────────────────────────────────────────────────
+// All cases extracted from official documents (2013–2015)
+// result: 'win' | 'loss' | 'neutral'
+const CHRONICLE_CASES = [
+  // ── 2015 ──
+  {
+    date: '2015',
+    court_ru: 'Апелляционный суд Баку', court_en: 'Baku Court of Appeal', court_az: 'Bakı Apellyasiya Məhkəməsi',
+    subject_ru: 'Компенсация за унижение чести и достоинства (свекровь)', subject_en: 'Compensation for damage to honour (mother-in-law)', subject_az: 'Şərəf və ləyaqətin alçaldılmasına görə kompensasiya',
+    amount: '2 500 AZN', result: 'win', cat: 'family'
+  },
+  // ── 2014 — судебные дела ──
+  {
+    date: '06.08.2014',
+    court_ru: 'Верховный суд АР', court_en: 'Supreme Court of AR', court_az: 'AR Ali Məhkəməsi',
+    subject_ru: 'Оправдательный приговор: незаконный оборот наркотиков (кассация прокуратуры отклонена)', subject_en: 'Acquittal upheld: drug trafficking (prosecution cassation dismissed)', subject_az: 'Bəraət hökmü qüvvədə saxlanıldı: narkotik dövriyyəsi',
+    amount: '—', result: 'win', cat: 'criminal'
+  },
+  {
+    date: '22.05.2014',
+    court_ru: 'Верховный суд АР', court_en: 'Supreme Court of AR', court_az: 'AR Ali Məhkəməsi',
+    subject_ru: 'Признание договора купли-продажи недействительным', subject_en: 'Sale agreement declared null and void', subject_az: 'Alqı-satqı müqaviləsinin etibarsız sayılması',
+    amount: '200 000 AZN', result: 'win', cat: 'civil'
+  },
+  {
+    date: '12.06.2014',
+    court_ru: 'Верховный суд АР', court_en: 'Supreme Court of AR', court_az: 'AR Ali Məhkəməsi',
+    subject_ru: 'Раздел имущества (кассационная жалоба удовлетворена)', subject_en: 'Property division — cassation granted', subject_az: 'Əmlakın bölünməsi — kassasiya şikayəti təmin edildi',
+    amount: '50 000 AZN', result: 'win', cat: 'civil'
+  },
+  {
+    date: '08.04.2014',
+    court_ru: 'Апелляционный суд Баку', court_en: 'Baku Court of Appeal', court_az: 'Bakı Apellyasiya Məhkəməsi',
+    subject_ru: 'Защита ОАО: выделение доли из имущества (апелляция отклонена)', subject_en: 'JSC defence: share separation — appeal dismissed', subject_az: 'ASC müdafiəsi: əmlakdan pay ayrılması — apellyasiya rədd edildi',
+    amount: '12 000 000 AZN', result: 'win', cat: 'corporate'
+  },
+  {
+    date: '19.06.2014',
+    court_ru: 'Апелляционный суд Баку', court_en: 'Baku Court of Appeal', court_az: 'Bakı Apellyasiya Məhkəməsi',
+    subject_ru: 'Раздел имущества ООО (апелляция отклонена)', subject_en: 'LLC property division — appeal dismissed', subject_az: 'MMC əmlakının bölünməsi — apellyasiya rədd edildi',
+    amount: '100 000 AZN', result: 'win', cat: 'corporate'
+  },
+  {
+    date: '13.02.2014',
+    court_ru: 'Апелляционный суд Шеки', court_en: 'Sheki Court of Appeal', court_az: 'Şəki Apellyasiya Məhkəməsi',
+    subject_ru: 'Оправдательный приговор: незаконный оборот наркотиков (протест прокуратуры отклонён)', subject_en: 'Acquittal upheld: drug trafficking (prosecution protest dismissed)', subject_az: 'Bəraət hökmü qüvvədə saxlanıldı: narkotik dövriyyəsi',
+    amount: '—', result: 'win', cat: 'criminal'
+  },
+  {
+    date: '16.01.2014',
+    court_ru: '1-й Адм.-экономический суд Баку', court_en: '1st Admin-Economic Court of Baku', court_az: '1 saylı Bakı İnzibati-iqtisadi Məhkəməsi',
+    subject_ru: 'Защита ОАО от иска о выделении доли (иск отклонён)', subject_en: 'JSC defence: share separation claim dismissed', subject_az: 'ASC müdafiəsi: pay ayrılması iddiası rədd edildi',
+    amount: '12 000 000 AZN', result: 'win', cat: 'corporate'
+  },
+  {
+    date: '03.06.2014',
+    court_ru: '1-й Адм.-экономический суд Баку', court_en: '1st Admin-Economic Court of Baku', court_az: '1 saylı Bakı İnzibati-iqtisadi Məhkəməsi',
+    subject_ru: 'Ограничение на выезд должника за рубеж', subject_en: 'Travel ban imposed on debtor', subject_az: 'Borclu üçün ölkəni tərk etmə məhdudiyyəti',
+    amount: '12 000 AZN', result: 'win', cat: 'civil'
+  },
+  {
+    date: '27.01.2014',
+    court_ru: 'Агдамский районный суд АР', court_en: 'Aghdam District Court', court_az: 'Ağdam Rayon Məhkəməsi',
+    subject_ru: 'Возврат долга', subject_en: 'Debt recovery', subject_az: 'Borcun qaytarılması',
+    amount: '30 000 AZN', result: 'win', cat: 'civil'
+  },
+  {
+    date: '24.01.2014',
+    court_ru: 'Хатаинский районный суд Баку', court_en: 'Khatai District Court, Baku', court_az: 'Xətai Rayon Məhkəməsi',
+    subject_ru: 'Раздел имущества ООО (иск против доверителя отклонён)', subject_en: 'LLC property division — claim against client dismissed', subject_az: 'MMC əmlakının bölünməsi — iddia rədd edildi',
+    amount: '100 000 AZN', result: 'win', cat: 'corporate'
+  },
+  {
+    date: '2014',
+    court_ru: 'Верховный суд АР', court_en: 'Supreme Court of AR', court_az: 'AR Ali Məhkəməsi',
+    subject_ru: 'Защита ОАО: выделение доли (кассация отклонена)', subject_en: 'JSC defence: share separation — cassation dismissed', subject_az: 'ASC müdafiəsi: pay ayrılması — kassasiya rədd edildi',
+    amount: '12 000 000 AZN', result: 'win', cat: 'corporate'
+  },
+  {
+    date: '2014',
+    court_ru: 'Конституционный суд АР', court_en: 'Constitutional Court of AR', court_az: 'AR Konstitusiya Məhkəməsi',
+    subject_ru: 'Жалоба о незаконном удержании кредитного долга принята к производству', subject_en: 'Complaint re: unlawful credit debt — admitted to proceedings', subject_az: 'Kredit borcunun əsassız tutulmasına dair şikayət icraata qəbul edildi',
+    amount: '15 000 AZN', result: 'win', cat: 'constitutional'
+  },
+  {
+    date: '2014',
+    court_ru: 'Конституционный суд АР', court_en: 'Constitutional Court of AR', court_az: 'AR Konstitusiya Məhkəməsi',
+    subject_ru: 'Списание кредитного долга по ипотеке (решение КС)', subject_en: 'Mortgage credit debt written off (Constitutional Court ruling)', subject_az: 'İpoteka üzrə kredit borcunun silinməsi (KM qərarı)',
+    amount: '33 000 AZN', result: 'win', cat: 'constitutional'
+  },
+  {
+    date: '2014',
+    court_ru: '2-й Адм.-экономический суд Баку', court_en: '2nd Admin-Economic Court of Baku', court_az: '2 saylı Bakı İnzibati-iqtisadi Məhkəməsi',
+    subject_ru: 'Регистрация унаследованного недвижимого имущества (пос. Марданкяны)', subject_en: 'Registration of inherited real estate (Mardakan village)', subject_az: 'Miras yolu ilə alınan daşınmaz əmlakın qeydiyyatı (Mardəkan)',
+    amount: '250 000 AZN', result: 'win', cat: 'civil'
+  },
+  // ── 2014 — договорная работа ──
+  {
+    date: '2014',
+    court_ru: 'Договорная работа', court_en: 'Contract Work', court_az: 'Müqavilə işi',
+    subject_ru: 'Юридическая экспертиза международного контракта по реконструкции', subject_en: 'Legal review: international reconstruction contract', subject_az: 'Beynəlxalq rekonstruksiya müqaviləsinin hüquqi ekspertizası',
+    amount: '450 000 000 €', result: 'neutral', cat: 'contract'
+  },
+  {
+    date: '2014',
+    court_ru: 'Договорная работа', court_en: 'Contract Work', court_az: 'Müqavilə işi',
+    subject_ru: 'Составление международных сервисных договоров по реконструкции (1-й)', subject_en: 'International reconstruction service agreement (1st)', subject_az: 'Beynəlxalq servis müqaviləsi № 1',
+    amount: '10 000 000 €', result: 'neutral', cat: 'contract'
+  },
+  {
+    date: '2014',
+    court_ru: 'Договорная работа', court_en: 'Contract Work', court_az: 'Müqavilə işi',
+    subject_ru: 'Составление международных сервисных договоров по реконструкции (2-й)', subject_en: 'International reconstruction service agreement (2nd)', subject_az: 'Beynəlxalq servis müqaviləsi № 2',
+    amount: '1 000 000 €', result: 'neutral', cat: 'contract'
+  },
+  {
+    date: '2014',
+    court_ru: 'Договорная работа', court_en: 'Contract Work', court_az: 'Müqavilə işi',
+    subject_ru: 'Составление международных сервисных договоров по реконструкции (3-й)', subject_en: 'International reconstruction service agreement (3rd)', subject_az: 'Beynəlxalq servis müqaviləsi № 3',
+    amount: '1 000 000 €', result: 'neutral', cat: 'contract'
+  },
+  {
+    date: '2014',
+    court_ru: 'Договорная работа', court_en: 'Contract Work', court_az: 'Müqavilə işi',
+    subject_ru: 'Международный договор о размещении рекламных баннеров (интернет-провайдер)', subject_en: 'International ad banner placement agreement (ISP)', subject_az: 'İnternet provayderinin saytında reklam banerlərinin yerləşdirilməsinə dair müqavilə',
+    amount: '200 000 USD', result: 'neutral', cat: 'contract'
+  },
+  {
+    date: '2014',
+    court_ru: 'Договорная работа', court_en: 'Contract Work', court_az: 'Müqavilə işi',
+    subject_ru: 'Юридическая экспертиза договора купли-продажи квартиры в новостройке', subject_en: 'Legal review: apartment purchase agreement (new build)', subject_az: 'Yeni binadakı mənzilin alqı-satqı müqaviləsinin hüquqi ekspertizası',
+    amount: '300 000 USD', result: 'neutral', cat: 'contract'
+  },
+  {
+    date: '2014',
+    court_ru: 'Договорная работа', court_en: 'Contract Work', court_az: 'Müqavilə işi',
+    subject_ru: 'Юридическая экспертиза договора купли-продажи 3-х квартир в новостройках Баку', subject_en: 'Legal review: purchase of 3 apartments in Baku new builds', subject_az: '3 mənzilin alqı-satqı müqaviləsinin hüquqi ekspertizası',
+    amount: '2 000 000 USD', result: 'neutral', cat: 'contract'
+  },
+  {
+    date: '2014',
+    court_ru: 'Договорная работа', court_en: 'Contract Work', court_az: 'Müqavilə işi',
+    subject_ru: 'Юридическая экспертиза договора купли-продажи земельного участка в пос. Новханы', subject_en: 'Legal review: land purchase agreement, Novkhany village', subject_az: 'Novxanı qəsəbəsində torpaq sahəsinin alqı-satqı müqaviləsinin ekspertizası',
+    amount: '1 000 000 USD', result: 'neutral', cat: 'contract'
+  },
+  {
+    date: '2014',
+    court_ru: 'Договорная работа', court_en: 'Contract Work', court_az: 'Müqavilə işi',
+    subject_ru: 'Оценка правовых рисков бизнес-плана по созданию мини-завода (Карадагский р-н)', subject_en: 'Legal risk assessment: mini-factory business plan (Garadagh district)', subject_az: 'Mini zavod biznes-planının hüquqi risklərinin qiymətləndirilməsi (Qaradağ r.)',
+    amount: '2 000 000 USD', result: 'neutral', cat: 'contract'
+  },
+  // ── 2013 ──
+  {
+    date: '11.09.2013',
+    court_ru: 'Шекинский районный суд АР', court_en: 'Sheki District Court', court_az: 'Şəki Rayon Məhkəməsi',
+    subject_ru: 'Оправдательный приговор: незаконный оборот наркотиков', subject_en: 'Acquittal: illegal drug trafficking', subject_az: 'Bəraət hökmü: narkotik vasitələrin qanunsuz dövriyyəsi',
+    amount: '—', result: 'win', cat: 'criminal'
+  },
+  // ── 2012 ──
+  {
+    date: '28.12.2012',
+    court_ru: '2-й Адм.-экономический суд Баку', court_en: '2nd Admin-Economic Court of Baku', court_az: '2 saylı Bakı İnzibati-iqtisadi Məhkəməsi',
+    subject_ru: 'Регистрация унаследованного недвижимого имущества в государственном реестре', subject_en: 'Registration of inherited real estate in the state registry', subject_az: 'Miras yolu ilə alınan əmlakın dövlət reyestrində qeydiyyatı',
+    amount: '—', result: 'win', cat: 'civil'
+  }
+];
+
+const CHRONICLE_DEFAULT_COUNT = 4;
+let chronicleExpanded = false;
+let chronicleCurrentCat = 'all';
+
+function chronicleGetLang() {
+  return typeof currentLang !== 'undefined' ? currentLang : 'ru';
+}
+
+function chronicleFilteredCases() {
+  if (chronicleCurrentCat === 'all') return CHRONICLE_CASES;
+  return CHRONICLE_CASES.filter(c => c.cat === chronicleCurrentCat);
+}
+
+function chronicleResultLabel(result) {
+  const lang = chronicleGetLang();
+  const map = {
+    win: { ru: 'Победа', en: 'Won', az: 'Qazanıldı' },
+    loss: { ru: 'Отклонено', en: 'Dismissed', az: 'Rədd edildi' },
+    neutral: { ru: 'Выполнено', en: 'Completed', az: 'Tamamlandı' }
+  };
+  return (map[result] || map.neutral)[lang];
+}
+
+function chronicleRender() {
+  const lang = chronicleGetLang();
+  const filtered = chronicleFilteredCases();
+  const visibleCases = chronicleExpanded ? filtered : filtered.slice(0, CHRONICLE_DEFAULT_COUNT);
+  const tbody = document.getElementById('chronicle-tbody');
+  const countEl = document.getElementById('chronicle-count');
+  const expandText = document.getElementById('chronicle-expand-text');
+  const expandIcon = document.getElementById('chronicle-expand-icon');
+  const expandBtn = document.getElementById('chronicle-expand-btn');
+  if (!tbody) return;
+
+  tbody.innerHTML = visibleCases.map((c, i) => {
+    const courtKey = 'court_' + lang;
+    const subjectKey = 'subject_' + lang;
+    const court = c[courtKey] || c.court_ru;
+    const subject = c[subjectKey] || c.subject_ru;
+    const resultClass = c.result === 'win' ? 'chr-badge--win' : c.result === 'loss' ? 'chr-badge--loss' : 'chr-badge--neutral';
+    return `<tr class="chr-row${i >= CHRONICLE_DEFAULT_COUNT && !chronicleExpanded ? ' chr-row--hidden' : ''}">
+      <td class="chr-td chr-td--date">${c.date}</td>
+      <td class="chr-td chr-td--court">${court}</td>
+      <td class="chr-td chr-td--subject">${subject}</td>
+      <td class="chr-td chr-td--amount">${c.amount}</td>
+      <td class="chr-td chr-td--result"><span class="chr-badge ${resultClass}">${chronicleResultLabel(c.result)}</span></td>
+    </tr>`;
+  }).join('');
+
+  // Count label
+  const shownLabel = { ru: 'показано', en: 'shown', az: 'göstərilir' }[lang];
+  const ofLabel = { ru: 'из', en: 'of', az: '/' }[lang];
+  countEl.textContent = `${visibleCases.length} ${shownLabel} ${ofLabel} ${filtered.length}`;
+
+  // Expand button
+  if (filtered.length <= CHRONICLE_DEFAULT_COUNT) {
+    expandBtn.style.display = 'none';
+  } else {
+    expandBtn.style.display = '';
+    if (chronicleExpanded) {
+      expandText.textContent = { ru: 'Свернуть', en: 'Collapse', az: 'Yığ' }[lang];
+      expandIcon.style.transform = 'rotate(180deg)';
+    } else {
+      expandText.textContent = { ru: 'Показать все дела', en: 'Show all cases', az: 'Bütün işləri göstər' }[lang];
+      expandIcon.style.transform = 'rotate(0deg)';
+    }
+  }
+}
+
+function chronicleToggle() {
+  chronicleExpanded = !chronicleExpanded;
+  chronicleRender();
+  if (!chronicleExpanded) {
+    document.querySelector('.chronicle-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+function chronicleSetFilter(cat) {
+  chronicleCurrentCat = cat;
+  chronicleExpanded = false;
+  document.querySelectorAll('.chr-filter').forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
+  chronicleRender();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.chr-filter').forEach(btn => {
+    btn.addEventListener('click', () => chronicleSetFilter(btn.dataset.cat));
+  });
+  chronicleRender();
+});
+
+// Re-render on language change (hook into applyLang)
+const _origApplyLang = applyLang;
+// eslint-disable-next-line no-global-assign
+applyLang = function(lang) {
+  _origApplyLang(lang);
+  chronicleRender();
+};
+
+// ─── CHRONICLE: make rows clickable (link to practice page) ────────────────
+const CHRONICLE_CAT_PAGES = {
+  civil: 'practice-civil.html',
+  criminal: 'practice-criminal.html',
+  corporate: 'practice-corporate.html',
+  constitutional: 'practice-constitutional.html',
+  family: 'practice-family.html',
+  contract: 'practice-contracts.html',
+};
+
+// Patch chronicleRender to add row links
+const _baseChronicleRender = chronicleRender;
+chronicleRender = function() {
+  _baseChronicleRender();
+  const filtered = chronicleFilteredCases();
+  const visibleCases = chronicleExpanded ? filtered : filtered.slice(0, CHRONICLE_DEFAULT_COUNT);
+  document.querySelectorAll('#chronicle-tbody .chr-row').forEach((row, i) => {
+    const c = visibleCases[i];
+    if (!c) return;
+    const page = CHRONICLE_CAT_PAGES[c.cat];
+    if (page) {
+      row.classList.add('chr-row--linked');
+      row.style.cursor = 'pointer';
+      row.addEventListener('click', () => { window.location.href = page; });
+      const subjectCell = row.querySelector('.chr-td--subject');
+      if (subjectCell && !subjectCell.querySelector('a')) {
+        subjectCell.innerHTML = `<a class="chr-subject-link" href="${page}">${subjectCell.innerHTML}</a>`;
+      }
+    }
+  });
+};
+
+// ─── SCROLL TO TOP BUTTON ─────────────────────────────────────────────────────
+(function() {
+  var btn = document.getElementById('scroll-top-btn');
+  if (!btn) return;
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  }, { passive: true });
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
