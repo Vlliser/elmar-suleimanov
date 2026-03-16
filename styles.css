@@ -3125,3 +3125,20 @@ tr.chr-row--linked:hover .chr-td--subject {
   }
 
 }
+
+/* ════════ ШАПКА ШИРЕ + EYEBROW БЛИЖЕ К ЗАГОЛОВКУ ══════════ */
+
+@media (max-width: 900px) {
+
+  /* Шапка выше */
+  header { height: 80px; }
+
+  /* Eyebrow — меньше отступ снизу, прижат к h1 */
+  .hero-eyebrow {
+    margin-bottom: 0.35rem;
+  }
+
+  /* Чуть увеличиваем hero padding сверху под новую шапку */
+  #hero { padding-top: 96px; }
+
+}
