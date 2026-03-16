@@ -1131,6 +1131,34 @@ function chronicleRender() {
     </tr>`;
   }).join('');
 
+  // ── Мобильные карточки ──
+  const mobileList = document.getElementById('chronicle-mobile-list');
+  if (mobileList) {
+    const catPages = {
+      civil: 'practice-civil.html',
+      criminal: 'practice-criminal.html',
+      corporate: 'practice-corporate.html',
+      constitutional: 'practice-constitutional.html',
+      family: 'practice-family.html',
+      contract: 'practice-contracts.html',
+    };
+    mobileList.innerHTML = visibleCases.map(c => {
+      const subjectKey = 'subject_' + lang;
+      const subject = c[subjectKey] || c.subject_ru;
+      const resultClass = c.result === 'win' ? 'chr-badge--win' : c.result === 'loss' ? 'chr-badge--loss' : 'chr-badge--neutral';
+      const page = catPages[c.cat];
+      const inner = `<div class="chr-mob-card">
+        <div class="chr-mob-top">
+          <span class="chr-mob-date">${c.date}</span>
+          <span class="chr-badge ${resultClass}">${chronicleResultLabel(c.result)}</span>
+        </div>
+        <div class="chr-mob-subject">${subject}</div>
+        ${c.amount ? `<div class="chr-mob-amount">${c.amount}</div>` : ''}
+      </div>`;
+      return page ? `<a href="${page}" class="chr-mob-link">${inner}</a>` : `<div class="chr-mob-link">${inner}</div>`;
+    }).join('');
+  }
+
   // Count label
   const shownLabel = { ru: 'показано', en: 'shown', az: 'göstərilir' }[lang];
   const ofLabel = { ru: 'из', en: 'of', az: '/' }[lang];

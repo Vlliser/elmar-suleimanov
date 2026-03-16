@@ -2198,6 +2198,9 @@
   scrollbar-color: var(--gold) transparent;
 }
 
+/* Мобильный список — только на мобиле */
+.chronicle-mobile-list { display: none; }
+
 .chronicle-table-wrap::-webkit-scrollbar { height: 3px; }
 .chronicle-table-wrap::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
 
@@ -2910,18 +2913,76 @@ tr.chr-row--linked:hover .chr-td--subject {
 
   /* Chronicle */
   .chronicle-wrap { margin-top: 0; padding-top: 1.5rem; }
-  .chronicle-table th:nth-child(2),
-  .chronicle-table td:nth-child(2),
-  .chronicle-table th:nth-child(4),
-  .chronicle-table td:nth-child(4) { display: none; }
-  .chr-td          { padding: 0.9rem 0.75rem; font-size: 0.83rem; }
-  .chr-td--date    { font-size: 0.72rem; min-width: 54px; }
-  .chr-td--subject { font-size: 0.93rem; }
-  .chronicle-table th { font-size: 0.58rem; padding: 0.6rem 0.75rem; }
-  .chr-badge       { font-size: 0.58rem; padding: 3px 8px; }
-  .chr-filter      { font-size: 0.63rem; padding: 6px 12px; }
-  .chronicle-filters { gap: 0.3rem; }
-  .chronicle-heading { font-size: clamp(1.3rem, 5.5vw, 1.9rem); }
+
+  /* Заголовок — скрыт на мобиле */
+  .chronicle-heading { display: none; }
+
+  /* Фильтры — горизонтальный скролл в одну строку */
+  .chronicle-filters {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0.4rem;
+    padding-bottom: 2px;
+  }
+  .chronicle-filters::-webkit-scrollbar { display: none; }
+  .chr-filter { font-size: 0.63rem; padding: 6px 12px; flex-shrink: 0; }
+
+  /* Таблица — скрыть на мобиле */
+  .chronicle-table-wrap { display: none; }
+
+  /* Мобильный список карточек */
+  .chronicle-mobile-list { display: flex; flex-direction: column; gap: 0; }
+
+  .chr-mob-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid var(--border);
+  }
+  .chr-mob-link:first-child { border-top: 1px solid var(--border); }
+
+  .chr-mob-card {
+    padding: 0.85rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    transition: background var(--transition);
+  }
+  .chr-mob-link:active .chr-mob-card,
+  .chr-mob-link:hover .chr-mob-card { background: rgba(184,151,42,0.04); }
+
+  .chr-mob-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .chr-mob-date {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .chr-mob-subject {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.45;
+  }
+
+  .chr-mob-amount {
+    font-size: 0.7rem;
+    color: var(--gold);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
 
 
   /* ─────────────────────────────────────────────────────────────
