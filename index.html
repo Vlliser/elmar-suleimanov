@@ -1143,6 +1143,22 @@ function toggleAboutText(btn) {
   document.getElementById('about-read-more-text').textContent = isOpen ? 'Читать далее' : 'Свернуть';
 }
 
+// Мобильный индикатор прокрутки — скрываем после первого скролла
+(function() {
+  if (window.innerWidth > 900) return;
+  var indicator = document.querySelector('.hero-scroll-mobile');
+  if (!indicator) return;
+  var hidden = false;
+  function hideIndicator() {
+    if (hidden) return;
+    if (window.scrollY > 40) {
+      hidden = true;
+      indicator.classList.add('hidden');
+    }
+  }
+  window.addEventListener('scroll', hideIndicator, { passive: true });
+})();
+
 // Lang switcher: one-square dropdown on mobile
 document.addEventListener('DOMContentLoaded', function() {
   var prevMobile = document.getElementById('practice-prev-mobile');

@@ -2901,8 +2901,8 @@ tr.chr-row--linked:hover .chr-td--subject {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    bottom: 24px;
+    position: fixed;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     width: 40px;
@@ -2910,13 +2910,22 @@ tr.chr-row--linked:hover .chr-td--subject {
     border: 1px solid rgba(184,151,42,0.35);
     border-radius: 50%;
     color: var(--gold);
+    background: var(--header-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     animation: mobileScrollBounce 2s ease-in-out infinite;
     pointer-events: none;
+    z-index: 10;
+    transition: opacity 0.4s ease;
+  }
+
+  .hero-scroll-mobile.hidden {
+    opacity: 0;
   }
 
   @keyframes mobileScrollBounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.9; }
-    50%       { transform: translateX(-50%) translateY(7px); opacity: 0.4; }
+    0%, 100% { transform: translateX(-50%) translateY(0);  opacity: 1; }
+    50%       { transform: translateX(-50%) translateY(6px); opacity: 0.45; }
   }
 
 
@@ -3073,7 +3082,10 @@ tr.chr-row--linked:hover .chr-td--subject {
   /* ─────────────────────────────────────────────────────────────
      CASES
   ───────────────────────────────────────────────────────────── */
-  #cases { display: none; }
+  #cases { display: block; padding: 52px 0 52px; }
+  #cases > .section-label,
+  #cases > h2,
+  #cases > .cases-sub { padding: 0 6vw; }
 
   #cases .cases-grid {
     display: flex;
@@ -3255,7 +3267,21 @@ tr.chr-row--linked:hover .chr-td--subject {
   .media-ad-text    { padding: 0.9rem 1rem; gap: 0.5rem; }
   .media-section-sub { font-size: 0.9rem; }
   .section-footer   { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
-  .media-list       { display: none; }
+
+  /* Список изданий — горизонтальный скролл вместо скрытия */
+  .media-list {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 2px;
+  }
+  .media-list::-webkit-scrollbar { display: none; }
+  .media-list-label { display: none; }
+  .media-tag { flex-shrink: 0; font-size: 0.65rem; padding: 5px 11px; }
 
 
   /* ─────────────────────────────────────────────────────────────
@@ -3293,12 +3319,12 @@ tr.chr-row--linked:hover .chr-td--subject {
   /* ─────────────────────────────────────────────────────────────
      ПЛАВАЮЩАЯ КНОПКА
   ───────────────────────────────────────────────────────────── */
-  .float-popup-label { display: none; }
+  .float-popup-label { display: block; font-size: 0.6rem; letter-spacing: 0.08em; }
   .float-contact-wrap { bottom: 20px; right: 16px; gap: 10px; }
   .float-popup { gap: 10px; }
-  .float-popup-row { gap: 10px; }
-  .float-action-btn { width: 50px; height: 50px; }
-  .float-main-btn   { height: 50px; width: 50px; }
+  .float-popup-row { gap: 8px; }
+  .float-action-btn { width: auto; height: 44px; padding: 0 12px; gap: 6px; min-width: 44px; }
+  .float-main-btn   { height: 44px; width: 44px; }
   .float-contact-wrap.closed .float-main-btn {
     width: auto;
     padding: 0 18px;
@@ -3345,11 +3371,11 @@ tr.chr-row--linked:hover .chr-td--subject {
 /* ── МАЛЕНЬКИЕ ТЕЛЕФОНЫ ≤ 480px ────────────────────────────── */
 @media (max-width: 480px) {
 
-  header { height: 72px; }
-  .logo-name { font-size: 1.15rem; }
-  .logo img  { height: 44px; width: 44px; }
+  header { height: 88px; }
+  .logo-name { font-size: 1.42rem; }
+  .logo img  { height: 56px; width: 56px; }
 
-  #hero { padding: 90px 5vw 52px; }
+  #hero { padding: 108px 5vw 52px; }
 
   h1 { font-size: clamp(2rem, 11vw, 3rem); }
   .hero-sub { font-size: 0.85rem; }
