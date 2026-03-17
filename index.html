@@ -107,6 +107,7 @@
     <div class="logo-text">
       <span class="logo-name" data-i18n="logo_name">Эльмар Сулейманов</span>
       <span class="logo-sub" data-i18n="logo_sub" onclick="event.stopPropagation(); window.location.href='tel:+994556447080';">Адвокат · +994 55 644 70 80</span>
+      <a class="logo-sub logo-sub--mobile-phone" href="tel:+994556447080" onclick="event.stopPropagation();">+994 55 644 70 80</a>
     </div>
   </a>
   <nav aria-label="Навигация">
@@ -407,10 +408,11 @@
     <span class="hero-scroll-text" data-i18n="hero_scroll">Прокрутите вниз</span>
   </div>
 
-  <!-- Мобильный намёк на скролл -->
-  <div class="hero-swipe-hint" id="hero-swipe-hint" aria-hidden="true">
-    <span class="hero-swipe-line"></span>
-    <span class="hero-swipe-label">листайте</span>
+  <!-- Мобильный индикатор прокрутки -->
+  <div class="hero-scroll-mobile" aria-hidden="true">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
   </div>
 </section>
 
@@ -1169,20 +1171,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
-</script>
-<script>
-// Скрываем мобильный намёк на скролл после первого свайпа
-(function() {
-  var hint = document.getElementById('hero-swipe-hint');
-  if (!hint) return;
-  function hideHint() {
-    hint.classList.add('hidden');
-    window.removeEventListener('scroll', hideHint);
-    window.removeEventListener('touchmove', hideHint);
-  }
-  window.addEventListener('scroll', hideHint, { passive: true });
-  window.addEventListener('touchmove', hideHint, { passive: true });
-})();
 </script>
 </body>
 </html>
