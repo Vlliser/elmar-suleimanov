@@ -406,6 +406,12 @@
     <span class="hero-scroll-line-v"></span>
     <span class="hero-scroll-text" data-i18n="hero_scroll">Прокрутите вниз</span>
   </div>
+
+  <!-- Мобильный намёк на скролл -->
+  <div class="hero-swipe-hint" id="hero-swipe-hint" aria-hidden="true">
+    <span class="hero-swipe-line"></span>
+    <span class="hero-swipe-label">листайте</span>
+  </div>
 </section>
 
 
@@ -1163,6 +1169,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+</script>
+<script>
+// Скрываем мобильный намёк на скролл после первого свайпа
+(function() {
+  var hint = document.getElementById('hero-swipe-hint');
+  if (!hint) return;
+  function hideHint() {
+    hint.classList.add('hidden');
+    window.removeEventListener('scroll', hideHint);
+    window.removeEventListener('touchmove', hideHint);
+  }
+  window.addEventListener('scroll', hideHint, { passive: true });
+  window.addEventListener('touchmove', hideHint, { passive: true });
+})();
 </script>
 </body>
 </html>
