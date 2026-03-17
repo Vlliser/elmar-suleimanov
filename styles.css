@@ -2908,7 +2908,7 @@ tr.chr-row--linked:hover .chr-td--subject {
   #practice h2,
   #practice .section-label { padding: 0 6vw; }
 
-  #practice h2 { font-size: clamp(1.65rem, 7vw, 2.4rem); }
+  #practice h2 { font-size: clamp(2rem, 8vw, 2.8rem); }
 
   .practice-slider-wrap { padding: 0 0 16px; }
   .practice-featured-card   { flex: 0 0 80vw; height: 260px; }
