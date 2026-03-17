@@ -1305,3 +1305,16 @@ chronicleRender = function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 })();
+
+// ─── MOBILE SCROLL HINT — исчезает при первом скролле ────────────────────────
+(function() {
+  var hint = document.getElementById('hero-scroll-hint-mobile');
+  if (!hint) return;
+  function hideHint() {
+    if (window.scrollY > 30) {
+      hint.classList.add('hidden');
+      window.removeEventListener('scroll', hideHint);
+    }
+  }
+  window.addEventListener('scroll', hideHint, { passive: true });
+})();
