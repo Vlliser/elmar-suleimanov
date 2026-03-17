@@ -1990,14 +1990,39 @@
 }
 .blog-card:hover .blog-card-arrow { letter-spacing: 0.18em; }
 
-/* Responsive: resize cards on smaller screens */
+/* Responsive: горизонтальный layout на мобиле */
 @media (max-width: 900px) {
-  .blog-card { flex: 0 0 75vw; max-width: 340px; }
-}
-@media (max-width: 560px) {
-  .blog-card { flex: 0 0 82vw; max-width: 300px; }
-  .blog-cards-track { padding: 0 1.25rem 0.5rem; }
-  .blog-card-excerpt { -webkit-line-clamp: 2; }
+  .blog-card {
+    flex: 0 0 78vw;
+    max-width: 340px;
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .blog-card::after { display: none; }
+
+  /* Картинка — квадрат слева */
+  .blog-card-img {
+    width: 110px;
+    min-width: 110px;
+    aspect-ratio: unset;
+    flex-shrink: 0;
+  }
+
+  /* Тело — правая колонка */
+  .blog-card-body {
+    padding: 0.75rem 0.9rem;
+    gap: 0.35rem;
+    justify-content: space-between;
+  }
+
+  /* Excerpt скрываем — заголовок и так информативен */
+  .blog-card-excerpt { display: none; }
+
+  .blog-card-title { font-size: 0.95rem; line-height: 1.35; }
+  .blog-card-date  { font-size: 0.65rem; }
+  .blog-card-arrow { padding-top: 0.5rem; font-size: 0.6rem; }
+
+  .blog-cards-track { padding: 0 6vw 0.5rem; gap: 0.75rem; }
 }
 
 /* ════════════════════════════════════════════════
