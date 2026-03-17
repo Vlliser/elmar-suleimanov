@@ -406,13 +406,6 @@
     <span class="hero-scroll-line-v"></span>
     <span class="hero-scroll-text" data-i18n="hero_scroll">Прокрутите вниз</span>
   </div>
-
-  <!-- Мобильный индикатор прокрутки -->
-  <div class="hero-scroll-mobile" aria-hidden="true">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="6 9 12 15 18 9"/>
-    </svg>
-  </div>
 </section>
 
 
@@ -1142,22 +1135,6 @@ function toggleAboutText(btn) {
   btn.classList.toggle('open', !isOpen);
   document.getElementById('about-read-more-text').textContent = isOpen ? 'Читать далее' : 'Свернуть';
 }
-
-// Мобильный индикатор прокрутки — скрываем после первого скролла
-(function() {
-  if (window.innerWidth > 900) return;
-  var indicator = document.querySelector('.hero-scroll-mobile');
-  if (!indicator) return;
-  var hidden = false;
-  function hideIndicator() {
-    if (hidden) return;
-    if (window.scrollY > 40) {
-      hidden = true;
-      indicator.classList.add('hidden');
-    }
-  }
-  window.addEventListener('scroll', hideIndicator, { passive: true });
-})();
 
 // Lang switcher: one-square dropdown on mobile
 document.addEventListener('DOMContentLoaded', function() {
