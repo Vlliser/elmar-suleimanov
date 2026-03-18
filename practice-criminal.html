@@ -24,17 +24,66 @@
 .practice-page-cta h2{font-size:clamp(1.8rem,3.2vw,2.6rem)!important}
 .practice-page-cta p{font-size:1.05rem!important}
 
-/* ── Cases grid ── */
-.pp-cases-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:2.5rem;border:1px solid var(--border)}
-.pp-cases-grid .case-card{display:flex;flex-direction:column;justify-content:space-between;outline:1px solid var(--border)}
-@media(max-width:1024px){.pp-cases-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:640px){.pp-cases-grid{grid-template-columns:1fr}}
-.pp-cases-grid .case-title{font-size:1.15rem!important}
-.pp-cases-grid .case-desc{font-size:0.88rem!important;line-height:1.78!important}
-.pp-cases-grid .case-tag{font-size:0.65rem!important}
-.pp-cases-grid .case-court{font-size:0.65rem!important}
-.pp-cases-grid .case-result{font-size:0.68rem!important}
-.pp-cases-grid .case-amount{font-size:1.1rem!important}
+/* ── Mobile hero fix ── */
+@media(max-width:768px){
+  .practice-page-hero{min-height:auto!important;padding:100px 0 48px!important}
+  .practice-page-hero-content{padding:0 20px!important;max-width:100%!important}
+  .practice-page-title{font-size:clamp(1.8rem,8vw,2.6rem)!important}
+  .practice-page-intro{font-size:clamp(0.92rem,3.8vw,1.05rem)!important;line-height:1.65!important}
+  .btn-primary--lg{font-size:0.8rem!important;padding:14px 24px!important;width:auto!important;max-width:100%!important}
+}
+
+/* ── Hide О себе / Контакты + dropdowns in mobile header ── */
+@media(max-width:900px){
+  nav .nav-item,nav .nav-has-drop,
+  a.nav-link[href="index.html#about"],
+  a.nav-link[href="index.html#contacts"]{display:none!important;}
+}
+
+/* ── Cases grid: full-width, 3 columns (3 cards ÷ 3) ── */
+.pp-cases-grid{
+  display:grid!important;flex-direction:unset!important;flex-wrap:unset!important;
+  overflow-x:visible!important;overflow-y:visible!important;
+  scroll-snap-type:unset!important;gap:0!important;
+  background:transparent!important;border:none!important;
+  margin:0!important;padding:0!important;
+  -webkit-mask-image:none!important;mask-image:none!important;
+  grid-template-columns:repeat(3,1fr);
+  width:100%;
+  border-left:1px solid var(--border)!important;
+  border-top:1px solid var(--border)!important;
+}
+.pp-cases-grid::after{display:none!important;}
+.pp-cases-grid .case-card{
+  display:flex!important;flex-direction:column!important;justify-content:space-between!important;
+  flex:1 1 0!important;max-width:none!important;min-width:0!important;
+  scroll-snap-align:unset!important;
+  border-right:1px solid var(--border);border-bottom:1px solid var(--border);
+  background:var(--card-bg);position:relative;overflow:hidden;
+  transition:background 0.28s ease,transform 0.22s ease,box-shadow 0.22s ease;
+}
+.pp-cases-grid .case-card:hover{background:var(--navy-mid,#162240);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,0.18);z-index:2;}
+.pp-cases-grid .case-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.3s ease;}
+.pp-cases-grid .case-card:hover::before{transform:scaleX(1);}
+@media(max-width:640px){.pp-cases-grid{grid-template-columns:1fr!important;}}
+
+/* ── Card internals ── */
+.pp-cases-grid .case-card-top{display:flex;align-items:center;justify-content:space-between;gap:0.5rem;margin-bottom:1rem;}
+.pp-cases-grid .case-title{font-family:'Cormorant Garamond',serif!important;font-size:1.25rem!important;font-weight:500!important;line-height:1.3!important;margin-bottom:0.85rem!important;color:var(--text)!important;}
+.case-section-label{display:block;font-size:0.6rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.25rem;margin-top:0.75rem;}
+.case-section-label:first-of-type{margin-top:0;}
+.pp-cases-grid .case-desc{font-size:0.87rem!important;line-height:1.72!important;color:var(--text-muted)!important;margin-bottom:0!important;}
+.pp-cases-grid .case-tag{font-size:0.62rem!important}
+.pp-cases-grid .case-court{font-size:0.62rem!important;color:var(--text-muted)!important;text-align:right;max-width:50%}
+.pp-cases-grid .case-card-bottom{display:flex;align-items:center;justify-content:space-between;gap:0.5rem;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);}
+.pp-cases-grid .case-result{font-size:0.65rem!important;letter-spacing:0.12em}
+.pp-cases-grid .case-amount,.pp-cases-grid .case-year{font-family:'Cormorant Garamond',serif!important;font-size:1.15rem!important;font-weight:500!important;color:var(--gold)!important;letter-spacing:0.02em;}
+
+/* ── Mobile: show case-desc, single column ── */
+@media(max-width:900px){
+  .pp-cases-grid .case-desc{display:block!important;}
+  .pp-cases-grid{grid-template-columns:1fr!important;}
+}
 
 /* ── Home FAB ── */
 .home-fab-pulse{position:fixed;bottom:32px;left:32px;z-index:9998;display:flex;align-items:center;gap:10px;background:#b8962e;color:#fff;border:none;border-radius:50px;padding:16px 28px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;box-shadow:0 4px 24px rgba(184,150,46,0.5);animation:fabPulse 2.2s ease-in-out infinite;transition:transform .2s,box-shadow .2s}
@@ -50,19 +99,55 @@
     <img src="logo.png" alt="Elmar Suleymanov">
     <div class="logo-text">
       <span class="logo-name" data-i18n="logo_name">Эльмар Сулейманов</span>
-      <span class="logo-sub" data-i18n="logo_sub">Адвокат · +994 55 644 70 80</span>
+      <span class="logo-sub logo-sub--desktop" data-i18n="logo_sub" onclick="event.stopPropagation(); window.location.href='tel:+994556447080';">Адвокат · +994 55 644 70 80</span>
+      <span class="logo-sub logo-sub--mobile" onclick="event.stopPropagation(); window.location.href='tel:+994556447080';">+994 55 644 70 80</span>
     </div>
   </a>
   <nav aria-label="Навигация">
-    <a href="index.html#practice" data-i18n="nav_practice">Практика</a>
-    <a href="index.html#cases" data-i18n="nav_cases">Дела</a>
-    <a href="index.html#about" data-i18n="nav_about">О себе</a>
-    <a href="media.html" data-i18n="nav_media">Медиа</a>
-    <a href="index.html#contacts" data-i18n="nav_contacts">Контакты</a>
+    <div class="nav-item nav-has-drop">
+      <a href="index.html#practice" class="nav-link" data-i18n="nav_practice">Практика<svg class="nav-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <div class="nav-dropdown nav-dropdown--wide">
+        <div class="nav-drop-label" data-i18n="nav_practice">Направления практики</div>
+        <div class="nav-drop-grid">
+          <a href="practice-civil.html" class="nav-drop-item"><span class="nav-drop-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 9l10 6 10-6-10-6z"/><path d="M2 17l10 6 10-6"/><path d="M2 13l10 6 10-6"/></svg></span><span data-i18n="p1_title">Гражданское право</span></a>
+          <a href="practice-criminal.html" class="nav-drop-item"><span class="nav-drop-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span><span data-i18n="p2_title">Уголовное право</span></a>
+          <a href="practice-family.html" class="nav-drop-item"><span class="nav-drop-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span data-i18n="p3_title">Семейное право</span></a>
+          <a href="practice-labour.html" class="nav-drop-item"><span class="nav-drop-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></span><span data-i18n="p4_title">Трудовое право</span></a>
+          <a href="practice-housing.html" class="nav-drop-item"><span class="nav-drop-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span data-i18n="p5_title">Жилищное право</span></a>
+          <a href="practice-land.html" class="nav-drop-item"><span class="nav-drop-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg></span><span data-i18n="p6_title">Земельное право</span></a>
+          <a href="practice-international.html" class="nav-drop-item"><span class="nav-drop-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><span data-i18n="p7_title">Международное право</span></a>
+          <a href="practice-corporate.html" class="nav-drop-item"><span class="nav-drop-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg></span><span data-i18n="p8_title">Корпоративное право</span></a>
+          <a href="practice-administrative.html" class="nav-drop-item"><span class="nav-drop-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span><span data-i18n="p9_title">Административное право</span></a>
+          <a href="practice-registration.html" class="nav-drop-item"><span class="nav-drop-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></span><span data-i18n="p10_title">Регистрация юрлиц</span></a>
+          <a href="practice-contracts.html" class="nav-drop-item"><span class="nav-drop-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span><span data-i18n="p11_title">Договоры</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item nav-has-drop">
+      <a href="index.html#cases" class="nav-link" data-i18n="nav_cases">Дела<svg class="nav-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <div class="nav-dropdown">
+        <div class="nav-drop-label" data-i18n="nav_cases">Из практики</div>
+        <a href="index.html#practice" class="nav-drop-item nav-drop-item--single"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span data-i18n="practice_h2">Сферы деятельности</span></a>
+        <a href="index.html#cases" class="nav-drop-item nav-drop-item--single"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span data-i18n="cases_h2">Резонансные дела</span></a>
+      </div>
+    </div>
+    <a href="index.html#about" class="nav-link" data-i18n="nav_about">О себе</a>
+    <div class="nav-item nav-has-drop">
+      <a href="media.html" class="nav-link" data-i18n="nav_media">Медиа<svg class="nav-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <div class="nav-dropdown">
+        <div class="nav-drop-label" data-i18n="nav_media">Медиа</div>
+        <a href="index.html#media-section" class="nav-drop-item nav-drop-item--single"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v2"/><path d="M2 8h6"/><path d="M2 12h6"/><path d="M2 16h6"/></svg><span data-i18n="media_section_h2">Публикации и комментарии</span></a>
+        <a href="media.html" class="nav-drop-item nav-drop-item--single"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg><span data-i18n="media_video_btn">Смотреть видео</span></a>
+        <a href="https://www.facebook.com/advokatelmar/reviews" target="_blank" rel="noopener" class="nav-drop-item nav-drop-item--single"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg><span data-i18n="reviews_fb">Отзывы на Facebook</span></a>
+        <a href="https://www.instagram.com/advokat_elmar_suleymanov/" target="_blank" rel="noopener" class="nav-drop-item nav-drop-item--single"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="3"/><path d="M17.5 6.5h.01"/></svg><span>Instagram</span></a>
+      </div>
+    </div>
+    <a href="index.html#contacts" class="nav-link" data-i18n="nav_contacts">Контакты</a>
     <div class="header-socials">
       <a href="https://wa.me/994556447080" target="_blank" rel="noopener" class="header-social-btn" aria-label="WhatsApp"><svg width="26" height="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.05 21.94a.5.5 0 0 0 .61.61l4.772-1.388A9.955 9.955 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.95 7.95 0 0 1-4.054-1.107l-.29-.17-2.94.856.87-2.878-.19-.299A7.96 7.96 0 0 1 4 12a8 8 0 1 1 8 8zm4.406-5.884c-.241-.12-1.426-.704-1.647-.784-.22-.081-.38-.12-.54.12-.16.242-.62.784-.76.945-.14.16-.28.18-.52.06-.24-.12-1.015-.374-1.934-1.193-.714-.636-1.196-1.42-1.337-1.66-.14-.24-.015-.37.105-.49.108-.108.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.062-.12-.542-1.303-.742-1.783-.2-.47-.404-.404-.542-.412l-.46-.008c-.16 0-.42.06-.642.3-.22.242-.84.822-.84 2.003 0 1.18.862 2.322.982 2.482.12.16 1.695 2.59 4.108 3.632.574.248 1.022.396 1.371.507.576.183 1.1.157 1.514.095.462-.069 1.422-.581 1.622-1.143.2-.561.2-1.042.14-1.143-.06-.1-.22-.16-.46-.28z"/></svg></a>
-      <a href="https://www.instagram.com/advokat_elmar_suleymanov/" target="_blank" rel="noopener" class="header-social-btn" aria-label="Instagram"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="3"/><path d="M17.5 6.5h.01"/></svg></a>
+      <a href="https://www.instagram.com/advokat_elmar_suleymanov/" target="_blank" rel="noopener" class="header-social-btn" aria-label="Instagram"><svg width="26" height="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
       <a href="https://www.facebook.com/advokatelmar/" target="_blank" rel="noopener" class="header-social-btn" aria-label="Facebook"><svg width="26" height="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047v-2.66c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.971h-1.513c-1.491 0-1.956.93-1.956 1.887v2.263h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg></a>
+      <a href="https://www.tiktok.com/@elmarlawyer" target="_blank" rel="noopener" class="header-social-btn" aria-label="TikTok"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg></a>
     </div>
     <div class="lang-switcher">
       <button class="lang-btn active" data-lang="ru">РУ</button>
@@ -73,12 +158,35 @@
   <button class="burger" id="burger-btn" aria-label="Меню"><span></span><span></span><span></span></button>
 </header>
 
-<div class="mobile-nav" id="mobile-nav">
-  <a href="index.html#practice" data-i18n="nav_practice">Практика</a>
-  <a href="index.html#cases" data-i18n="nav_cases">Дела</a>
-  <a href="index.html#about" data-i18n="nav_about">О себе</a>
-  <a href="media.html" data-i18n="nav_media">Медиа</a>
-  <a href="index.html#contacts" data-i18n="nav_contacts">Контакты</a>
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <div class="mobile-nav-group">
+    <button class="mobile-link mobile-link--toggle" data-i18n="nav_practice">Практика<svg class="mobile-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+    <div class="mobile-sub mobile-sub--grid">
+      <div class="mobile-sub-grid-inner">
+        <a href="practice-civil.html" class="mobile-sub-grid-item"><span class="mobile-sub-grid-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 9l10 6 10-6-10-6z"/><path d="M2 17l10 6 10-6"/><path d="M2 13l10 6 10-6"/></svg></span><span data-i18n="p1_title">Гражданское право</span></a>
+        <a href="practice-criminal.html" class="mobile-sub-grid-item"><span class="mobile-sub-grid-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span><span data-i18n="p2_title">Уголовное право</span></a>
+        <a href="practice-family.html" class="mobile-sub-grid-item"><span class="mobile-sub-grid-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span data-i18n="p3_title">Семейное право</span></a>
+        <a href="practice-labour.html" class="mobile-sub-grid-item"><span class="mobile-sub-grid-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></span><span data-i18n="p4_title">Трудовое право</span></a>
+        <a href="practice-housing.html" class="mobile-sub-grid-item"><span class="mobile-sub-grid-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span data-i18n="p5_title">Жилищное право</span></a>
+        <a href="practice-land.html" class="mobile-sub-grid-item"><span class="mobile-sub-grid-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg></span><span data-i18n="p6_title">Земельное право</span></a>
+        <a href="practice-international.html" class="mobile-sub-grid-item"><span class="mobile-sub-grid-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><span data-i18n="p7_title">Международное право</span></a>
+        <a href="practice-corporate.html" class="mobile-sub-grid-item"><span class="mobile-sub-grid-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg></span><span data-i18n="p8_title">Корпоративное право</span></a>
+        <a href="practice-administrative.html" class="mobile-sub-grid-item"><span class="mobile-sub-grid-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span><span data-i18n="p9_title">Административное право</span></a>
+        <a href="practice-registration.html" class="mobile-sub-grid-item"><span class="mobile-sub-grid-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></span><span data-i18n="p10_title">Регистрация юрлиц</span></a>
+        <a href="practice-contracts.html" class="mobile-sub-grid-item"><span class="mobile-sub-grid-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span><span data-i18n="p11_title">Договоры</span></a>
+      </div>
+    </div>
+  </div>
+  <a href="index.html#cases" class="mobile-link" data-i18n="nav_cases">Дела</a>
+  <div class="mobile-nav-group">
+    <button class="mobile-link mobile-link--toggle" data-i18n="nav_media">Медиа<svg class="mobile-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+    <div class="mobile-sub">
+      <a href="index.html#media-section" class="mobile-sub-link" data-i18n="media_section_h2">Публикации</a>
+      <a href="media.html" class="mobile-sub-link" data-i18n="media_video_btn">Смотреть видео</a>
+      <a href="https://www.facebook.com/advokatelmar/" target="_blank" rel="noopener" class="mobile-sub-link">Facebook</a>
+      <a href="https://www.instagram.com/advokat_elmar_suleymanov/" target="_blank" rel="noopener" class="mobile-sub-link">Instagram</a>
+    </div>
+  </div>
   <div class="mobile-lang">
     <button class="mobile-lang-btn active" data-lang="ru">РУ</button>
     <button class="mobile-lang-btn" data-lang="az">AZ</button>
@@ -114,53 +222,68 @@
 </section>
 
 <!-- CASES -->
-<section class="practice-page-section practice-page-section--alt">
-  <div class="practice-page-inner" style="background:none!important">
+<section class="practice-page-section practice-page-section--alt" style="padding-bottom:0!important;">
+  <div class="practice-page-inner" style="background:none!important;padding-bottom:2rem!important;">
     <p class="section-label" data-pp-i18n="cases_label">Из практики</p>
     <h2 data-pp-i18n="cases_heading">Краткий перечень дел, успешная защита по которым была осуществлена адвокатом Эльмаром Сулеймановым в период между 2013–2015&#160;гг.</h2>
-    <p class="cases-sub" data-i18n="cases_sub" style="font-size:0.92rem;line-height:1.65;max-width:760px;margin-bottom:2.5rem;opacity:0.6;font-style:italic;">Все имена и детали, позволяющие идентифицировать клиентов, изменены или опущены в соответствии с адвокатской тайной.</p>
-    <div class="cases-grid pp-cases-grid">
+    <p class="cases-sub" data-i18n="cases_sub" style="font-size:0.92rem;line-height:1.65;max-width:760px;margin-bottom:0;opacity:0.6;font-style:italic;">Все имена и детали, позволяющие идентифицировать клиентов, изменены или опущены в соответствии с адвокатской тайной.</p>
+  </div>
+  <div class="cases-grid pp-cases-grid">
 
-      <div class="case-card">
+    <div class="case-card">
+      <div>
         <div class="case-card-top">
           <span class="case-tag case-tag--criminal" data-ru="Уголовное право" data-en="Criminal Law" data-az="Cinayət hüququ">Уголовное право</span>
           <span class="case-court" data-ru="Верховный суд АР" data-en="Supreme Court of AR" data-az="AR Ali Məhkəməsi">Верховный суд АР</span>
         </div>
         <h3 class="case-title" data-ru="Оправдательный приговор: протест Генпрокуратуры отклонён" data-en="Acquittal upheld: Prosecutor General's cassation dismissed" data-az="Bəraət hökmü: Baş Prokurorluğun kassasiya protestu rədd edildi">Оправдательный приговор: протест Генпрокуратуры отклонён</h3>
-        <p class="case-desc" data-ru="Верховный суд АР отклонил кассационный протест Генеральной прокуратуры и оставил в силе оправдательный приговор по обвинению в незаконном обороте наркотиков. Дело прошло три инстанции." data-en="The Supreme Court rejected the Prosecutor General's cassation protest and upheld the acquittal on drug trafficking charges. The case went through three instances." data-az="AR Ali Məhkəməsi Baş Prokurorluğun kassasiya protestini rədd etdi və narkotik dövriyyəsi ittihamı üzrə bəraət hökmünü qüvvədə saxladı.">Верховный суд АР отклонил кассационный протест Генеральной прокуратуры и оставил в силе оправдательный приговор по обвинению в незаконном обороте наркотиков. Дело прошло три инстанции.</p>
-        <div class="case-card-bottom">
-          <span class="case-result case-result--win" data-ru="Оправдательный приговор" data-en="Acquitted" data-az="Bəraət">Оправдательный приговор</span>
-          <span class="case-year">2014</span>
-        </div>
+        <span class="case-section-label" data-ru="Ситуация" data-en="Situation" data-az="Vəziyyət">Ситуация</span>
+        <p class="case-desc" data-ru="Доверитель был оправдан по обвинению в незаконном обороте наркотиков. Генеральная прокуратура подала кассационный протест, добиваясь отмены приговора." data-en="The client was acquitted on drug trafficking charges. The Prosecutor General filed a cassation protest seeking to overturn the verdict." data-az="Müvəkkil narkotik dövriyyəsi ittihamından bəraət aldı. Baş Prokurorluq hökmü ləğv etmək üçün kassasiya protestu verdi.">Доверитель был оправдан по обвинению в незаконном обороте наркотиков. Генеральная прокуратура подала кассационный протест, добиваясь отмены приговора.</p>
+        <span class="case-section-label" data-ru="Итог" data-en="Result" data-az="Nəticə">Итог</span>
+        <p class="case-desc" data-ru="Верховный суд АР отклонил протест и оставил оправдательный приговор в силе. Дело прошло все три инстанции." data-en="The Supreme Court rejected the protest and upheld the acquittal. The case went through all three instances." data-az="AR Ali Məhkəməsi protestu rədd etdi və bəraət hökmünü qüvvədə saxladı.">Верховный суд АР отклонил протест и оставил оправдательный приговор в силе. Дело прошло все три инстанции.</p>
       </div>
+      <div class="case-card-bottom">
+        <span class="case-result case-result--win chr-badge" data-result="win" data-ru="Оправдательный приговор" data-en="Acquitted" data-az="Bəraət">Оправдательный приговор</span>
+        <span class="case-year">2014</span>
+      </div>
+    </div>
 
-      <div class="case-card">
+    <div class="case-card">
+      <div>
         <div class="case-card-top">
           <span class="case-tag case-tag--criminal" data-ru="Уголовное право" data-en="Criminal Law" data-az="Cinayət hüququ">Уголовное право</span>
           <span class="case-court" data-ru="Апелляционный суд Шеки" data-en="Sheki Court of Appeal" data-az="Şəki Apellyasiya Məhkəməsi">Апелляционный суд Шеки</span>
         </div>
         <h3 class="case-title" data-ru="Оправдательный приговор: апелляционный протест прокуратуры отклонён" data-en="Acquittal upheld: prosecution appeal dismissed" data-az="Bəraət hökmü: prokurorluğun apellyasiya protestu rədd edildi">Оправдательный приговор: апелляционный протест прокуратуры отклонён</h3>
-        <p class="case-desc" data-ru="Апелляционный суд Шеки отклонил протест прокуратуры и оставил в силе оправдательный приговор по обвинению в незаконном обороте наркотиков." data-en="Sheki Court of Appeal dismissed the prosecution's protest and upheld the acquittal on drug trafficking charges." data-az="Şəki Apellyasiya Məhkəməsi prokurorluğun protestini rədd etdi və narkotik dövriyyəsi ittihamı üzrə bəraət hökmünü qüvvədə saxladı.">Апелляционный суд Шеки отклонил протест прокуратуры и оставил в силе оправдательный приговор по обвинению в незаконном обороте наркотиков.</p>
-        <div class="case-card-bottom">
-          <span class="case-result case-result--win" data-ru="Оправдательный приговор" data-en="Acquitted" data-az="Bəraət">Оправдательный приговор</span>
-          <span class="case-year">2014</span>
-        </div>
+        <span class="case-section-label" data-ru="Ситуация" data-en="Situation" data-az="Vəziyyət">Ситуация</span>
+        <p class="case-desc" data-ru="После оправдательного приговора первой инстанции прокуратура подала апелляционный протест с требованием пересмотра дела об обороте наркотиков." data-en="After the first-instance acquittal, the prosecution filed an appellate protest seeking review of the drug trafficking case." data-az="Birinci instansiya bəraət hökmündən sonra prokurorluq apellyasiya protestu verdi.">После оправдательного приговора первой инстанции прокуратура подала апелляционный протест с требованием пересмотра дела об обороте наркотиков.</p>
+        <span class="case-section-label" data-ru="Итог" data-en="Result" data-az="Nəticə">Итог</span>
+        <p class="case-desc" data-ru="Апелляционный суд Шеки отклонил протест прокуратуры и оставил оправдательный приговор в силе." data-en="Sheki Court of Appeal dismissed the prosecution's protest and upheld the acquittal." data-az="Şəki Apellyasiya Məhkəməsi prokurorluğun protestini rədd etdi və bəraət hökmünü qüvvədə saxladı.">Апелляционный суд Шеки отклонил протест прокуратуры и оставил оправдательный приговор в силе.</p>
       </div>
+      <div class="case-card-bottom">
+        <span class="case-result case-result--win chr-badge" data-result="win" data-ru="Оправдательный приговор" data-en="Acquitted" data-az="Bəraət">Оправдательный приговор</span>
+        <span class="case-year">2014</span>
+      </div>
+    </div>
 
-      <div class="case-card">
+    <div class="case-card">
+      <div>
         <div class="case-card-top">
           <span class="case-tag case-tag--criminal" data-ru="Уголовное право" data-en="Criminal Law" data-az="Cinayət hüququ">Уголовное право</span>
           <span class="case-court" data-ru="Шекинский районный суд АР" data-en="Sheki District Court" data-az="Şəki Rayon Məhkəməsi">Шекинский районный суд АР</span>
         </div>
         <h3 class="case-title" data-ru="Оправдательный приговор по обвинению в обороте наркотиков" data-en="Acquittal on drug trafficking charges" data-az="Narkotik dövriyyəsi ittihamı üzrə bəraət hökmü">Оправдательный приговор по обвинению в обороте наркотиков</h3>
-        <p class="case-desc" data-ru="Суд первой инстанции вынес оправдательный приговор по обвинению в незаконном обороте наркотических средств. Впоследствии приговор устоял в апелляции и кассации." data-en="The court of first instance delivered an acquittal on drug trafficking charges. The verdict subsequently withstood appeals at appellate and cassation levels." data-az="Birinci instansiya məhkəməsi narkotik vasitələrin qanunsuz dövriyyəsi ittihamı üzrə bəraət hökmü çıxardı.">Суд первой инстанции вынес оправдательный приговор по обвинению в незаконном обороте наркотических средств. Впоследствии приговор устоял в апелляции и кассации.</p>
-        <div class="case-card-bottom">
-          <span class="case-result case-result--win" data-ru="Оправдательный приговор" data-en="Acquitted" data-az="Bəraət">Оправдательный приговор</span>
-          <span class="case-year">2013</span>
-        </div>
+        <span class="case-section-label" data-ru="Ситуация" data-en="Situation" data-az="Vəziyyət">Ситуация</span>
+        <p class="case-desc" data-ru="Доверитель обвинялся в незаконном обороте наркотических средств. Доказательная база обвинения содержала существенные противоречия." data-en="The client was charged with illegal drug trafficking. The prosecution's evidence contained significant contradictions." data-az="Müvəkkil narkotik vasitələrin qanunsuz dövriyyəsində ittiham olunurdu. İttihamın sübut bazasında ciddi ziddiyyətlər var idi.">Доверитель обвинялся в незаконном обороте наркотических средств. Доказательная база обвинения содержала существенные противоречия.</p>
+        <span class="case-section-label" data-ru="Итог" data-en="Result" data-az="Nəticə">Итог</span>
+        <p class="case-desc" data-ru="Суд первой инстанции вынес оправдательный приговор. Впоследствии он устоял в апелляции и кассации." data-en="The court of first instance delivered an acquittal. The verdict subsequently withstood both appellate and cassation review." data-az="Birinci instansiya məhkəməsi bəraət hökmü çıxardı. Hökm apellyasiya və kassasiyada da qüvvədə qaldı.">Суд первой инстанции вынес оправдательный приговор. Впоследствии он устоял в апелляции и кассации.</p>
       </div>
-
+      <div class="case-card-bottom">
+        <span class="case-result case-result--win chr-badge" data-result="win" data-ru="Оправдательный приговор" data-en="Acquitted" data-az="Bəraət">Оправдательный приговор</span>
+        <span class="case-year">2013</span>
+      </div>
     </div>
+
   </div>
 </section>
 
@@ -294,9 +417,40 @@ function detectLang() { return localStorage.getItem('lang') || 'ru'; }
 document.querySelectorAll('.lang-btn, .mobile-lang-btn').forEach(btn => btn.addEventListener('click', () => applyPPLang(btn.dataset.lang)));
 document.addEventListener('DOMContentLoaded', () => applyPPLang(detectLang()));
 
-// Burger
+// Burger + mobile nav toggles
 document.getElementById('burger-btn').addEventListener('click', () => {
-  document.getElementById('mobile-nav').classList.toggle('open');
+  const nav = document.getElementById('mobile-nav');
+  const isOpen = nav.classList.toggle('open');
+  nav.setAttribute('aria-hidden', !isOpen);
+  document.getElementById('burger-btn').classList.toggle('open', isOpen);
+});
+document.querySelectorAll('.mobile-link--toggle').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const group = this.closest('.mobile-nav-group');
+    const sub = group.querySelector('.mobile-sub');
+    const isOpen = group.classList.toggle('open');
+    if (sub) sub.style.maxHeight = isOpen ? sub.scrollHeight + 'px' : '0';
+  });
+});
+// Desktop nav dropdowns
+document.querySelectorAll('.nav-has-drop').forEach(item => {
+  const drop = item.querySelector('.nav-dropdown');
+  if (!drop) return;
+  let timer;
+  item.addEventListener('mouseenter', () => { clearTimeout(timer); drop.classList.add('open'); });
+  item.addEventListener('mouseleave', () => { timer = setTimeout(() => drop.classList.remove('open'), 120); });
+});
+// Lang switcher mobile
+document.addEventListener('DOMContentLoaded', function() {
+  const langSwitcher = document.querySelector('.lang-switcher');
+  if (langSwitcher) {
+    langSwitcher.addEventListener('click', function(e) {
+      if (window.innerWidth > 900) return;
+      if (e.target.classList.contains('lang-btn') && !e.target.classList.contains('active')) { setTimeout(function(){ langSwitcher.classList.remove('open'); }, 50); return; }
+      langSwitcher.classList.toggle('open'); e.stopPropagation();
+    });
+    document.addEventListener('click', function() { langSwitcher.classList.remove('open'); });
+  }
 });
 
 // Float button
