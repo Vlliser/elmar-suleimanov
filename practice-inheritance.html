@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Наследственное право · Эльмар Сулейманов · Адвокат · Баку</title>
+<meta name="description" content="Наследственные споры, оспаривание завещаний, регистрация унаследованного имущества. Адвокат Эльмар Сулейманов — более 20 лет практики в Азербайджане.">
+<link rel="canonical" href="https://www.elmarsuleymanov.az/practice-inheritance.html">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="practice-page.css">
+<style>
+/* ── Element size boost ── */
+.practice-page-title{font-size:clamp(2.8rem,5.8vw,5.4rem)!important}
+.practice-page-intro{font-size:clamp(1.1rem,1.7vw,1.28rem)!important;line-height:1.8!important}
+.btn-primary--lg{font-size:0.88rem!important;padding:18px 38px!important}
+.practice-page-inner h2{font-size:clamp(1.4rem,2.6vw,2.2rem)!important}
+.practice-page-inner h2[data-pp-i18n="cases_heading"]{font-size:clamp(1.35rem,2.2vw,1.9rem)!important;line-height:1.35!important;max-width:700px;word-break:normal;white-space:normal}
+.practice-page-services li{font-size:1.1rem!important;padding:1.05rem 0!important}
+.section-label{font-size:0.82rem!important;letter-spacing:0.18em!important}
+.practice-page-cta h2{font-size:clamp(1.8rem,3.2vw,2.6rem)!important}
+.practice-page-cta p{font-size:1.05rem!important}
+
+/* ── Mobile hero fix ── */
+@media(max-width:768px){
+  .practice-page-hero{min-height:auto!important;padding:100px 0 48px!important}
+  .practice-page-hero-content{padding:0 20px!important;max-width:100%!important}
+  .practice-page-title{font-size:clamp(1.8rem,8vw,2.6rem)!important}
+  .practice-page-intro{font-size:clamp(0.92rem,3.8vw,1.05rem)!important;line-height:1.65!important}
+  .btn-primary--lg{font-size:0.8rem!important;padding:14px 24px!important;width:auto!important;max-width:100%!important}
+}
+
+/* ── Hide О себе / Контакты + dropdowns in mobile header ── */
+@media(max-width:900px){
+  nav .nav-item,nav .nav-has-drop,
+  a.nav-link[href="index.html#about"],
+  a.nav-link[href="index.html#contacts"]{display:none!important;}
+}
+
+/* ── Cases grid: full-width, 3 columns ── */
+.pp-cases-grid{
+  display:grid!important;flex-direction:unset!important;flex-wrap:unset!important;
+  overflow-x:visible!important;overflow-y:visible!important;
+  scroll-snap-type:unset!important;gap:0!important;
+  background:transparent!important;border:none!important;
+  margin:0!important;padding:0!important;
+  -webkit-mask-image:none!important;mask-image:none!important;
+  grid-template-columns:repeat(3,1fr);
+  width:100%;
+  border-left:1px solid var(--border)!important;
+  border-top:1px solid var(--border)!important;
+}
+.pp-cases-grid::after{display:none!important;}
+.pp-cases-grid .case-card{
+  display:flex!important;flex-direction:column!important;justify-content:space-between!important;
+  flex:1 1 0!important;max-width:none!important;min-width:0!important;
+  scroll-snap-align:unset!important;
+  border-right:1px solid var(--border);border-bottom:1px solid var(--border);
+  background:var(--card-bg);position:relative;overflow:hidden;
+  transition:background 0.28s ease,transform 0.22s ease,box-shadow 0.22s ease;
+}
+.pp-cases-grid .case-card:hover{background:var(--navy-mid,#162240);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,0.18);z-index:2;}
+.pp-cases-grid .case-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.3s ease;}
+.pp-cases-grid .case-card:hover::before{transform:scaleX(1);}
+@media(max-width:640px){.pp-cases-grid{grid-template-columns:1fr!important;}}
+
+/* ── Card internals ── */
+.pp-cases-grid .case-card-top{display:flex;align-items:center;justify-content:space-between;gap:0.5rem;margin-bottom:1rem;}
+.pp-cases-grid .case-title{font-family:'Cormorant Garamond',serif!important;font-size:1.25rem!important;font-weight:500!important;line-height:1.3!important;margin-bottom:0.85rem!important;color:var(--text)!important;}
+.case-section-label{display:block;font-size:0.6rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.25rem;margin-top:0.75rem;}
+.case-section-label:first-of-type{margin-top:0;}
+.pp-cases-grid .case-desc{font-size:0.87rem!important;line-height:1.72!important;color:var(--text-muted)!important;margin-bottom:0!important;}
+.pp-cases-grid .case-tag{font-size:0.62rem!important}
+.pp-cases-grid .case-court{font-size:0.62rem!important;color:var(--text-muted)!important;text-align:right;max-width:50%}
+.pp-cases-grid .case-card-bottom{display:flex;align-items:center;justify-content:space-between;gap:0.5rem;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);}
+.pp-cases-grid .case-result{font-size:0.65rem!important;letter-spacing:0.12em}
+.pp-cases-grid .case-amount,.pp-cases-grid .case-year{font-family:'Cormorant Garamond',serif!important;font-size:1.15rem!important;font-weight:500!important;color:var(--gold)!important;letter-spacing:0.02em;}
+
+/* ── Mobile: single column ── */
+@media(max-width:900px){
+  .pp-cases-grid .case-desc{display:block!important;}
+  .pp-cases-grid{grid-template-columns:1fr!important;}
+}
+
+/* ── Home FAB ── */
+.home-fab-pulse{position:fixed;bottom:32px;left:32px;z-index:9998;display:flex;align-items:center;gap:10px;background:#b8962e;color:#fff;border:none;border-radius:50px;padding:16px 28px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;box-shadow:0 4px 24px rgba(184,150,46,0.5);animation:fabPulse 2.2s ease-in-out infinite;transition:transform .2s,box-shadow .2s}
+.home-fab-pulse:hover{transform:scale(1.06);box-shadow:0 6px 32px rgba(184,150,46,0.7);animation:none}
+@keyframes fabPulse{0%{box-shadow:0 0 0 0 rgba(184,150,46,0.6),0 4px 24px rgba(184,150,46,0.4)}50%{box-shadow:0 0 0 14px rgba(184,150,46,0),0 4px 24px rgba(184,150,46,0.4)}100%{box-shadow:0 0 0 0 rgba(184,150,46,0),0 4px 24px rgba(184,150,46,0.4)}}
+@media(max-width:600px){.home-fab-pulse{bottom:90px;left:16px;padding:13px 20px;font-size:13px}}
+</style>
+</head>
+<body>
+
+<header id="main-header">
+  <a href="index.html" class="logo" aria-label="Главная">
+    <img src="logo.png" alt="Elmar Suleymanov">
+    <div class="logo-text">
+      <span class="logo-name" data-i18n="logo_name">Эльмар Сулейманов</span>
+      <span class="logo-sub logo-sub--desktop" data-i18n="logo_sub" onclick="event.stopPropagation(); window.location.href='tel:+994556447080';">Адвокат · +994 55 644 70 80</span>
+      <span class="logo-sub logo-sub--mobile" onclick="event.stopPropagation(); window.location.href='tel:+994556447080';">+994 55 644 70 80</span>
+    </div>
+  </a>
+  <nav aria-label="Навигация">
+    <div class="nav-item nav-has-drop">
+      <a href="index.html#practice" class="nav-link" data-i18n="nav_practice">Практика<svg class="nav-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <div class="nav-dropdown nav-dropdown--wide">
+        <div class="nav-drop-label" data-i18n="nav_practice">Направления практики</div>
+        <div class="nav-drop-grid">
+          <a href="practice-civil.html" class="nav-drop-item"><span class="nav-drop-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 9l10 6 10-6-10-6z"/><path d="M2 17l10 6 10-6"/><path d="M2 13l10 6 10-6"/></svg></span><span data-i18n="p1_title">Гражданское право</span></a>
+          <a href="practice-criminal.html" class="nav-drop-item"><span class="nav-drop-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span><span data-i18n="p2_title">Уголовное право</span></a>
+          <a href="practice-family.html" class="nav-drop-item"><span class="nav-drop-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span data-i18n="p3_title">Семейное право</span></a>
+          <a href="practice-labour.html" class="nav-drop-item"><span class="nav-drop-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></span><span data-i18n="p4_title">Трудовое право</span></a>
+          <a href="practice-housing.html" class="nav-drop-item"><span class="nav-drop-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span data-i18n="p5_title">Жилищное право</span></a>
+          <a href="practice-land.html" class="nav-drop-item"><span class="nav-drop-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg></span><span data-i18n="p6_title">Земельное право</span></a>
+          <a href="practice-international.html" class="nav-drop-item"><span class="nav-drop-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><span data-i18n="p7_title">Международное право</span></a>
+          <a href="practice-corporate.html" class="nav-drop-item"><span class="nav-drop-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg></span><span data-i18n="p8_title">Корпоративное право</span></a>
+          <a href="practice-administrative.html" class="nav-drop-item"><span class="nav-drop-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span><span data-i18n="p9_title">Административное право</span></a>
+          <a href="practice-registration.html" class="nav-drop-item"><span class="nav-drop-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></span><span data-i18n="p10_title">Регистрация юрлиц</span></a>
+          <a href="practice-contracts.html" class="nav-drop-item"><span class="nav-drop-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span><span data-i18n="p11_title">Договоры</span></a>
+          <a href="practice-inheritance.html" class="nav-drop-item" style="background:rgba(184,150,46,0.07);border-radius:4px;"><span class="nav-drop-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg></span><span data-i18n="p12_title">Наследственное право</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item nav-has-drop">
+      <a href="index.html#cases" class="nav-link" data-i18n="nav_cases">Дела<svg class="nav-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <div class="nav-dropdown">
+        <div class="nav-drop-label" data-i18n="nav_cases">Из практики</div>
+        <a href="index.html#practice" class="nav-drop-item nav-drop-item--single"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span data-i18n="practice_h2">Сферы деятельности</span></a>
+        <a href="index.html#cases" class="nav-drop-item nav-drop-item--single"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span data-i18n="cases_h2">Резонансные дела</span></a>
+      </div>
+    </div>
+    <a href="index.html#about" class="nav-link" data-i18n="nav_about">О себе</a>
+    <div class="nav-item nav-has-drop">
+      <a href="media.html" class="nav-link" data-i18n="nav_media">Медиа<svg class="nav-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <div class="nav-dropdown">
+        <div class="nav-drop-label" data-i18n="nav_media">Медиа</div>
+        <a href="index.html#media-section" class="nav-drop-item nav-drop-item--single"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v2"/><path d="M2 8h6"/><path d="M2 12h6"/><path d="M2 16h6"/></svg><span data-i18n="media_section_h2">Публикации и комментарии</span></a>
+        <a href="media.html" class="nav-drop-item nav-drop-item--single"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg><span data-i18n="media_video_btn">Смотреть видео</span></a>
+        <a href="https://www.facebook.com/advokatelmar/reviews" target="_blank" rel="noopener" class="nav-drop-item nav-drop-item--single"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg><span data-i18n="reviews_fb">Отзывы на Facebook</span></a>
+        <a href="https://www.instagram.com/advokat_elmar_suleymanov/" target="_blank" rel="noopener" class="nav-drop-item nav-drop-item--single"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="3"/><path d="M17.5 6.5h.01"/></svg><span>Instagram</span></a>
+      </div>
+    </div>
+    <a href="index.html#contacts" class="nav-link" data-i18n="nav_contacts">Контакты</a>
+    <div class="header-socials">
+      <a href="https://wa.me/994556447080" target="_blank" rel="noopener" class="header-social-btn" aria-label="WhatsApp"><svg width="26" height="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.05 21.94a.5.5 0 0 0 .61.61l4.772-1.388A9.955 9.955 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.95 7.95 0 0 1-4.054-1.107l-.29-.17-2.94.856.87-2.878-.19-.299A7.96 7.96 0 0 1 4 12a8 8 0 1 1 8 8zm4.406-5.884c-.241-.12-1.426-.704-1.647-.784-.22-.081-.38-.12-.54.12-.16.242-.62.784-.76.945-.14.16-.28.18-.52.06-.24-.12-1.015-.374-1.934-1.193-.714-.636-1.196-1.42-1.337-1.66-.14-.24-.015-.37.105-.49.108-.108.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.062-.12-.542-1.303-.742-1.783-.2-.47-.404-.404-.542-.412l-.46-.008c-.16 0-.42.06-.642.3-.22.242-.84.822-.84 2.003 0 1.18.862 2.322.982 2.482.12.16 1.695 2.59 4.108 3.632.574.248 1.022.396 1.371.507.576.183 1.1.157 1.514.095.462-.069 1.422-.581 1.622-1.143.2-.561.2-1.042.14-1.143-.06-.1-.22-.16-.46-.28z"/></svg></a>
+      <a href="https://www.instagram.com/advokat_elmar_suleymanov/" target="_blank" rel="noopener" class="header-social-btn" aria-label="Instagram"><svg width="26" height="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      <a href="https://www.facebook.com/advokatelmar/" target="_blank" rel="noopener" class="header-social-btn" aria-label="Facebook"><svg width="26" height="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047v-2.66c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.971h-1.513c-1.491 0-1.956.93-1.956 1.887v2.263h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg></a>
+      <a href="https://www.tiktok.com/@elmarlawyer" target="_blank" rel="noopener" class="header-social-btn" aria-label="TikTok"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg></a>
+    </div>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="ru">РУ</button>
+      <button class="lang-btn" data-lang="az">AZ</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </nav>
+  <button class="burger" id="burger-btn" aria-label="Меню"><span></span><span></span><span></span></button>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <div class="mobile-nav-group">
+    <button class="mobile-link mobile-link--toggle" data-i18n="nav_practice">Практика<svg class="mobile-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+    <div class="mobile-sub mobile-sub--grid">
+      <div class="mobile-sub-grid-inner">
+        <a href="practice-civil.html" class="mobile-sub-grid-item"><span class="mobile-sub-grid-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 9l10 6 10-6-10-6z"/><path d="M2 17l10 6 10-6"/><path d="M2 13l10 6 10-6"/></svg></span><span data-i18n="p1_title">Гражданское право</span></a>
+        <a href="practice-criminal.html" class="mobile-sub-grid-item"><span class="mobile-sub-grid-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span><span data-i18n="p2_title">Уголовное право</span></a>
+        <a href="practice-family.html" class="mobile-sub-grid-item"><span class="mobile-sub-grid-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span data-i18n="p3_title">Семейное право</span></a>
+        <a href="practice-labour.html" class="mobile-sub-grid-item"><span class="mobile-sub-grid-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></span><span data-i18n="p4_title">Трудовое право</span></a>
+        <a href="practice-housing.html" class="mobile-sub-grid-item"><span class="mobile-sub-grid-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span data-i18n="p5_title">Жилищное право</span></a>
+        <a href="practice-land.html" class="mobile-sub-grid-item"><span class="mobile-sub-grid-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg></span><span data-i18n="p6_title">Земельное право</span></a>
+        <a href="practice-international.html" class="mobile-sub-grid-item"><span class="mobile-sub-grid-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><span data-i18n="p7_title">Международное право</span></a>
+        <a href="practice-corporate.html" class="mobile-sub-grid-item"><span class="mobile-sub-grid-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg></span><span data-i18n="p8_title">Корпоративное право</span></a>
+        <a href="practice-administrative.html" class="mobile-sub-grid-item"><span class="mobile-sub-grid-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span><span data-i18n="p9_title">Административное право</span></a>
+        <a href="practice-registration.html" class="mobile-sub-grid-item"><span class="mobile-sub-grid-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></span><span data-i18n="p10_title">Регистрация юрлиц</span></a>
+        <a href="practice-contracts.html" class="mobile-sub-grid-item"><span class="mobile-sub-grid-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span><span data-i18n="p11_title">Договоры</span></a>
+        <a href="practice-inheritance.html" class="mobile-sub-grid-item" style="background:rgba(184,150,46,0.08);border-radius:4px;"><span class="mobile-sub-grid-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg></span><span data-i18n="p12_title">Наследственное право</span></a>
+      </div>
+    </div>
+  </div>
+  <a href="index.html#cases" class="mobile-link" data-i18n="nav_cases">Дела</a>
+  <div class="mobile-nav-group">
+    <button class="mobile-link mobile-link--toggle" data-i18n="nav_media">Медиа<svg class="mobile-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+    <div class="mobile-sub">
+      <a href="index.html#media-section" class="mobile-sub-link" data-i18n="media_section_h2">Публикации</a>
+      <a href="media.html" class="mobile-sub-link" data-i18n="media_video_btn">Смотреть видео</a>
+      <a href="https://www.facebook.com/advokatelmar/" target="_blank" rel="noopener" class="mobile-sub-link">Facebook</a>
+      <a href="https://www.instagram.com/advokat_elmar_suleymanov/" target="_blank" rel="noopener" class="mobile-sub-link">Instagram</a>
+    </div>
+  </div>
+  <div class="mobile-lang">
+    <button class="mobile-lang-btn active" data-lang="ru">РУ</button>
+    <button class="mobile-lang-btn" data-lang="az">AZ</button>
+    <button class="mobile-lang-btn" data-lang="en">EN</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="practice-page-hero" style="--hero-bg: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1600&q=80')">
+  <div class="practice-page-hero-overlay" style="background:linear-gradient(to right,rgba(0,0,0,0.93) 0%,rgba(0,0,0,0.82) 55%,rgba(0,0,0,0.55) 100%) !important;"></div>
+  <div class="practice-page-hero-content">
+    <h1 class="practice-page-title" style="text-shadow:0 2px 20px rgba(0,0,0,0.9),0 4px 40px rgba(0,0,0,0.8);"
+        data-ru="Наследственное право" data-en="Inheritance Law" data-az="Vərəsəlik hüququ">Наследственное право</h1>
+    <p class="practice-page-intro" style="text-shadow:0 1px 12px rgba(0,0,0,0.9),0 2px 24px rgba(0,0,0,0.8);"
+       data-ru="Ведение наследственных споров, оспаривание завещаний, регистрация унаследованного имущества и раздел наследственной массы. Более 20 лет практики в Азербайджане."
+       data-en="Handling inheritance disputes, contesting wills, registering inherited property and dividing estates. Over 20 years of practice in Azerbaijan."
+       data-az="Vərəsəlik mübahisələrinin aparılması, vəsiyyətnamələrin mübahisələndirilməsi, miras yolu ilə alınan əmlakın qeydiyyatı. Azərbaycanda 20 ildən çox təcrübə.">Ведение наследственных споров, оспаривание завещаний, регистрация унаследованного имущества и раздел наследственной массы. Более 20 лет практики в Азербайджане.</p>
+    <button onclick="openConsultModal()" class="btn-primary btn-primary--lg" data-pp-i18n="cta">Записаться на консультацию</button>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="practice-page-section">
+  <div class="practice-page-inner">
+    <p class="section-label" data-pp-i18n="services_label">Что входит в практику</p>
+    <h2 data-ru="Наследственное право" data-en="Inheritance Law" data-az="Vərəsəlik hüququ">Наследственное право</h2>
+    <ul class="practice-page-services">
+      <li data-ru="Консультирование по вопросам наследования по закону и по завещанию" data-en="Advice on succession by law and by will" data-az="Qanun üzrə və vəsiyyətnamə üzrə miras məsələlərində məsləhət">Консультирование по вопросам наследования по закону и по завещанию</li>
+      <li data-ru="Оспаривание завещаний и признание их недействительными" data-en="Contesting wills and seeking their invalidation" data-az="Vəsiyyətnamələrin mübahisələndirilməsi və etibarsız sayılması">Оспаривание завещаний и признание их недействительными</li>
+      <li data-ru="Установление круга наследников и их долей" data-en="Establishing heirs and their shares" data-az="Varislərin dairəsinin və paylarının müəyyən edilməsi">Установление круга наследников и их долей</li>
+      <li data-ru="Раздел наследственного имущества между наследниками" data-en="Division of estate among heirs" data-az="Miras əmlakının varislər arasında bölünməsi">Раздел наследственного имущества между наследниками</li>
+      <li data-ru="Регистрация унаследованной недвижимости в государственном реестре" data-en="Registration of inherited real estate in the state registry" data-az="Miras yolu ilə alınan daşınmaz əmlakın dövlət reyestrində qeydiyyatı">Регистрация унаследованной недвижимости в государственном реестре</li>
+      <li data-ru="Восстановление пропущенного срока принятия наследства" data-en="Restoration of a missed deadline for accepting an inheritance" data-az="Mirasın qəbulu üçün buraxılmış müddətin bərpası">Восстановление пропущенного срока принятия наследства</li>
+      <li data-ru="Защита права на обязательную долю в наследстве" data-en="Protection of the right to a compulsory share in an estate" data-az="Mirasdakı məcburi paya hüququn müdafiəsi">Защита права на обязательную долю в наследстве</li>
+      <li data-ru="Наследственные споры с участием иностранного элемента" data-en="Inheritance disputes involving a foreign element" data-az="Xarici element iştirakı ilə vərəsəlik mübahisələri">Наследственные споры с участием иностранного элемента</li>
+      <li data-ru="Признание наследника недостойным" data-en="Recognition of an heir as unworthy" data-az="Vərəsənin layiqsiz elan edilməsi">Признание наследника недостойным</li>
+      <li data-ru="Взыскание задолженности из состава наследственной массы" data-en="Recovery of debts from the estate" data-az="Miras kütləsindən borc məbləğinin tutulması">Взыскание задолженности из состава наследственной массы</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CASES -->
+<section class="practice-page-section practice-page-section--alt" style="padding-bottom:0!important;">
+  <div class="practice-page-inner" style="background:none!important;padding-bottom:2rem!important;">
+    <p class="section-label" data-pp-i18n="cases_label">Из практики</p>
+    <h2 data-pp-i18n="cases_heading">Дела по наследственным спорам из практики адвоката Эльмара Сулейманова</h2>
+    <p class="cases-sub" data-i18n="cases_sub" style="font-size:0.92rem;line-height:1.65;max-width:760px;margin-bottom:0;opacity:0.6;font-style:italic;">Все имена и детали, позволяющие идентифицировать клиентов, изменены или опущены в соответствии с адвокатской тайной.</p>
+  </div>
+  <div class="cases-grid pp-cases-grid">
+
+    <!-- Case 1 -->
+    <div class="case-card">
+      <div>
+        <div class="case-card-top">
+          <span class="case-tag case-tag--civil" data-ru="Наследственное право" data-en="Inheritance Law" data-az="Vərəsəlik hüququ">Наследственное право</span>
+          <span class="case-court" data-ru="2-й Адм.-экономический суд Баку" data-en="2nd Admin-Economic Court of Baku" data-az="2 saylı Bakı İnzibati-iqtisadi Məhkəməsi">2-й Адм.-экономический суд Баку</span>
+        </div>
+        <h3 class="case-title"
+            data-ru="Регистрация унаследованной недвижимости в государственном реестре"
+            data-en="Registration of inherited real estate in the state registry"
+            data-az="Miras yolu ilə alınan əmlakın dövlət reyestrində qeydiyyatı">Регистрация унаследованной недвижимости в государственном реестре</h3>
+        <span class="case-section-label" data-ru="Ситуация" data-en="Situation" data-az="Vəziyyət">Ситуация</span>
+        <p class="case-desc"
+           data-ru="Доверитель унаследовал недвижимое имущество, однако государственные органы отказали в регистрации права собственности, ссылаясь на неполноту документов."
+           data-en="The client inherited real estate but state authorities refused to register the title, citing incomplete documents."
+           data-az="Müvəkkil daşınmaz əmlakı miras aldı, lakin dövlət orqanları sənədlərin natamamlığına istinad edərək mülkiyyət hüququnun qeydiyyatından imtina etdi.">Доверитель унаследовал недвижимое имущество, однако государственные органы отказали в регистрации права собственности, ссылаясь на неполноту документов.</p>
+        <span class="case-section-label" data-ru="Итог" data-en="Result" data-az="Nəticə">Итог</span>
+        <p class="case-desc"
+           data-ru="Суд обязал зарегистрировать право собственности на унаследованное имущество. Интересы доверителя полностью защищены."
+           data-en="The court ordered the registration of title to the inherited property. The client's interests were fully protected."
+           data-az="Məhkəmə miras yolu ilə alınan əmlaka mülkiyyət hüququnun qeydiyyatını məcbur etdi.">Суд обязал зарегистрировать право собственности на унаследованное имущество. Интересы доверителя полностью защищены.</p>
+      </div>
+      <div class="case-card-bottom">
+        <span class="case-result case-result--win chr-badge" data-result="win" data-ru="Право зарегистрировано" data-en="Title registered" data-az="Hüquq qeydə alındı">Право зарегистрировано</span>
+        <span class="case-year">2012</span>
+      </div>
+    </div>
+
+    <!-- Case 2 -->
+    <div class="case-card">
+      <div>
+        <div class="case-card-top">
+          <span class="case-tag case-tag--civil" data-ru="Наследственное право" data-en="Inheritance Law" data-az="Vərəsəlik hüququ">Наследственное право</span>
+          <span class="case-court" data-ru="2-й Адм.-экономический суд Баку" data-en="2nd Admin-Economic Court of Baku" data-az="2 saylı Bakı İnzibati-iqtisadi Məhkəməsi">2-й Адм.-экономический суд Баку</span>
+        </div>
+        <h3 class="case-title"
+            data-ru="Регистрация унаследованной недвижимости в пос. Марданкяны"
+            data-en="Registration of inherited real estate in Mardakan village"
+            data-az="Mardəkan qəsəbəsindəki miras əmlakının qeydiyyatı">Регистрация унаследованной недвижимости в пос. Марданкяны</h3>
+        <span class="case-section-label" data-ru="Ситуация" data-en="Situation" data-az="Vəziyyət">Ситуация</span>
+        <p class="case-desc"
+           data-ru="Доверитель не мог оформить права на объект недвижимости, доставшийся по наследству в посёлке Марданкяны, из-за отсутствия ряда правоустанавливающих документов."
+           data-en="The client was unable to register a property inherited in Mardakan village due to missing title documents."
+           data-az="Müvəkkil Mardəkan qəsəbəsindəki miras daşınmaz əmlaka hüququ bir sıra sənədlərin olmaması səbəbindən rəsmiləşdirə bilmirdi.">Доверитель не мог оформить права на объект недвижимости, доставшийся по наследству в посёлке Марданкяны, из-за отсутствия ряда правоустанавливающих документов.</p>
+        <span class="case-section-label" data-ru="Итог" data-en="Result" data-az="Nəticə">Итог</span>
+        <p class="case-desc"
+           data-ru="Суд вынес решение в пользу доверителя, право собственности на объект стоимостью 250 000 AZN было зарегистрировано в государственном реестре."
+           data-en="The court ruled in favour of the client; title to the property worth 250,000 AZN was registered in the state registry."
+           data-az="Məhkəmə müvəkkil lehinə qərar çıxardı; 250 000 AZN dəyərindəki obyektin mülkiyyət hüququ dövlət reyestrində qeydiyyata alındı.">Суд вынес решение в пользу доверителя, право собственности на объект стоимостью 250 000 AZN было зарегистрировано в государственном реестре.</p>
+      </div>
+      <div class="case-card-bottom">
+        <span class="case-result case-result--win chr-badge" data-result="win" data-ru="Право зарегистрировано" data-en="Title registered" data-az="Hüquq qeydə alındı">Право зарегистрировано</span>
+        <span class="case-amount">250 000 AZN</span>
+      </div>
+    </div>
+
+    <!-- Case 3 -->
+    <div class="case-card">
+      <div>
+        <div class="case-card-top">
+          <span class="case-tag case-tag--civil" data-ru="Наследственное право" data-en="Inheritance Law" data-az="Vərəsəlik hüququ">Наследственное право</span>
+          <span class="case-court" data-ru="Суд общей юрисдикции" data-en="Court of General Jurisdiction" data-az="Ümumi yurisdiksiya məhkəməsi">Суд общей юрисдикции</span>
+        </div>
+        <h3 class="case-title"
+            data-ru="Справедливый раздел наследственного имущества"
+            data-en="Fair division of inherited estate"
+            data-az="Miras əmlakının ədalətli bölünməsi">Справедливый раздел наследственного имущества</h3>
+        <span class="case-section-label" data-ru="Ситуация" data-en="Situation" data-az="Vəziyyət">Ситуация</span>
+        <p class="case-desc"
+           data-ru="Между несколькими наследниками возник спор о разделе имущества умершего. Один из наследников пытался исключить других из числа правопреемников."
+           data-en="A dispute arose among multiple heirs over the division of the deceased's estate. One heir attempted to exclude the others from succession."
+           data-az="Bir neçə varis arasında vəfat etmiş şəxsin əmlakının bölünməsi ilə bağlı mübahisə yarandı. Varislərdən biri digərlərini varislər siyahısından çıxarmağa cəhd etdi.">Между несколькими наследниками возник спор о разделе имущества умершего. Один из наследников пытался исключить других из числа правопреемников.</p>
+        <span class="case-section-label" data-ru="Итог" data-en="Result" data-az="Nəticə">Итог</span>
+        <p class="case-desc"
+           data-ru="Суд признал права всех законных наследников и вынес решение о справедливом разделе имущества между ними."
+           data-en="The court recognised the rights of all lawful heirs and ordered a fair division of the estate among them."
+           data-az="Məhkəmə bütün qanuni varislərin hüquqlarını tanıdı və əmlakın onlar arasında ədalətli bölünməsi barədə qərar çıxardı.">Суд признал права всех законных наследников и вынес решение о справедливом разделе имущества между ними.</p>
+      </div>
+      <div class="case-card-bottom">
+        <span class="case-result case-result--win chr-badge" data-result="win" data-ru="Раздел произведён" data-en="Estate divided" data-az="Əmlak bölündü">Раздел произведён</span>
+        <span class="case-year">2014</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="practice-page-cta" style="position:relative;overflow:hidden;background:var(--navy);">
+  <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1600&q=80');background-size:cover;background-position:center;pointer-events:none;z-index:0;"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,15,35,0.92) 0%,rgba(5,15,35,0.80) 100%);pointer-events:none;z-index:1;"></div>
+  <div class="practice-page-inner practice-page-cta-inner" style="position:relative;z-index:2;">
+    <div>
+      <h2 data-pp-i18n="cta_heading">Нужна консультация?</h2>
+      <p data-i18n="cta_p1">Первичная консультация позволяет оценить ситуацию и определить возможные пути решения.</p>
+    </div>
+    <div class="practice-page-cta-btns">
+      <button onclick="openConsultModal()" class="btn-primary btn-primary--lg" data-pp-i18n="cta">Записаться на консультацию</button>
+      <a href="tel:+994556447080" class="btn-outline" data-i18n="cta_btn">Позвонить сейчас</a>
+    </div>
+  </div>
+</section>
+
+<!-- Home FAB -->
+<a href="index.html" class="home-fab-pulse" aria-label="На главную">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+  <span data-pp-i18n="home_btn">На главную</span>
+</a>
+
+<footer>
+  <p class="footer-copy" data-i18n="footer_copy">© {{year}} Эльмар Сулейманов. Все права защищены.</p>
+  <div class="footer-links">
+    <button onclick="openModal('modal-terms')" data-i18n="footer_terms">Пользовательское соглашение</button>
+    <button onclick="openModal('modal-privacy')" data-i18n="footer_privacy">Обработка персональных данных</button>
+  </div>
+</footer>
+
+<!-- Consultation modal -->
+<div class="consult-modal-overlay" id="modal-consult" role="dialog" aria-modal="true" aria-labelledby="consult-title">
+  <div class="consult-modal">
+    <div class="consult-modal-header">
+      <h3 id="consult-title" data-i18n="consult_title">Записаться на консультацию</h3>
+      <p data-i18n="consult_sub">Мгновенная отправка в WhatsApp</p>
+      <button class="consult-modal-close" onclick="closeConsultModal()" aria-label="Закрыть">✕</button>
+    </div>
+    <div class="consult-modal-body">
+      <div id="consult-form-wrap">
+        <form id="consult-form" onsubmit="sendToWhatsApp(event)">
+          <div class="consult-field">
+            <label for="cf-message" data-i18n="consult_field_label">Краткое описание проблемы <span class="req">*</span></label>
+            <textarea id="cf-message" name="message" data-i18n-placeholder="consult_placeholder" placeholder="Кратко опишите вашу ситуацию…" rows="5" class="form-textarea" required></textarea>
+          </div>
+          <button type="submit" class="consult-submit-btn" id="consult-submit-btn">
+            <span id="consult-btn-text" data-i18n="consult_submit">Отправить в WhatsApp →</span>
+          </button>
+        </form>
+      </div>
+      <div class="consult-success" id="consult-success">
+        <div class="consult-success-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h4 data-i18n="consult_success_title">Перенаправление в WhatsApp!</h4>
+        <p data-i18n="consult_success_text">Сейчас откроется окно WhatsApp с вашим сообщением.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-terms" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-terms')">×</button>
+    <h3 data-i18n="footer_terms">Пользовательское соглашение</h3>
+    <p>Настоящее соглашение регулирует условия использования сайта адвоката Эльмара Сулейманова.</p>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-privacy" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-privacy')">×</button>
+    <h3 data-i18n="footer_privacy">Обработка персональных данных</h3>
+    <p>Настоящее уведомление составлено в соответствии с Законом АР «О персональных данных».</p>
+  </div>
+</div>
+
+<div class="float-contact-wrap" id="float-contact-wrap">
+  <div class="float-popup" id="float-popup">
+    <div class="float-popup-row">
+      <span class="float-popup-label" data-i18n="btn_phone">Связаться по телефону</span>
+      <a href="tel:+994556447080" class="float-action-btn float-action-phone" aria-label="Позвонить"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.29 6.29l1.91-1.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+    </div>
+    <div class="float-popup-row">
+      <span class="float-popup-label" data-i18n="btn_whatsapp">Связаться по WhatsApp</span>
+      <a href="https://wa.me/994556447080" target="_blank" rel="noopener" class="float-action-btn float-action-whatsapp" aria-label="WhatsApp"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.118.549 4.107 1.514 5.84L.057 23.625a.75.75 0 0 0 .921.903l5.919-1.55A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.704 9.704 0 0 1-4.964-1.362l-.355-.211-3.716.974.991-3.624-.231-.373A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg></a>
+    </div>
+  </div>
+  <button class="float-main-btn" id="float-main-btn" aria-label="Связаться">
+    <span class="float-main-label" data-i18n="float_contact">Связаться</span>
+    <span class="float-main-icon-open"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+    <span class="float-main-icon-closed"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.29 6.29l1.91-1.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+  </button>
+</div>
+
+<script>
+const LAWYER_WHATSAPP = '994556447080';
+const PP_I18N = {
+  ru: { back:'← Все направления', cta:'Записаться на консультацию', services_label:'Что входит в практику', cases_label:'Из практики', cases_heading:'Дела по наследственным спорам из практики адвоката Эльмара Сулейманова', cta_heading:'Нужна консультация?', home_btn:'На главную' },
+  en: { back:'← All Practice Areas', cta:'Book a Consultation', services_label:'What we handle', cases_label:'From Practice', cases_heading:'Inheritance cases from the practice of attorney Elmar Suleymanov', cta_heading:'Need a consultation?', home_btn:'Home' },
+  az: { back:'← Bütün sahələr', cta:'Konsultasiyaya yazılın', services_label:'Praktikaya nə daxildir', cases_label:'Təcrübədən', cases_heading:'Vəkil Elmar Süleymanovun vərəsəlik mübahisələri üzrə işləri', cta_heading:'Konsultasiya lazımdır?', home_btn:'Ana səhifə' },
+};
+const RESULT_LABELS = {
+  win: { ru:'Победа', en:'Won', az:'Qazanıldı' },
+  loss: { ru:'Отклонено', en:'Dismissed', az:'Rədd edildi' },
+  neutral: { ru:'Выполнено', en:'Completed', az:'Tamamlandı' },
+};
+function applyPPLang(lang) {
+  const t = PP_I18N[lang];
+  document.querySelectorAll('[data-pp-i18n]').forEach(el => {
+    const key = el.getAttribute('data-pp-i18n');
+    if (t[key]) el.textContent = t[key];
+  });
+  ['ru','en','az'].forEach(l => document.querySelectorAll('[data-' + l + ']').forEach(el => {
+    if (lang === l) el.textContent = el.getAttribute('data-' + l);
+  }));
+  document.querySelectorAll('.chr-badge[data-result]').forEach(el => {
+    const res = el.getAttribute('data-result');
+    if (RESULT_LABELS[res]) el.textContent = RESULT_LABELS[res][lang];
+  });
+  document.querySelectorAll('.lang-btn, .mobile-lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  localStorage.setItem('lang', lang);
+  document.documentElement.lang = lang;
+}
+function detectLang() { return localStorage.getItem('lang') || 'ru'; }
+document.querySelectorAll('.lang-btn, .mobile-lang-btn').forEach(btn => btn.addEventListener('click', () => applyPPLang(btn.dataset.lang)));
+document.addEventListener('DOMContentLoaded', () => applyPPLang(detectLang()));
+
+document.getElementById('burger-btn').addEventListener('click', () => {
+  const nav = document.getElementById('mobile-nav');
+  const isOpen = nav.classList.toggle('open');
+  nav.setAttribute('aria-hidden', !isOpen);
+  document.getElementById('burger-btn').classList.toggle('open', isOpen);
+});
+document.querySelectorAll('.mobile-link--toggle').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const group = this.closest('.mobile-nav-group');
+    const sub = group.querySelector('.mobile-sub');
+    const isOpen = group.classList.toggle('open');
+    if (sub) sub.style.maxHeight = isOpen ? sub.scrollHeight + 'px' : '0';
+  });
+});
+document.querySelectorAll('.nav-has-drop').forEach(item => {
+  const drop = item.querySelector('.nav-dropdown');
+  if (!drop) return;
+  let timer;
+  item.addEventListener('mouseenter', () => { clearTimeout(timer); drop.classList.add('open'); });
+  item.addEventListener('mouseleave', () => { timer = setTimeout(() => drop.classList.remove('open'), 120); });
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const langSwitcher = document.querySelector('.lang-switcher');
+  if (langSwitcher) {
+    langSwitcher.addEventListener('click', function(e) {
+      if (window.innerWidth > 900) return;
+      if (e.target.classList.contains('lang-btn') && !e.target.classList.contains('active')) { setTimeout(function(){ langSwitcher.classList.remove('open'); }, 50); return; }
+      langSwitcher.classList.toggle('open'); e.stopPropagation();
+    });
+    document.addEventListener('click', function() { langSwitcher.classList.remove('open'); });
+  }
+});
+
+(function() {
+  const wrap = document.getElementById('float-contact-wrap');
+  const mainBtn = document.getElementById('float-main-btn');
+  if (!wrap || !mainBtn) return;
+  var reopenTimer = null;
+  function openPopup() { wrap.classList.remove('closed'); clearTimeout(reopenTimer); }
+  function closePopup() { wrap.classList.add('closed'); clearTimeout(reopenTimer); reopenTimer = setTimeout(openPopup, 10000); }
+  mainBtn.addEventListener('click', function(e) { e.stopPropagation(); wrap.classList.contains('closed') ? openPopup() : closePopup(); });
+  window.addEventListener('scroll', () => { wrap.classList.toggle('visible', window.scrollY > 200); }, {passive:true});
+})();
+
+function openConsultModal() { document.getElementById('modal-consult').classList.add('open'); document.body.style.overflow = 'hidden'; document.getElementById('consult-form-wrap').style.display = ''; document.getElementById('consult-success').style.display = 'none'; document.getElementById('consult-form').reset(); }
+function closeConsultModal() { document.getElementById('modal-consult').classList.remove('open'); document.body.style.overflow = ''; }
+document.getElementById('modal-consult').addEventListener('click', function(e) { if (e.target === this) closeConsultModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeConsultModal(); });
+function sendToWhatsApp(event) {
+  event.preventDefault();
+  const message = document.getElementById('cf-message').value;
+  let whatsappMessage = '*ЗАЯВКА НА КОНСУЛЬТАЦИЮ*\n\nКраткое описание проблемы:\n' + message;
+  window.open('https://wa.me/' + LAWYER_WHATSAPP + '?text=' + encodeURIComponent(whatsappMessage), '_blank');
+  document.getElementById('consult-form-wrap').style.display = 'none';
+  document.getElementById('consult-success').style.display = 'block';
+  setTimeout(() => { closeConsultModal(); document.getElementById('consult-form').reset(); document.getElementById('consult-form-wrap').style.display = ''; document.getElementById('consult-success').style.display = 'none'; }, 3500);
+}
+function openModal(id) { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+document.querySelectorAll('.modal-overlay').forEach(m => m.addEventListener('click', function(e) { if (e.target === this) this.classList.remove('open'); }));
+
+const _sharedI18n = {
+  ru: { logo_name:'Эльмар Сулейманов', logo_sub:'Адвокат · +994 55 644 70 80', nav_practice:'Практика', nav_cases:'Дела', nav_about:'О себе', nav_media:'Медиа', nav_contacts:'Контакты', p1_title:'Гражданское право', p2_title:'Уголовное право', p3_title:'Семейное право', p4_title:'Трудовое право', p5_title:'Жилищное право', p6_title:'Земельное право', p7_title:'Международное право', p8_title:'Корпоративное право', p9_title:'Административное право', p10_title:'Регистрация юрлиц', p11_title:'Договоры', p12_title:'Наследственное право', practice_h2:'Направления практики', cases_h2:'Резонансные дела', media_section_h2:'Публикации и комментарии', media_video_btn:'Смотреть видео', reviews_fb:'Отзывы на Facebook', cta_p1:'Первичная консультация позволяет оценить ситуацию и определить возможные пути решения.', cta_btn:'Позвонить сейчас', footer_copy:'© {{year}} Эльмар Сулейманов. Все права защищены.', footer_terms:'Пользовательское соглашение', footer_privacy:'Обработка персональных данных', btn_phone:'Связаться по телефону', btn_whatsapp:'Связаться по WhatsApp', float_contact:'Связаться', consult_title:'Записаться на консультацию', consult_sub:'Мгновенная отправка в WhatsApp', consult_placeholder:'Кратко опишите вашу ситуацию или вопрос…', consult_field_label:'Краткое описание проблемы', consult_submit:'Отправить в WhatsApp →', consult_success_title:'Перенаправление в WhatsApp!', consult_success_text:'Сейчас откроется окно WhatsApp с вашим сообщением.', cases_sub:'Все имена и детали, позволяющие идентифицировать клиентов, изменены или опущены в соответствии с адвокатской тайной.' },
+  en: { logo_name:'Elmar Suleymanov', logo_sub:'Attorney · +994 55 644 70 80', nav_practice:'Practice', nav_cases:'Cases', nav_about:'About', nav_media:'Media', nav_contacts:'Contact', p1_title:'Civil Law', p2_title:'Criminal Law', p3_title:'Family Law', p4_title:'Labour Law', p5_title:'Housing Law', p6_title:'Land Law', p7_title:'International Law', p8_title:'Corporate Law', p9_title:'Administrative Law', p10_title:'Company Registration', p11_title:'Contracts', p12_title:'Inheritance Law', practice_h2:'Practice Areas', cases_h2:'Notable Cases', media_section_h2:'Publications & Comments', media_video_btn:'Watch videos', reviews_fb:'Reviews on Facebook', cta_p1:'An initial consultation allows us to assess the situation and identify possible solutions.', cta_btn:'Call now', footer_copy:'© {{year}} Elmar Suleymanov. All rights reserved.', footer_terms:'Terms of Use', footer_privacy:'Privacy Policy', btn_phone:'Call us', btn_whatsapp:'WhatsApp', float_contact:'Contact', consult_title:'Book a Consultation', consult_sub:'Instant send to WhatsApp', consult_placeholder:'Briefly describe your situation…', consult_field_label:'Brief description', consult_submit:'Send via WhatsApp →', consult_success_title:'Redirecting to WhatsApp!', consult_success_text:'A WhatsApp window with your message will open shortly.', cases_sub:'All names and identifying details have been altered or omitted in accordance with attorney-client privilege.' },
+  az: { logo_name:'Elmar Süleymanov', logo_sub:'Vəkil · +994 55 644 70 80', nav_practice:'Təcrübə', nav_cases:'İşlər', nav_about:'Haqqımda', nav_media:'Media', nav_contacts:'Əlaqə', p1_title:'Mülki hüquq', p2_title:'Cinayət hüququ', p3_title:'Ailə hüququ', p4_title:'Əmək hüququ', p5_title:'Mənzil hüququ', p6_title:'Torpaq hüququ', p7_title:'Beynəlxalq hüquq', p8_title:'Korporativ hüquq', p9_title:'İnzibati hüquq', p10_title:'Hüquqi şəxslərin qeydiyyatı', p11_title:'Müqavilələr', p12_title:'Vərəsəlik hüququ', practice_h2:'Fəaliyyət istiqamətləri', cases_h2:'Rezonans işlər', media_section_h2:'Nəşrlər və şərhlər', media_video_btn:'Videoları izləyin', reviews_fb:'Facebook-da rəylər', cta_p1:'İlkin konsultasiya vəziyyəti qiymətləndirməyə və mümkün həll yollarını müəyyən etməyə imkan verir.', cta_btn:'İndi zəng edin', footer_copy:'© {{year}} Elmar Süleymanov. Bütün hüquqlar qorunur.', footer_terms:'İstifadəçi müqaviləsi', footer_privacy:'Şəxsi məlumatların işlənməsi', btn_phone:'Telefonla əlaqə', btn_whatsapp:'WhatsApp ilə əlaqə', float_contact:'Əlaqə', consult_title:'Konsultasiyaya yazılın', consult_sub:'WhatsApp-a ani göndərmə', consult_placeholder:'Vəziyyətinizi qısaca təsvir edin…', consult_field_label:'Problemin qısa təsviri', consult_submit:'WhatsApp-a göndər →', consult_success_title:'WhatsApp-a yönləndirmə!', consult_success_text:'WhatsApp pəncərəsi mesajınızla açılacaq.', cases_sub:'Müvəkkil sirrini qorumaq məqsədilə müştəriləri müəyyən edə biləcək bütün adlar və təfərrüatlar dəyişdirilmiş və ya buraxılmışdır.' }
+};
+function applySharedLang(lang) {
+  const t = _sharedI18n[lang];
+  const year = new Date().getFullYear();
+  if (!t) return;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.innerHTML = t[key].replace('{{year}}', year);
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (t[key]) el.placeholder = t[key];
+  });
+}
+document.querySelectorAll('.lang-btn, .mobile-lang-btn').forEach(btn => btn.addEventListener('click', () => { applySharedLang(btn.dataset.lang); }, true));
+document.addEventListener('DOMContentLoaded', () => applySharedLang(detectLang()));
+</script>
+</body>
+</html>

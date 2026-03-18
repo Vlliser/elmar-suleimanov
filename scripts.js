@@ -18,6 +18,7 @@ const i18n = {
     p9_title:'Административное право', p9_desc:'Оспаривание решений государственных органов, административные правонарушения.',
     p10_title:'Регистрация и ликвидация юридических лиц', p10_desc:'Регистрация компаний, изменения в уставных документах, ликвидация юридических лиц.',
     p11_title:'Составление и экспертиза договоров', p11_desc:'Разработка, правовая проверка и экспертиза договоров с учётом специфики сделки и рисков сторон.',
+    p12_title:'Наследственное право', p12_desc:'Наследственные споры, оспаривание завещаний, регистрация унаследованного имущества и раздел наследственной массы.',
     about_label:'Об адвокате',
     about_p1:'Эльмар Сулейманов родился в 1976 году в городе Баку. В 2003 году получил степень магистра права.',
     about_p2:'В разные годы работал юрисконсультом в ряде компаний, возглавлял административно-правовой департамент телекомпании «ANS-TV» и ООО «MƏTANƏT-A», а также занимал должность советника генерального директора Института стандартизации Азербайджанской Республики. В 2002 году занимался преподавательской деятельностью в университете «Təfəkkür».',
@@ -109,7 +110,7 @@ const i18n = {
     chronicle_label:'Краткий перечень сверхсложных дел, успешная защита по которым была осуществлена адвокатом <em style="color:var(--gold);font-style:italic">Эльмаром Сулеймановым</em> в период между <em style="color:var(--gold);font-style:italic">2013–2015&nbsp;гг.</em>',
     chr_all:'Все', chr_criminal:'Уголовное право', chr_civil:'Гражданское право',
     chr_corporate:'Корпоративное право', chr_family:'Семейное право',
-    chr_constitutional:'Конституционное право', chr_contract:'Договорная работа',
+    chr_constitutional:'Конституционное право', chr_contract:'Договорная работа', chr_inheritance:'Наследственное право',
     chr_th_date:'Дата', chr_th_court:'Суд', chr_th_subject:'Предмет иска',
     chr_th_amount:'Сумма', chr_th_result:'Результат',
     chr_show_more:'Показать все дела', chr_show_less:'Свернуть',
@@ -134,6 +135,7 @@ const i18n = {
     p9_title:'Administrative Law', p9_desc:'Challenging government decisions, administrative offences.',
     p10_title:'Business Registration & Liquidation', p10_desc:'Company registration, charter amendments, liquidation of legal entities.',
     p11_title:'Contract Drafting & Review', p11_desc:'Development, legal review and due diligence of contracts, accounting for transaction specifics and risks.',
+    p12_title:'Inheritance Law', p12_desc:'Inheritance disputes, contesting wills, registration of inherited property and division of estates.',
     about_label:'About',
     about_name:'Elmar Suleymanov',
     about_p1:'Elmar Suleymanov was born in 1976 in Baku. In 2003, he obtained a Master\'s degree in Law.',
@@ -225,7 +227,7 @@ const i18n = {
     chronicle_label:'A Brief List of Exceptionally Complex Cases Successfully Defended by Attorney <em style="color:var(--gold);font-style:italic">Elmar Suleymanov</em> Between <em style="color:var(--gold);font-style:italic">2013–2015</em>',
     chr_all:'All', chr_criminal:'Criminal Law', chr_civil:'Civil Law',
     chr_corporate:'Corporate Law', chr_family:'Family Law',
-    chr_constitutional:'Constitutional Law', chr_contract:'Contract Work',
+    chr_constitutional:'Constitutional Law', chr_contract:'Contract Work', chr_inheritance:'Inheritance Law',
     chr_th_date:'Date', chr_th_court:'Court', chr_th_subject:'Subject',
     chr_th_amount:'Amount', chr_th_result:'Result',
     chr_show_more:'Show all cases', chr_show_less:'Collapse',
@@ -250,6 +252,7 @@ const i18n = {
     p9_title:'İnzibati hüquq', p9_desc:'Dövlət orqanlarının qərarlarına etiraz, inzibati xətalar.',
     p10_title:'Hüquqi şəxslərin qeydiyyatı və ləğvi', p10_desc:'Şirkət qeydiyyatı, nizamnamə dəyişiklikləri, hüquqi şəxslərin ləğvi.',
     p11_title:'Müqavilələrin hazırlanması və ekspertizası', p11_desc:'Əqdin xüsusiyyətləri və riskləri nəzərə alınaraq müqavilələrin hazırlanması, yoxlanması və ekspertizası.',
+    p12_title:'Vərəsəlik hüququ', p12_desc:'Vərəsəlik mübahisələri, vəsiyyətnamələrin mübahisələndirilməsi, miras əmlakının qeydiyyatı və bölünməsi.',
     about_label:'Haqqımda',
     about_name:'Elmar Süleymanov',
     stats_l1:'illik hüquqi təcrübə', stats_l2:'müqavilə dəstəyi həcmi', stats_l3:'ildə məhkəmə işi', stats_l4:'ən böyük müqavilənin məbləği',
@@ -341,7 +344,7 @@ const i18n = {
     chronicle_label:'Vəkil <em style="color:var(--gold);font-style:italic">Elmar Süleymanov</em> tərəfindən <em style="color:var(--gold);font-style:italic">2013–2015-ci illər</em> arasında müdafiə edilmiş xüsusilə mürəkkəb işlərin qısa siyahısı',
     chr_all:'Hamısı', chr_criminal:'Cinayət hüququ', chr_civil:'Mülki hüquq',
     chr_corporate:'Korporativ hüquq', chr_family:'Ailə hüququ',
-    chr_constitutional:'Konstitusiya hüququ', chr_contract:'Müqavilə işi',
+    chr_constitutional:'Konstitusiya hüququ', chr_contract:'Müqavilə işi', chr_inheritance:'Vərəsəlik hüququ',
     chr_th_date:'Tarix', chr_th_court:'Məhkəmə', chr_th_subject:'İddianın predmeti',
     chr_th_amount:'Məbləğ', chr_th_result:'Nəticə',
     chr_show_more:'Bütün işləri göstər', chr_show_less:'Yığ',
@@ -1039,7 +1042,7 @@ const CHRONICLE_CASES = [
     date: '2014',
     court_ru: '2-й Адм.-экономический суд Баку', court_en: '2nd Admin-Economic Court of Baku', court_az: '2 saylı Bakı İnzibati-iqtisadi Məhkəməsi',
     subject_ru: 'Регистрация унаследованного недвижимого имущества (пос. Марданкяны)', subject_en: 'Registration of inherited real estate (Mardakan village)', subject_az: 'Miras yolu ilə alınan daşınmaz əmlakın qeydiyyatı (Mardəkan)',
-    amount: '250 000 AZN', result: 'win', cat: 'civil'
+    amount: '250 000 AZN', result: 'win', cat: 'inheritance'
   },
   // ── 2014 — договорная работа ──
   {
@@ -1108,7 +1111,14 @@ const CHRONICLE_CASES = [
     date: '28.12.2012',
     court_ru: '2-й Адм.-экономический суд Баку', court_en: '2nd Admin-Economic Court of Baku', court_az: '2 saylı Bakı İnzibati-iqtisadi Məhkəməsi',
     subject_ru: 'Регистрация унаследованного недвижимого имущества в государственном реестре', subject_en: 'Registration of inherited real estate in the state registry', subject_az: 'Miras yolu ilə alınan əmlakın dövlət reyestrində qeydiyyatı',
-    amount: '—', result: 'win', cat: 'civil'
+    amount: '—', result: 'win', cat: 'inheritance'
+  },
+  // ── Наследственные дела (дополнительные) ──
+  {
+    date: '2014',
+    court_ru: 'Суд общей юрисдикции Баку', court_en: 'Baku General Court', court_az: 'Bakı ümumi yurisdiksiya məhkəməsi',
+    subject_ru: 'Раздел наследственного имущества между наследниками', subject_en: 'Division of inherited estate among heirs', subject_az: 'Miras əmlakının varislər arasında bölünməsi',
+    amount: '—', result: 'win', cat: 'inheritance'
   }
 ];
 
@@ -1246,6 +1256,7 @@ const CHRONICLE_CAT_PAGES = {
   constitutional: 'practice-constitutional.html',
   family: 'practice-family.html',
   contract: 'practice-contracts.html',
+  inheritance: 'practice-inheritance.html',
 };
 
 // Patch chronicleRender to add row links
