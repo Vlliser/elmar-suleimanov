@@ -419,8 +419,14 @@ let reviewTimer = null;
 
 // ─── LANGUAGE ────────────────────────────────────────
 function detectLang() {
+  // URL-based detection takes highest priority (for /az/ and /en/ subdirectories)
+  const path = window.location.pathname;
+  if (/\/az(\/|\/index\.html)?$/.test(path) || path.includes('/az/')) return 'az';
+  if (/\/en(\/|\/index\.html)?$/.test(path) || path.includes('/en/')) return 'en';
+  // Saved preference
   const saved = localStorage.getItem('lang');
   if (saved && i18n[saved]) return saved;
+  // Browser language fallback
   const bl = (navigator.language || 'ru').toLowerCase();
   if (bl.startsWith('az')) return 'az';
   if (bl.startsWith('en')) return 'en';
@@ -444,6 +450,10 @@ function applyLang(lang) {
   });
   document.querySelectorAll('.lang-btn, .mobile-lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+  // Also handle <a> lang buttons that use data-lang (subdirectory pages)
+  document.querySelectorAll('a.lang-btn[data-lang], a.mobile-lang-btn[data-lang]').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('data-lang') === lang);
   });
   reviewIndex = 0;
   renderReviews(lang);
@@ -632,7 +642,24 @@ document.querySelectorAll('.modal-overlay').forEach(o => o.addEventListener('cli
 document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id)); });
 
 // ─── LANG BUTTONS ────────────────────────────────────
-document.querySelectorAll('.lang-btn, .mobile-lang-btn').forEach(btn => btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang'))));
+document.querySelectorAll('.lang-btn, .mobile-lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const lang = btn.getAttribute('data-lang');
+    if (!lang) return;
+    // On subdirectory pages (/az/, /en/), navigate to the correct URL
+    const path = window.location.pathname;
+    const isSubdir = path.includes('/az/') || path.includes('/en/');
+    if (isSubdir) {
+      const base = window.location.origin;
+      // Strip trailing subdir to get root
+      const rootPath = path.replace(/\/(az|en)(\/.*)?$/, '/');
+      if (lang === 'ru') { window.location.href = base + rootPath; return; }
+      if (lang === 'az') { window.location.href = base + rootPath + 'az/'; return; }
+      if (lang === 'en') { window.location.href = base + rootPath + 'en/'; return; }
+    }
+    applyLang(lang);
+  });
+});
 
 
 // ─── FAQ DATA ─────────────────────────────────────────
