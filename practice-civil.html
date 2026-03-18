@@ -33,6 +33,22 @@
   .btn-primary--lg{font-size:0.8rem!important;padding:14px 24px!important;width:auto!important;max-width:100%!important}
 }
 
+/* ── Hide О себе / Контакты in desktop nav on mobile (practice pages use index.html# hrefs) ── */
+@media(max-width:900px){
+  /* На мобильном в <nav> должны остаться только lang-switcher и burger.
+     nav > a скрывается styles.css, но .nav-item (div) остаётся — скрываем явно */
+  nav .nav-item,
+  nav .nav-has-drop,
+  a.nav-link[href="index.html#about"],
+  a.nav-link[href="index.html#contacts"] { display: none !important; }
+}
+
+/* ── Case descriptions must be visible in pp-cases-grid (styles.css hides .case-desc on mobile) ── */
+@media(max-width:900px){
+  .pp-cases-grid .case-desc { display: block !important; }
+  .pp-cases-grid { grid-template-columns: 1fr !important; }
+}
+
 /* ── Cases grid: full-width, no empty ghost card ── */
 .pp-cases-grid{
   display:grid!important;
