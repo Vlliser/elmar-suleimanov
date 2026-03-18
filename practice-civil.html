@@ -24,29 +24,109 @@
 .practice-page-cta h2{font-size:clamp(1.8rem,3.2vw,2.6rem)!important}
 .practice-page-cta p{font-size:1.05rem!important}
 
-/* ── Cases grid (exact match to main page .cases-grid) ── */
-.pp-cases-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:2.5rem;border:1px solid var(--border)}
-.pp-cases-grid .case-card{display:flex;flex-direction:column;justify-content:space-between;outline:1px solid var(--border)}
+/* ── Mobile hero fix: prevent overflow, scale text down ── */
+@media(max-width:768px){
+  .practice-page-hero{min-height:auto!important;padding:100px 0 48px!important}
+  .practice-page-hero-content{padding:0 20px!important;max-width:100%!important}
+  .practice-page-title{font-size:clamp(1.8rem,8vw,2.6rem)!important}
+  .practice-page-intro{font-size:clamp(0.92rem,3.8vw,1.05rem)!important;line-height:1.65!important}
+  .btn-primary--lg{font-size:0.8rem!important;padding:14px 24px!important;width:auto!important;max-width:100%!important}
+}
+
+/* ── Cases grid: full-width, no empty ghost card ── */
+.pp-cases-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  margin-top:2.5rem;
+  width:100%;
+  border-left:1px solid var(--border);
+  border-top:1px solid var(--border);
+}
+.pp-cases-grid .case-card{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  border-right:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  background:var(--card-bg);
+  position:relative;
+  overflow:hidden;
+  transition:background 0.28s ease,transform 0.22s ease,box-shadow 0.22s ease;
+}
+.pp-cases-grid .case-card:hover{
+  background:var(--navy-mid,#162240);
+  transform:translateY(-2px);
+  box-shadow:0 8px 32px rgba(0,0,0,0.18);
+  z-index:2;
+}
+/* Accent bar on hover */
+.pp-cases-grid .case-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px;
+  background:var(--gold);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform 0.3s ease;
+}
+.pp-cases-grid .case-card:hover::before{transform:scaleX(1);}
+
 @media(max-width:1024px){.pp-cases-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.pp-cases-grid{grid-template-columns:1fr}}
-.pp-cases-grid .case-title{font-size:1.15rem!important}
-.pp-cases-grid .case-desc{font-size:0.88rem!important;line-height:1.78!important}
-.pp-cases-grid .case-tag{font-size:0.65rem!important}
-.pp-cases-grid .case-court{font-size:0.65rem!important}
-.pp-cases-grid .case-result{font-size:0.68rem!important}
-.pp-cases-grid .case-amount{font-size:1.1rem!important}
 
-/* ── Mobile hero fix ── */
-@media(max-width:768px){
-  .practice-page-hero{min-height:auto;padding:100px 20px 56px!important;box-sizing:border-box}
-  .practice-page-hero-content{max-width:100%!important;padding:0!important}
-  .practice-page-title{font-size:clamp(1.9rem,8vw,2.6rem)!important;line-height:1.18!important;word-break:break-word}
-  .practice-page-intro{font-size:0.9rem!important;line-height:1.7!important;margin-top:.85rem!important}
-  .btn-primary--lg{font-size:0.8rem!important;padding:13px 24px!important;margin-top:1.4rem!important;width:auto!important;display:inline-block}
+/* ── Redesigned case card internals ── */
+.pp-cases-grid .case-card-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:0.5rem;
+  margin-bottom:1rem;
 }
-@media(max-width:480px){
-  .practice-page-title{font-size:clamp(1.65rem,7.5vw,2rem)!important}
-  .practice-page-intro{font-size:0.85rem!important}
+.pp-cases-grid .case-title{
+  font-family:'Cormorant Garamond',serif!important;
+  font-size:1.25rem!important;
+  font-weight:500!important;
+  line-height:1.3!important;
+  margin-bottom:0.85rem!important;
+  color:var(--text)!important;
+}
+/* Ситуация / Итог labels */
+.case-section-label{
+  display:block;
+  font-size:0.6rem;
+  font-weight:500;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:0.25rem;
+  margin-top:0.75rem;
+}
+.case-section-label:first-of-type{margin-top:0;}
+.pp-cases-grid .case-desc{
+  font-size:0.87rem!important;
+  line-height:1.72!important;
+  color:var(--text-muted)!important;
+  margin-bottom:0!important;
+}
+.pp-cases-grid .case-tag{font-size:0.62rem!important}
+.pp-cases-grid .case-court{font-size:0.62rem!important;color:var(--text-muted)!important;text-align:right;max-width:50%}
+.pp-cases-grid .case-card-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:0.5rem;
+  margin-top:1.25rem;
+  padding-top:1rem;
+  border-top:1px solid var(--border);
+}
+.pp-cases-grid .case-result{font-size:0.65rem!important;letter-spacing:0.12em}
+.pp-cases-grid .case-amount{
+  font-family:'Cormorant Garamond',serif!important;
+  font-size:1.15rem!important;
+  font-weight:500!important;
+  color:var(--gold)!important;
+  letter-spacing:0.02em;
 }
 </style>
 </head>
@@ -147,7 +227,7 @@
       </a>
       <div class="nav-dropdown">
         <div class="nav-drop-label" data-i18n="nav_media">Медиа</div>
-        <a href="media.html#media-section" class="nav-drop-item nav-drop-item--single">
+        <a href="index.html#media-section" class="nav-drop-item nav-drop-item--single">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v2"/><path d="M2 8h6"/><path d="M2 12h6"/><path d="M2 16h6"/></svg>
           <span data-i18n="media_section_h2">Публикации и комментарии</span>
         </a>
@@ -192,6 +272,7 @@
   <button class="burger" id="burger-btn" aria-label="Меню"><span></span><span></span><span></span></button>
 </header>
 
+<!-- MOBILE NAV — полная, как на главной (без "О себе" и "Контакты" на мобильной) -->
 <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
 
   <!-- ПРАКТИКА с сеткой иконок -->
@@ -252,24 +333,18 @@
   <!-- ДЕЛА -->
   <a href="index.html#cases" class="mobile-link" data-i18n="nav_cases">Дела</a>
 
-  <!-- О СЕБЕ -->
-  <a href="index.html#about" class="mobile-link" data-i18n="nav_about">О себе</a>
-
   <!-- МЕДИА -->
   <div class="mobile-nav-group">
     <button class="mobile-link mobile-link--toggle" data-i18n="nav_media">Медиа
       <svg class="mobile-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
     </button>
     <div class="mobile-sub">
-      <a href="media.html#media-section" class="mobile-sub-link" data-i18n="media_section_h2">Публикации</a>
+      <a href="index.html#media-section" class="mobile-sub-link" data-i18n="media_section_h2">Публикации</a>
       <a href="media.html" class="mobile-sub-link" data-i18n="media_video_btn">Смотреть видео</a>
       <a href="https://www.facebook.com/advokatelmar/" target="_blank" rel="noopener" class="mobile-sub-link">Facebook</a>
       <a href="https://www.instagram.com/advokat_elmar_suleymanov/" target="_blank" rel="noopener" class="mobile-sub-link">Instagram</a>
     </div>
   </div>
-
-  <!-- КОНТАКТЫ -->
-  <a href="index.html#contacts" class="mobile-link" data-i18n="nav_contacts">Контакты</a>
 
   <!-- Языки -->
   <div class="mobile-lang">
@@ -314,160 +389,113 @@
     <p class="section-label" data-pp-i18n="cases_label">Из практики</p>
     <h2 data-pp-i18n="cases_heading">Краткий перечень дел, успешная защита по которым была осуществлена адвокатом Эльмаром Сулеймановым в период между 2013–2015 гг.</h2>
     <p class="cases-sub" data-i18n="cases_sub" style="font-size:0.92rem;line-height:1.65;max-width:760px;margin-bottom:2.5rem;opacity:0.6;font-style:italic;">Все имена и детали, позволяющие идентифицировать клиентов, изменены или опущены в соответствии с адвокатской тайной.</p>
-    <style>
-/* ── Живые кейс-карточки ── */
-.chr-cases-list{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:2.5rem;border:1px solid var(--border)}
-.chr-case{display:flex;flex-direction:column;padding:2rem 1.8rem;border-right:1px solid var(--border);border-bottom:1px solid var(--border);transition:background .22s}
-.chr-case:nth-child(3n){border-right:none}
-.chr-case:nth-last-child(-n+3){border-bottom:none}
-.chr-case:hover{background:rgba(184,150,46,0.04)}
-.chr-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem;gap:.6rem;flex-wrap:wrap}
-.chr-tag{font-family:'DM Sans',sans-serif;font-size:0.6rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold,#b8962e);background:rgba(184,150,46,0.1);padding:.28em .75em;border-radius:2px}
-.chr-court{font-family:'DM Sans',sans-serif;font-size:0.65rem;color:var(--text-muted,rgba(255,255,255,.4));text-align:right;line-height:1.3}
-.chr-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;line-height:1.4;margin:0 0 1.2rem;color:var(--text)}
-.chr-story{display:flex;flex-direction:column;gap:.75rem;flex:1}
-.chr-story-block{display:flex;gap:.65rem;align-items:flex-start}
-.chr-story-label{font-family:'DM Sans',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted,rgba(255,255,255,.38));white-space:nowrap;padding-top:.18em;min-width:52px}
-.chr-story-text{font-family:'DM Sans',sans-serif;font-size:0.82rem;line-height:1.7;color:var(--text-muted,rgba(255,255,255,.65))}
-.chr-footer{display:flex;align-items:center;justify-content:space-between;margin-top:1.4rem;padding-top:1.1rem;border-top:1px solid var(--border)}
-.chr-badge{font-family:'DM Sans',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:.3em .85em;border-radius:2px}
-.chr-badge--win{background:rgba(39,174,96,.12);color:#4ade80}
-.chr-amount{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:500;color:var(--gold,#b8962e)}
-@media(max-width:1024px){.chr-cases-list{grid-template-columns:repeat(2,1fr)}.chr-case:nth-child(3n){border-right:1px solid var(--border)}.chr-case:nth-child(2n){border-right:none}.chr-case:nth-last-child(-n+3){border-bottom:1px solid var(--border)}.chr-case:nth-last-child(-n+2){border-bottom:none}}
-@media(max-width:640px){.chr-cases-list{grid-template-columns:1fr}.chr-case{border-right:none!important;border-bottom:1px solid var(--border)!important}.chr-case:last-child{border-bottom:none!important}}
-</style>
+    <div class="cases-grid pp-cases-grid">
 
-    <div class="chr-cases-list">
-
-      <div class="chr-case">
-        <div class="chr-meta">
-          <span class="chr-tag" data-ru="Гражданское право" data-en="Civil Law" data-az="Mülki hüquq">Гражданское право</span>
-          <span class="chr-court" data-ru="Верховный суд АР" data-en="Supreme Court of AR" data-az="AR Ali Məhkəməsi">Верховный суд АР</span>
-        </div>
-        <h3 class="chr-title" data-ru="Признание договора купли-продажи имущества недействительным" data-en="Sale agreement declared null and void" data-az="Alqı-satqı müqaviləsinin etibarsız sayılması">Признание договора купли-продажи имущества недействительным</h3>
-        <div class="chr-story">
-          <div class="chr-story-block">
-            <span class="chr-story-label" data-ru="Ситуация" data-en="Situation" data-az="Vəziyyət">Ситуация</span>
-            <span class="chr-story-text" data-ru="Доверитель оспаривал сделку купли-продажи недвижимости, совершённую без его ведома. Нижестоящие суды отказали в иске." data-en="The client challenged a real estate sale conducted without their knowledge. Lower courts dismissed the claim." data-az="Müvəkkil öz xəbəri olmadan həyata keçirilmiş əmlak alqı-satqısını mübahisələndirdi. Alt məhkəmələr iddiaya rədd cavabı verdi.">Доверитель оспаривал сделку купли-продажи недвижимости, совершённую без его ведома. Нижестоящие суды отказали в иске.</span>
+      <div class="case-card">
+        <div>
+          <div class="case-card-top">
+            <span class="case-tag case-tag--civil" data-ru="Гражданское право" data-en="Civil Law" data-az="Mülki hüquq">Гражданское право</span>
+            <span class="case-court" data-ru="Верховный суд АР" data-en="Supreme Court of AR" data-az="AR Ali Məhkəməsi">Верховный суд АР</span>
           </div>
-          <div class="chr-story-block">
-            <span class="chr-story-label" data-ru="Итог" data-en="Result" data-az="Nəticə">Итог</span>
-            <span class="chr-story-text" data-ru="Кассационная жалоба удовлетворена. Верховный суд АР признал сделку недействительной, права доверителя восстановлены в полном объёме." data-en="Cassation granted. The Supreme Court declared the agreement null and void; the client's rights were fully restored." data-az="Kassasiya şikayəti təmin edildi. Ali Məhkəmə müqaviləni etibarsız saydı, müvəkkilin hüquqları tam bərpa edildi.">Кассационная жалоба удовлетворена. Верховный суд АР признал сделку недействительной, права доверителя восстановлены в полном объёме.</span>
-          </div>
+          <h3 class="case-title" data-ru="Признание договора купли-продажи имущества недействительным" data-en="Sale agreement declared null and void" data-az="Alqı-satqı müqaviləsinin etibarsız sayılması">Признание договора купли-продажи имущества недействительным</h3>
+          <span class="case-section-label" data-ru="Ситуация" data-en="Situation" data-az="Vəziyyət">Ситуация</span>
+          <p class="case-desc" data-ru="Доверитель оспаривал сделку купли-продажи недвижимости, совершённую без его ведома. Нижестоящие суды отказали в иске." data-en="The client challenged a real estate transaction carried out without his knowledge. Lower courts denied the claim." data-az="Müvəkkil xəbəri olmadan həyata keçirilmiş əmlak müqaviləsini mübahisələndirdi. Alt məhkəmələr iddiadan imtina etdi.">Доверитель оспаривал сделку купли-продажи недвижимости, совершённую без его ведома. Нижестоящие суды отказали в иске.</p>
+          <span class="case-section-label" data-ru="Итог" data-en="Result" data-az="Nəticə">Итог</span>
+          <p class="case-desc" data-ru="Кассационная жалоба удовлетворена. Верховный суд АР признал сделку купли-продажи имущества недействительной, права доверителя восстановлены." data-en="Cassation granted. The Supreme Court declared the sale agreement null and void; the client's property rights were restored." data-az="Kassasiya şikayəti təmin edildi. AR Ali Məhkəməsi alqı-satqı müqaviləsini etibarsız saydı, müvəkkilin hüquqları bərpa edildi.">Кассационная жалоба удовлетворена. Верховный суд АР признал сделку недействительной, права доверителя восстановлены.</p>
         </div>
-        <div class="chr-footer">
-          <span class="chr-badge chr-badge--win" data-result="win">Победа</span>
-          <span class="chr-amount">200 000 AZN</span>
+        <div class="case-card-bottom">
+          <span class="case-result case-result--win chr-badge" data-result="win" data-ru="Победа" data-en="Won" data-az="Qazanıldı">Победа</span>
+          <span class="case-amount">200 000 AZN</span>
         </div>
       </div>
 
-      <div class="chr-case">
-        <div class="chr-meta">
-          <span class="chr-tag" data-ru="Гражданское право" data-en="Civil Law" data-az="Mülki hüquq">Гражданское право</span>
-          <span class="chr-court" data-ru="Верховный суд АР" data-en="Supreme Court of AR" data-az="AR Ali Məhkəməsi">Верховный суд АР</span>
-        </div>
-        <h3 class="chr-title" data-ru="Раздел совместно нажитого имущества" data-en="Division of jointly acquired property" data-az="Birgə qazanılmış əmlakın bölünməsi">Раздел совместно нажитого имущества</h3>
-        <div class="chr-story">
-          <div class="chr-story-block">
-            <span class="chr-story-label" data-ru="Ситуация" data-en="Situation" data-az="Vəziyyət">Ситуация</span>
-            <span class="chr-story-text" data-ru="Спор о разделе имущества супругов дошёл до кассации — апелляционная инстанция вынесла несправедливое решение против доверителя." data-en="A spousal property dispute reached cassation after the appellate court issued an unfair ruling against the client." data-az="Ər-arvadın əmlakının bölünməsi mübahisəsi kassasiyaya çatdı — apellyasiya instansiyası müvəkkil əleyhinə ədalətsiz qərar verdi.">Спор о разделе имущества супругов дошёл до кассации — апелляционная инстанция вынесла несправедливое решение против доверителя.</span>
+      <div class="case-card">
+        <div>
+          <div class="case-card-top">
+            <span class="case-tag case-tag--civil" data-ru="Гражданское право" data-en="Civil Law" data-az="Mülki hüquq">Гражданское право</span>
+            <span class="case-court" data-ru="Верховный суд АР" data-en="Supreme Court of AR" data-az="AR Ali Məhkəməsi">Верховный суд АР</span>
           </div>
-          <div class="chr-story-block">
-            <span class="chr-story-label" data-ru="Итог" data-en="Result" data-az="Nəticə">Итог</span>
-            <span class="chr-story-text" data-ru="Верховный суд АР удовлетворил кассационную жалобу. Интересы доверителя защищены в полном объёме." data-en="The Supreme Court upheld the cassation. The client's interests were fully protected." data-az="AR Ali Məhkəməsi kassasiya şikayətini təmin etdi. Müvəkkilin maraqları tam qorundu.">Верховный суд АР удовлетворил кассационную жалобу. Интересы доверителя защищены в полном объёме.</span>
-          </div>
+          <h3 class="case-title" data-ru="Раздел совместно нажитого имущества" data-en="Division of jointly acquired property" data-az="Birgə qazanılmış əmlakın bölüşdürülməsi">Раздел совместно нажитого имущества</h3>
+          <span class="case-section-label" data-ru="Ситуация" data-en="Situation" data-az="Vəziyyət">Ситуация</span>
+          <p class="case-desc" data-ru="Спор о разделе имущества супругов дошёл до кассации — апелляционная инстанция вынесла несправедливое решение против доверителя." data-en="The property division dispute reached cassation — the appellate court had ruled unfairly against the client." data-az="Əmlakın bölünməsi mübahisəsi kassasiyaya çatdı — apellyasiya instansiyası müvəkkil əleyhinə ədalətsiz qərar çıxardı.">Спор о разделе имущества супругов дошёл до кассации — апелляционная инстанция вынесла несправедливое решение против доверителя.</p>
+          <span class="case-section-label" data-ru="Итог" data-en="Result" data-az="Nəticə">Итог</span>
+          <p class="case-desc" data-ru="Верховный суд АР удовлетворил кассационную жалобу. Интересы доверителя защищены в полном объёме." data-en="The Supreme Court upheld the cassation complaint. The client's interests were fully protected." data-az="AR Ali Məhkəməsi kassasiya şikayətini təmin etdi. Müvəkkilin maraqları tam həcmdə qorundu.">Верховный суд АР удовлетворил кассационную жалобу. Интересы доверителя защищены в полном объёме.</p>
         </div>
-        <div class="chr-footer">
-          <span class="chr-badge chr-badge--win" data-result="win">Победа</span>
-          <span class="chr-amount">50 000 AZN</span>
+        <div class="case-card-bottom">
+          <span class="case-result case-result--win chr-badge" data-result="win" data-ru="Победа" data-en="Won" data-az="Qazanıldı">Победа</span>
+          <span class="case-amount">50 000 AZN</span>
         </div>
       </div>
 
-      <div class="chr-case">
-        <div class="chr-meta">
-          <span class="chr-tag" data-ru="Гражданское право" data-en="Civil Law" data-az="Mülki hüquq">Гражданское право</span>
-          <span class="chr-court" data-ru="1-й Адм.-экономический суд Баку" data-en="1st Admin-Economic Court, Baku" data-az="1 saylı Bakı İnzibati-iqtisadi Məhkəməsi">1-й Адм.-экономический суд Баку</span>
-        </div>
-        <h3 class="chr-title" data-ru="Ограничение выезда должника за рубеж" data-en="Travel ban imposed on debtor" data-az="Borclu üçün ölkəni tərk etmə məhdudiyyəti">Ограничение выезда должника за рубеж</h3>
-        <div class="chr-story">
-          <div class="chr-story-block">
-            <span class="chr-story-label" data-ru="Ситуация" data-en="Situation" data-az="Vəziyyət">Ситуация</span>
-            <span class="chr-story-text" data-ru="Должник уклонялся от исполнения денежного обязательства и планировал покинуть страну. Требовалось экстренное реагирование." data-en="The debtor was evading a monetary obligation and planning to leave the country. Emergency action was required." data-az="Borclu pul öhdəliyini yerinə yetirməkdən boyun qaçırır və ölkəni tərk etməyi planlaşdırırdı. Təcili reaksiya tələb olunurdu.">Должник уклонялся от исполнения денежного обязательства и планировал покинуть страну. Требовалось экстренное реагирование.</span>
+      <div class="case-card">
+        <div>
+          <div class="case-card-top">
+            <span class="case-tag case-tag--civil" data-ru="Гражданское право" data-en="Civil Law" data-az="Mülki hüquq">Гражданское право</span>
+            <span class="case-court" data-ru="1-й Адм.-экономический суд Баку" data-en="1st Admin-Economic Court, Baku" data-az="1 saylı Bakı İnzibati-iqtisadi Məhkəməsi">1-й Адм.-экономический суд Баку</span>
           </div>
-          <div class="chr-story-block">
-            <span class="chr-story-label" data-ru="Итог" data-en="Result" data-az="Nəticə">Итог</span>
-            <span class="chr-story-text" data-ru="Суд в кратчайшие сроки наложил запрет на выезд. Долг взыскан в рамках исполнительного производства." data-en="The court promptly imposed a travel ban. The debt was recovered through enforcement proceedings." data-az="Məhkəmə qısa müddətdə çıxış yasağı qoydu. Borc icra icraatı çərçivəsində tutuldu.">Суд в кратчайшие сроки наложил запрет на выезд. Долг взыскан в рамках исполнительного производства.</span>
-          </div>
+          <h3 class="case-title" data-ru="Ограничение выезда должника за рубеж" data-en="Travel ban imposed on debtor" data-az="Borclu üçün ölkəni tərk etmə məhdudiyyəti">Ограничение выезда должника за рубеж</h3>
+          <span class="case-section-label" data-ru="Ситуация" data-en="Situation" data-az="Vəziyyət">Ситуация</span>
+          <p class="case-desc" data-ru="Должник уклонялся от исполнения денежного обязательства и планировал покинуть страну. Требовалось экстренное реагирование." data-en="The debtor evaded a financial obligation and planned to leave the country. Urgent action was required." data-az="Borclu pul öhdəliyini yerinə yetirməkdən boyun qaçırıb ölkəni tərk etməyi planlaşdırırdı.">Должник уклонялся от исполнения денежного обязательства и планировал покинуть страну. Требовалось экстренное реагирование.</p>
+          <span class="case-section-label" data-ru="Итог" data-en="Result" data-az="Nəticə">Итог</span>
+          <p class="case-desc" data-ru="Суд в кратчайшие сроки наложил запрет на выезд. Долг взыскан в рамках исполнительного производства." data-en="The court promptly imposed the travel ban. The debt was recovered through enforcement proceedings." data-az="Məhkəmə qısa müddətdə ölkədən çıxış yasağı tətbiq etdi. Borc icra icraatı çərçivəsində tutuldu.">Суд в кратчайшие сроки наложил запрет на выезд. Долг взыскан в рамках исполнительного производства.</p>
         </div>
-        <div class="chr-footer">
-          <span class="chr-badge chr-badge--win" data-result="win">Победа</span>
-          <span class="chr-amount">12 000 AZN</span>
+        <div class="case-card-bottom">
+          <span class="case-result case-result--win chr-badge" data-result="win" data-ru="Победа" data-en="Won" data-az="Qazanıldı">Победа</span>
+          <span class="case-amount">12 000 AZN</span>
         </div>
       </div>
 
-      <div class="chr-case">
-        <div class="chr-meta">
-          <span class="chr-tag" data-ru="Гражданское право" data-en="Civil Law" data-az="Mülki hüquq">Гражданское право</span>
-          <span class="chr-court" data-ru="Агдамский районный суд АР" data-en="Aghdam District Court" data-az="Ağdam Rayon Məhkəməsi">Агдамский районный суд АР</span>
-        </div>
-        <h3 class="chr-title" data-ru="Взыскание долга в полном объёме" data-en="Full debt recovery" data-az="Borcun tam həcmdə tutulması">Взыскание долга в полном объёме</h3>
-        <div class="chr-story">
-          <div class="chr-story-block">
-            <span class="chr-story-label" data-ru="Ситуация" data-en="Situation" data-az="Vəziyyət">Ситуация</span>
-            <span class="chr-story-text" data-ru="Доверитель длительное время не мог получить долг от контрагента, несмотря на наличие письменных договорённостей." data-en="The client had long been unable to recover a debt from a counterparty, despite written agreements." data-az="Müvəkkil yazılı razılaşmalara baxmayaraq, uzun müddət tərəf müqabilindən borc ala bilmirdi.">Доверитель длительное время не мог получить долг от контрагента, несмотря на наличие письменных договорённостей.</span>
+      <div class="case-card">
+        <div>
+          <div class="case-card-top">
+            <span class="case-tag case-tag--civil" data-ru="Гражданское право" data-en="Civil Law" data-az="Mülki hüquq">Гражданское право</span>
+            <span class="case-court" data-ru="Агдамский районный суд АР" data-en="Aghdam District Court" data-az="Ağdam Rayon Məhkəməsi">Агдамский районный суд АР</span>
           </div>
-          <div class="chr-story-block">
-            <span class="chr-story-label" data-ru="Итог" data-en="Result" data-az="Nəticə">Итог</span>
-            <span class="chr-story-text" data-ru="Суд вынес решение о взыскании задолженности в полном объёме. Доверитель получил причитающиеся средства." data-en="The court ruled for full debt recovery. The client received all funds owed." data-az="Məhkəmə borcun tam həcmdə tutulması barədə qərar çıxardı. Müvəkkil bütün ödənişləri aldı.">Суд вынес решение о взыскании задолженности в полном объёме. Доверитель получил причитающиеся средства.</span>
-          </div>
+          <h3 class="case-title" data-ru="Взыскание долга в полном объёме" data-en="Full debt recovery" data-az="Borcun tam həcmdə tutulması">Взыскание долга в полном объёме</h3>
+          <span class="case-section-label" data-ru="Ситуация" data-en="Situation" data-az="Vəziyyət">Ситуация</span>
+          <p class="case-desc" data-ru="Доверитель длительное время не мог получить причитающиеся ему средства от должника, уклонявшегося от выплаты." data-en="The client had long been unable to recover funds owed by a debtor who evaded payment." data-az="Müvəkkil uzun müddət ödənişdən boyun qaçıran borcludan pul ala bilmirdi.">Доверитель длительное время не мог получить причитающиеся ему средства от должника, уклонявшегося от выплаты.</p>
+          <span class="case-section-label" data-ru="Итог" data-en="Result" data-az="Nəticə">Итог</span>
+          <p class="case-desc" data-ru="Суд вынес решение о взыскании задолженности в полном объёме. Доверитель получил причитающиеся ему средства по судебному решению." data-en="The court ruled in full for debt recovery. The client received the funds owed pursuant to the judgment." data-az="Məhkəmə borcun tam həcmdə tutulması barədə qərar çıxardı.">Суд вынес решение о взыскании задолженности в полном объёме. Доверитель получил причитающиеся ему средства.</p>
         </div>
-        <div class="chr-footer">
-          <span class="chr-badge chr-badge--win" data-result="win">Победа</span>
-          <span class="chr-amount">30 000 AZN</span>
+        <div class="case-card-bottom">
+          <span class="case-result case-result--win chr-badge" data-result="win" data-ru="Победа" data-en="Won" data-az="Qazanıldı">Победа</span>
+          <span class="case-amount">30 000 AZN</span>
         </div>
       </div>
 
-      <div class="chr-case">
-        <div class="chr-meta">
-          <span class="chr-tag" data-ru="Гражданское право" data-en="Civil Law" data-az="Mülki hüquq">Гражданское право</span>
-          <span class="chr-court" data-ru="2-й Адм.-экономический суд Баку" data-en="2nd Admin-Economic Court, Baku" data-az="2 saylı Bakı İnzibati-iqtisadi Məhkəməsi">2-й Адм.-экономический суд Баку</span>
-        </div>
-        <h3 class="chr-title" data-ru="Регистрация унаследованного имущества (пос. Марданкяны)" data-en="Registration of inherited real estate (Mardakan)" data-az="Miras yolu ilə alınan əmlakın qeydiyyatı (Mardəkan)">Регистрация унаследованного имущества (пос. Марданкяны)</h3>
-        <div class="chr-story">
-          <div class="chr-story-block">
-            <span class="chr-story-label" data-ru="Ситуация" data-en="Situation" data-az="Vəziyyət">Ситуация</span>
-            <span class="chr-story-text" data-ru="Наследник не мог оформить право собственности — органы регистрации отказывали во внесении данных в государственный реестр без законных оснований." data-en="The heir was unable to register ownership — registration authorities refused to record the property in the state registry without legal grounds." data-az="Varis mülkiyyət hüququnu rəsmiləşdirə bilmirdi — qeydiyyat orqanları qanuni əsas olmadan dövlət reyestrinə daxil edilməkdən imtina edirdilər.">Наследник не мог оформить право собственности — органы регистрации отказывали во внесении данных в государственный реестр без законных оснований.</span>
+      <div class="case-card">
+        <div>
+          <div class="case-card-top">
+            <span class="case-tag case-tag--civil" data-ru="Гражданское право" data-en="Civil Law" data-az="Mülki hüquq">Гражданское право</span>
+            <span class="case-court" data-ru="2-й Адм.-экономический суд Баку" data-en="2nd Admin-Economic Court, Baku" data-az="2 saylı Bakı İnzibati-iqtisadi Məhkəməsi">2-й Адм.-экономический суд Баку</span>
           </div>
-          <div class="chr-story-block">
-            <span class="chr-story-label" data-ru="Итог" data-en="Result" data-az="Nəticə">Итог</span>
-            <span class="chr-story-text" data-ru="Суд обязал органы регистрации внести сведения в реестр. Права наследника официально закреплены." data-en="The court ordered registration authorities to record the property. The heir's rights were officially confirmed." data-az="Məhkəmə qeydiyyat orqanlarına məlumatı reyestrə daxil etməyi tapşırdı. Varisin hüquqları rəsmi olaraq təsbit edildi.">Суд обязал органы регистрации внести сведения в реестр. Права наследника официально закреплены.</span>
-          </div>
+          <h3 class="case-title" data-ru="Регистрация унаследованного имущества (пос. Марданкяны)" data-en="Registration of inherited real estate (Mardakan)" data-az="Miras yolu ilə alınan əmlakın qeydiyyatı (Mardəkan)">Регистрация унаследованного имущества (пос. Марданкяны)</h3>
+          <span class="case-section-label" data-ru="Ситуация" data-en="Situation" data-az="Vəziyyət">Ситуация</span>
+          <p class="case-desc" data-ru="Наследник не мог оформить право собственности на унаследованную недвижимость из-за отказа регистрирующих органов." data-en="The heir was unable to register property rights to inherited real estate due to refusal by registration authorities." data-az="Varis qeydiyyat orqanlarının imtinası səbəbindən miras əmlaka mülkiyyət hüquqlarını rəsmiləşdirə bilmirdi.">Наследник не мог оформить право собственности на унаследованную недвижимость из-за отказа регистрирующих органов.</p>
+          <span class="case-section-label" data-ru="Итог" data-en="Result" data-az="Nəticə">Итог</span>
+          <p class="case-desc" data-ru="Суд обязал органы регистрации внести сведения в государственный реестр. Права наследника закреплены официально." data-en="The court ordered the registration authorities to record the real estate in the state registry. The heir's rights were officially confirmed." data-az="Məhkəmə qeydiyyat orqanlarına dövlət reyestrinə məlumat daxil etməyi tapşırdı.">Суд обязал органы регистрации внести сведения в государственный реестр. Права наследника закреплены официально.</p>
         </div>
-        <div class="chr-footer">
-          <span class="chr-badge chr-badge--win" data-result="win">Победа</span>
-          <span class="chr-amount">250 000 AZN</span>
+        <div class="case-card-bottom">
+          <span class="case-result case-result--win chr-badge" data-result="win" data-ru="Победа" data-en="Won" data-az="Qazanıldı">Победа</span>
+          <span class="case-amount">250 000 AZN</span>
         </div>
       </div>
 
-      <div class="chr-case">
-        <div class="chr-meta">
-          <span class="chr-tag" data-ru="Гражданское право" data-en="Civil Law" data-az="Mülki hüquq">Гражданское право</span>
-          <span class="chr-court" data-ru="2-й Адм.-экономический суд Баку" data-en="2nd Admin-Economic Court, Baku" data-az="2 saylı Bakı İnzibati-iqtisadi Məhkəməsi">2-й Адм.-экономический суд Баку</span>
-        </div>
-        <h3 class="chr-title" data-ru="Включение унаследованной недвижимости в государственный реестр" data-en="Entry of inherited real estate into state registry" data-az="Miras yolu ilə alınan daşınmaz əmlakın dövlət reyestrində qeydiyyatı">Включение унаследованной недвижимости в государственный реестр</h3>
-        <div class="chr-story">
-          <div class="chr-story-block">
-            <span class="chr-story-label" data-ru="Ситуация" data-en="Situation" data-az="Vəziyyət">Ситуация</span>
-            <span class="chr-story-text" data-ru="Законный наследник годами не мог распоряжаться имуществом из-за бюрократических препятствий при регистрации права собственности." data-en="The lawful heir had been unable to manage the property for years due to bureaucratic obstacles in the registration process." data-az="Qanuni varis bürokratik maneələr səbəbindən illər boyu əmlak üzərində sərəncam verə bilmirdi.">Законный наследник годами не мог распоряжаться имуществом из-за бюрократических препятствий при регистрации права собственности.</span>
+      <div class="case-card">
+        <div>
+          <div class="case-card-top">
+            <span class="case-tag case-tag--civil" data-ru="Гражданское право" data-en="Civil Law" data-az="Mülki hüquq">Гражданское право</span>
+            <span class="case-court" data-ru="2-й Адм.-экономический суд Баку" data-en="2nd Admin-Economic Court, Baku" data-az="2 saylı Bakı İnzibati-iqtisadi Məhkəməsi">2-й Адм.-экономический суд Баку</span>
           </div>
-          <div class="chr-story-block">
-            <span class="chr-story-label" data-ru="Итог" data-en="Result" data-az="Nəticə">Итог</span>
-            <span class="chr-story-text" data-ru="По решению суда правовые препятствия устранены, право собственности оформлено через государственный реестр." data-en="By court order, legal obstacles were removed and property rights were registered through the state registry." data-az="Məhkəmə qərarı ilə hüquqi maneələr aradan qaldırıldı, mülkiyyət hüququ dövlət reyestri vasitəsilə rəsmiləşdirildi.">По решению суда правовые препятствия устранены, право собственности оформлено через государственный реестр.</span>
-          </div>
+          <h3 class="case-title" data-ru="Включение унаследованной недвижимости в государственный реестр" data-en="Registration of inherited real estate in the state registry" data-az="Miras yolu ilə alınan daşınmaz əmlakın dövlət reyestrində qeydiyyatı">Включение унаследованной недвижимости в государственный реестр</h3>
+          <span class="case-section-label" data-ru="Ситуация" data-en="Situation" data-az="Vəziyyət">Ситуация</span>
+          <p class="case-desc" data-ru="Правовые препятствия не позволяли наследнику зарегистрировать недвижимость через государственный реестр." data-en="Legal obstacles prevented the heir from registering the property through the state registry." data-az="Hüquqi maneələr varisin əmlakı dövlət reyestri vasitəsilə qeydiyyatdan keçirməsinə mane olurdu.">Правовые препятствия не позволяли наследнику зарегистрировать недвижимость через государственный реестр.</p>
+          <span class="case-section-label" data-ru="Итог" data-en="Result" data-az="Nəticə">Итог</span>
+          <p class="case-desc" data-ru="По решению суда наследник получил возможность оформить право собственности на недвижимое имущество. Правовые препятствия устранены." data-en="By court order, the heir was able to register property rights to real estate. Legal obstacles were resolved." data-az="Məhkəmə qərarı ilə varis daşınmaz əmlaka mülkiyyət hüququnu rəsmiləşdirə bildi. Hüquqi maneələr aradan qaldırıldı.">По решению суда наследник получил возможность оформить право собственности. Правовые препятствия устранены.</p>
         </div>
-        <div class="chr-footer">
-          <span class="chr-badge chr-badge--win" data-result="win">Победа</span>
-          <span class="chr-amount chr-year" style="font-size:1rem;opacity:.65">2012</span>
+        <div class="case-card-bottom">
+          <span class="case-result case-result--win chr-badge" data-result="win" data-ru="Победа" data-en="Won" data-az="Qazanıldı">Победа</span>
+          <span class="case-year" style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--gold);">2012</span>
         </div>
       </div>
 
@@ -613,29 +641,22 @@ function detectLang() { return localStorage.getItem('lang') || 'ru'; }
 document.querySelectorAll('.lang-btn, .mobile-lang-btn').forEach(btn => btn.addEventListener('click', () => applyPPLang(btn.dataset.lang)));
 document.addEventListener('DOMContentLoaded', () => applyPPLang(detectLang()));
 
-// Burger
+// Burger + mobile nav toggles
 document.getElementById('burger-btn').addEventListener('click', () => {
   const nav = document.getElementById('mobile-nav');
-  nav.classList.toggle('open');
-  const isOpen = nav.classList.contains('open');
+  const isOpen = nav.classList.toggle('open');
   nav.setAttribute('aria-hidden', !isOpen);
+  document.getElementById('burger-btn').classList.toggle('open', isOpen);
 });
 
-// Mobile nav accordion toggles
+// Mobile sub-menu toggles (Практика, Медиа)
 document.querySelectorAll('.mobile-link--toggle').forEach(btn => {
   btn.addEventListener('click', function() {
     const group = this.closest('.mobile-nav-group');
     const sub = group.querySelector('.mobile-sub');
-    const isOpen = group.classList.contains('open');
-    document.querySelectorAll('.mobile-nav-group').forEach(g => g.classList.remove('open'));
-    if (!isOpen) group.classList.add('open');
+    const isOpen = group.classList.toggle('open');
+    if (sub) sub.style.maxHeight = isOpen ? sub.scrollHeight + 'px' : '0';
   });
-});
-
-// Desktop dropdown hover
-document.querySelectorAll('.nav-has-drop').forEach(item => {
-  item.addEventListener('mouseenter', () => item.classList.add('open'));
-  item.addEventListener('mouseleave', () => item.classList.remove('open'));
 });
 
 // Float button
@@ -669,7 +690,32 @@ function openModal(id) { document.getElementById(id).classList.add('open'); }
 function closeModal(id) { document.getElementById(id).classList.remove('open'); }
 document.querySelectorAll('.modal-overlay').forEach(m => m.addEventListener('click', function(e) { if (e.target === this) this.classList.remove('open'); }));
 
-// i18n for shared elements (logo, nav, etc.)
+// Desktop nav dropdowns
+document.querySelectorAll('.nav-has-drop').forEach(item => {
+  const link = item.querySelector('.nav-link');
+  const drop = item.querySelector('.nav-dropdown');
+  if (!drop) return;
+  let timer;
+  item.addEventListener('mouseenter', () => { clearTimeout(timer); drop.classList.add('open'); });
+  item.addEventListener('mouseleave', () => { timer = setTimeout(() => drop.classList.remove('open'), 120); });
+});
+
+// Lang switcher mobile square dropdown
+document.addEventListener('DOMContentLoaded', function() {
+  const langSwitcher = document.querySelector('.lang-switcher');
+  if (langSwitcher) {
+    langSwitcher.addEventListener('click', function(e) {
+      if (window.innerWidth > 900) return;
+      if (e.target.classList.contains('lang-btn') && !e.target.classList.contains('active')) {
+        setTimeout(function(){ langSwitcher.classList.remove('open'); }, 50);
+        return;
+      }
+      langSwitcher.classList.toggle('open');
+      e.stopPropagation();
+    });
+    document.addEventListener('click', function() { langSwitcher.classList.remove('open'); });
+  }
+});
 const _sharedI18n = {
   ru: { logo_name:'Эльмар Сулейманов', logo_sub:'Адвокат · +994 55 644 70 80', nav_practice:'Практика', nav_cases:'Дела', nav_about:'О себе', nav_media:'Медиа', nav_contacts:'Контакты', hero_eyebrow:'Частная адвокатская практика', cta_p1:'Первичная консультация позволяет оценить ситуацию и определить возможные пути решения. Для записи достаточно одного звонка.', cta_btn:'Позвонить сейчас', footer_copy:'© {{year}} Эльмар Сулейманов. Все права защищены.', footer_terms:'Пользовательское соглашение', footer_privacy:'Обработка персональных данных', btn_phone:'Связаться по телефону', btn_whatsapp:'Связаться по WhatsApp', float_contact:'Связаться', consult_title:'Записаться на консультацию', consult_sub:'Мгновенная отправка в WhatsApp', consult_placeholder:'Кратко опишите вашу ситуацию или вопрос…', consult_field_label:'Краткое описание проблемы', consult_submit:'Отправить в WhatsApp →', consult_success_title:'Перенаправление в WhatsApp!', consult_success_text:'Сейчас откроется окно WhatsApp с вашим сообщением.', cases_sub:'Все имена и детали, позволяющие идентифицировать клиентов, изменены или опущены в соответствии с адвокатской тайной.' },
   en: { logo_name:'Elmar Suleymanov', logo_sub:'Attorney · +994 55 644 70 80', nav_practice:'Practice', nav_cases:'Cases', nav_about:'About', nav_media:'Media', nav_contacts:'Contact', hero_eyebrow:'Private Legal Practice', cta_p1:'An initial consultation allows us to assess the situation and identify possible solutions. One call is all it takes.', cta_btn:'Call now', footer_copy:'© {{year}} Elmar Suleymanov. All rights reserved.', footer_terms:'Terms of Use', footer_privacy:'Privacy Policy', btn_phone:'Call us', btn_whatsapp:'WhatsApp', float_contact:'Contact', consult_title:'Book a Consultation', consult_sub:'Instant send to WhatsApp', consult_placeholder:'Briefly describe your situation…', consult_field_label:'Brief description', consult_submit:'Send via WhatsApp →', consult_success_title:'Redirecting to WhatsApp!', consult_success_text:'A WhatsApp window with your message will open shortly.', cases_sub:'All names and identifying details have been altered or omitted in accordance with attorney-client privilege.' },
