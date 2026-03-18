@@ -35,17 +35,34 @@
 
 /* ── Cases grid: full-width, no empty ghost card ── */
 .pp-cases-grid{
-  display:grid;
+  display:grid!important;
+  flex-direction:unset!important;
+  flex-wrap:unset!important;
+  overflow-x:visible!important;
+  overflow-y:visible!important;
+  -webkit-overflow-scrolling:unset!important;
+  scroll-snap-type:unset!important;
+  gap:0!important;
+  background:transparent!important;
+  border:none!important;
+  margin:0!important;
+  padding:0!important;
+  -webkit-mask-image:none!important;
+  mask-image:none!important;
   grid-template-columns:repeat(3,1fr);
-  margin-top:2.5rem;
   width:100%;
-  border-left:1px solid var(--border);
-  border-top:1px solid var(--border);
+  border-left:1px solid var(--border)!important;
+  border-top:1px solid var(--border)!important;
 }
+.pp-cases-grid::after{display:none!important;}
 .pp-cases-grid .case-card{
   display:flex;
   flex-direction:column;
   justify-content:space-between;
+  flex:1 1 0!important;
+  max-width:none!important;
+  min-width:0!important;
+  scroll-snap-align:unset!important;
   border-right:1px solid var(--border);
   border-bottom:1px solid var(--border);
   background:var(--card-bg);
@@ -384,12 +401,13 @@
 </section>
 
 <!-- CASES -->
-<section class="practice-page-section practice-page-section--alt" style="--section-alt-bg:transparent;">
-  <div class="practice-page-inner" style="background:none!important">
+<section class="practice-page-section practice-page-section--alt" style="--section-alt-bg:transparent;padding-bottom:0!important;">
+  <div class="practice-page-inner" style="background:none!important;padding-bottom:2rem!important;">
     <p class="section-label" data-pp-i18n="cases_label">Из практики</p>
     <h2 data-pp-i18n="cases_heading">Краткий перечень дел, успешная защита по которым была осуществлена адвокатом Эльмаром Сулеймановым в период между 2013–2015 гг.</h2>
-    <p class="cases-sub" data-i18n="cases_sub" style="font-size:0.92rem;line-height:1.65;max-width:760px;margin-bottom:2.5rem;opacity:0.6;font-style:italic;">Все имена и детали, позволяющие идентифицировать клиентов, изменены или опущены в соответствии с адвокатской тайной.</p>
-    <div class="cases-grid pp-cases-grid">
+    <p class="cases-sub" data-i18n="cases_sub" style="font-size:0.92rem;line-height:1.65;max-width:760px;margin-bottom:0;opacity:0.6;font-style:italic;">Все имена и детали, позволяющие идентифицировать клиентов, изменены или опущены в соответствии с адвокатской тайной.</p>
+  </div>
+  <div class="cases-grid pp-cases-grid">
 
       <div class="case-card">
         <div>
@@ -500,7 +518,6 @@
       </div>
 
     </div>
-  </div>
 </section>
 
 <!-- CTA -->
